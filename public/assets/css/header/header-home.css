@@ -1,0 +1,113 @@
+.mainHome_navbar-topic {
+    font-size: 0.8125rem;
+    display: inline-block;
+    font-weight: 300px;
+    color: white;
+    height: 100%;
+  }
+.mainHome_navbar {
+    color: #000;
+    font-size: var(--navb-font-size);
+    background-color: var(--color-1);
+    padding: 5px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 8888;
+}
+
+.mainHome_navbar_aboutUs {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: var(--layout-width);
+}
+.mainHome_navbar_about_topic {
+    display: flex;
+    align-items: center;
+}
+.mainHome_navbar_about_topic ul {
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+}
+.mainHome__split--line {
+    color: #ffffff75;
+}
+.mainHome_shopIcon {
+    width: 150px;
+}
+
+.mainHome_pageSearch {
+    width: inherit;
+    display: flex;
+    background-color: white;
+    border-radius: 3px;
+    padding: 3px;
+    align-items: center;
+}
+.mainHome_personal {
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+#mainHome-Icon {
+    object-fit: cover;
+    width: 170px;
+    filter: drop-shadow(2px 1px 0px #ffffff7b);
+    transform: translateY(-10px);
+}
+#mainHone-search-field {
+    width: 100%;
+    height: 100%;
+    margin: 0 70px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
+}
+#mainHome-search-inp {
+    width: 100%;
+    height: 100%;
+    outline: unset;
+    border: unset;
+    padding: 0 5px;
+}
+#mainHome_pageSearchHome_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    border: unset;
+    cursor: pointer;
+    background-color: var(--color-1);
+    color: white;
+    padding: 5px 20px;
+    border-radius: inherit;
+}
+
+#mainHome-list-recommend {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#mainHome-list-recommend a {
+    color: white;
+    text-decoration: unset;
+    font-size: 13px;
+    white-space: nowrap;
+}
+#mainHome-list-recommend a::after {
+    content: " /";
+}
+.mainHome_navbar_containt {
+    display: flex;
+    align-items: flex-start;
+    margin: auto;
+    height: 70px;
+    width: var(--layout-width);
+  }
