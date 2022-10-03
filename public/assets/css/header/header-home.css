@@ -4,7 +4,7 @@
     font-weight: 300px;
     color: white;
     height: 100%;
-  }
+}
 .mainHome_navbar {
     color: #000;
     font-size: var(--navb-font-size);
@@ -52,8 +52,11 @@
 }
 .mainHome_personal {
     color: white;
-    font-size: 40px;
     cursor: pointer;
+    position: relative;
+}
+.mainHome_personal ion-icon {
+    font-size: 40px;
 }
 #mainHome-Icon {
     object-fit: cover;
@@ -110,4 +113,75 @@
     margin: auto;
     height: 70px;
     width: var(--layout-width);
-  }
+}
+.mainHome_personal:hover > #mainHome-cart-hidden{
+    transform: scale(1);
+    visibility: visible;
+}
+#mainHome-cart-hidden {
+    transform: scale(0);
+    visibility: hidden;
+    transform-origin: top right;
+    transition: 200ms;
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 50px;
+    left: -355px;
+    border-radius: 2px;
+    box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+}
+#mainHome-cart-hidden::before{
+    content: "";
+    width: 30px;
+    aspect-ratio: 1;
+    background-color: white;
+    clip-path: polygon(50% 60%, 0 100%, 100% 100%);
+    position: absolute;
+    top: -30px;
+    right: 15px;
+}
+#mainHome-cart-list-product {
+    display: flex;
+    flex-direction: column;
+}
+.mainHome__cart--product-name {
+    font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 250px;
+}
+.mainHome__cart--product-wrap {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.mainHome__cart--product-wrap:hover {
+    background-color: var(--gray-soft);
+}
+.mainHome__cart--product-wrap img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+#mainHome-cart-product-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--gray-hard);
+    padding: 10px;
+}
+.mainHome__cart--product-price {
+    font-size: 16px;
+    color: var(--color-4);
+}
+#mainHome-cart-view-btn {
+    margin: 20px 10px 10px 0;
+    padding: 5px 20px;
+    background-color: var(--color-4);
+    border: unset;
+    border-radius: 2px;
+    float: right;
+    color: white;
+    text-decoration: unset;
+}

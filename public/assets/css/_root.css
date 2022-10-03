@@ -1,11 +1,12 @@
 :root {
     --main-Color: bisque;
     --navb-font-size: 17px;
-    /* --layout-width: 80%; */
     --layout-width: 1200px;
     --margin-space: 15px auto;
     --color-1: #191a21;
     --color-2: #ffd02e;
+    --color-3: #FC5931;
+    --color-4: #EE4D2D;
     --gray-soft: #f5f5f5;
     --gray-light: #fbfbfb;
     --gray-hard: #939393;

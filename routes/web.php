@@ -17,11 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('_home.home');
 });
+
+
 Route::resource('/product', ProductController::class);
 
 Route::get('/seller', function () {
     return view('_seller.seller');
 });
+
+Route::get('/cart', function () {
+    return view('_cart.cart');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
