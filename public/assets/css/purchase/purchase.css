@@ -1,0 +1,492 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  /* outline: 1px solid red; */
+}
+:root {
+  --mother-width: 1200px;
+}
+/*todo main_home */
+#purchage-header-navbar-wrap {
+  width: 100%;
+  height: 35px;
+  background-color: #f05d40;
+  display: flex;
+  align-items: center;
+}
+.mainHome_navbar_aboutUs {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.mainHome_navbar_about_topic {
+  display: flex;
+  align-items: center;
+}
+.mainHome_navbar_about_topic ul {
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+}
+.mainHome__split--line {
+  color: #ffffff75;
+}
+.mainHome_navbar-topic {
+  font-size: 0.8125rem;
+  display: inline-block;
+  font-weight: 300px;
+  color: white;
+  height: 100%;
+}
+/* todo end main_home */
+#purchase-page-containt {
+  background-color: #e9e4e484;
+  padding-bottom: 60px;
+}
+#purchage-header-wrap {
+  width: 100%;
+  height: 135px;
+  background-color: white;
+  border-bottom: 1px solid #00000017;
+}
+#purchage-logo-title-wrap {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+#purchage-logo-title-wrap img {
+  width: 120px;
+}
+#purchage-title {
+  font-size: 20px;
+  transform: translateY(12px);
+  border-left: 1px solid #f05d40;
+  padding-left: 15px;
+  margin-left: 10px;
+}
+#purchase-page-wrap {
+  margin: 15px auto;
+  max-width: var(--mother-width);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/*! dia chi,ten nguoi mua */
+#purchage-letter-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-position-x: -30px;
+  background-size: 116px 3px;
+  background-image: repeating-linear-gradient(45deg, #6fa6d6, #6fa6d6 33px, transparent 0, transparent 41px, #f18d9b 0, #f18d9b 74px, transparent 0, transparent 82px);
+}
+#purchase-page-address {
+  position: relative;
+  height: 135px;
+  border-bottom: 1px solid #00000017;
+  padding: 30px;
+}
+#purchase-page-address,
+#purchase-page-productReview,
+#purchase-page-shop-voucherAndCoin,
+#purchase-page-payment-wrap {
+  background-color: #fff;
+  width: inherit;
+}
+#purchase-page-payment-wrap{
+  border-bottom: 1px solid #00000017;
+}
+#purchase-page-address-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+#purchase-page-address-detail {
+  width: 800px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#purchase-page-infor {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  white-space: nowrap;
+}
+#purchage-address-default {
+  color: #f05d40;
+  border: 1px solid #f05d40;
+  font-size: 14px;
+  padding: 1px 5px;
+  border-radius: 2px;
+  user-select: none;
+  cursor: help;
+  white-space: nowrap;
+}
+#purchage-address-default:hover {
+  background-color: #f05d40;
+  color: white;
+}
+#purchage-address-default abbr {
+  text-decoration: unset;
+}
+#purchase-page-customerInfor {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#purchase-page-address-title {
+  color: #f05d40;
+}
+
+#purchase-page-customInfor input {
+  background-color: #fff;
+  border: none;
+  color: blue;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+/*! reiew san truoc khi mua */
+
+#purchase-page-prodcuctTilte {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+#purchase-page-prodcuctTilte:nth-child(div) {
+  justify-content: center;
+}
+
+.purchase_page_product_about,
+.purchase_page_product_price,
+.purchase_page_product_quantity,
+.purchase_page_product_priceSum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.purchase_page_product_priceSum {
+  justify-content: end;
+}
+.add__color--gray {
+  color: #bbc1d3;
+  font-size: 14px;
+}
+.purchase_page_product_name {
+  justify-content: flex-start;
+  flex: 4;
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.purchase_page_product_about {
+  flex: 2;
+  color: #9b9b9b;
+  justify-content: start;
+}
+
+.purchase_page_product_price,
+.purchase_page_product_quantity,
+.purchase_page_product_priceSum {
+  flex: 1;
+  font-size: 14px;
+}
+
+.purchase_page_productCompany_chat {
+  display: flex;
+}
+
+.purchase_page_productView_company {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  gap: 30px;
+}
+
+.purchase_page_message {
+  display: flex;
+}
+
+.purchase_page_productView_detail {
+  padding: 20px 0;
+  display: flex;
+  height: inherit;
+}
+.purchase_page_product_name_title {
+  width: 380px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1rem;
+  max-height: 2em;
+  white-space: nowrap;
+  font-size: 14px;
+  /* display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; */
+}
+
+.purchase_page_product_name_img {
+  object-fit: cover;
+  width: 40px;
+  aspect-ratio: 1;
+}
+#purchase-page-productSight {
+  background-color: #fafdff;
+}
+/*! cac chuc nang trong muc san pham */
+.purchase_page_product_otherFunction {
+  display: flex;
+  border-bottom: 1px dashed #9b9b9b76;
+  justify-content: space-between;
+}
+
+.purchase_page_product_chatFunct {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  border-right: 1px dashed #9b9b9b76;
+  padding: 20px 30px 30px 30px;
+}
+.purchase_page_product_chatInput {
+  background-color: white;
+  width: 345px;
+  height: 40px;
+  border-radius: 2px;
+  padding: 10px;
+  border: 1px solid #DBDBDB;
+}
+.purchase_page_product_chatInput::placeholder{
+    color: #C1BBBB;
+}
+.purchase_page_product_transportFunct {
+  display: grid;
+  grid-template-columns: repeat(4, 160px);
+  padding: 20px 30px;
+  font-size: 14px;
+}
+.ws-nowrap{
+    white-space: nowrap;
+}
+.purchase_page_product_sumPrice {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+  padding: 20px 0;
+  box-shadow: 0 1px 1px 0 #00000017
+}
+.purchase_page_product_transChange{
+    justify-self: center;
+}
+.purchase_page_product_transPrice{
+    justify-self: right;
+}
+.purchage__trans--property:not(:first-child){
+    color: #9b9b9b;
+    font-size: 13px;
+    margin-top: 5px;
+}
+.purchase_page_product_sumDetail{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.purchase_page_product_sumDetail span:first-child{
+    color: #9b9b9b;
+}
+.purchase_page_product_sumDetail span:last-child{
+    color: #f05d40;
+    font-size: 25px;
+}
+/*! chon voucher */
+#purchase-page-shop-voucherAndCoin {
+  background-color: #fff;
+}
+.purchase_page_product_transTitle{
+    color: #00CDD4;
+}
+#purchase-page-shop-voucher {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cdcdcd83;
+  padding: 30px;
+}
+
+#purchase-page-shop-voucher-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+#purchase-page-shop-voucher-title ion-icon{
+    color: #f05d40;
+}
+#purchase-page-shop-coin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 30px;
+}
+#purchage-page-shop-coin-wrap{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 18px;
+}
+#purchage-coin-current{
+    font-size: 14px;
+    color: #9b9b9b;
+}
+#purchage-page-shop-coin-wrap ion-icon{
+    color: #FFA600;
+}
+#purchage-coin-shop-accept{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#purchage-coin-shop-accept span{
+    font-size: 14px;
+    color: #9b9b9b;
+}
+#purchase_page_sellerChat {
+  font-size: 14px;
+}
+/*! phuong phap thanh toan */
+#purchase-page-payment-method {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 30px;
+}
+.purchage__product--info-wrap {
+  padding: 30px;
+  background-color: white;
+  border-radius: 3px;
+  border-bottom: 1px dashed #cdcdcd83;
+  box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+  -webkit-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+  -moz-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+}
+#purchase-page-payment-method-about {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.purchage__check--method{
+    display: none;
+}
+#purchase-page-payment-method-about label:hover{
+    color: #f05d40;
+    outline: 1px solid;
+}
+#purchase-page-payment-method-about label {
+    user-select: none;
+    color: #9b9b9b;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    padding: 2px 5px;
+    border: unset;
+    outline: 1px solid #cdcdcd83;
+    transition: 100ms linear;
+    border-radius: 1px;
+}
+
+#purchase-page-payment-method-about label:has(.purchage__check--method:checked){
+  outline: 1px solid #f05d40;
+  color: #f05d40;
+  padding-right: 30px;
+}
+
+#purchase-page-payment-method-about label:has(.purchage__check--method:checked)::before {
+  content: "✓";
+  font-weight: 1000;
+  color: white;
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  z-index: 5;
+  text-align: right;
+  padding-right: 5px;
+  width: 30px;
+  height: 23px;
+  background-color: #f05d40;
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 0 100%);;
+}
+
+#purchase-page-payment-sumbit-wrap {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #F1F0ED;
+  border-bottom: 1px solid #F1F0ED;
+}
+.required__star--red{
+    color: red;
+}
+#purchase-page-payment-sumbit-containt {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 2fr);
+  padding: 30px;
+  font-size: 14px;
+  color: #9b9b9b;
+  text-align: right;
+  align-items: center;
+}
+#purchase-page-payment-sumbitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+#purchase-page-payment-sumbitSum{
+  display: flex;
+  align-items: center;
+  color: red;
+  font-size: 30px;
+}
+
+#purchage-page-warn-policy{
+  font-size: 14px;
+}
+
+#purchage-page-warn-policy span{
+  color: #9b9b9b;
+}
+#purchage-page-warn-policy a{
+  color: #1855AA;
+  text-decoration: unset;
+}
+#purchase-page-payment-sumbitButton {
+  background-color: #f05d40;
+  color: #fff;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+#purchase-page-payment-sumbitButton:hover {
+  background-color: #bb4b34;
+}

@@ -434,7 +434,7 @@
   padding: 0 20px;
 }
 
-#cart-page-sticky-function-btnBuy input {
+#cart-page-sticky-function-btnBuy #cart-page-go-buy button{
   width: 200px;
   height: 40px;
   background-color: #f05d40;
@@ -443,8 +443,9 @@
   outline: unset;
   border: none;
   cursor: pointer;
+  text-decoration: unset;
 }
 
-#cart-page-sticky-function-btnBuy input:hover {
+#cart-page-sticky-function-btnBuy #cart-page-go-buy:hover button{
   background-color: #c04027;
 }

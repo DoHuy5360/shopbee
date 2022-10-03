@@ -9,7 +9,7 @@
         <div id="cart-search-warp">
             <div id="cart-search-shopbee-icon">
                 <div id="cart-shopbee-img">
-                    <img src="../img/shopbee.png" alt="" srcset="" />
+                    <img src="{{ asset('assets/imgs/shopbee.png') }}" alt="" srcset="" />
                 </div>
                 <div id="cart-shopbee">Giỏ Hàng</div>
             </div>
@@ -329,7 +329,9 @@
                             <div>Tổng thanh toán (<span>0</span>) sản phẩm: ₫<span>0</span></div>
                         </div>
                         <div id="cart-page-sticky-function-btnBuy">
-                            <input type="button" value="Mua Hàng" />
+                            <a href="/purchase" id="cart-page-go-buy">
+                                <button>Thanh Toán</button>
+                            </a>
                         </div>
                     </div>
                 </div>

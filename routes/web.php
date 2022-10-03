@@ -19,6 +19,11 @@ Route::get('/', function () {
 });
 
 
+Route::get('/purchase', function () {
+    return view('_purchase.purchase');
+});
+
+
 Route::resource('/product', ProductController::class);
 
 Route::get('/seller', function () {
