@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ asset('assets/css/_root.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/header/header-home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}">
     @yield('css')
     <title>
         @yield('title')
@@ -18,6 +20,7 @@
 
 <body>
     @yield('content')
+    <button id="scroll-to-top">Cuộn lên trên</button>
 </body>
 
 </html>
@@ -38,4 +41,5 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="{{ asset('assets/js/ajax.js') }}"></script>
+<script src="{{ asset('assets/js/skeleton/skeleton.js') }}"></script>
 @yield('js')

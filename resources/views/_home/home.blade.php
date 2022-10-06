@@ -1,12 +1,10 @@
 @extends('layouts.skeleton')
 @section('title', 'Shopbee')
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/css/header/header-home.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main-home/main-home.css') }}" />
 @endsection
 @section('js')
-
+    <script src="{{ asset('assets/js/home/home.js') }}"></script>
 @endsection
 @section('content')
     @include('layouts.header-home')
@@ -84,7 +82,7 @@
                 <div class="mainHome__part--title">DANH MỤC</div>
                 <div class="mainHome-listOfCate">
                     <div id="mainHome-listType-1" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-2" class="mainHome-listOfType">
@@ -92,43 +90,43 @@
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-3" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-4" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-5" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-6" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-7" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-8" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-9" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-10" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-11" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                     <div id="mainHome-listType-12" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" />
+                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
                         <p class="mainHome-ListDescrib">Xe máy</p>
                     </div>
                 </div>

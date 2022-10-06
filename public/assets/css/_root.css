@@ -10,11 +10,13 @@
     --gray-soft: #f5f5f5;
     --gray-light: #fbfbfb;
     --gray-hard: #939393;
+    --gray-hard-2: #0000008a;
 }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
     /* outline: 1px solid red; */
 }
 .logo__color--orange{
@@ -25,4 +27,15 @@
 }
 .shadow__text{
     text-shadow: 1px 2px #474747;
+}
+#scroll-to-top{
+    background-color: var(--color-4);
+    color: white;
+    padding: 10px;
+    border: unset;
+    border-radius: 2px 2px 0 0;
+    outline: unset;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }

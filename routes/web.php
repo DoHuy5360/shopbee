@@ -23,6 +23,10 @@ Route::get('/purchase', function () {
     return view('_purchase.purchase');
 });
 
+Route::get('/new-product', function () {
+    return view('_new_product.new_product');
+});
+
 
 Route::resource('/product', ProductController::class);
 

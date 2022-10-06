@@ -72,6 +72,7 @@
         </div>
         <div id="mainHome-foot-list-category">
             <div id="mainHome-foot-category-title">Danh Mục</div>
+            <div id="mainHome-category-wrap"></div>
         </div>
     </div>
 </div>

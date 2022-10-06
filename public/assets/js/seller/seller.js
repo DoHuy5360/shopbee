@@ -28,11 +28,11 @@ var xValues = [0, 0, 0, 0];
                 },
             });
 // ! -------------------------------- end chart
-const menuList = document.querySelectorAll(".sidebarList");
+const menuList = document.querySelectorAll(".sidebar__menu--title");
 menuList.forEach((menu) => {
   menu.addEventListener("click", (e) => {
-    menu.querySelector(".sidebar-menu-content").classList.toggle("toggle__none");
-    menu.querySelector(".seller__arrow--sidebar").classList.toggle("toggle__transform");
+    menu.parentNode.querySelector(".sidebar__menu--content").classList.toggle("toggle__none");
+    menu.parentNode.querySelector(".seller__arrow--sidebar").classList.toggle("toggle__transform");
   });
 });
 

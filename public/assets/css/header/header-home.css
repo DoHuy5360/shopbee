@@ -80,6 +80,11 @@
     border: unset;
     padding: 0 5px;
 }
+#mainHome-search-inp:focus{
+    outline: 2px solid white;
+    outline-offset: 10px;
+    border-radius: 1px;
+}
 #mainHome_pageSearchHome_search {
     display: flex;
     justify-content: center;

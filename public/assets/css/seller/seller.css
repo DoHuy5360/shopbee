@@ -160,7 +160,7 @@
     list-style: none;
   }
   
-  .sidebar-menu-title {
+  .sidebar__menu--title {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -503,4 +503,10 @@
   .seller__marketing--title {
     padding: 15px 0;
   }
-  
+.sidebar__menu--content a{
+  color: black;
+  text-decoration: unset;
+}
+.sidebar__menu--content li:hover{
+  color: var(--color-3) !important;
+}

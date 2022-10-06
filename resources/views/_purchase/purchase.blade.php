@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div id="purchage-logo-title-wrap">
-                <img src="../img/shopbee.png" alt="" />
+                <a href="/"><img src="{{ asset('assets/imgs/shopbee.png') }}" alt="" /></a>
                 <div id="purchage-title">Thanh Toán</div>
             </div>
         </div>

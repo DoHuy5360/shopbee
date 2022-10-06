@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #f6f6f6;
+}
+
+#seller-product-wrap {
+  width: 1200px;
+  margin: 20px auto;
+  padding: 40px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 #0000000d;
+}
+#seller-product-wrap-title {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ededed;
+}
+#seller-product-title-about {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+#seller-product-subTitle {
+  font-size: 13px;
+  color: #a5a5a5;
+}
+#typeProduct-describe-wrap{
+    display: flex;
+    gap: 5px;
+}
+#typeProduct-describe-wrap a{
+    color: #EE4D2D;
+    text-decoration: unset;
+}
+#typeProduct-describe-wrap a:hover{
+    text-decoration: underline;
+}
+/*! nhap ten san pham */
+
+#seller-product-name {
+  margin: 30px 0;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+#seller-product-name-field {
+  border: 1px solid #E5E5E5;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  flex: 4;
+  padding: 0 10px;
+  border-radius: 3px;
+  transition: 200ms linear;
+}
+#seller-product-name-field:hover,
+#seller-product-name-field:focus-within {
+  border: 1px solid #b7b7b7;
+}
+
+#seller-product-name-input-field {
+  border: none;
+  outline: none;
+  height: 35px;
+  width: 100%;
+}
+#seller-product-name-input-field::placeholder {
+  color: #b7b7b7;
+}
+#seller-product-name-input-numb {
+  display: flex;
+  border-left: 1px solid #ededed;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #b7b7b7;
+}
+
+/*! khung chon san pham */
+
+#seller-product-choice {
+  margin: 30px 0;
+  padding: 10px 10px 20px 10px;
+  background-color: #F6F6F6;
+  border-radius: 5px;
+}
+#seller-product-choice-search{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 10px 20px 10px;
+}
+#seller-product-choice-items{
+    border-radius: 5px;
+    margin: 0 10px;
+    overflow: hidden;
+    background-color: white;
+
+    position: relative;
+}
+#seller-product-choice-search-field {
+  background-color: white;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  color: #b7b7b7;
+  padding-right: 10px;
+}
+
+#seller-product-choice-search-input {
+  width: 100%;
+  border: none;
+  height: 30px;
+  outline: none;
+}
+#seller-product-choice-search-input::placeholder{
+    color: #b7b7b7;
+}
+#seller-product-submit-btn {
+  border: none;
+  background-color: #fc5c22;
+  color: #fff;
+  width: 115px;
+  height: 40px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: unset;
+}
+
+#seller-product-submit-btn:hover {
+  background-color: #f94706;
+}
+#typeProduct-describe-note{
+    color: #a5a5a5;
+}
+/* ! choice feature */
+#typeProduct-columns-wrap {
+  display: flex;
+  width: 1090px;
+  height: 350px;
+  /* overflow-x: scroll; */
+  transition: 300ms linear;
+}
+.typeProduct__column::-webkit-scrollbar{
+    width: 6px;
+}
+.typeProduct__column::-webkit-scrollbar-thumb{
+    background: #B2B2B2;
+    border-radius: 5px;
+}
+.typeProduct__column {
+  background-color: white;
+  border-right: 1px solid #eaeaea;
+  min-width: 300px;
+  overflow-x: hidden;
+  margin: 10px 0;
+}
+.typeProduct__tray--wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 10px;
+}
+.typeProduct__category--name {
+  padding: 5px;
+  cursor: pointer;
+  transition: 100ms linear;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.typeProduct__category--name:hover {
+  background-color: #F6F6F6;
+  border-radius: 5px;
+}
+.choiceed{
+    color: #EE4D2D;
+    gap: 10px;
+}
+#seller-product-submit-items-wrap{
+    font-size: 15px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+#seller-product-submit-items{
+    display: flex;
+    align-items: center;
+}
+
+#typeProduct__next--transform,
+#typeProduct__previous--transform{
+    width: 35px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    border: unset;
+    background-color: #CCCCCC;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 8;
+    font-size: 30px;
+    place-items: center;
+    color: white;
+    display: none;
+    outline: unset;
+}
+#typeProduct__next--transform{
+    right: 10px;
+}
+#typeProduct__previous--transform{
+    left: 10px;
+}
