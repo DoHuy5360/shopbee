@@ -181,6 +181,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
+  gap: 10px;
 }
 .typeProduct__category--name:hover {
   background-color: #F6F6F6;
@@ -188,7 +189,6 @@ body {
 }
 .choiceed{
     color: #EE4D2D;
-    gap: 10px;
 }
 #seller-product-submit-items-wrap{
     font-size: 15px;

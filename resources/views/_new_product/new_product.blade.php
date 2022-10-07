@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/new_product/new_product.css') }}">
 @endsection
 @section('js')
-    <script src="{{ asset('assets/js/new_product/new_product.js') }}"></script>
+    <script type="module" src="{{ asset('assets/js/new_product/new_product.mjs') }}"></script>
 @endsection
 @section('content')
     <div id="seller-product-wrap">
