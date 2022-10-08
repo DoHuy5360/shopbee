@@ -39,3 +39,6 @@
     bottom: 0;
     right: 0;
 }
+.no_decoration{
+    text-decoration: unset !important;
+}

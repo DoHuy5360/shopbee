@@ -9,7 +9,8 @@
         <div id="cart-search-warp">
             <div id="cart-search-shopbee-icon">
                 <div id="cart-shopbee-img">
-                    <img src="{{ asset('assets/imgs/shopbee.png') }}" alt="" srcset="" />
+                    <a href="/" class="no_decoration">
+                        <img src="{{ asset('assets/imgs/shopbee.png') }}" alt="" srcset="" /></a>
                 </div>
                 <div id="cart-shopbee">Giỏ Hàng</div>
             </div>

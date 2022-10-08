@@ -313,47 +313,29 @@
                     <a href="http://" class="mainHome__link--to" target="_blank">Xem tất cả ></a>
                 </div>
                 <div id="mainHome-card-suggest-wrap">
-                    {{-- ! suggest card --}}
-                    <a href="{{ route('product.show', 1) }}" class="mainHome__cardSuggest-padding">
-                        <div class="mainHome__cardSuggest-content">
-                            <div class="mainHome__cardSuggest--image">
-                                <div class="mainHome__cardSuggest--label-like">Yêu thích</div>
-                                <img src="http://surl.li/dafng" alt="" />
-                            </div>
-                            <div class="mainHome__cardSuggest--text">
-                                <div class="mainHome__cardSuggest--name">Bàn phím cơ K37d</div>
-                                <div class="mainHome__cardSuggest--footer">
-                                    <div class="mainhome__bonus--bebefit">
-                                        <ion-icon name="cart-outline"></ion-icon>
-                                    </div>
-                                    <div class="mainHome__cardSuggest--price-wrap">
-                                        <div class="mainHome__cardSuggest--price"><span>₫</span><span>944.000</span></div>
-                                        <span>Đã bán 34k</span>
+                    {{-- {{ $test_products }} --}}
+                    @foreach ($test_products as $products)
+                        <a href="{{ route('product.show', 1) }}" class="mainHome__cardSuggest-padding">
+                            <div class="mainHome__cardSuggest-content">
+                                <div class="mainHome__cardSuggest--image">
+                                    <div class="mainHome__cardSuggest--label-like">Yêu thích</div>
+                                    <img src="{{ $products->image }}" alt="" />
+                                </div>
+                                <div class="mainHome__cardSuggest--text">
+                                    <div class="mainHome__cardSuggest--name">{{ $products->name }}</div>
+                                    <div class="mainHome__cardSuggest--footer">
+                                        <div class="mainhome__bonus--bebefit">
+                                            <ion-icon name="cart-outline"></ion-icon>
+                                        </div>
+                                        <div class="mainHome__cardSuggest--price-wrap">
+                                            <div class="mainHome__cardSuggest--price"><span>₫</span><span>{{ $products->price }}</span></div>
+                                            <span>Đã bán {{ $products->sold }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('product.show', 1) }}" class="mainHome__cardSuggest-padding">
-                        <div class="mainHome__cardSuggest-content">
-                            <div class="mainHome__cardSuggest--image">
-                                <div class="mainHome__cardSuggest--label-like">Yêu thích</div>
-                                <img src="http://surl.li/dafng" alt="" />
-                            </div>
-                            <div class="mainHome__cardSuggest--text">
-                                <div class="mainHome__cardSuggest--name">Bàn phím cơ K37d</div>
-                                <div class="mainHome__cardSuggest--footer">
-                                    <div class="mainhome__bonus--bebefit">
-                                        <ion-icon name="cart-outline"></ion-icon>
-                                    </div>
-                                    <div class="mainHome__cardSuggest--price-wrap">
-                                        <div class="mainHome__cardSuggest--price"><span>₫</span><span>944.000</span></div>
-                                        <span>Đã bán 34k</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
                 </div>
                 <div id="mainHome-cardSuggest-display-btn">
                     <button id="mainHome-cardSuggest-display-more" type="button">Hiển thị thêm sản phẩm</button>

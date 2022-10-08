@@ -13,22 +13,20 @@ class Category {
         );
         this.tray_wrap = document.getElementById("typeProduct-columns-wrap");
     }
+    // Đệ quy để gắn sự kiện nhấp chuột cho các category
     displayCategories(_where) {
         const display_node = document.querySelector(`[data-level="${_where}"]`),
             wrap_categories = document.createElement("div");
         wrap_categories.setAttribute("class", "typeProduct__tray--wrap");
-        let category_node, category_name;
         this.arr_categ.forEach((category) => {
-            category_node = document.createElement("div");
+            const category_node = document.createElement("div");
             category_node.setAttribute("class", "typeProduct__category--name");
-            category_name = document.createElement("div");
+            const category_name = document.createElement("div");
             category_name.textContent = category.parent;
             category_node.appendChild(category_name);
             if (category.childrend.length) {
-                const arrow = document.createElement("div");
-                arrow.innerHTML =
-                    '<ion-icon name="chevron-forward-outline"></ion-icon>';
-                category_node.appendChild(arrow);
+                const arrow = '<ion-icon name="chevron-forward-outline"></ion-icon>';
+                category_node.insertAdjacentHTML("beforeend",arrow);
             }
             category_node.addEventListener("click", (e) => {
                 // category.level + 1
@@ -45,6 +43,7 @@ class Category {
         });
     }
     removeSelectedChildrend(_where) {
+        // Loại bỏ các tùy chọn con
         let display_node;
         for (let index = _where; index <= this.amount_column; index++) {
             display_node = document.querySelector(`[data-level="${index}"]`);
@@ -52,6 +51,7 @@ class Category {
         }
     }
     addClassChoiceed(_node) {
+        // Thêm class để đánh dấu category được chọn
         if (this.choice_node_temp) {
             this.choice_node_temp.classList.remove("choiceed");
             _node.classList.add("choiceed");
@@ -62,7 +62,7 @@ class Category {
         }
     }
     displayStringCategories() {
-        let clone_category;
+        // Hiển thị dãy thể loại đã chọn
         const tray_select = document.getElementById(
             "seller-product-submit-items"
         );
@@ -71,10 +71,11 @@ class Category {
             ".typeProduct__category--name.choiceed"
         );
         category_selected.forEach((category) => {
-            clone_category = category.cloneNode(true);
+            const clone_category = category.cloneNode(true);
             tray_select.appendChild(clone_category);
         });
     }
+    // Hiển thị nút mở rộng tầm nhìn bên trái và phải
     showLeftAndfRight(_category) {
         if (_category.level >= 3) {
             if (_category.childrend.length) {
