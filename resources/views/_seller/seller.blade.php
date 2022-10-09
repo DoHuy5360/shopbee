@@ -1,9 +1,9 @@
 @extends('layouts.skeleton')
 @section('title', 'Kênh Người Bán')
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/css/seller/seller.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/header/header-home.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/seller/seller.css') }}">
 @endsection
 @section('js')
     <script src="{{ asset('assets/js/seller/seller.js') }}"></script>
@@ -36,7 +36,7 @@
                     <li id="seller-sidebar-transport" class="sidebarList">
                         <div class="sidebar__menu--title">
                             <div class="seller__name--title">
-                                <ion-icon name="earth-outline"></ion-icon>
+                                <ion-icon name="rocket-outline"></ion-icon>
                                 <span>Vận chuyển</span>
                             </div>
                             <span class="seller__arrow--sidebar">
@@ -52,7 +52,7 @@
                     <li id="seller-sidebar-sellManage" class="sidebarList">
                         <div class="sidebar__menu--title">
                             <div class="seller__name--title">
-                                <ion-icon name="earth-outline"></ion-icon>
+                                <ion-icon name="file-tray-stacked-outline"></ion-icon>
                                 <span>Quản Lý Đơn Hàng</span>
                             </div>
                             <span class="seller__arrow--sidebar">
@@ -68,7 +68,7 @@
                     <li id="seller-sidebar-productManage" class="sidebarList">
                         <div class="sidebar__menu--title">
                             <div class="seller__name--title">
-                                <ion-icon name="earth-outline"></ion-icon>
+                                <ion-icon name="cube-outline"></ion-icon>
                                 <span>Quản Lý Sản Phẩm</span>
                             </div>
                             <span class="seller__arrow--sidebar">
@@ -86,7 +86,7 @@
                     <li id="seller-sidebar-marketing" class="sidebarList">
                         <div class="sidebar__menu--title">
                             <div class="seller__name--title">
-                                <ion-icon name="earth-outline"></ion-icon>
+                                <ion-icon name="flag-outline"></ion-icon>
                                 <span>Kênh Marketing</span>
                             </div>
                             <span class="seller__arrow--sidebar">
@@ -102,7 +102,7 @@
                     <li id="seller-sidebar-finance" class="sidebarList">
                         <div class="sidebar__menu--title">
                             <div class="seller__name--title">
-                                <ion-icon name="earth-outline"></ion-icon>
+                                <ion-icon name="cash-outline"></ion-icon>
                                 <span>Tài Chính</span>
                             </div>
                             <span class="seller__arrow--sidebar">
@@ -119,7 +119,7 @@
                     <li id="seller-sidebar-data" class="sidebarList">
                         <div class="sidebar__menu--title">
                             <div class="seller__name--title">
-                                <ion-icon name="earth-outline"></ion-icon>
+                                <ion-icon name="bar-chart-outline"></ion-icon>
                                 <span>Dữ Liệu</span>
                             </div>
                             <span class="seller__arrow--sidebar">
@@ -134,7 +134,7 @@
                     <li id="seller-sidebar-development" class="sidebarList">
                         <div class="sidebar__menu--title">
                             <div class="seller__name--title">
-                                <ion-icon name="earth-outline"></ion-icon>
+                                <ion-icon name="trending-up-outline"></ion-icon>
                                 <span>Phát Triển</span>
                             </div>
                             <span class="seller__arrow--sidebar">
@@ -149,7 +149,7 @@
                     <li id="seller-sidebar-clientCare" class="sidebarList">
                         <div class="sidebar__menu--title">
                             <div class="seller__name--title">
-                                <ion-icon name="earth-outline"></ion-icon>
+                                <ion-icon name="people-outline"></ion-icon>
                                 <span>Chăm Sóc Khách Hàng</span>
                             </div>
                             <span class="seller__arrow--sidebar">
@@ -164,7 +164,7 @@
                     <li id="seller-sidebar-shopMange" class="sidebarList">
                         <div class="sidebar__menu--title">
                             <div class="seller__name--title">
-                                <ion-icon name="earth-outline"></ion-icon>
+                                <ion-icon name="storefront-outline"></ion-icon>
                                 <span>Quản Lý Shop</span>
                             </div>
                             <span class="seller__arrow--sidebar">
@@ -183,7 +183,7 @@
                     <li id="seller-sidebar-shopSetup" class="sidebarList">
                         <div class="sidebar__menu--title">
                             <div class="seller__name--title">
-                                <ion-icon name="earth-outline"></ion-icon>
+                                <ion-icon name="library-outline"></ion-icon>
                                 <span>Thiết Lập Shop</span>
                             </div>
                             <span class="seller__arrow--sidebar">
@@ -462,11 +462,11 @@
                         <a class="see-all-content" href="">Xem tất cả ></a>
                     </div>
                     <!-- <div id="seller-mission">
-                      <div class="seller-content-title">
-                        <span>Nhiệm Vụ Người Bán</span>
-                      </div>
-                      <a class="see-all-content" href="">Xem tất cả ></a>
-                    </div> -->
+                          <div class="seller-content-title">
+                            <span>Nhiệm Vụ Người Bán</span>
+                          </div>
+                          <a class="see-all-content" href="">Xem tất cả ></a>
+                        </div> -->
                 </div>
             </div>
         </div>

@@ -177,7 +177,7 @@
   }
   .seller__name--title {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 5px;
     font-size: 14px;
     font-weight: bold;
@@ -459,6 +459,7 @@
   }
   #seller-marketing-card-wrap {
     display: grid;
+    gap: 5px;
     grid-template-columns: repeat(5, 1fr);
   }
   .seller__marketing--card {

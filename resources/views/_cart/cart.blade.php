@@ -6,6 +6,48 @@
 @endsection
 @section('content')
     <div id="cart-search-voucher">
+        <div id="cart-header-wrap">
+            <div class="mainHome_navbar_aboutUs">
+                <div class="mainHome_navbar_about_topic">
+                    <ul>
+                        <a href="/seller" target="_blank" rel="noopener noreferrer">
+                            <li class="mainHome_navbar-topic">Kênh người bán</li>
+                        </a>
+                        <li class="mainHome__split--line">|</li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <li class="mainHome_navbar-topic">Become Seller</li>
+                        </a>
+                        <li class="mainHome__split--line">|</li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <li class="mainHome_navbar-topic">Tải ứng dụng</li>
+                        </a>
+                        <li class="mainHome__split--line">|</li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <li class="mainHome_navbar-topic">Liên kết</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="mainHome_navbar_about_topic">
+                    <ul>
+                        <li class="mainHome_navbar-topic">Thông báo</li>
+                        <li class="mainHome_navbar-topic">Hỗ Trợ</li>
+                        <li class="mainHome_navbar-topic">Ngôn ngữ</li>
+                        @auth
+                            <a href="">
+                                <li class="mainHome_navbar-topic">{{ Auth::user()->name }}</li>
+                            </a>
+        
+                        @endauth
+                        <a href="{{ route('register') }}">
+                            <li class="mainHome_navbar-topic">Đăng Ký</li>
+                        </a>
+                        <a href="{{ route('login') }}">
+                            <li class="mainHome_navbar-topic">Đăng nhập</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div id="cart-search-warp">
             <div id="cart-search-shopbee-icon">
                 <div id="cart-shopbee-img">

@@ -49,7 +49,7 @@
                     <div id="product-like-index-wrap">
                         <ion-icon name="heart-outline"></ion-icon>
                         <span>Đã thích</span>
-                        <span>({{ $de }})</span>
+                        <span>(234)</span>
                     </div>
                 </div>
             </div>

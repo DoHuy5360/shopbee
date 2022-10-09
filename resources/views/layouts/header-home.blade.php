@@ -41,7 +41,9 @@
     </div>
     <div class="mainHome_navbar_containt">
         <div class="mainHome_shopIcon">
-            <img id="mainHome-Icon" src="{{ asset('assets/imgs/shopbee.png') }}" alt="" />
+            <a href="/" class="no_decoration">
+                <img id="mainHome-Icon" src="{{ asset('assets/imgs/shopbee.png') }}" alt="" />
+            </a>
         </div>
         <div id="mainHone-search-field">
             <div class="mainHome_pageSearch">

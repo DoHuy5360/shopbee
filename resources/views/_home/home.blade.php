@@ -48,86 +48,84 @@
         <div id="mainHome-activity">
             <div class="mainHome__activity--card">
                 <div class="mainHome__act--icon">
-                    <ion-icon name="flash-outline"></ion-icon>
+                    <img src="https://cf.shopee.vn/file/46a2a2c810622f314d78455da5e5d926_xhdpi" alt="">
                 </div>
-                <div class="mainHome__act--name">Khung giờ săn Sale</div>
+                <div class="mainHome__act--name">Khung Giờ Săn Sale</div>
             </div>
             <div class="mainHome__activity--card">
                 <div class="mainHome__act--icon">
-                    <ion-icon name="cash-outline"></ion-icon>
+                    <img src="https://cf.shopee.vn/file/b3535d7e56c58c4ebe9a87672d38cc5e_xhdpi" alt="">
                 </div>
-                <div class="mainHome__act--name">Gì cũng rẻ, mua là Freeship</div>
+                <div class="mainHome__act--name">Gì Cũng Rẻ - Mua Là Freeship</div>
             </div>
             <div class="mainHome__activity--card">
                 <div class="mainHome__act--icon">
-                    <ion-icon name="airplane-outline"></ion-icon>
+                    <img src="https://cf.shopee.vn/file/c7a2e1ae720f9704f92f72c9ef1a494a_xhdpi" alt="">
                 </div>
-                <div class="mainHome__act--name">Miễn phí vận chuyển</div>
+                <div class="mainHome__act--name">Miễn Phí Vận Chuyển</div>
             </div>
             <div class="mainHome__activity--card">
                 <div class="mainHome__act--icon">
-                    <ion-icon name="airplane-outline"></ion-icon>
+                    <img src="https://cf.shopee.vn/file/1975fb1af4ae3c22878d04f6f440b6f9_xhdpi" alt="">
                 </div>
-                <div class="mainHome__act--name">Bắt Trend - Giá sốc</div>
+                <div class="mainHome__act--name">Bắt Trend - Giá Sốc</div>
             </div>
             <div class="mainHome__activity--card">
                 <div class="mainHome__act--icon">
-                    <ion-icon name="bag-check-outline"></ion-icon>
+                    <img src="https://cf.shopee.vn/file/21a4856d1fecd4eda143748661315dba_xhdpi" alt="">
                 </div>
-                <div class="mainHome__act--name">Hàng hiệu giá tốt</div>
+                <div class="mainHome__act--name">Hoàn Xu Xtra Từ 100K</div>
+            </div>
+            <div class="mainHome__activity--card">
+                <div class="mainHome__act--icon">
+                    <img src="https://cf.shopee.vn/file/8d6d5ee795e7675fed39d31ba04c3b92_xhdpi" alt="">
+                </div>
+                <div class="mainHome__act--name">Hàng Hiệu Giá Tốt</div>
+            </div>
+            <div class="mainHome__activity--card">
+                <div class="mainHome__act--icon">
+                    <img src="https://cf.shopee.vn/file/a08ab28962514a626195ef0415411585_xhdpi" alt="">
+                </div>
+                <div class="mainHome__act--name">Hàng Quốc Tế</div>
+            </div>
+            <div class="mainHome__activity--card">
+                <div class="mainHome__act--icon">
+                    <img src="https://cf.shopee.vn/file/9df57ba80ca225e67c08a8a0d8cc7b85_xhdpi" alt="">
+                </div>
+                <div class="mainHome__act--name">Nạp Thẻ & Dịch Vụ</div>
+            </div>
+            <div class="mainHome__activity--card">
+                <div class="mainHome__act--icon">
+                    <img src="https://cf.shopee.vn/file/b898e8b6a0ba6fc2a86beb99f9420f06_xhdpi" alt="">
+                </div>
+                <div class="mainHome__act--name">Chọn 6 Số Trúng Trăm Triệu</div>
+            </div>
+            <div class="mainHome__activity--card">
+                <div class="mainHome__act--icon">
+                    <img src="https://cf.shopee.vn/file/93acaac785c19b09180b01cc34a4c17e_xhdpi" alt="">
+                </div>
+                <div class="mainHome__act--name">Flash Sale</div>
             </div>
         </div>
         <div class="mainHome__category">
             <div id="mainHome__category--wrap">
                 <div class="mainHome__part--title">DANH MỤC</div>
-                <div class="mainHome-listOfCate">
-                    <div id="mainHome-listType-1" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
+                <div id="mainHome__category--wrap-arrow">
+                    <div id="mainHome-category-arrow-left">
+                        <ion-icon name="chevron-back-outline"></ion-icon>
                     </div>
-                    <div id="mainHome-listType-2" class="mainHome-listOfType">
-                        <img src="http://surl.li/dagkg" alt="" />
-                        <p class="mainHome-ListDescrib">Xe máy</p>
+                    <div id="mainHome-category-tray-wrap">
+                        <div id="mainHome-listOfCate">
+                            @foreach ($product_categories as $category)
+                                <div id="mainHome-listType-1" class="mainHome-listOfType">
+                                    <img src="{{ $category->category_image }}" alt="" loading="lazy" />
+                                    <span class="mainHome-ListDescrib">{{ $category->category_name }}</span>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                    <div id="mainHome-listType-3" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
-                    </div>
-                    <div id="mainHome-listType-4" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
-                    </div>
-                    <div id="mainHome-listType-5" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
-                    </div>
-                    <div id="mainHome-listType-6" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
-                    </div>
-                    <div id="mainHome-listType-7" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
-                    </div>
-                    <div id="mainHome-listType-8" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
-                    </div>
-                    <div id="mainHome-listType-9" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
-                    </div>
-                    <div id="mainHome-listType-10" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
-                    </div>
-                    <div id="mainHome-listType-11" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
-                    </div>
-                    <div id="mainHome-listType-12" class="mainHome-listOfType">
-                        <img src="http://surl.li/daghx" alt="" loading="lazy"/>
-                        <p class="mainHome-ListDescrib">Xe máy</p>
+                    <div id="mainHome-category-arrow-right">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
                     </div>
                 </div>
             </div>
@@ -141,36 +139,16 @@
                 <!--! làm đồng hồ đếm ngược -->
                 <!-- <p id="flash-sale-end"><span id="hours">12</span><span id="minutes">12</span><span id="seconds">12</span></p> -->
                 <div class="mainHome-listOfFlashcate">
-                    <div id="mainHome-listOfFlash-1" class="mainHome-listOfFlash">
-                        <img src="http://surl.li/dafng" alt="" />
-                        <p class="flash-price">75.000 đồng</p>
-                        <progress value="75" min="0" max="100"></progress>
-                    </div>
-                    <div id="mainHome-listOfFlash-2" class="mainHome-listOfFlash">
-                        <img src="http://surl.li/dafnd" alt="" />
-                        <p class="flash-price">55.000 đồng</p>
-                        <progress value="75" min="0" max="100"></progress>
-                    </div>
-                    <div id="mainHome-listOfFlash-3" class="mainHome-listOfFlash">
-                        <img src="http://surl.li/dafnj" alt="" />
-                        <p class="flash-price">56.000 đồng</p>
-                        <progress value="75" min="0" max="100"></progress>
-                    </div>
-                    <div id="mainHome-listOfFlash-4" class="mainHome-listOfFlash">
-                        <img src="http://surl.li/dafnp" alt="" />
-                        <p class="flash-price">99.000 đồng</p>
-                        <progress value="75" min="0" max="100"></progress>
-                    </div>
-                    <div id="mainHome-listOfFlash-5" class="mainHome-listOfFlash">
-                        <img src="http://surl.li/dafnq" alt="" />
-                        <p class="flash-price">77.000 đồng</p>
-                        <progress value="75" min="0" max="100"></progress>
-                    </div>
-                    <div id="mainHome-listOfFlash-6" class="mainHome-listOfFlash">
-                        <img src="http://surl.li/dafnr" alt="" />
-                        <p class="flash-price">33.000 đồng</p>
-                        <progress value="75" min="0" max="100"></progress>
-                    </div>
+                    @foreach ($products_flash_sale as $product)
+                        <div id="mainHome-listOfFlash-1" class="mainHome-listOfFlash">
+                            <img src="{{ $product->product_image }}" alt="" />
+                            <p class="mainHome__flashSale--price">{{ $product->product_price }}</p>
+                            <div class="mainHome__flashSale--processBar-wrap">
+                                <div class="mainHome__flashSale--processBar" style="width: {{ $product->product_sold_proportion }}%"></div>
+                                <div class="mainHome__flashSal--text">Đang Bán Chạy</div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -215,35 +193,12 @@
                         </div>
                     </div>
                     <div class="mainHome-bigComapanyProducts">
-                        <div class="mainHome-comapny">
-                            <img src="https://th.bing.com/th/id/R.5b0b18b80aeb20f05476ab34a0b7efe6?rik=i4kQ%2fEfT%2ffuv4w&pid=ImgRaw&r=0" alt="" />
-                            <div class="mainHone__banner--wrap">
-                                <img src="https://th.bing.com/th/id/R.c75d99342fcbe8f46a2c01973b08b5c7?rik=1iar%2fhSpbkTTaQ&riu=http%3a%2f%2f3.bp.blogspot.com%2f-Da3Yj32iknc%2fUPGKkqB4euI%2fAAAAAAAAE7U%2fThZsRisL45Y%2fs1600%2fLogo%2bApple%2biPhone.jpg&ehk=B90iBPuwHGUTosz9OohWUr2ZkKne566aB4tckCrIotM%3d&risl=&pid=ImgRaw&r=0"
-                                    alt="" />
+                        @foreach ($malls as $mall)
+                            <div class="mainHome-company">
+                                <img src="{{ $mall->mall_image }}" alt="" />
+                                <div class="mainHome__mall--sale">Giảm đến {{ $mall->mall_sale }}</div>
                             </div>
-                            <div>Giảm đến 50%</div>
-                        </div>
-                        <div class="mainHome-comapny">
-                            <img src="https://th.bing.com/th/id/R.5336cdbb14df4d13646366f2ee802d88?rik=KyNGwEgCK2C0rw&pid=ImgRaw&r=0" alt="" />
-                            <div class="mainHone__banner--wrap">
-                                <img src="https://th.bing.com/th/id/R.dbca938efb1fe46f5f3b34b17f35a026?rik=t27stuDPoMhMiQ&pid=ImgRaw&r=0" alt="" />
-                            </div>
-                            <div>Giảm đến 50%</div>
-                        </div>
-                        <div class="mainHome-comapny">
-                            <img src="" alt="" />
-                            <div class="mainHone__banner--wrap">
-                                <img src="" alt="" />
-                            </div>
-                            <div></div>
-                        </div>
-                        <div class="mainHome-comapny">
-                            <img src="" alt="" />
-                            <div class="mainHone__banner--wrap">
-                                <img src="" alt="" />
-                            </div>
-                            <div></div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -315,7 +270,7 @@
                 <div id="mainHome-card-suggest-wrap">
                     {{-- {{ $test_products }} --}}
                     @foreach ($test_products as $products)
-                        <a href="{{ route('product.show', 1) }}" class="mainHome__cardSuggest-padding">
+                        <a href="{{ route('product.show', $products->id) }}" class="mainHome__cardSuggest-padding">
                             <div class="mainHome__cardSuggest-content">
                                 <div class="mainHome__cardSuggest--image">
                                     <div class="mainHome__cardSuggest--label-like">Yêu thích</div>

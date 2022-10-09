@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+require_once('functions/convert.php');
 class ProductController extends Controller
 {
     /**
@@ -45,9 +46,30 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $de = 1;
+        $keys = [
+            "product_generate_id",
+            "product_image",
+            "product_price",
+            "product_category",
+            "product_sold",
+            "product_inventory",
+            "product_rate",
+            "product_star",
+            "product_like",
+            "product_color",
+            "user_address",
+            "shop_generate_id",
+            "shop_name",
+            "shop_rate",
+            "shop_response_rate",
+            "shop_created_at",
+            "shop_follower",
+            "shop_response_time",
+            "shop_product"
+        ];
+        $product_info = "1";
         return view('_product.product', [
-            'de'=>$de,
+            'product_infor' => $product_info,
         ]);
     }
 
