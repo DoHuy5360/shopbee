@@ -1,0 +1,657 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+html {
+    scroll-padding-top: 50px;
+}
+body {
+    background-color: #f6f6f6;
+    position: relative;
+}
+#seller_product_detail-wrapper {
+    width: 1200px;
+    display: flex;
+    margin: auto;
+    padding-bottom: 40px;
+}
+#sellerProduct-nemu-wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 70px 0 0 40px;
+    position: fixed;
+}
+#seller_product_detail-wrapper-detail {
+    display: flex;
+    flex-direction: column;
+    width: 1015px;
+    position: relative;
+}
+.sellerProduct-nemu-element {
+    white-space: nowrap;
+    padding-left: 25px;
+    border-left: 3px solid #dbdbdb;
+    font-size: 14px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.seller_product_detail_inforWrapper {
+    background-color: white;
+    padding: 32px 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.2rem 0.4rem #00000017;
+    margin-top: 18px;
+}
+.sellerProduct__image--add-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.sellerProduct__accept--wrap {
+    display: flex;
+    flex-direction: column;
+}
+.sellerProduct__descript--hidden {
+    display: none;
+}
+#seller_product_detail-otherInfor-option-false-quote,
+#seller_product_detail-otherInfor-option-true-quote {
+    font-size: 14px;
+    color: #9999a6;
+}
+#sellerProduct-detail-choice-wrap:has(#seller_product_detail-otherInfor-option-true:checked)
+    ~ #seller_product_detail-otherInfor-option-true-quote {
+    display: block;
+}
+#sellerProduct-detail-choice-wrap:has(#seller_product_detail-otherInfor-option-false:checked)
+    ~ #seller_product_detail-otherInfor-option-false-quote {
+    display: block;
+}
+.sellerProduct__accept--check-wrap {
+    display: flex;
+    gap: 5px;
+}
+.sellerProduct__title--field-wrap {
+    font-size: 14px;
+    min-width: 150px;
+    max-width: 150px;
+    text-align: right;
+    display: inline-block;
+    margin-right: 20px;
+    color: #656565;
+}
+.sellerProduct__title--field-wrap ion-icon {
+    vertical-align: middle;
+    font-size: 20px;
+}
+.sellerProduct__image--number {
+    color: #999999;
+    font-size: 14px;
+}
+#sellerProduct-required-video {
+    margin-left: 30px;
+    width: 500px;
+}
+#sellerProduct-required-video p {
+    margin: 0;
+    font-size: 12px;
+    color: #b7bed0;
+}
+.sellerProduct__image--number.cover {
+    color: black;
+}
+#seller_product_detail-basicInfor-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    padding-left: 15px;
+}
+
+#seller_product_detail-basicInfor-detail {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.sellerProduct__input--wrap {
+    border: 1px solid #e5e5e5;
+}
+.sellerProduct__input--wrap::placeholder {
+    color: #b7b7be;
+}
+.sellerProduct__image--field-wrap {
+    display: flex;
+}
+#seller_product_detail-basicImg-item {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    white-space: none;
+    gap: 15px;
+}
+
+.seller_product_detail-basicImg-containt,
+#seller_product_detail-basicVid-item {
+    width: 80px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1791f2;
+    border: 1px dashed #1791f2;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    font-size: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.seller_product_detail-basicImg-containt:hover {
+    background-color: #f5fbff;
+}
+
+#seller_product_detail-basicName-inputfield {
+    flex-grow: 1;
+    border-radius: 3px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+#seller_product_detail-basicName-input {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+#seller_product_detail-basicProdDesc-inputfield {
+    flex-grow: 1;
+    position: relative;
+}
+
+#seller_product_detail-basicProdDesc-input {
+    width: 100%;
+    outline: none;
+    border-radius: 3px;
+    padding: 10px;
+    height: 210px;
+    resize: unset;
+}
+.sellerProduct__animate-hover-focus {
+    transition: 100ms linear !important;
+}
+.sellerProduct__animate-hover-focus:hover,
+.sellerProduct__animate-hover-focus:focus {
+    border: 1px solid #666670 !important;
+}
+#seller_product_detail-basicProdDesc-inputLimit {
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    font-size: 14px;
+    color: #b7b7be;
+}
+#sellerProduct-product-name-countLenght {
+    border-left: 1px solid #dbdbdb;
+    padding: 5px 0 5px 10px;
+    font-size: 14px;
+    color: #999999;
+}
+#seller_product_detail-basicCategory {
+    margin-top: 40px;
+    font-size: 14px;
+}
+#seller_product_detail-basicCategory-content {
+    display: flex;
+}
+
+#seller_product_detail-sellInfor-voucher {
+    display: flex;
+    margin: 20px 0;
+}
+
+#seller_product_detail-sellInfor-voucher-inputfield {
+    width: 100%;
+    padding: 20px;
+    background-color: #fafafa;
+    display: none;
+}
+
+.seller_product_detail_sellInfor_voucher_inputfield_wrap {
+    display: grid;
+    grid-template-columns: auto 190px 190px 190px 16px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.seller_product_detail_sellInfor_voucher_inputfield_label {
+    color: #999999;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.seller_product_detail_sellInfor_voucher_input {
+    flex: 1;
+    gap: 10px;
+    color: #999999;
+    font-size: 14px;
+}
+
+.seller_product_detail_sellInfor_voucher_input input {
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    outline: none;
+    padding: 10px;
+}
+
+#seller_product_detail_sellInfor_voucher_del {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center;
+    color: #999999;
+    font-size: 1.2rem;
+}
+
+/*! thong tin chi tiet */
+#seller_product_detail-mainInfor-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+#seller_product_detail-mainInfor-sublabel {
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+#seller_product_detail-mainInfor-inputfield {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 40px);
+    gap: 20px;
+    text-align: start;
+}
+
+select:invalid {
+    color: red;
+}
+
+.seller_product_detail_mainInfor_inputfield {
+    display: flex;
+    align-items: center;
+}
+
+.seller_product_detail_mainInfor_inputfield input,
+.seller_product_detail_mainInfor_inputfield select {
+    height: 40px;
+    box-sizing: border-box;
+    outline: none;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    min-width: 290px;
+    border-radius: 3px;
+}
+/*! thong tin ban hang */
+#seller_product_detail-sellInfor-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#seller_product_detail-sellInfor-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    /* width: 700px; */
+    margin-top: 20px;
+}
+
+#seller_product_detail-sellInfor-Category {
+    display: flex;
+    align-items: center;
+}
+
+#seller_product_detail-sellInfor-addCategoryBtn {
+    width: 555px;
+    color: #179ff5;
+    border: 1px dashed #179ff5;
+    border-radius: 3px;
+    height: 40px;
+    outline: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+#seller_product_detail-sellInfor-buyMoreBtn {
+    width: 555px;
+    color: #179ff5;
+    border: 1px dashed #179ff5;
+    border-radius: 3px;
+    height: 40px;
+    outline: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+#seller_product_detail-sellInfor-buyMoreBtn-addMore {
+    width: 680px;
+    color: #179ff5;
+    border: 1px dashed #179ff5;
+    border-radius: 3px;
+    height: 40px;
+    outline: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+#seller_product_detail-sellInfor-buyMore-addMore-wrap {
+    margin-left: 19px;
+}
+#seller_product_detail-sellInfor-buyMore-notification {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #666670;
+}
+#seller_product_detail-sellInfor-buyMoreBtn-addMore:hover {
+    background-color: #ebf1f5;
+    cursor: pointer;
+}
+#seller_product_detail-sellInfor-addCategoryBtn:hover {
+    background-color: #ebf1f5;
+    cursor: pointer;
+}
+
+#seller_product_detail-sellInfor-price {
+    display: flex;
+    align-items: center;
+}
+#seller_product_detail-sellInfor-price-currency {
+    border-right: 1px solid #e5e5e5;
+    padding: 0 5px;
+    color: #beb7b7;
+}
+#seller_product_detail-sellInfor-price-inputfield {
+    display: flex;
+    width: 555px;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    border-radius: 3px;
+    align-items: center;
+    padding: 0 5px;
+    transition: 100ms linear;
+    position: relative;
+}
+#seller_product_detail-sellInfor-price-inputfield:hover {
+    border-color: #999999;
+}
+#seller_product_detail-sellInfor-price-input {
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    height: 40px;
+    outline: none;
+    padding: 0 5px;
+}
+.sellerProduct__placeholder--color::placeholder {
+    color: #beb7b7;
+}
+#seller_product_detail-sellInfor-price-inputfield:has(#seller_product_detail-sellInfor-price-input:invalid) {
+    border: 1px solid red;
+}
+#seller_product_detail-sellInfor-storage {
+    display: flex;
+    align-items: center;
+}
+.sellerProduct__alert--no-empty {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+#seller_product_detail-sellInfor-storage-input {
+    width: 555px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    height: 40px;
+    outline: none;
+    padding: 0 5px;
+    transition: 100ms linear;
+}
+/*! thong tin van chuyen */
+#seller_product_detail-transport-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#seller_product_detail-transport-weight {
+    display: flex;
+    align-items: center;
+}
+
+#seller_product_detail-transport-detail {
+    width: 800px;
+    margin-top: 20px;
+}
+
+#seller_product_detail-transport-weight-inputfield {
+    border-radius: 3px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin: 20px 0;
+    width: 100%;
+    width: 440px;
+}
+
+#seller_product_detail-transport-weight-input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+#seller_product_detail-transport-size {
+    display: flex;
+    width: 100%;
+}
+
+#seller_product_detail-transport-size-inputfield {
+    display: flex;
+    gap: 10px;
+    width: 440px;
+}
+.sellerProduct__unit {
+    border-left: 1px solid #dbdbdb;
+    font-size: 14px;
+    color: #66667f;
+    padding: 5px 0 5px 10px;
+}
+.seller_product_detail_transport_size_input {
+    border-radius: 3px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    width: calc(100% / 3);
+}
+
+.seller_product_detail_transport_size_input_block {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+/*! thong tin khac */
+#seller_product_detail-otherInfor-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+}
+
+#seller_product_detail-otherInfor-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 26px;
+}
+
+#seller_product_detail-otherInfor-option {
+    display: flex;
+}
+#sellerProduct-detail-choice-wrap {
+    display: flex;
+    gap: 20px;
+}
+.seller_product_detail-otherInfor-option-wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 10px;
+}
+
+#seller_product_detail-otherInfor-condition {
+    display: flex;
+    align-items: center;
+}
+
+#seller_product_detail-otherInfor-condition-option,
+#seller_product_detail-otherInfor-SKU-detail {
+    padding: 0 10px;
+    width: 440px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    outline: unset;
+    border-radius: 3px;
+}
+
+#seller_product_detail-otherInfor-SKU {
+    display: flex;
+    align-items: center;
+}
+
+#seller_product_detail-otherInfor-option-true-date {
+    width: 60px;
+    height: 30px;
+    margin: 0 10px;
+    padding: 0 10px;
+    outline: unset;
+    border-radius: 3px;
+}
+#sellerProduct-finishStep-wrap {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    padding: 15px 40px;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0 -2px 6px 0 #0000001f;
+}
+#sellerProduct-finishStep-cancel,
+#sellerProduct-finishStep-save-hidden,
+#sellerProduct-finishStep-save-display {
+    width: 140px;
+    height: 32px;
+    border: unset;
+    outline: unset;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#sellerProduct-finishStep-cancel {
+    background-color: white;
+    border: 1px solid #e5e5e5;
+}
+#sellerProduct-finishStep-save-hidden {
+    background-color: white;
+    border: 1px solid #e5e5e5;
+}
+#sellerProduct-finishStep-save-display {
+    color: white;
+    border: 1px solid #e5e5e5;
+    background-color: #ee4d2d;
+}
+.menu__selected {
+    color: #ee4d2d;
+    border-color: #ee4d2d;
+    font-weight: 600;
+}
+.flow {
+    box-shadow: unset !important;
+    background-color: transparent !important;
+}
+#sellerProduct-nemu-wrap a {
+    text-decoration: unset;
+    color: #656565;
+}
+.sellerProduct__hidden--video-input,
+.sellerProduct__hidden--image-input {
+    width: 0;
+}
+
+.sellerProduct__image--display {
+    width: 90%;
+}
+#sellerProduct-video-cover {
+    width: inherit;
+    height: inherit;
+}
+#sellerProduct-video-contain {
+    width: 0;
+}
+.explain_video {
+    min-width: 1060px;
+    min-height: 600px;
+    z-index: 10;
+    box-shadow: 0px 0px 0px 1000px black;
+}
+#sellerProduct-video-view {
+    cursor: pointer;
+}
+#sellerProduct-video-dialog {
+    width: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: unset;
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+}
+
+#sellerProduct__close--model {
+    width: 20px;
+    aspect-ratio: 1;
+    outline: unset;
+    border: unset;
+    background-color: transparent;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    right: -30px;
+    top: -30px;
+    z-index: 2;
+}
