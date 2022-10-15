@@ -53,7 +53,9 @@
                 Đã chọn :
                 <div id="seller-product-submit-items"></div>
             </div>
-            <button type="submit" id="seller-product-submit-btn" value="">Tiếp theo</button>
+            <form action="/new-product/store" method="get">
+                <button type="submit" id="seller-product-submit-btn" value="">Tiếp theo</button>
+            </form>
         </div>
     </div>
 @endsection
