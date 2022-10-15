@@ -92,8 +92,10 @@
                             <label for="sellerProduct-add-video-cover" id="seller_product_detail-basicVid-item">
                                 <ion-icon name="add-circle-outline"> </ion-icon>
                             </label>
-                            <div id="sellerProduct-video-view">Xem</div>
                             <span class="sellerProduct__image--number cover">Video bìa</span>
+                            <div id="sellerProduct-video-view">Xem 
+                                <ion-icon name="eye-outline"></ion-icon>
+                            </div>
                             <div id="sellerProduct-video-dialog">
                                 <video id="sellerProduct-video-contain" controls></video>
                                 <button id="sellerProduct__close--model">
@@ -111,16 +113,16 @@
                         </div>
                     </div>
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicName">
-                        <div class="sellerProduct__title--field-wrap">* Tên sản phẩm</div>
+                        <label class="sellerProduct__title--field-wrap" for="seller_product_detail-basicName-input">* Tên sản phẩm</label>
                         <div id="seller_product_detail-basicName-inputfield" class="sellerProduct__input--wrap">
-                            <input id="seller_product_detail-basicName-input" />
+                            <input id="seller_product_detail-basicName-input" name="product-name"/>
                             <span id="sellerProduct-product-name-countLenght">0<span>/120</span></span>
                         </div>
                     </div>
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicProdDesc">
-                        <div class="sellerProduct__title--field-wrap">* Mô tả sản phẩm</div>
+                        <label class="sellerProduct__title--field-wrap" for="seller_product_detail-basicProdDesc-input">* Mô tả sản phẩm</label>
                         <div id="seller_product_detail-basicProdDesc-inputfield">
-                            <textarea type="textarea" id="seller_product_detail-basicProdDesc-input" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus" resize="none" autosize="true" maxlength="Infinity"
+                            <textarea type="textarea" name="product-description" id="seller_product_detail-basicProdDesc-input" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus" resize="none" autosize="true" maxlength="Infinity"
                                 restrictiontype="input" max="Infinity" min="-Infinity" spellcheck="false"></textarea>
                             <div id="seller_product_detail-basicProdDesc-inputLimit"><span>0</span>/3000</div>
                         </div>
@@ -212,7 +214,7 @@
                         <div class="sellerProduct__title--field-wrap">* Giá</div>
                         <div id="seller_product_detail-sellInfor-price-inputfield">
                             <div id="seller_product_detail-sellInfor-price-currency">₫</div>
-                            <input type="text" name="" id="seller_product_detail-sellInfor-price-input" class="sellerProduct__placeholder--color" min="1000" max="100000000"
+                            <input type="text" name="product-price" id="seller_product_detail-sellInfor-price-input" class="sellerProduct__placeholder--color" min="1000" max="100000000"
                                 placeholder="Nhập vào" required />
                         </div>
                     </div>
@@ -230,7 +232,7 @@
                 </div>
                 <div id="seller_product_detail-sellInfor-voucher">
                     <div class="sellerProduct__title--field-wrap">Mua nhiều giảm giá</div>
-                    <button id="seller_product_detail-sellInfor-buyMoreBtn">
+                    <button id="seller_product_detail-sellInfor-buyMoreBtn" type="button" style="cursor: not-allowed" title="Tính năng không khả dụng" disabled>
                         <ion-icon name="add-circle-outline"> </ion-icon>
                         Thêm khoảng giá
                     </button>
@@ -275,7 +277,7 @@
                     <div id="seller_product_detail-transport-weight">
                         <div class="sellerProduct__title--field-wrap">* Cân nặng (Sau khi đóng gói)</div>
                         <div id="seller_product_detail-transport-weight-inputfield" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                            <input type="text" id="seller_product_detail-transport-weight-input" placeholder="Nhập vào" />
+                            <input type="text" name="product-weight" id="seller_product_detail-transport-weight-input" placeholder="Nhập vào" />
                             <div class="sellerProduct__unit">gr</div>
                         </div>
                     </div>
@@ -283,15 +285,15 @@
                         <div class="sellerProduct__title--field-wrap">Kích thước đóng gói (Phí vận chuyển thực tế sẽ thay đổi nếu bạn nhập sai kích thước)</div>
                         <div id="seller_product_detail-transport-size-inputfield">
                             <div class="seller_product_detail_transport_size_input sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                                <input type="text" class="seller_product_detail_transport_size_input_block" placeholder="R" />
+                                <input type="text" name="product-size-long" class="seller_product_detail_transport_size_input_block" placeholder="R" />
                                 <div class="sellerProduct__unit">cm</div>
                             </div>
                             <div class="seller_product_detail_transport_size_input sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                                <input type="text" class="seller_product_detail_transport_size_input_block" placeholder="D" />
+                                <input type="text" name="product-size-width" class="seller_product_detail_transport_size_input_block" placeholder="D" />
                                 <div class="sellerProduct__unit">cm</div>
                             </div>
                             <div class="seller_product_detail_transport_size_input sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                                <input type="text" class="seller_product_detail_transport_size_input_block" placeholder="C" />
+                                <input type="text" name="product-size-height" class="seller_product_detail_transport_size_input_block" placeholder="C" />
                                 <div class="sellerProduct__unit">cm</div>
                             </div>
                         </div>
@@ -307,14 +309,14 @@
                             <div id="sellerProduct-detail-choice-wrap">
                                 <div class="sellerProduct__accept--wrap">
                                     <div class="sellerProduct__accept--check-wrap">
-                                        <input type="radio" name="otherInfor-option" id="seller_product_detail-otherInfor-option-false" value="no" />
-                                        <div id="seller_product_detail-otherInfor-option-false">Không đồng ý</div>
+                                        <input type="radio" name="product-pre-order" id="seller_product_detail-otherInfor-option-false" value="no" checked/>
+                                        <label id="seller_product_detail-otherInfor-option-false-label" for="seller_product_detail-otherInfor-option-false">Không đồng ý</label>
                                     </div>
                                 </div>
                                 <div class="sellerProduct__accept--wrap">
-                                    <div class="sellerProduct__accept--check-wrap">
-                                        <input type="radio" name="otherInfor-option" id="seller_product_detail-otherInfor-option-true" value="yes" checked />
-                                        <div id="seller_product_detail-otherInfor-option-true">Đồng ý</div>
+                                    <div class="sellerProduct__accept--check-wrap" title="Tính năng không khả dụng">
+                                        <input type="radio" name="product-pre-order" id="seller_product_detail-otherInfor-option-true" value="yes" style="cursor: not-allowed" disabled />
+                                        <label id="seller_product_detail-otherInfor-option-true-label" for="seller_product_detail-otherInfor-option-true">Đồng ý</label>
                                     </div>
                                 </div>
                             </div>
@@ -327,14 +329,14 @@
                     </div>
                     <div id="seller_product_detail-otherInfor-condition">
                         <div class="sellerProduct__title--field-wrap">Tình trạng</div>
-                        <select name="" id="seller_product_detail-otherInfor-condition-option">
+                        <select name="product-status" id="seller_product_detail-otherInfor-condition-option">
                             <option value="new" selected>Mới</option>
                             <option value="old">Đã dùng</option>
                         </select>
                     </div>
                     <div id="seller_product_detail-otherInfor-SKU">
                         <div class="sellerProduct__title--field-wrap">SKU sản phẩm</div>
-                        <input type="text" id="seller_product_detail-otherInfor-SKU-detail" placeholder="-" />
+                        <input type="text" id="seller_product_detail-otherInfor-SKU-detail" placeholder="Mã Stock Keeping Unit" style="cursor: not-allowed;" disabled title="Tính năng không khả dụng"/>
                     </div>
                 </div>
             </div>
