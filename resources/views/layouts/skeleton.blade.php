@@ -11,6 +11,8 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ asset('assets/css/_root.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/header/header-home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/header/header-home-respon.css') }}">
+
     <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}">
     @yield('css')
     <title>
@@ -43,4 +45,6 @@
 <script src="{{ asset('assets/js/ajax.js') }}"></script>
 <script src="{{ asset('assets/js/skeleton/skeleton.js') }}"></script>
 <script src="{{ asset('assets/js/footer/footer.js') }}"></script>
+<script src="{{ asset('assets/js/header/header.js') }}"></script>
+
 @yield('js')
