@@ -21,7 +21,7 @@
 
     .mainHome_navbar_aboutUs {
         display: none;
-        height: 100vw;
+        height: 100vh;
         z-index: 2;
         width: 100%;
         background-color: rgb(101, 101, 101, 0.5);
@@ -51,6 +51,7 @@
         display: block;
         background-image: url(https://cdn.discordapp.com/attachments/851277080344002622/1030748832247590952/wave-haikei_1.png);
         background-repeat: no-repeat;
+        background-position: left 50% top;
         background-size: cover;
         height: 100%;
         width: 40%;
