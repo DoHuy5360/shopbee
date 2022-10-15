@@ -40,11 +40,16 @@
 }
 /* ADS 1 */
 #mainHome-activity {
-    width: var(--layout-width);
-    margin: var(--margin-space);
-    height: 100px;
+    width: 100%;
+    gap: 10px;
+}
+#mainHome-activity-wrapper{
     display: flex;
     gap: 10px;
+    height: 100px;
+    width: 100%;
+    width: var(--layout-width);
+    margin: var(--margin-space);
 }
 .mainHome__activity--card {
     display: flex;
@@ -239,6 +244,10 @@
     padding-bottom: 20px;
 }
 
+.mainHome-ads-inside_respons{
+    display: none;
+}
+
 .mainHome-ads-block-2 .mainHome-ads-inside {
     width: var(--layout-width);
     margin: auto;
@@ -299,7 +308,7 @@
     background-color: var(--gray-soft);
     padding-bottom: 20px;
 }
-#mainHome-top-finding-wrap {
+#mainHome-top-finding-wrap, .mainHome__part--title-wrap {
     width: var(--layout-width);
     margin: auto;
     background-color: white;
@@ -338,7 +347,7 @@
     color: white;
     bottom: 0;
     width: 100%;
-    opacity: 0.9;
+    opacity: .9;
     background-color: #bdbdbd;
 }
 .mainHome__card--topfind:hover .mainHome__topFind--top {

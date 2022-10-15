@@ -1,0 +1,99 @@
+@media screen and (max-width: 1080px) {
+    .mainHome_navbar {
+        width: 100%;
+        position: relative;
+    }
+
+    #mainHome_navbar_about_topic-respon-hidden {
+        display: block;
+        width: 50px;
+        color: #fff;
+        margin: 0 10px;
+        font-size: 2.6rem;
+    }
+
+    .mainHome_navbar {
+        position: fixed !important;
+        top: 0;
+        width: 100%;
+        transition: top 0.3s;
+    }
+
+    .mainHome_navbar_aboutUs {
+        display: none;
+        height: 100vw;
+        z-index: 2;
+        width: 100%;
+        background-color: rgb(101, 101, 101, 0.5);
+        position: absolute;
+        right: 0%;
+        transform-origin: right;
+        transition: .2s;
+    }
+
+    .mainHome_navbar_about_topic ul {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 20px 0;
+        border-bottom: 1px solid #ffb81d;
+    }
+
+    #mainHome_navbar_about_topic-close-icon {
+        display: block;
+    }
+
+    #mainHome_navbar_about_topic-close-icon ion-icon {
+        color: #ffb81d;
+        font-size: 1.6rem;
+    }
+
+    #mainHome_navbar_aboutUs-wrapper {
+        display: block;
+        background-image: url(https://cdn.discordapp.com/attachments/851277080344002622/1030748832247590952/wave-haikei_1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 40%;
+        position: absolute;
+        right: 0%;
+        background-color: #252525;
+        transform-origin: right;
+        transition: .2s;
+    }
+
+    .mainHome__split--line {
+        display: none;
+    }
+
+    .mainHome_navbar_containt {
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 10px;
+        display: flex;
+        width: 100%;
+    }
+
+    #mainHone-search-field {
+        display: flex;
+        justify-content: center;
+    }
+
+    #mainHome-Icon {
+        display: none;
+    }
+
+    .mainHome_shopIcon {
+        height: 100%;
+        background-image: url(https://cdn.discordapp.com/attachments/885169725640937492/1029609920074620958/unknown.png);
+        background-repeat: no-repeat;
+        background-size: 50%;
+    }
+
+    .no_decoration {
+        display: block;
+    }
+
+    #mainHome-list-recommend {
+        display: none;
+    }
+}

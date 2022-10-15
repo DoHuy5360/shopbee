@@ -1,42 +1,47 @@
 <div class="mainHome_navbar">
     <div class="mainHome_navbar_aboutUs">
-        <div class="mainHome_navbar_about_topic">
-            <ul>
-                <a href="/seller" target="_blank" rel="noopener noreferrer">
-                    <li class="mainHome_navbar-topic">Kênh người bán</li>
-                </a>
-                <li class="mainHome__split--line">|</li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <li class="mainHome_navbar-topic">Become Seller</li>
-                </a>
-                <li class="mainHome__split--line">|</li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <li class="mainHome_navbar-topic">Tải ứng dụng</li>
-                </a>
-                <li class="mainHome__split--line">|</li>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <li class="mainHome_navbar-topic">Liên kết</li>
-                </a>
-            </ul>
-        </div>
-        <div class="mainHome_navbar_about_topic">
-            <ul>
-                <li class="mainHome_navbar-topic">Thông báo</li>
-                <li class="mainHome_navbar-topic">Hỗ Trợ</li>
-                <li class="mainHome_navbar-topic">Ngôn ngữ</li>
-                @auth
+        <div id="mainHome_navbar_aboutUs-wrapper">
+            <div class="mainHome_navbar_about_topic">
+                <ul>
+                    <div id="mainHome_navbar_about_topic-close-icon">
+                        <ion-icon name="close-circle"></ion-icon>
+                    </div>
+                    <a href="/seller" target="_blank" rel="noopener noreferrer">
+                        <li class="mainHome_navbar-topic">Kênh người bán</li>
+                    </a>
+                    <li class="mainHome__split--line">|</li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <li class="mainHome_navbar-topic">Become Seller</li>
+                    </a>
+                    <li class="mainHome__split--line">|</li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <li class="mainHome_navbar-topic">Tải ứng dụng</li>
+                    </a>
+                    <li class="mainHome__split--line">|</li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <li class="mainHome_navbar-topic">Liên kết</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="mainHome_navbar_about_topic">
+                <ul>
+                    <li class="mainHome_navbar-topic">Thông báo</li>
+                    <li class="mainHome_navbar-topic">Hỗ Trợ</li>
+                    <li class="mainHome_navbar-topic">Ngôn ngữ</li>
+                    @auth
                     <a href="">
                         <li class="mainHome_navbar-topic">{{ Auth::user()->name }}</li>
+                        </a>
+    
+                        @endauth
+                    <a href="{{ route('register') }}">
+                        <li class="mainHome_navbar-topic">Đăng Ký</li>
                     </a>
-
-                @endauth
-                <a href="{{ route('register') }}">
-                    <li class="mainHome_navbar-topic">Đăng Ký</li>
-                </a>
-                <a href="{{ route('login') }}">
-                    <li class="mainHome_navbar-topic">Đăng nhập</li>
-                </a>
-            </ul>
+                    <a href="{{ route('login') }}">
+                        <li class="mainHome_navbar-topic">Đăng nhập</li>
+                    </a>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="mainHome_navbar_containt">
@@ -87,6 +92,9 @@
                 <a href="/cart" id="mainHome-cart-view-btn">Xem giỏ hàng</a>
                 {{-- <button id="mainHome-cart-view-btn">Xem giỏ hàng</button> --}}
             </div>
+        </div>
+        <div id="mainHome_navbar_about_topic-respon-hidden">
+            <ion-icon name="menu-outline"></ion-icon>
         </div>
     </div>
 </div>
