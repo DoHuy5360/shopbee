@@ -3,13 +3,15 @@
         width: 100%;
         overflow: hidden;
     }
-    #data-body-transfer div::-webkit-scrollbar{
+
+    #data-body-transfer div::-webkit-scrollbar {
         display: none;
         scrollbar-width: none;
-        width: 0 !important ;
+        width: 0 !important;
         overflow: -moz-scrollbars-none;
-        -ms-overflow-style: none; 
+        -ms-overflow-style: none;
     }
+
     .mainHome-homeCarousel {
         display: block;
         height: 100%;
@@ -47,31 +49,32 @@
         width: 100%;
     }
 
-    #mainHome-category-tray-wrap{
+    #mainHome-category-tray-wrap {
         overflow: scroll;
         width: 100%;
     }
 
-    #mainHome-category-tray-wrap{
+    #mainHome-category-tray-wrap {
         overflow-x: scroll;
     }
-    
+
     #mainHome-listOfCate {
         width: max-content;
         display: flex;
     }
-    
-    .mainHome-listOfType{
+
+    .mainHome-listOfType {
         /* height: 150px; */
         width: 150px;
     }
 
-    #mainHome-listOfCate img{
+    #mainHome-listOfCate img {
         object-fit: cover;
         width: 100%;
     }
 
-    #mainHome-category-arrow-left, #mainHome-category-arrow-right{
+    #mainHome-category-arrow-left,
+    #mainHome-category-arrow-right {
         display: none;
     }
 

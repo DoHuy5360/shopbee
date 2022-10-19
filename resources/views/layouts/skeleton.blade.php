@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/header/header-home-respon.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home-respon.css') }}">
+
     @yield('css')
     <title>
         @yield('title')

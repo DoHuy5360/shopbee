@@ -3,6 +3,8 @@
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/header/header-home.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/product/product.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/product/product_respon.css') }}">
+
 @endsection
 @section('content')
     @include('layouts.header-home')
@@ -10,32 +12,6 @@
         <div id="product-body">
             <div class="product_content" id="product-img">
                 <div id="product-main-img"><img src="https://cdn.tgdd.vn/Files/2021/11/17/1398649/cach-ve-sinh-ban-phim-co-don-gian-va-hieu-qua-2.jpg" alt="" srcset="" /></div>
-                <!-- <div id="product-carousel">
-          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-           <div class="carousel-inner">
-            <div class="carousel-item active">
-             <img class="d-block w-100" src="https://cf.shopee.vn/file/7e23aff96f69cf297f97c7888e921be1" alt="First slide" />
-            </div>
-            <div class="carousel-item">
-             <img class="d-block w-100" src="https://cf.shopee.vn/file/6f9f04d0616a238cc4f07a70aebe3670" alt="Second slide" />
-            </div>
-            <div class="carousel-item">
-             <img class="d-block w-100" src="https://cf.shopee.vn/file/8d9c40d452e0c2763bc92a60037141cb" alt="Third slide" />
-            </div>
-            <div class="carousel-item">
-             <img class="d-block w-100" src="https://cf.shopee.vn/file/eea3317bad9cf6488171c04e2de570b8" alt="Third slide" />
-            </div>
-           </div>
-           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-           </a>
-           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-           </a>
-          </div>
-         </div> -->
                 <div id="product-shareLike">
                     <div id="product-shareLike-item">
                         <span>Chia sẻ:</span>
@@ -208,91 +184,97 @@
                 <a href="http://" target="_blank" rel="noopener noreferrer" class="product_seller_action" id=""><span class="product_seller_action-number"></span></a>
             </div>
         </div>
-        <div id="product-spec_feature">
-            <div id="product-detail">
-                <div class="product-detail-title">CHI TIẾT SẢN PHẨM</div>
-                <div id="product-specifications">
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Danh Mục</div>
-                        <div class="">
-                            <span><a href="http://" target="_blank" rel="noopener noreferrer">Shopbee</a></span>> <span><a href="http://" target="_blank" rel="noopener noreferrer">Máy Tính &
-                                    Laptop</a></span>> <span><a href="http://" target="_blank" rel="noopener noreferrer">Gaming</a></span>> <span><a href="http://" target="_blank"
-                                    rel="noopener noreferrer">Bàn Phím Máy Tính</a></span>
+        <div id="product-spec_feature" class="product-spec_feature_respon">
+            <div id="product-spec_feature-wrapper">
+                <button id="product-spec_feature-btn-down" class="product-spec_feature_btn_down">Xem tất cả</button>
+                <div id="product-detail">
+                    <div class="product-detail-title">CHI TIẾT SẢN PHẨM</div>
+                    <div id="product-specifications">
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Danh Mục</div>
+                            <div class="">
+                                <span><a href="http://" target="_blank" rel="noopener noreferrer">Shopbee</a></span>> <span><a href="http://" target="_blank" rel="noopener noreferrer">Máy Tính &
+                                        Laptop</a></span>> <span><a href="http://" target="_blank" rel="noopener noreferrer">Gaming</a></span>> <span><a href="http://" target="_blank"
+                                        rel="noopener noreferrer">Bàn Phím Máy Tính</a></span>
+                            </div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Thương hiệu</div>
+                            <div><a href="http://" target="_blank" rel="noopener noreferrer">LEAVEN裂纹</a></div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Kiểu kết nối</div>
+                            <div class="">Có dây</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Bộ sản phẩm</div>
+                            <div class="">Không</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Loại bàn phím</div>
+                            <div class="">Bàn phím cơ</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Hạn bảo hành</div>
+                            <div class="">24 tháng</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Loại bảo hành</div>
+                            <div class="">Bảo hành nhà cung cấp</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Game chuyên dụng</div>
+                            <div class="">Có</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Model bàn phím & chuột</div>
+                            <div class="">K550</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Bàn phím tương thích</div>
+                            <div class="">Tương thích với tất cả các hệ thống</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Kích thước (dài x rộng x cao)</div>
+                            <div class="">35.5*12.6*4</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Số lượng hàng khuyến mãi</div>
+                            <div class="">199279</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Số sản phẩm còn lại</div>
+                            <div class="">278500</div>
+                        </div>
+                        <div class="product_spec_item">
+                            <div class="product_spec_item_label">Gửi từ</div>
+                            <div class="">Hà Nội</div>
                         </div>
                     </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Thương hiệu</div>
-                        <div><a href="http://" target="_blank" rel="noopener noreferrer">LEAVEN裂纹</a></div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Kiểu kết nối</div>
-                        <div class="">Có dây</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Bộ sản phẩm</div>
-                        <div class="">Không</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Loại bàn phím</div>
-                        <div class="">Bàn phím cơ</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Hạn bảo hành</div>
-                        <div class="">24 tháng</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Loại bảo hành</div>
-                        <div class="">Bảo hành nhà cung cấp</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Game chuyên dụng</div>
-                        <div class="">Có</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Model bàn phím & chuột</div>
-                        <div class="">K550</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Bàn phím tương thích</div>
-                        <div class="">Tương thích với tất cả các hệ thống</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Kích thước (dài x rộng x cao)</div>
-                        <div class="">35.5*12.6*4</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Số lượng hàng khuyến mãi</div>
-                        <div class="">199279</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Số sản phẩm còn lại</div>
-                        <div class="">278500</div>
-                    </div>
-                    <div class="product_spec_item">
-                        <div class="product_spec_item_label">Gửi từ</div>
-                        <div class="">Hà Nội</div>
-                    </div>
                 </div>
-            </div>
-            <div id="product-feature">
-                <div class="product-detail-title">MÔ TẢ SẢN PHẨm</div>
-                <div id="product-detail-content-description">Bàn Phím Cơ Gaming K550 Pro / K620 Pro - 87 Phím Nhiều Chế Độ Màu , Chiến Game Siêu Đỉnh ⚡ Bàn phím có 4 màu sắc thời trang và trẻ trung,
-                    tuyệt đẹp và Charming. ⚡ 87 phím tiêu chuẩn, ký tự. ⚡ Bàn phím cơ sử dụng Blue switch cho âm thanh gõ sắc nét và có nhịp gõ mạnh mẽ. ⚡ Bàn phím nổi sáu hàng thứ tư phù hợp với quỹ đạo
-                    chuyển động của ngón tay, gõ phím thoải mái và không dễ bị mỏi. ⚡ Sản phẩm bàn phím cơ K550 được làm từ NHỰA ABS vật liệu nhựa nhiệt dẻo, thiết kế tinh tế tạo cảm giác thoải mái khi sử
-                    dụng, không để lại dấu vân tay trên phím bấm. ⚡ Bố trí 87 phím, nắp phím nổi hình chữ U, gần ngón tay hoàn hảo, cảm giác mượt mà khi sử dụng. ⚡ Thiết kế chống nước và chống bụi, với
-                    nhiều lỗ thoát nước ở phía dưới. ---------------------------------------------------------- THÔNG SỐ KỸ THUẬT BÀN PHÍM CƠ K550 - Mẫu: K550 - Màu sắc: đen, trắng, xanh, hồng - Loại
-                    keycap: Keycap treo hai màu - Hiệu ứng ánh sáng: Hiệu ứng ánh sáng Charming tuyệt đẹp - Giao diện: cáp USB với hình dạng nhẫn từ tính - Có LED trên mỗi switch , LED nền ,có 10 chế độ
-                    LED - Chiều dài dây: 1.8m/5,91ft - Thân Công tắc cơ: Công tắc màu xanh - Độ bền hơn 50 triệu lần bấm - Phím có khả năng chống nước tốt - Sử dụng switch cơ quang học Blue - Sử dụng trục
-                    cơ công nghệ mới nhất - hơn 50 triệu lần bấm - Sử dụng bảng mạch điện 2 mặt, hiệu suất ổn định hơn, chất lượng tốt hơn - Sử dụng phím tắt Fn+ SL (hoặc FN + INS) để thay đổi chế độ LED
-                    - Khả năng tương thích hệ thống: Dành cho win xp/7/8/10, dành cho mac10.2 trở lên - Kích thước sản phẩm: 360x130x36mm/14.17x5.12x1.42" * ĐẶC ĐIỂM NỔI BẬT BÀN PHÍM CƠ MÁY TÍNH GAMING
-                    K550 PRO Bàn phím cơ máy tính gaming có dây K550 full led 7 hiệu ứng, với thiết kế với khuynh hướng Gaming mang lại cảm giác hiện đại và nổi bật. Bàn phím cơ gaming có dây K550 luôn là
-                    sản phẩm không nên bỏ qua thuộc phân khúc bàn phím cơ giá rẻ được thiết kế phù hợp với bàn tay người sử dụng hiện nay. * Thiết kế nhỏ gọn - BÀN PHÍM cơ gaming có dây K500 được thiết kế
-                    nhỏ gọn đẹp, có các phím chức năng mang đến cho người dùng một công cụ hỗ trợ các thao tác thuận tiện nhất - BÀN PHÍM gồm 87 phím cơ, không lo xung đột phím, kẹt phím, thoải mái bấm
-                    các tổ hợp và nhấn các phím cùng lúc * Blue Switch Bàn phím cơ gaming có dây K550 sử dụng Blue switch - loại switch phổ biến trong tầm giá với độ bền cực cao lên đến 50 triệu lần nhấn
-                    * Led Rainbow 7 Chế Độ Bàn phím cơ gaming có dây K550 được trang bị dải đèn led với 7 chế độ khác nhau, các màu được bố trí rất thông minh khiến cho chiếc bàn phím có hiệu ứng màu sắc
-                    rất đẹp mắt * Các Tính Năng Khác Của BÀN PHÍM CƠ GAMING CÓ DÂY K550K Bàn phím cơ gaming có K550 sử dụng chip mạnh mẽ cho truyền tải nhanh và ổn định Bàn phím cơ gaming có dây K550 có
-                    dây cáp được chắc chắn với độ dài giúp cho người dùng có thể thoải mái quấn, gấp mà không gây hư hại cho lõi dây bên trong. Bàn phím sử dụng đầu cắm USB tiện lợi, không gây khó khăn
-                    cho người dùng khi tìm ổ cắm thích hợp. ---------------</div>
+                <div id="product-feature">
+                    <div class="product-detail-title">MÔ TẢ SẢN PHẨm</div>
+                    <div id="product-detail-content-description">Bàn Phím Cơ Gaming K550 Pro / K620 Pro - 87 Phím Nhiều Chế Độ Màu , Chiến Game Siêu Đỉnh ⚡ Bàn phím có 4 màu sắc thời trang và trẻ trung,
+                        tuyệt đẹp và Charming. ⚡ 87 phím tiêu chuẩn, ký tự. ⚡ Bàn phím cơ sử dụng Blue switch cho âm thanh gõ sắc nét và có nhịp gõ mạnh mẽ. ⚡ Bàn phím nổi sáu hàng thứ tư phù hợp với quỹ đạo
+                        chuyển động của ngón tay, gõ phím thoải mái và không dễ bị mỏi. ⚡ Sản phẩm bàn phím cơ K550 được làm từ NHỰA ABS vật liệu nhựa nhiệt dẻo, thiết kế tinh tế tạo cảm giác thoải mái khi sử
+                        dụng, không để lại dấu vân tay trên phím bấm. ⚡ Bố trí 87 phím, nắp phím nổi hình chữ U, gần ngón tay hoàn hảo, cảm giác mượt mà khi sử dụng. ⚡ Thiết kế chống nước và chống bụi, với
+                        nhiều lỗ thoát nước ở phía dưới. ---------------------------------------------------------- THÔNG SỐ KỸ THUẬT BÀN PHÍM CƠ K550 - Mẫu: K550 - Màu sắc: đen, trắng, xanh, hồng - Loại
+                        keycap: Keycap treo hai màu - Hiệu ứng ánh sáng: Hiệu ứng ánh sáng Charming tuyệt đẹp - Giao diện: cáp USB với hình dạng nhẫn từ tính - Có LED trên mỗi switch , LED nền ,có 10 chế độ
+                        LED - Chiều dài dây: 1.8m/5,91ft - Thân Công tắc cơ: Công tắc màu xanh - Độ bền hơn 50 triệu lần bấm - Phím có khả năng chống nước tốt - Sử dụng switch cơ quang học Blue - Sử dụng trục
+                        cơ công nghệ mới nhất - hơn 50 triệu lần bấm - Sử dụng bảng mạch điện 2 mặt, hiệu suất ổn định hơn, chất lượng tốt hơn - Sử dụng phím tắt Fn+ SL (hoặc FN + INS) để thay đổi chế độ LED
+                        - Khả năng tương thích hệ thống: Dành cho win xp/7/8/10, dành cho mac10.2 trở lên - Kích thước sản phẩm: 360x130x36mm/14.17x5.12x1.42" * ĐẶC ĐIỂM NỔI BẬT BÀN PHÍM CƠ MÁY TÍNH GAMING
+                        K550 PRO Bàn phím cơ máy tính gaming có dây K550 full led 7 hiệu ứng, với thiết kế với khuynh hướng Gaming mang lại cảm giác hiện đại và nổi bật. Bàn phím cơ gaming có dây K550 luôn là
+                        sản phẩm không nên bỏ qua thuộc phân khúc bàn phím cơ giá rẻ được thiết kế phù hợp với bàn tay người sử dụng hiện nay. * Thiết kế nhỏ gọn - BÀN PHÍM cơ gaming có dây K500 được thiết kế
+                        nhỏ gọn đẹp, có các phím chức năng mang đến cho người dùng một công cụ hỗ trợ các thao tác thuận tiện nhất - BÀN PHÍM gồm 87 phím cơ, không lo xung đột phím, kẹt phím, thoải mái bấm
+                        các tổ hợp và nhấn các phím cùng lúc * Blue Switch Bàn phím cơ gaming có dây K550 sử dụng Blue switch - loại switch phổ biến trong tầm giá với độ bền cực cao lên đến 50 triệu lần nhấn
+                        * Led Rainbow 7 Chế Độ Bàn phím cơ gaming có dây K550 được trang bị dải đèn led với 7 chế độ khác nhau, các màu được bố trí rất thông minh khiến cho chiếc bàn phím có hiệu ứng màu sắc
+                        rất đẹp mắt * Các Tính Năng Khác Của BÀN PHÍM CƠ GAMING CÓ DÂY K550K Bàn phím cơ gaming có K550 sử dụng chip mạnh mẽ cho truyền tải nhanh và ổn định Bàn phím cơ gaming có dây K550 có
+                        dây cáp được chắc chắn với độ dài giúp cho người dùng có thể thoải mái quấn, gấp mà không gây hư hại cho lõi dây bên trong. Bàn phím sử dụng đầu cắm USB tiện lợi, không gây khó khăn
+                        cho người dùng khi tìm ổ cắm thích hợp. ---------------</div>
+                </div>
+                <button class="product-spec_feature_btn_up">
+                    <a href="#product-spec_feature" style="color:#ee4d2d;">Thu nhỏ</a>
+                </button>
             </div>
         </div>
         <div id="product-rate">
@@ -487,5 +469,6 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('assets/js/product/product_respon.js') }}"></script>
     @include('layouts.footer-home')
 @endsection

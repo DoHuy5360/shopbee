@@ -76,7 +76,7 @@
         </div>
     </div>
 </div>
-<div class="footer-about">
+<div class="footer_about">
     <div class="footer__about--wrap">
         <div id="about-1" class="footer-about">
             <p class="footer-about-title">CHĂM SÓC KHÁCH HÀNG</p>
