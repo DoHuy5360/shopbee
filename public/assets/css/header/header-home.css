@@ -38,11 +38,21 @@
 
 }
 
+/* .mainHome_navbar_wrapper {
+    margin: auto;
+    width: var(--layout-width);
+    justify-content: space-between;
+} */
+
+.mainHome_navbar_aboutUs-wrapper {
     margin: auto;
     width: var(--layout-width);
     /* width: 100%; */
     justify-content: space-between;
+    display: flex;
 }
+
+
 .mainHome_navbar_about_topic {
     display: flex;
     align-items: center;
