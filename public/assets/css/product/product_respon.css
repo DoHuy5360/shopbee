@@ -1,0 +1,122 @@
+@media screen and (max-width: 1080px) {
+    #product-page-content {
+        width: 100%;
+    }
+
+    #product-body {
+        display: block;
+    }
+
+    #product-img {
+        width: 100%;
+        position: relative;
+    }
+
+    #product-shareLike-item {
+        display: none;
+    }
+
+    #product-shareLike {
+        position: absolute;
+        bottom: -20%;
+        right: 10%;
+    }
+
+    /*! lam js hien thi */
+    #product-title-column {
+        display: none;
+    }
+
+    .product_content {
+        width: 100%;
+    }
+
+    #product-about {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    /*! product-seller-action */
+    #product-seller-action {
+        width: 100%;
+    }
+
+    #product-seller-profile {
+        display: block;
+        width: 100%;
+    }
+
+    #product-seller-profile-left {
+        width: 100%;
+    }
+
+    #product-seller-info-wrap {
+        /* display: block; */
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        flex: 1;
+    }
+
+    #product-seller-info-wrap-contact {
+        display: block;
+    }
+
+    #product-seller-chat-btn {
+        display: none;
+    }
+
+    #product-seller-viewShop-btn {
+        border: 1px solid #ee4d2d;
+        color: #ee4d2d;
+    }
+
+    .product-spec_feature_respon {
+        height: 300px;
+        overflow-y: hidden;
+        position: relative;
+    }
+
+    .product-spec_feature_full {
+        height: max-content;
+    }
+
+    .product-spec_feature_btn_down {
+        display: block;
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 5px 10px;
+        border: 1px solid #ee4d2d;
+        color: #ee4d2d;
+        border-radius: 3px;
+    }
+
+    .product-spec_feature_btn_full {
+        display: none;
+    }
+
+    .product-spec_feature_btn_up {
+        display: block;
+        margin: 0 auto;
+        padding: 5px 10px;
+        border: 1px solid #ee4d2d;
+        color: #ee4d2d;
+        border-radius: 3px;
+    }
+
+    .product-spec_feature_btn_srink {
+        display: block;
+    }
+
+    .product-spec_feature_btn_down:focus,
+    .product-spec_feature_btn_up:focus {
+        outline: none;
+        border: 1px solid #ee4d2d;
+    }
+
+    #product-spec_feature-wrapper {
+        height: max-content;
+    }
+}

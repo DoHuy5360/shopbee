@@ -1,6 +1,8 @@
 @extends('layouts.skeleton')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/cart/cart.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/cart/cart_respon.css') }}">
+
 @endsection
 @section('js')
 @endsection

@@ -20,15 +20,14 @@
     }
 
     .mainHome_navbar_aboutUs {
-        display: none;
+        display: block;
         height: 100vh;
         z-index: 2;
-        width: 100%;
-        background-color: rgb(101, 101, 101, 0.5);
+        width: 0%;
+        background-color: rgb(101, 101, 101, 0);
         position: absolute;
         right: 0%;
-        transform-origin: right;
-        transition: .2s;
+        transition: all linear 500ms;
     }
 
     .mainHome_navbar_about_topic ul {
@@ -47,19 +46,18 @@
         font-size: 1.6rem;
     }
 
-    #mainHome_navbar_aboutUs-wrapper {
+    .mainHome_navbar_aboutUs-wrapper {
         display: block;
         background-image: url(https://cdn.discordapp.com/attachments/851277080344002622/1030748832247590952/wave-haikei_1.png);
         background-repeat: no-repeat;
         background-position: left 50% top;
         background-size: cover;
+        background-color: #252525;
         height: 100%;
-        width: 40%;
+        width: 0%;
         position: absolute;
         right: 0%;
-        background-color: #252525;
-        transform-origin: right;
-        transition: .2s;
+        transition: right .2s;
     }
 
     .mainHome__split--line {
@@ -96,5 +94,13 @@
 
     #mainHome-list-recommend {
         display: none;
+    }
+    .menuIconItem {
+        width: 100%;
+        background-color: rgb(101, 101, 101, 0.8);
+    }
+
+    .menuItems {
+        width: 40%;
     }
 }
