@@ -60,7 +60,6 @@
         transition: right .2s;
     }
 
-
     .mainHome__split--line {
         display: none;
     }
@@ -96,7 +95,6 @@
     #mainHome-list-recommend {
         display: none;
     }
-
     .menuIconItem {
         width: 100%;
         background-color: rgb(101, 101, 101, 0.8);

@@ -310,5 +310,5 @@
             </div>
         </div>
     </div>
-    @include('layouts.footer-home')
+    {{-- @include('layouts.footer-home') --}}
 @endsection

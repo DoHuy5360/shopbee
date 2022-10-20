@@ -38,14 +38,11 @@
 
 }
 
-.mainHome_navbar_aboutUs-wrapper {
-    display: flex;
     margin: auto;
     width: var(--layout-width);
     /* width: 100%; */
     justify-content: space-between;
 }
-
 .mainHome_navbar_about_topic {
     display: flex;
     align-items: center;
