@@ -430,7 +430,6 @@ for (let column = 0; column < amount_category; column += amount_columns) {
         category_list.setAttribute("class", "mainHome__category--items-wrap");
         
         const target_category = categories[column + row];
-        console.log(target_category);
         category_title.textContent = target_category.parent;
         target_category.childrend.forEach((child) => {
             category_child = document.createElement("a");

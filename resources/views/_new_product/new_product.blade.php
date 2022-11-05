@@ -14,10 +14,11 @@
         </div>
         <div id="seller-product-name">
             <label for="seller-product-name-input-field">Tên sản phẩm: </label>
-            <div id="seller-product-name-field">
-                <input type="text" id="seller-product-name-input-field" maxlength="120" minlength="10" placeholder="Nhập vào" />
+            <form action="/new-product-detail" method="POST" target="_blank" id="seller-product-name-field">
+                @csrf
+                <input name="product_name" id="seller-product-name-input-field" value="Tàu sân bay nhập khẩu chính hãng" maxlength="120" minlength="10" placeholder="Nhập vào" type="text" />
                 <div id="seller-product-name-input-numb"><span id="seller-product-input-numb">0</span>/120</div>
-            </div>
+            </form>
         </div>
         <div id="seller-product-choice">
             <div id="seller-product-choice-search">
@@ -53,9 +54,10 @@
                 Đã chọn :
                 <div id="seller-product-submit-items"></div>
             </div>
-            <form action="/new-product/store" method="get">
+            {{-- <form action="/new-product-detail" method="get">
                 <button type="submit" id="seller-product-submit-btn" value="">Tiếp theo</button>
-            </form>
+            </form> --}}
+            <button type="button" id="seller-product-submit-btn" form="seller-product-name-field">Tiếp theo</button>
         </div>
     </div>
 @endsection
