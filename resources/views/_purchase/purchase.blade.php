@@ -1,6 +1,8 @@
 @extends('layouts.skeleton')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase_respon.css') }}">
+
 @endsection
 @section('content')
     <div id="purchase-page-containt">

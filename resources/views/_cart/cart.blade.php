@@ -126,7 +126,7 @@
                                         <div>Combo 5 quần lót nam tam giác Cotton thương hiệu Coolmate (đỏ, xanh, vàng, lam, lục tímmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm)</div>
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="cart_page_option_wrap_respon">
                                     <div class="cart_page_about_option">
                                         <div class="cart_page_about_title">
                                             <div>Phân Loại Hàng</div>
@@ -135,7 +135,7 @@
                                         <div class="cart_page_about_choice">M</div>
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="cart_page_pricePer_wrap_respon">
                                     <div>₫ <span>199.000</span></div>
                                 </div>
                                 <div class="cart__set--number-product-wrap">
@@ -145,10 +145,10 @@
                                         <button class="cart_page_quantity_btn" id="cart_page_quantity_btn_minus">-</button>
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="cart_page_price_wrap_respon">
                                     <div style="color: red">900.000</div>
                                 </div>
-                                <div class="">
+                                <div class="cart_page_action_wrap_respon">
                                     <div class="cart_page_action_wrap">
                                         <div class="cart_page_actionDel">
                                             <ion-icon name="bag-remove-sharp"></ion-icon>
@@ -212,7 +212,7 @@
                                         <div>Combo 5 quần lót nam tam giác Cotton thương hiệu Coolmate (đỏ, xanh, vàng, lam, lục tímmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm)</div>
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="cart_page_option_wrap_respon">
                                     <div class="cart_page_about_option">
                                         <div class="cart_page_about_title">
                                             <div>Phân Loại Hàng</div>
@@ -221,7 +221,7 @@
                                         <div class="cart_page_about_choice">M</div>
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="cart_page_pricePer_wrap_respon">
                                     <div>₫ <span>199.000</span></div>
                                 </div>
                                 <div class="cart__set--number-product-wrap">
@@ -231,10 +231,10 @@
                                         <button class="cart_page_quantity_btn" id="cart_page_quantity_btn_minus">-</button>
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="cart_page_price_wrap_respon">
                                     <div style="color: red">900.000</div>
                                 </div>
-                                <div class="">
+                                <div class="cart_page_action_wrap_respon">
                                     <div class="cart_page_action_wrap">
                                         <div class="cart_page_actionDel">
                                             <ion-icon name="bag-remove-sharp"></ion-icon>
@@ -291,7 +291,7 @@
                                             <div>Combo 5 quần lót nam tam giác Cotton thương hiệu Coolmate (đỏ, xanh, vàng, lam, lục tímmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm)</div>
                                         </div>
                                     </div>
-                                    <div class="">
+                                    <div class="cart_page_option_wrap_respon">
                                         <div class="cart_page_about_option">
                                             <div class="cart_page_about_title">
                                                 <div>Phân Loại Hàng</div>
@@ -300,7 +300,7 @@
                                             <div class="cart_page_about_choice">M</div>
                                         </div>
                                     </div>
-                                    <div class="">
+                                    <div class="cart_page_pricePer_wrap_respon">
                                         <div>₫ <span>199.000</span></div>
                                     </div>
                                     <div class="cart__set--number-product-wrap">
@@ -310,10 +310,10 @@
                                             <button class="cart_page_quantity_btn" id="cart_page_quantity_btn_minus">-</button>
                                         </div>
                                     </div>
-                                    <div class="">
+                                    <div class="cart_page_price_wrap_respon">
                                         <div style="color: red">900.000</div>
                                     </div>
-                                    <div class="">
+                                    <div class="cart_page_action_wrap_respon">
                                         <div class="cart_page_action_wrap">
                                             <div class="cart_page_actionDel">
                                                 <ion-icon name="bag-remove-sharp"></ion-icon>
