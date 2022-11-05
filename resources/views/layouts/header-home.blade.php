@@ -1,3 +1,4 @@
+
 <div class="mainHome_navbar_wrapper">
     <div class="mainHome_navbar">
         <div class="mainHome_navbar_aboutUs">
@@ -97,6 +98,9 @@
             <div id="mainHome_navbar_about_topic-respon-hidden">
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
+        </div>
+        <div id="mainHome_navbar_about_topic-respon-hidden">
+            <ion-icon name="menu-outline"></ion-icon>
         </div>
     </div>
 </div>

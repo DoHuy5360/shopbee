@@ -120,9 +120,6 @@ add_video_over_btn.addEventListener("change", (e) => {
             canvas_image.height
         );
         canvas_image.setAttribute("id", "sellerProduct-video-cover");
-        display_video_block.addEventListener("mouseover", (e) => {
-            console.log(1);
-        });
     }, 1000);
 });
 const body_page = document.querySelector("body");
