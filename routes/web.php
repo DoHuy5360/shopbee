@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +27,30 @@ Route::get('/new-product', function () {
     return view('_new_product.new_product');
 });
 
-Route::get('/new-product/store', function () {
-    return view('_new_product_detail.new_product_detail');
+
+Route::get('/new-product-detail', function () {
+    return "12";
+});
+
+Route::post('/new-product-detail', function (Request $request) {
+    function getRandom($arr)
+    {
+        return $arr[array_rand($arr, 1)];
+    }
+    $random = new stdClass;
+    $product_price_arr = [
+        "488.539.538.539",
+        "942.482.482.244",
+        "842.424.133.767"
+    ];
+    $category_array = explode(',',$request->product_category);
+    $product_name = $request->product_name;
+    $random->product_price = getRandom($product_price_arr);
+    return view('_new_product_detail.new_product_detail', [
+        "random" => $random,
+        "category_array"=>$category_array,
+        "product_name"=>$product_name,
+    ]);
 });
 
 
