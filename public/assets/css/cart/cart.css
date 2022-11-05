@@ -4,10 +4,19 @@
   background-color: white;
   border-bottom: 1px solid #00000017;
 }
-#cart-header-wrap{
+
+#cart-header-wrap {
   background-color: var(--color-1);
   padding: 5px 0;
 }
+
+.mainHome_navbar_aboutUs {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
 #cart-search-warp {
   display: flex;
   justify-content: space-between;
@@ -53,9 +62,11 @@
   padding-left: 10px;
   outline: unset;
 }
+
 .cart__icon {
   width: 20px;
 }
+
 #cart-search-icon {
   width: 80px;
   height: unset;
@@ -66,9 +77,11 @@
   display: grid;
   place-items: center;
 }
+
 #cart-search-icon ion-icon {
   font-size: 20px;
 }
+
 #cart-search-icon:active {
   background-color: #c04027;
 }
@@ -265,6 +278,7 @@
   text-decoration: none;
   margin: 0 10px;
 }
+
 .cart_page_trans_icon {
   width: 55px;
   text-align: center;
@@ -280,10 +294,12 @@
   outline: 1px solid #e8e8e8;
   border-radius: 4px;
 }
+
 .cart_page_actionAdd {
   color: #f0582b;
   font-size: 14px;
 }
+
 .cart_page_infor_warp {
   display: grid;
   grid-template-columns: 50px 332px 205px 147px 160px 146px 119px;
@@ -292,10 +308,12 @@
   padding: 15px 0;
   position: relative;
 }
+
 .cart__set--number-product-wrap {
   display: flex;
   justify-content: center;
 }
+
 .cart__set--number-product {
   display: flex;
   align-items: center;
@@ -305,12 +323,14 @@
   outline: 1px solid #e8e8e8;
   height: 32px;
 }
+
 .cart__set--number-product input {
   width: 50px;
   height: inherit;
   border: unset;
   text-align: center;
 }
+
 .cart_page_voucher_cover {
   background-color: #fff3ed;
   display: flex;
@@ -320,10 +340,12 @@
   padding: 0 15px;
   gap: 10px;
 }
+
 .cart_page_voucher_add a {
   text-decoration: unset;
   color: #f0582b;
 }
+
 #cart_page-product-inactive {
   background: white;
 }
@@ -352,12 +374,14 @@
   height: 100px;
   position: relative;
 }
-.cart_page_product_prize_infor{
-    border-radius: 3px;
-    overflow: hidden;
+
+.cart_page_product_prize_infor {
+  border-radius: 3px;
+  overflow: hidden;
 }
+
 .cart_page_product_blur {
-  height: 100px;
+  height: 100%;
   width: 100%;
   filter: blur(100%);
   opacity: 0.8;
@@ -391,15 +415,17 @@
   text-decoration: none;
 }
 
-#cart-page-sticky-voucher-wrap{
-    display: flex;
-    align-items: center;
-    width: 320px;
+#cart-page-sticky-voucher-wrap {
+  display: flex;
+  align-items: center;
+  width: 320px;
 }
-#cart-page-sticky-coin-amount{
-    width: 200px;
-    text-align: right;
+
+#cart-page-sticky-coin-amount {
+  width: 200px;
+  text-align: right;
 }
+
 #cart-page-sticky-coin {
   display: flex;
   justify-content: flex-end;
@@ -423,7 +449,7 @@
   padding: 15px 20px;
 }
 
-#cart-page-sticky-function-btnBuy #cart-page-go-buy button{
+#cart-page-sticky-function-btnBuy #cart-page-go-buy button {
   width: 200px;
   height: 40px;
   background-color: #f05d40;
@@ -435,6 +461,6 @@
   text-decoration: unset;
 }
 
-#cart-page-sticky-function-btnBuy #cart-page-go-buy:hover button{
+#cart-page-sticky-function-btnBuy #cart-page-go-buy:hover button {
   background-color: #c04027;
 }

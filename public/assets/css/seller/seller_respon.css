@@ -1,0 +1,121 @@
+@media screen and (max-width: 1080px) {
+
+    /* !header  */
+    #seller-icon {
+        display: none;
+    }
+
+    #seller-navbar-icon {
+        flex: 2;
+        justify-content: center;
+        padding-left: 10px;
+    }
+
+    #seller-navbar-icon span {
+        width: 100%;
+        transform: none;
+        flex: 1;
+    }
+
+    #navbar-content-icon {
+        padding: 0;
+    }
+
+    #navbar-content-icon span {
+        display: none;
+    }
+
+    #navbar-content-list input {
+        display: none;
+    }
+
+    #seller-navbar-content {
+        flex: 2;
+        justify-content: end;
+        padding-right: 20px;
+    }
+
+    /* !content */
+    #seller-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #seller-listOfContent {
+        display: flex;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .seller-sidebar {
+        width: 100%;
+    }
+
+    #seller-sidebarMenu {
+        display: flex;
+    }
+
+    .seller__name--title {
+        flex-direction: column;
+        width: 100px;
+        align-items: center;
+    }
+
+    .sidebar__menu--content {
+        display: none;
+    }
+
+
+    .seller__arrow--sidebar {
+        display: none;
+    }
+
+    .seller_sidebarIcon {
+        font-size: 2rem;
+    }
+
+    .seller__name--title span {
+        text-align: center;
+    }
+
+    /*! noi dung chinh */
+    #seller-contentTable {
+        width: 100%;
+    }
+
+    #seller-content-right-part {
+        display: none;
+    }
+
+    #seller-content-right {
+        width: 100%;
+        display: block;
+    }
+
+    .seller__opttion--bar {
+        width: 100%;
+    }
+
+    /*! todo list */
+    #seller-todolistbox {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*! chart */
+    #seller-shopAnalyst {
+        height: fit-content;
+    }
+
+    #chart-analyst {
+        display: block;
+    }
+
+    /*! marketing tool */
+    #seller-marketing-card-wrap {
+        display: flex;
+    }
+
+    .seller__marketing--card>div:nth-child(n+3) {
+        display: none;
+    }
+}

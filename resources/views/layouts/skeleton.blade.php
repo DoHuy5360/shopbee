@@ -25,6 +25,8 @@
 <body>
     @yield('content')
     <button id="scroll-to-top">Cuộn lên trên</button>
+    <button id="scroll-to-top-respon">&#8679;</button>
+
 </body>
 
 </html>

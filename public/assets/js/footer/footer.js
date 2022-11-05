@@ -428,7 +428,7 @@ for (let column = 0; column < amount_category; column += amount_columns) {
         category_title.setAttribute("class", "mainHome__category--title");
         const category_list = document.createElement("div");
         category_list.setAttribute("class", "mainHome__category--items-wrap");
-        
+
         const target_category = categories[column + row];
         console.log(target_category);
         category_title.textContent = target_category.parent;
