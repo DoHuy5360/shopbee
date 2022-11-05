@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 require_once('functions/convert.php');
@@ -35,7 +36,26 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addProduct = new Product();
+        $addProduct->code = "jnv83403hv8hainr0498hfanv478nv9anw4v9834hn394vh34n8v";
+        $addProduct->name = $request->product_name;
+        $addProduct->description = $request->product_description;
+        $addProduct->category = $request->product_category;
+        $addProduct->brand = $request->product_brand;
+        $addProduct->origin = $request->product_origin;
+        $addProduct->weight = $request->product_weight;
+        $addProduct->price = $request->product_price;
+        $addProduct->storage = $request->product_storage;
+        $addProduct->weight_packed = $request->product_weight_packed;
+        $addProduct->r_packed = $request->product_r_packed;
+        $addProduct->d_packed = $request->product_d_packed;
+        $addProduct->c_packed = $request->product_c_packed;
+        $addProduct->pre_order = $request->product_pre_order;
+        $addProduct->status = $request->product_status;
+        $addProduct->sku_code = $request->product_sku_code;
+        $addProduct->save();
+        
+        return ($request);
     }
 
     /**

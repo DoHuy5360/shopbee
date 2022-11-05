@@ -12,3 +12,5 @@ headerMenu.addEventListener("click", (e) => {
 menuIcon.addEventListener("click", (e) => {
     menuIconItem.classList.toggle("menuIconItem");
     menuItems.classList.toggle("menuItems");
+    }
+)

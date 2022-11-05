@@ -99,8 +99,8 @@
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
         </div>
-        <div id="mainHome_navbar_about_topic-respon-hidden">
+        {{-- <div id="mainHome_navbar_about_topic-respon-hidden">
             <ion-icon name="menu-outline"></ion-icon>
-        </div>
+        </div> --}}
     </div>
 </div>

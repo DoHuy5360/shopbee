@@ -22,11 +22,16 @@ class Category {
             const category_node = document.createElement("div");
             category_node.setAttribute("class", "typeProduct__category--name");
             const category_name = document.createElement("div");
+            category_name.setAttribute(
+                "class",
+                "typeProduct__category--selected"
+            );
             category_name.textContent = category.parent;
             category_node.appendChild(category_name);
             if (category.childrend.length) {
-                const arrow = '<ion-icon name="chevron-forward-outline"></ion-icon>';
-                category_node.insertAdjacentHTML("beforeend",arrow);
+                const arrow =
+                    '<ion-icon name="chevron-forward-outline"></ion-icon>';
+                category_node.insertAdjacentHTML("beforeend", arrow);
             }
             category_node.addEventListener("click", (e) => {
                 // category.level + 1
@@ -101,3 +106,20 @@ class Category {
 }
 const first_display = new Category(CATEGORIES);
 first_display.displayCategories(1);
+
+const accept_btn = document.getElementById("seller-product-submit-btn");
+accept_btn.addEventListener("click", (e) => {
+    let category_string = [];
+    const category_selected_all = document.querySelectorAll(
+        "#seller-product-submit-items .typeProduct__category--selected"
+    );
+    category_selected_all.forEach((category) => {
+        category_string.push(category.innerText);
+    });
+    const hidden_tranfer = document.createElement("input");
+    hidden_tranfer.setAttribute("type", "hidden");
+    hidden_tranfer.setAttribute("name", "product_category");
+    hidden_tranfer.value = category_string;
+    accept_btn.form.prepend(hidden_tranfer);
+    accept_btn.form.submit();
+});
