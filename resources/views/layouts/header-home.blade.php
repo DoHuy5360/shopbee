@@ -49,7 +49,7 @@
         <div class="mainHome_navbar_containt">
             <div class="mainHome_shopIcon">
                 <a href="/" class="no_decoration">
-                    <img id="mainHome-Icon" src="{{ asset('assets/imgs/shopbee.png') }}" alt="" />
+                    <img id="mainHome-Icon" src="{{ asset('assets/img/shopbee.png') }}" alt="" />
                 </a>
             </div>
             <div id="mainHone-search-field">

@@ -104,6 +104,7 @@ class Category {
         }
     }
 }
+
 const first_display = new Category(CATEGORIES);
 first_display.displayCategories(1);
 
