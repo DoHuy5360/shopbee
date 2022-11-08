@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string("r_packed", 10);
             $table->string("d_packed", 10);
             $table->string("c_packed", 10);
-            $table->boolean("pre_order")->default("false");
+            $table->boolean("pre_order")->default(false);
             $table->string("status", 20);
             $table->string("sku_code", 120);
         });

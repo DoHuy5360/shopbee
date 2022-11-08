@@ -163,9 +163,9 @@
             <div class="mainHome-ads-inside">
                 <img src="https://cf.shopee.vn/file/2598a052df3405712b42aee9fecb0b1c" alt="" />
             </div>
-            <div class="mainHome-ads-inside_respons" id="mainHome-ads-inside-respon1"><img src="https://cdn.discordapp.com/attachments/851277080344002622/1029965693988372560/unknown.png" alt=""></div>
+            <div class="mainHome-ads-inside_respons" id="mainHome-ads-inside-respon1"><img src="https://i.pinimg.com/564x/78/0f/2e/780f2e6686df2e872653eb66ade166d6.jpg" alt=""></div>
             <div class="mainHome-ads-inside_respons" id="mainHome-ads-inside-respon2"><img src="https://cdn.discordapp.com/attachments/851277080344002622/1029965661167960124/unknown.png" alt=""></div>
-            <div class="mainHome-ads-inside_respons" id="mainHome-ads-inside-respon3"><img src="https://cdn.discordapp.com/attachments/851277080344002622/1029965744680738866/unknown.png" alt=""></div>
+            <div class="mainHome-ads-inside_respons" id="mainHome-ads-inside-respon3"><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/special-sale-ad-template-design-2cd0286a2af3ec0f1a6a98009dc155f7_screen.jpg?ts=1585987167" alt=""></div>
         </div>
         <div class="mainHome-shopbeeMall">
             <div class="mainHome__shopbeeMall--wrap">

@@ -332,13 +332,13 @@
                         <div id="sellerProduct-detail-choice-wrap">
                             <div class="sellerProduct__accept--wrap">
                                 <div class="sellerProduct__accept--check-wrap">
-                                    <input type="radio" name="product_pre_order" id="seller_product_detail-otherInfor-option-false" value="no" checked />
+                                    <input type="radio" name="product_pre_order" id="seller_product_detail-otherInfor-option-false" value="false" checked />
                                     <label id="seller_product_detail-otherInfor-option-false-label" for="seller_product_detail-otherInfor-option-false">Không đồng ý</label>
                                 </div>
                             </div>
                             <div class="sellerProduct__accept--wrap">
                                 <div class="sellerProduct__accept--check-wrap" title="Tính năng không khả dụng">
-                                    <input type="radio" name="product-pre-order" id="seller_product_detail-otherInfor-option-true" value="yes" style="cursor: not-allowed" disabled />
+                                    <input type="radio" name="product-pre-order" id="seller_product_detail-otherInfor-option-true" value="true" style="cursor: not-allowed" disabled />
                                     <label id="seller_product_detail-otherInfor-option-true-label" for="seller_product_detail-otherInfor-option-true">Đồng ý</label>
                                 </div>
                             </div>

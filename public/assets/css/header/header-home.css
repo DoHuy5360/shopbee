@@ -35,7 +35,6 @@
 .mainHome_navbar_aboutUs {
     width: 100%;
     /* background-color: var(--color-1); */
-
 }
 
 /* .mainHome_navbar_wrapper {
@@ -51,7 +50,6 @@
     justify-content: space-between;
     display: flex;
 }
-
 
 .mainHome_navbar_about_topic {
     display: flex;
@@ -167,7 +165,7 @@
     width: var(--layout-width);
 }
 
-.mainHome_personal:hover>#mainHome-cart-hidden {
+.mainHome_personal:hover > #mainHome-cart-hidden {
     transform: scale(1);
     visibility: visible;
 }
@@ -247,4 +245,8 @@
     float: right;
     color: white;
     text-decoration: unset;
+}
+
+#mainHome-cart-view-btn-respon {
+    display: none;
 }
