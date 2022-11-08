@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BuyerpageController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::resource('/', BuyerpageController::class);
 
 
 Route::get('/purchase', function () {
@@ -29,7 +29,8 @@ Route::get('/new-product', function () {
 
 
 Route::get('/new-product-detail', function () {
-    return "12";
+    // echo asset("storage/de.html");
+    return 33;
 });
 
 Route::post('/new-product-detail', function (Request $request) {
