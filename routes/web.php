@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BuyerpageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -60,6 +61,8 @@ Route::resource('/product', ProductController::class);
 Route::get('/seller', function () {
     return view('_seller.seller');
 });
+
+Route::resource('/profile', UserController::class);
 
 Route::get('/cart', function () {
     return view('_cart.cart');

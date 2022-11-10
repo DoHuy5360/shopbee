@@ -599,6 +599,7 @@ body {
 
 #product-detail-content-description {
     padding: 30px 15px;
+    text-align: justify;
 }
 #product-image-carousel-wrap {
     height: 100px;

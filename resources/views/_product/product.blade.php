@@ -282,37 +282,7 @@
                 </div>
                 <div id="product-feature">
                     <div class="product-detail-title">MÔ TẢ SẢN PHẨm</div>
-                    <div id="product-detail-content-description">Bàn Phím Cơ Gaming K550 Pro / K620 Pro - 87 Phím Nhiều Chế Độ Màu , Chiến Game Siêu Đỉnh ⚡ Bàn phím có 4 màu sắc thời trang và trẻ trung,
-                        tuyệt đẹp và Charming. ⚡ 87 phím tiêu chuẩn, ký tự. ⚡ Bàn phím cơ sử dụng Blue switch cho âm thanh gõ sắc nét và có nhịp gõ mạnh mẽ. ⚡ Bàn phím nổi sáu hàng thứ tư phù hợp với quỹ
-                        đạo
-                        chuyển động của ngón tay, gõ phím thoải mái và không dễ bị mỏi. ⚡ Sản phẩm bàn phím cơ K550 được làm từ NHỰA ABS vật liệu nhựa nhiệt dẻo, thiết kế tinh tế tạo cảm giác thoải mái
-                        khi sử
-                        dụng, không để lại dấu vân tay trên phím bấm. ⚡ Bố trí 87 phím, nắp phím nổi hình chữ U, gần ngón tay hoàn hảo, cảm giác mượt mà khi sử dụng. ⚡ Thiết kế chống nước và chống bụi,
-                        với
-                        nhiều lỗ thoát nước ở phía dưới. ---------------------------------------------------------- THÔNG SỐ KỸ THUẬT BÀN PHÍM CƠ K550 - Mẫu: K550 - Màu sắc: đen, trắng, xanh, hồng - Loại
-                        keycap: Keycap treo hai màu - Hiệu ứng ánh sáng: Hiệu ứng ánh sáng Charming tuyệt đẹp - Giao diện: cáp USB với hình dạng nhẫn từ tính - Có LED trên mỗi switch , LED nền ,có 10 chế
-                        độ
-                        LED - Chiều dài dây: 1.8m/5,91ft - Thân Công tắc cơ: Công tắc màu xanh - Độ bền hơn 50 triệu lần bấm - Phím có khả năng chống nước tốt - Sử dụng switch cơ quang học Blue - Sử dụng
-                        trục
-                        cơ công nghệ mới nhất - hơn 50 triệu lần bấm - Sử dụng bảng mạch điện 2 mặt, hiệu suất ổn định hơn, chất lượng tốt hơn - Sử dụng phím tắt Fn+ SL (hoặc FN + INS) để thay đổi chế độ
-                        LED
-                        - Khả năng tương thích hệ thống: Dành cho win xp/7/8/10, dành cho mac10.2 trở lên - Kích thước sản phẩm: 360x130x36mm/14.17x5.12x1.42" * ĐẶC ĐIỂM NỔI BẬT BÀN PHÍM CƠ MÁY TÍNH
-                        GAMING
-                        K550 PRO Bàn phím cơ máy tính gaming có dây K550 full led 7 hiệu ứng, với thiết kế với khuynh hướng Gaming mang lại cảm giác hiện đại và nổi bật. Bàn phím cơ gaming có dây K550
-                        luôn là
-                        sản phẩm không nên bỏ qua thuộc phân khúc bàn phím cơ giá rẻ được thiết kế phù hợp với bàn tay người sử dụng hiện nay. * Thiết kế nhỏ gọn - BÀN PHÍM cơ gaming có dây K500 được
-                        thiết kế
-                        nhỏ gọn đẹp, có các phím chức năng mang đến cho người dùng một công cụ hỗ trợ các thao tác thuận tiện nhất - BÀN PHÍM gồm 87 phím cơ, không lo xung đột phím, kẹt phím, thoải mái
-                        bấm
-                        các tổ hợp và nhấn các phím cùng lúc * Blue Switch Bàn phím cơ gaming có dây K550 sử dụng Blue switch - loại switch phổ biến trong tầm giá với độ bền cực cao lên đến 50 triệu lần
-                        nhấn
-                        * Led Rainbow 7 Chế Độ Bàn phím cơ gaming có dây K550 được trang bị dải đèn led với 7 chế độ khác nhau, các màu được bố trí rất thông minh khiến cho chiếc bàn phím có hiệu ứng màu
-                        sắc
-                        rất đẹp mắt * Các Tính Năng Khác Của BÀN PHÍM CƠ GAMING CÓ DÂY K550K Bàn phím cơ gaming có K550 sử dụng chip mạnh mẽ cho truyền tải nhanh và ổn định Bàn phím cơ gaming có dây K550
-                        có
-                        dây cáp được chắc chắn với độ dài giúp cho người dùng có thể thoải mái quấn, gấp mà không gây hư hại cho lõi dây bên trong. Bàn phím sử dụng đầu cắm USB tiện lợi, không gây khó
-                        khăn
-                        cho người dùng khi tìm ổ cắm thích hợp. ---------------</div>
+                    <div id="product-detail-content-description">{{ $get_pdt->description }}</div>
                 </div>
                 <button class="product-spec_feature_btn_up">
                     <a href="#product-spec_feature" style="color:#ee4d2d;">Thu nhỏ</a>
