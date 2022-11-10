@@ -22,20 +22,20 @@
 #mainHome-user-hidden-wrap {
     position: relative;
 }
-#mainHome-navbar-user{
+#mainHome-navbar-user {
     display: flex;
     gap: 5px;
 }
-#mainHome-navbar-user:hover #mainHome-hidden-tramform{
+#mainHome-navbar-user:hover #mainHome-hidden-tramform {
     transform: scale(1);
 }
-#mainHome-logout-btn{
+#mainHome-logout-btn {
     all: unset;
     color: black;
     padding: 7px 13px;
     white-space: nowrap;
 }
-#mainHome-hidden-tramform{
+#mainHome-hidden-tramform {
     position: absolute;
     transition: 100ms ease;
     transform-origin: top;
@@ -319,10 +319,7 @@
     color: white;
     text-decoration: unset;
 }
-<<<<<<< HEAD
 
 #mainHome-cart-view-btn-respon {
     display: none;
 }
-=======
->>>>>>> 8f8e77acf5975148e76be2783e79b8a4969db9d2
