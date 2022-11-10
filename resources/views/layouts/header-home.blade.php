@@ -1,5 +1,6 @@
 <div class="mainHome_navbar_wrapper">
     <div class="mainHome_navbar">
+        {{-- <div class="mainHome_navbar_aboutUs_respon_wrap"></div> --}}
         <div class="mainHome_navbar_aboutUs">
             <div class="mainHome_navbar_aboutUs-wrapper">
                 <div class="mainHome_navbar_about_topic">
@@ -87,7 +88,12 @@
                 </div>
             </div>
             <div class="mainHome_personal">
-                <ion-icon name="cart-outline"></ion-icon>
+                <a href="/cart" id="mainHome-cart-view-btn-respon">
+                    <ion-icon name="cart">
+                    </ion-icon>
+                </a>
+                <ion-icon name="cart-outline">
+                </ion-icon>
                 <div id="mainHome-cart-hidden">
                     <div id="mainHome-cart-product-title">Sản phẩm mới thêm</div>
                     <div id="mainHome-cart-list-product">

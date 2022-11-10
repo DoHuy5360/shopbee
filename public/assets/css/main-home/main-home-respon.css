@@ -29,7 +29,6 @@
         overflow-x: scroll;
         scrollbar-width: none;
         padding: 10px;
-
     }
 
     #mainHome-activity-wrapper {
@@ -52,7 +51,6 @@
         overflow: scroll;
         width: 100%;
     }
-
 
     #mainHome-category-tray-wrap {
         overflow-x: scroll;
@@ -90,7 +88,6 @@
         scrollbar-width: none;
         width: 100%;
         padding: 10px;
-
     }
 
     #mainHome-listOfFlash-1 {
@@ -100,7 +97,9 @@
     /*! mainHome-ads-block-2 */
     .mainHome-ads-block-2 {
         display: flex;
+        align-items: center;
         width: 100%;
+        padding: 10px;
     }
 
     .mainHome-ads-inside {
@@ -108,16 +107,23 @@
     }
 
     #mainHome-ads-inside-respon2 {
-        flex-grow: 1;
+        flex: 2;
     }
 
     #mainHome-ads-inside-respon1,
     #mainHome-ads-inside-respon3 {
-        width: 50%;
+        /* width: 50%; */
+        flex: 1;
+        height: 70px;
     }
 
+    :is(#mainHome-ads-inside-respon1, #mainHome-ads-inside-respon3) :is(img) {
+        border-radius: 10px;
+        width: 100%;
+        height: 50px;
+        object-fit: cover;
+    }
     .mainHome-ads-inside_respons {
-        height: 100px;
         display: flex;
         align-items: center;
     }
@@ -169,11 +175,10 @@
         color: #000;
         height: 80px;
         background-color: #fff;
-        opacity: .8;
+        /* opacity: 0.8; */
+        backdrop-filter: blur(2px);
         z-index: 2;
     }
-
-
 
     .mainHome__topFind--top {
         transform: translateY(0%);
