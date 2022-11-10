@@ -419,9 +419,12 @@ const amount_items_separate = amount_category / amount_columns;
 const category_node = document.getElementById("mainHome-category-wrap");
 
 for (let column = 0; column < amount_category; column += amount_columns) {
+
     const category_wrap_card = document.createElement("div");
     category_wrap_card.setAttribute("class", "mainHome__category--card-wrap");
+
     for (let row = 0; row < amount_items_separate; row++) {
+        
         const category_wrap = document.createElement("div");
         category_wrap.setAttribute("class", "mainHome__category--card");
         const category_title = document.createElement("div");

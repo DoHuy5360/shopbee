@@ -14,7 +14,7 @@
 @section('content')
     <div id="seller-navbar">
         <div id="seller-navbar-icon">
-            <div id="seller-icon"><img src="{{ asset('assets/imgs/shopbee.png') }}" alt="" /></div>
+            <div id="seller-icon"><img src="{{ asset('assets/img/shopbee.png') }}" alt="" /></div>
             <span>Kênh Người Bán</span>
         </div>
         <div id="seller-navbar-content">

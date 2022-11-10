@@ -1,0 +1,116 @@
+@media screen and (max-width: 1080px) {
+	#login_page-cover {
+		height: 100vh;
+		/* overflow: hidden; */
+	}
+
+	#login_page-header-wrapper {
+		display: none;
+	}
+
+	#login_page-content-wrapper {
+		width: 100%;
+		display: block;
+	}
+
+	#login_page-content-respon {
+		width: 100%;
+		min-height: 100vw;
+		animation: changeBg 10s ease infinite;
+		background-size: 400% 400% !important;
+		background: linear-gradient(70deg, #008375, #ff8300);
+		display: flex;
+		justify-content: center;
+	}
+
+	@keyframes changeBg {
+		0% {
+			background-position: 100% 0%;
+			opacity: 0;
+		}
+
+		10% {
+			opacity: 0.8;
+		}
+
+		25% {
+			background-position: 75% 50%;
+		}
+
+		50% {
+			background-position: 50% 50%;
+			opacity: 1;
+		}
+
+		75% {
+			background-position: 25% 50%;
+			opacity: 0.8;
+		}
+
+		100% {
+			background-position: 0% 50%;
+			opacity: 0;
+		}
+	}
+
+	/*! form */
+	#login_page-content {
+		position: relative;
+		background-image: none;
+		justify-content: center;
+	}
+
+	#login_page-content,
+	#login_page-content-respon {
+		width: 100%;
+		margin: 0;
+		height: 100vh;
+		position: absolute;
+	}
+
+	#login_page-content-respon {
+		position: absolute;
+		z-index: -1;
+	}
+
+	#login_page-content-form {
+		background-color: rgb(255, 255, 255, 0);
+		box-shadow: none;
+	}
+
+	#login_page-content-form-logins {
+		margin: 0px 35px;
+		box-shadow: 0 0 14px rgb(0 0 0 / 50%);
+		background-color: #fff;
+		border-radius: 4px;
+		z-index: 999;
+		gap: 10px;
+	}
+
+	#login_page-content-form-otherMethod-wrap {
+		justify-content: space-around;
+	}
+
+	.login_page_content_for_otherMethod {
+		aspect-ratio: 1/1;
+		flex: 0;
+		border-radius: 50% 50%;
+		box-shadow: 0 0 14px rgb(0 0 0 / 10%);
+	}
+
+	.login_page_content_for_otherMethod > div {
+		display: none;
+	}
+
+	.login_page_content_for_otherMethod ion-icon {
+		font-size: 1.8rem;
+	}
+
+	#login_page-content-form-loginSite {
+		margin: 0;
+	}
+
+	#login_page-content-form-qr-wrap-detail {
+		display: none;
+	}
+}

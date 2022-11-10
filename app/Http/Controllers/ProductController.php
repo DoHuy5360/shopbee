@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductImage;
+use App\Models\ProductVideo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 require_once('functions/convert.php');
+require_once('functions/code_generate.php');
 class ProductController extends Controller
 {
     /**
@@ -15,7 +19,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        // return genCode(52);
     }
 
     /**
@@ -36,8 +40,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $product_temp_code = genCode(52);
+
         $addProduct = new Product();
-        $addProduct->code = "jnv83403hv8hainr0498hfanv478nv9anw4v9834hn394vh34n8v";
+        $addProduct->code = $product_temp_code;
         $addProduct->name = $request->product_name;
         $addProduct->description = $request->product_description;
         $addProduct->category = $request->product_category;
@@ -54,7 +60,35 @@ class ProductController extends Controller
         $addProduct->status = $request->product_status;
         $addProduct->sku_code = $request->product_sku_code;
         $addProduct->save();
-        
+
+        for ($index = 0; $index < 9; $index++) {
+            $is_image_exist = $request->file("image-$index");
+            if ($is_image_exist) {
+                $image_file = $is_image_exist;
+                $image_name = date("dmYHis") . '.' . $image_file->getClientOriginalName();
+                $image_file->move(public_path("assets/img/product"), $image_name);
+
+                $sto_pdt_img = new ProductImage();
+                $sto_pdt_img->code = genCode(52);
+                $sto_pdt_img->product_code = $product_temp_code;
+                $sto_pdt_img->index = $index;
+                $sto_pdt_img->path = "assets/img/product/$image_name";
+                $sto_pdt_img->save();
+            }
+        }
+        $is_video_exist = $request->file("product_video");
+        if ($is_video_exist) {
+            $video_file = $is_video_exist;
+            $video_name = date("dmYHis") . '.' . $video_file->getClientOriginalName();
+            $video_file->move(public_path("assets/video/product"), $video_name);
+
+            $sto_pro_vid = new ProductVideo();
+            $sto_pro_vid->code = genCode(52);
+            $sto_pro_vid->product_code = $product_temp_code;
+            $sto_pro_vid->path = "assets/video/product/$video_name";
+            $sto_pro_vid->save();
+        }
+
         return ($request);
     }
 
@@ -87,9 +121,29 @@ class ProductController extends Controller
             "shop_response_time",
             "shop_product"
         ];
-        $product_info = "1";
+        $get_pdt = DB::select(
+            "SELECT *
+            FROM products p
+            WHERE p.code = '$id'
+            "
+        )[0];
+        $get_pdt_img = DB::select(
+            "SELECT *
+            FROM product_images p_i
+            WHERE product_code = '$id'
+            "
+        );
+        $get_pdt_vid = DB::select(
+            "SELECT path
+            FROM  product_videos p_v
+            WHERE product_code = '$id'
+            "
+        )[0];
+        // return $get_pdt;
         return view('_product.product', [
-            'product_infor' => $product_info,
+            'get_pdt' => $get_pdt,
+            'get_pdt_img' => $get_pdt_img,
+            'get_pdt_vid' => $get_pdt_vid,
         ]);
     }
 

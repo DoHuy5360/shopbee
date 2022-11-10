@@ -54,7 +54,7 @@
             <div id="cart-search-shopbee-icon">
                 <div id="cart-shopbee-img">
                     <a href="/" class="no_decoration">
-                        <img src="{{ asset('assets/imgs/shopbee.png') }}" alt="" srcset="" /></a>
+                        <img src="{{ asset('assets/img/shopbee.png') }}" alt="" srcset="" /></a>
                 </div>
                 <div id="cart-shopbee">Giỏ Hàng</div>
             </div>

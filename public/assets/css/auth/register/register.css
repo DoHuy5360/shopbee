@@ -1,0 +1,222 @@
+* {
+	margin: 0%;
+	padding: 0%;
+}
+
+#reg_page-cover {
+	width: 100%;
+	/* min-width: 1200px; */
+}
+
+#reg_page-header-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0px auto;
+	width: 1200px;
+	height: 84px;
+}
+
+#reg_page-header-content {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	gap: 30px;
+}
+
+#reg_page-header-logo-wrapper {
+	width: 144px;
+	transform: translateX(10px) translateY(-5px);
+}
+
+#reg_page-header-logo-wrapper img {
+	object-fit: cover;
+	width: 100%;
+	transform: scale(1.2);
+}
+
+#reg_page-header-logo-script {
+	font-size: 1.4rem;
+}
+
+#reg_page-header-help {
+	color: #ee4d2d;
+	margin-right: 15px;
+}
+
+#reg_page-header-help-detail {
+	font-size: 0.875rem;
+	text-decoration: none;
+	color: #ee4d2d;
+}
+
+/*! phan noi dung */
+#reg_page-content-wrapper {
+	min-width: 100%;
+	width: 1200px;
+	background-color: #ee4d2d;
+	display: flex;
+	justify-content: center;
+}
+
+#reg_page-content {
+	display: flex;
+	margin: 0 80px;
+	height: 600px;
+	width: 1040px;
+	background-image: url("../../sale_regs.png");
+	background-repeat: no-repeat;
+	background-size: 550px;
+	background-position: left center;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#reg_page-content-pic {
+	width: 1040px;
+}
+
+#reg_page-content-form {
+	background-color: #fff;
+	height: fit-content;
+	width: 400px;
+	box-sizing: border-box;
+	/* box-shadow: 0 3px 10px 0 rgb(0 0 0 / 14%); */
+	/* border-radius: 4px; */
+}
+
+#reg_page-content-form-regs {
+	display: flex;
+	flex-direction: column;
+	gap: 1.375rem;
+}
+
+#reg_page-content-form-label {
+	padding: 1.375rem 30px 0 !important;
+	font-size: 1.25rem;
+}
+
+#reg_page-content-form-regs > div {
+	padding: 0 30px;
+}
+
+#reg_page-content-form-input {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+#reg_page-content-form-input-wrap {
+	width: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.14);
+	border-radius: 2px;
+	box-sizing: border-box;
+	height: 2.5rem;
+	display: flex;
+	align-items: center;
+}
+
+#reg_page-content-form-input-field {
+	margin: 15px;
+	outline: none;
+	border: none;
+	width: 100%;
+}
+
+#reg_page-content-form-input-field::placeholder {
+	color: #ccc;
+}
+
+#reg_page-content-form-btn button {
+	background-color: var(--color-4);
+	color: #fff;
+	outline: none;
+	border: none;
+	text-align: center;
+	height: 2.5rem;
+	width: 100%;
+	text-transform: uppercase;
+}
+
+#reg_page-content-form-pageSep-wrap {
+	width: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+#reg_page-content-form-pageSep-content {
+	text-transform: uppercase;
+	color: #ccc;
+	background-color: #fff;
+	width: fit-content;
+	padding: 0 10px;
+	z-index: 1;
+	font-size: 0.75rem;
+}
+
+.reg_page-content-form-pageSep-line {
+	background-color: #ccc;
+	width: 100%;
+	flex: 1;
+	height: 1px;
+}
+
+#reg_page-content-form-otherMethod-wrap {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.reg_page_content_for_otherMethod {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	height: 36px;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.14);
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.reg_page_content_for_otherMethod ion-icon {
+	font-size: 1.5rem;
+}
+
+.reg_page_content_for_otherMethod:hover {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+#reg_page-content-form-rule {
+	font-size: 13px;
+	text-align: center;
+}
+
+#reg_page-content-form-rule > a {
+	text-decoration: none;
+	color: #ee4d2d;
+}
+
+#reg_page-content-form-loginSite {
+	text-align: center;
+	padding-bottom: 1.375rem !important;
+}
+
+#reg_page-content-form-loginSite > a {
+	text-decoration: none;
+	color: #ee4d2d;
+}
+
+#reg_page-content-form-loginSite {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+}
+
+#reg_page-content-form-loginSite > span {
+	color: #ccc;
+}

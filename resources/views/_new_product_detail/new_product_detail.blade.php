@@ -21,7 +21,7 @@
                                     <ion-icon name="add-circle-outline"> </ion-icon>
                                 </label>
                                 <span class="sellerProduct__image--number cover">* Ảnh bìa</span>
-                                <input type="file" name="image-cover" id="sellerProduct-add-image-cover" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-0" id="sellerProduct-add-image-cover" class="sellerProduct__hidden--image-input">
                             </div>
                             <div class="sellerProduct__image--add-wrap">
                                 <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-1">
@@ -93,12 +93,12 @@
                             </div>
                             <div id="sellerProduct-video-dialog">
                                 <video id="sellerProduct-video-contain" controls></video>
-                                <button id="sellerProduct__close--model">
+                                <button id="sellerProduct__close--model" type="button">
                                     <ion-icon name="close-outline"></ion-icon>
                                 </button>
                             </div>
 
-                            <input type="file" name="video-cover" id="sellerProduct-add-video-cover" class="sellerProduct__hidden--video-input">
+                            <input type="file" name="product_video" id="sellerProduct-add-video-cover" class="sellerProduct__hidden--video-input">
                         </div>
                         <div id="sellerProduct-required-video">
                             <p>1. Kích thước: Tối đa 30Mb, độ phân giải không vượt quá 1280x1280px</p>
@@ -148,7 +148,7 @@
                 <div id="seller_product_detail-mainInfor-inputfield">
                     <div class="seller_product_detail_mainInfor_inputfield">
                         <div class="sellerProduct__title--field-wrap">* Thương hiệu</div>
-                        <select name="product_brand" required>
+                        <select name="product_brand" title="Brand">
                             <option value="" disabled selected hidden>Vui lòng chọn vào</option>
                             <option value="Gu chì">Gu chì</option>
                             <option value="A đi đát">A đi đát</option>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="seller_product_detail_mainInfor_inputfield">
                         <div class="sellerProduct__title--field-wrap">* Xuất xứ</div>
-                        <select name="product_origin" required>
+                        <select name="product_origin" title="Origin">
                             <option value="" disabled selected hidden>Vui lòng chọn vào</option>
                             <option value="Việt Nam">Việt Nam</option>
                             <option value="Trung Quốc">Trung Quốc</option>
@@ -165,7 +165,7 @@
                     </div>
                     <div class="seller_product_detail_mainInfor_inputfield">
                         <div class="sellerProduct__title--field-wrap">Tên tổ chức chịu trách nhiệm sản xuất</div>
-                        <select name="" required>
+                        <select name="" title="Responsible Organization">
                             <option value="" disabled selected hidden>Vui lòng chọn vào</option>
                             <option value="">test1</option>
                             <option value="">test2</option>
@@ -173,7 +173,7 @@
                     </div>
                     <div class="seller_product_detail_mainInfor_inputfield">
                         <div class="sellerProduct__title--field-wrap">Trọng lượng</div>
-                        <select name="product_weight" id="seller_product_detail-mainInfor-inputfield5" required>
+                        <select name="product_weight" id="seller_product_detail-mainInfor-inputfield5" title="Height">
                             <option value="" disabled selected hidden>Vui lòng chọn vào</option>
                             <option value="1 kg">1kg</option>
                             <option value="10 kg">10kg</option>
@@ -193,26 +193,9 @@
                                 <div class="sellerProduct__title--field-wrap">Số lô sản xuất</div>
                                 <input type="text" id="seller_product_detail-mainInfor-inputfield4" placeholder="Vui lòng điền vào" />
                             </div>
-
-                            <div class="seller_product_detail_mainInfor_inputfield">
-                                <div class="sellerProduct__title--field-wrap">Tên tổ chức chịu trách nhiệm sản xuất</div>
-                                <select name="" id="seller_product_detail-mainInfor-inputfield6" required>
-                                    <option value="" disabled selected hidden>Vui lòng chọn vào</option>
-                                    <option value="">test1</option>
-                                    <option value="">test2</option>
-                                </select>
-                            </div>
-                            <div class="seller_product_detail_mainInfor_inputfield">
-                                <div class="sellerProduct__title--field-wrap">Địa chỉ tổ chức chịu trách nhiệm sản xuất</div>
-                                <select name="" id="seller_product_detail-mainInfor-inputfield7" required>
-                                    <option value="" disabled selected hidden>Vui lòng chọn vào</option>
-                                    <option value="">test1</option>
-                                    <option value="">test2</option>
-                                </select>
-                            </div>
                             <div class="seller_product_detail_mainInfor_inputfield">
                                 <div class="sellerProduct__title--field-wrap">Thể tích</div>
-                                <select name="" id="seller_product_detail-mainInfor-inputfield8" required>
+                                <select name="" id="seller_product_detail-mainInfor-inputfield8" title="Volume">
                                     <option value="" disabled selected hidden>Vui lòng chọn vào</option>
                                     <option value="">test1</option>
                                     <option value="">test2</option>

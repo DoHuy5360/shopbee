@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BuyerpageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::resource('/', BuyerpageController::class);
 
 
 Route::get('/purchase', function () {
@@ -29,7 +30,8 @@ Route::get('/new-product', function () {
 
 
 Route::get('/new-product-detail', function () {
-    return "12";
+    // echo asset("storage/de.html");
+    return 33;
 });
 
 Route::post('/new-product-detail', function (Request $request) {
@@ -59,6 +61,8 @@ Route::resource('/product', ProductController::class);
 Route::get('/seller', function () {
     return view('_seller.seller');
 });
+
+Route::resource('/profile', UserController::class);
 
 Route::get('/cart', function () {
     return view('_cart.cart');

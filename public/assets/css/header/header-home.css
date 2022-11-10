@@ -4,13 +4,86 @@
     font-weight: 300px;
     color: white;
     height: 100%;
+    position: relative;
 }
 
 #mainHome_navbar_aboutUs-visual,
 #mainHome_navbar_about_topic-close-icon {
     display: none;
 }
-
+#mainHome-hidden-option-user {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 2px;
+    overflow: hidden;
+}
+#mainHome-user-hidden-wrap {
+    position: relative;
+}
+#mainHome-navbar-user{
+    display: flex;
+    gap: 5px;
+}
+#mainHome-navbar-user:hover #mainHome-hidden-tramform{
+    transform: scale(1);
+}
+#mainHome-logout-btn{
+    all: unset;
+    color: black;
+    padding: 7px 13px;
+    white-space: nowrap;
+}
+#mainHome-hidden-tramform{
+    position: absolute;
+    transition: 100ms ease;
+    transform-origin: top;
+    transform: scale(0);
+    bottom: -105px;
+    left: -32px;
+    box-shadow: 0 2px 2px 0 #0000001a;
+    -webkit-box-shadow: 0 2px 2px 0 #0000001a;
+    -moz-box-shadow: 0 2px 2px 0 #0000001a;
+    z-index: 10;
+}
+#mainHome-user-hidden-wrap::before {
+    content: "";
+    clip-path: polygon(50% 70%, 0% 100%, 100% 100%);
+    background-color: white;
+    top: -19px;
+    width: 20px;
+    aspect-ratio: 1;
+    left: 70%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+#mainHome-user-name {
+    color: white;
+    text-decoration: unset;
+}
+#mainHome-hidden-option-user a {
+    text-decoration: unset;
+    color: black;
+    white-space: nowrap;
+    padding: 7px 13px;
+}
+.mainHome__action--user:hover {
+    background-color: var(--gray-soft) !important;
+    color: var(--color-6) !important;
+    cursor: pointer;
+}
+#mainHome-avatar-ion {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#mainHome-profile-avatar {
+    padding: 0;
+}
+#mainHome-profile-avatar:hover {
+}
 .mainHome_navbar_wrapper {
     background-color: var(--color-1);
     display: flex;
@@ -246,7 +319,10 @@
     color: white;
     text-decoration: unset;
 }
+<<<<<<< HEAD
 
 #mainHome-cart-view-btn-respon {
     display: none;
 }
+=======
+>>>>>>> 8f8e77acf5975148e76be2783e79b8a4969db9d2
