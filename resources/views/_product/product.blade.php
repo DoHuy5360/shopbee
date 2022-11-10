@@ -10,7 +10,18 @@
     <script src="{{ asset('assets/js/product/product.js') }}"></script>
 @endsection
 @section('content')
+    <div id="product-alert-wrap">
+        <div id="product-alert-icon">
+            <ion-icon name="checkmark-outline"></ion-icon>
+        </div>
+        <div id="product-alert-mesage">Sản phẩm đã được thêm vào Giỏ hàng</div>
+    </div>
     @include('layouts.header-home')
+    <form action="{{ route('cart.store') }}" id="theForm" method="POST">
+        @csrf
+        <input name="buyer_code" type="hidden" value="{{ Auth::user()->code }}">
+        <input name="product_code" type="hidden" value="{{ $get_pdt->code }}">
+    </form>
     <div id="product-page-content">
         <div id="product-body">
             <div class="product_content" id="product-img">
