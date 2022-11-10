@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
+require_once('functions/code_generate.php');
 class CartController extends Controller
 {
     /**
@@ -34,8 +38,22 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        $message = "Đã thêm sản phẩm vào giỏ hàng thành công!";
+        $status = 200;
+        if (Auth::user()) {
+            $g_code = genCode(52);
+            $add_pdt_cart = new Cart();
+            $add_pdt_cart->code = $g_code;
+            $add_pdt_cart->user_code = $request->buyer_code;
+            $add_pdt_cart->product_code = $request->product_code;
+            $add_pdt_cart->save();
+        } else {
+            $message = "Thêm thất bại, hãy đăng nhập.";
+            $status = 500;
+        }
         return response()->json([
-            "message" => "Đã thêm sản phẩm vào giỏ hàng thành công!"
+            "status" => $status,
+            "message" => $message
         ]);
     }
 
@@ -47,7 +65,18 @@ class CartController extends Controller
      */
     public function show($id)
     {
-        //
+        $get_cart = DB::select(
+            "SELECT p.name, p.price, pi.path
+            FROM carts c, products p, product_images pi
+            WHERE c.user_code = '$id'
+            AND c.product_code = p.code
+            AND pi.product_code = p.code
+            AND pi.index = '0'
+            "
+        );
+        return response()->json([
+            'get_cart' => $get_cart
+        ]);
     }
 
     /**

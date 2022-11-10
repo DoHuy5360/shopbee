@@ -28,20 +28,30 @@ all_product_images.forEach((media) => {
         }
     });
 });
-// todo: Chức năng thông báo thêm giỏ hàng thành công
-$("#product-add-cart");
+// todo: Chức năng thông báo thêm giỏ hàng thành công, không thì bắt đăng nhập
 $(document).ready(function () {
+    // todo: Sự kiện thêm sản phẩm vào giỏ hàng
     $("#product-title-add2cart").click(function (e) {
         e.preventDefault();
         $("#theForm").ajaxSubmit({
             url: "/cart",
             type: "post",
             success: function (response, statusText, xhr, form) {
-                const resp_msg = $(response)[0].message;
-                $("#product-alert-wrap").css("display", "flex");
-                setTimeout(()=>{
-                    $("#product-alert-wrap").css("display", "none");
-                },1500)
+                const resp_msg = $(response)[0];
+                if (resp_msg.status === 500) {
+                    $.ajax({
+                        type: "GET",
+                        url: `/login?pre_page=${window.location.pathname}`,
+                        success: function (response) {
+                            $("#body").html(response);
+                        },
+                    });
+                } else {
+                    $("#product-alert-wrap").css("display", "flex");
+                    setTimeout(() => {
+                        $("#product-alert-wrap").css("display", "none");
+                    }, 1500);
+                }
             },
         });
     });

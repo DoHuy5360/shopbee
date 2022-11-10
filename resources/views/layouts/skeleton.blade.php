@@ -22,7 +22,7 @@
     </title>
 </head>
 
-<body>
+<body id="body">
     @yield('content')
     <button id="scroll-to-top" type="button">Cuộn lên trên</button>
     <button id="scroll-to-top-respon" type="button">&#8679;</button>

@@ -19,7 +19,9 @@
     @include('layouts.header-home')
     <form action="{{ route('cart.store') }}" id="theForm" method="POST">
         @csrf
-        <input name="buyer_code" type="hidden" value="{{ Auth::user()->code }}">
+        @auth
+            <input name="buyer_code" type="hidden" value="{{ Auth::user()->code }}">
+        @endauth
         <input name="product_code" type="hidden" value="{{ $get_pdt->code }}">
     </form>
     <div id="product-page-content">
