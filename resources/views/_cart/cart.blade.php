@@ -219,6 +219,50 @@
                                             <ion-icon name="chevron-down-outline"></ion-icon>
                                         </div>
                                         <div class="cart_page_about_choice">M</div>
+
+                                    </div>
+                                    <div class="cart_page_option_items">
+                                        <div class="cart_page_option_items_wrap">
+                                            <div class="cart_page_option_fix">
+                                                <div class="cart_page_option_fix_title">
+                                                    <span>Màu</span>:
+                                                </div>
+                                                <div class="cart_page_option_choice">
+                                                    <div class="cart_checkout--method-wrap">
+                                                        <label for="cart-page-payment-feature-1">
+                                                            <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1" value="white" />
+                                                            <span>Trắng</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="cart_checkout--method-wrap">
+                                                        <label for="cart-page-payment-feature-2">
+                                                            <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-2" value="Black" />
+                                                            <span>Đen</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="cart_checkout--method-wrap">
+                                                        <label for="cart-page-payment-feature-3">
+                                                            <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-3" value="Pink" />
+                                                            <span>Hồng</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cart_page_option_fix">
+                                                <div class="cart_page_option_fix_title">
+                                                    <span>Size</span>:
+                                                </div>
+                                                <div class="cart_page_option_choice">
+                                                    <input type="radio" name="S" id="" class="cart_page_option_fix_btn">
+                                                    <input type="radio" name="M" id="" class="cart_page_option_fix_btn">
+                                                    <input type="radio" name="L" id="" class="cart_page_option_fix_btn">
+                                                    <input type="radio" name="XL" id="" class="cart_page_option_fix_btn">
+                                                </div>
+                                            </div>
+                                            <div id="cart_page_option_submit_btn_wrap">
+                                                
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="cart_page_pricePer_wrap_respon">
