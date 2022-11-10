@@ -34,6 +34,7 @@
 
     .cart_page_wrap_containt {
         width: 100%;
+        margin: 0;
     }
 
     .cart_page_infor_warp {
@@ -100,9 +101,38 @@
         width: 100%;
     }
 
+    .cart_page_product_voucher,
+    .cart_page_product_trans {
+        padding: 0;
+    }
+
+    .cart_page_voucher_title {
+        display: none;
+    }
+
+    .cart_page_voucher_cover {
+        justify-content: space-between;
+    }
     #scroll-to-top-respon {
         bottom: 30%;
     }
+
+    .cart_page_voucher_detail,
+    .cart_page_trans_detail {
+        width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .cart_page_voucherAdd,
+    .cart_page_transAdd {
+        width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     /*! thanh toan field */
     #cart-page-sticky-function-del,
     #cart-page-sticky-function-delInactive,
