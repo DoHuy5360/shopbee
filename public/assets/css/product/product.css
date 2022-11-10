@@ -657,3 +657,33 @@ body {
     background-color: var(--gray-light);
     color: black;
 }
+#product-alert-wrap {
+    width: fit-content;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    background-color: #000000b3;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    display: none;
+  }
+  #product-alert-icon {
+    font-size: 30px;
+    background-color: #00bfa5;
+    border-radius: 50%;
+    width: 40px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    color: white;
+  }
+  #product-alert-mesage {
+    color: white;
+    white-space: nowrap;
+  }

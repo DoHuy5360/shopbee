@@ -95,26 +95,17 @@
                 <ion-icon name="cart-outline">
                 </ion-icon>
                 <div id="mainHome-cart-hidden">
-                    <div id="mainHome-cart-product-title">Sản phẩm mới thêm</div>
-                    <div id="mainHome-cart-list-product">
-                        <div class="mainHome__cart--product-wrap">
-                            <img src="http://surl.li/dafng" alt="">
-                            <div class="mainHome__cart--product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil natus unde distinctio voluptatem eaque recusandae neque</div>
-                            <div class="mainHome__cart--product-price">9.000.000</div>
+                    @if (Auth::guest())
+                        <div id="mainHome-cart-empty-wrap">
+                            <img src="{{ asset('assets/img/empty_cart.png') }}" alt="Giỏ hàng của bạn">
+                            <div>Chưa Có Sản Phẩm</div>
                         </div>
-                        <div class="mainHome__cart--product-wrap">
-                            <img src="http://surl.li/dafnd" alt="">
-                            <div class="mainHome__cart--product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil natus unde distinctio voluptatem eaque recusandae neque</div>
-                            <div class="mainHome__cart--product-price">9.000.000</div>
-                        </div>
-                        <div class="mainHome__cart--product-wrap">
-                            <img src="http://surl.li/dafnj" alt="">
-                            <div class="mainHome__cart--product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil natus unde distinctio voluptatem eaque recusandae neque</div>
-                            <div class="mainHome__cart--product-price">9.000.000</div>
-                        </div>
-                    </div>
-                    <a href="/cart" id="mainHome-cart-view-btn">Xem giỏ hàng</a>
-                    {{-- <button id="mainHome-cart-view-btn">Xem giỏ hàng</button> --}}
+                    @else
+                        <input type="hidden" id="mainHome-user-code" name="" value="{{ Auth::user()->code }}">
+                        <div id="mainHome-cart-product-title">Sản phẩm mới thêm</div>
+                        <div id="mainHome-cart-list-product"></div>
+                        <a href="/cart" id="mainHome-cart-view-btn">Xem giỏ hàng</a>
+                    @endif
                 </div>
             </div>
             <div id="mainHome_navbar_about_topic-respon-hidden">
