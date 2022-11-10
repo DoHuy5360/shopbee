@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+body {
+  background-color: #f5f5f5;
+}
+#profile-user-edit{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#profile-user-edit span{
+    color: #9999a6;
+}
+.profile__icon{
+    width: 16px;
+}
+#profile-body-wrap {
+  width: 1200px;
+  margin: 20px auto 50px auto;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+}
+.profile__menu--element {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#profile-user-name-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+#profile-user-info-wrap {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #efefef;
+}
+#profile-user-name{
+    font-weight: 600;
+}
+#profile-user-avatar {
+  width: 48px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#profile-menu-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.profile__menu--element:hover span {
+  color: #ee4d2d;
+}
+.profile__menu--element-wrap {
+}
+.profile__element--option-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0 0 27px;
+}
+.profile__element--option:hover {
+  color: #ee4d2d;
+}
+#profile-body-right-wrap {
+  background-color: white;
+  padding: 0 30px;
+  margin-left: 25px;
+  box-shadow: 0 1px 2px 0 #00000021;
+}
+#profile-edit-left-part {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.profile__edit--field-wrap {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+#profile-my-profile {
+  padding: 15px 0;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+#profile-my-profile-title {
+  font-size: 20px;
+}
+.profile__edit--name {
+  min-width: 20%;
+  text-align: right;
+  color: #777777;
+}
+.profile__edit--field-input {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.profile__edit--field-input input {
+  padding: 10px;
+  outline: unset;
+  border: 1px solid #dbdbdb;
+  width: 100%;
+  border-radius: 2px;
+}
+#profile-edit-save-btn {
+  padding: 12px 24px;
+  background-color: #ee4d2d;
+  border: unset;
+  outline: unset;
+  border-radius: 2px;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+}
+.profile__birthday--option-wrap {
+  position: relative;
+  width: 150px;
+}
+.profile__birthday--inut-wrap:hover {
+  border: 1px solid #ee4d2d;
+}
+.profile__birthday--inut-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  padding: 0 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  gap: 5px;
+  justify-content: space-around;
+}
+.profile__birthday--number-choice {
+  padding: 5px 5px 5px 10px;
+  cursor: pointer;
+}
+.profile__birthday--number-choice:hover {
+  background-color: #efefef;
+}
+.profile__birthday--value {
+  border-radius: 2px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+}
+.profile__birthday--display-choice{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.profile__birthday--list-value {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  height: 150px;
+  overflow-x: hidden;
+  width: 100%;
+  background-color: white;
+  top: 38px;
+}
+.profile__birthday--option-wrap.active .profile__birthday--inut-wrap {
+  border: 1px solid #ee4d2d;
+}
+.profile__birthday--option-wrap.active .profile__birthday--list-value {
+  display: flex;
+  outline: 1px solid #efefef;
+}
+#profile__edit--content-wrap {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  padding: 30px 0 70px 0;
+  gap: 50px;
+}
+#profile__edit--avatar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid #efefef;
+  gap: 15px;
+}
+#profile-edit-right-part img {
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin-top: 15px;
+  object-fit: cover;
+}
+#profile-edit-limit-require {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #9999a6;
+}
+.profile__gender--input-wrap {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+#profile-edit-choose-avatar {
+  border: 1px solid #e8e8e8;
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 100ms;
+  box-shadow: 0 1px 1px 0 #00000017;
+}
+#profile-edit-choose-avatar:hover {
+  background-color: #fafafa;
+}

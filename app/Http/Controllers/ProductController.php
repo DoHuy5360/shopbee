@@ -121,15 +121,29 @@ class ProductController extends Controller
             "shop_response_time",
             "shop_product"
         ];
-        $get_product = DB::select(
+        $get_pdt = DB::select(
             "SELECT *
-            FROM products
-            WHERE code = $id
+            FROM products p
+            WHERE p.code = '$id'
+            "
+        )[0];
+        $get_pdt_img = DB::select(
+            "SELECT *
+            FROM product_images p_i
+            WHERE product_code = '$id'
             "
         );
-        $product_info = "1";
+        $get_pdt_vid = DB::select(
+            "SELECT path
+            FROM  product_videos p_v
+            WHERE product_code = '$id'
+            "
+        )[0];
+        // return $get_pdt;
         return view('_product.product', [
-            'product_infor' => $product_info,
+            'get_pdt' => $get_pdt,
+            'get_pdt_img' => $get_pdt_img,
+            'get_pdt_vid' => $get_pdt_vid,
         ]);
     }
 

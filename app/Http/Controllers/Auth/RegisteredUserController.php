@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
+require_once(__DIR__. '/../functions/code_generate.php');
 class RegisteredUserController extends Controller
 {
     /**
@@ -43,6 +44,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'code'=>genCode(52),
         ]);
 
         event(new Registered($user));

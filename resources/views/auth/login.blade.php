@@ -1,56 +1,100 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.skeleton')
+@section('title', 'Đăng ký tài khoản')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/css/auth/login/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/auth/login/login_respon.css') }}">
+@endsection
+@section('js')
+    <script src="{{ asset('assets/js/auth/login_and_regs_page.js') }}"></script>
+@endsection
+@section('content')
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-input-label for="email" :value="__('Email')" />
-
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+    <!-- Validation Errors -->
+    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <div id="login_page-cover">
+        <div id="login_page-header-wrapper">
+            <div id="login_page-header-content">
+                <div id="login_page-header-logo-wrapper">
+                    <img src="https://cdn.discordapp.com/attachments/885169725640937492/1017451862548549742/shopbee.png" alt="" srcset="" />
+                </div>
+                <div id="login_page-header-logo-detail">
+                    <div id="login_page-header-logo-script">Đăng ký</div>
+                </div>
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
-
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
+            <div id="login_page-header-help">
+                <a href="" id="login_page-header-help-detail">Bạn cần giúp đỡ?</a>
             </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
+        </div>
+        <div id="login_page-content-wrapper">
+            <div id="login_page-content">
+                <div id="login_page-content-form">
+                    <form action="{{ route('login') }}" method="POST" id="login_page-content-form-logins">
+                        @csrf
+                        <div id="login_page-content-form-label">
+                            <label for="login_page-content-form-input-field">Đăng nhập</label>
+                            <div id="login_page-content-form-qr-login">
+                                <div id="login_page-content-form-qr-wrap">
+                                    <div id="login_page-content-form-qr-wrap-detail">Đăng nhập với mã QR</div>
+                                </div>
+                                <div id="login_page-content-form-qr">
+                                    <ion-icon name="qr-code-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="login_page-content-form-input">
+                            <div id="login_page-content-form-input-wrap">
+                                <input type="text" name="email" id="login_page-content-form-input-field" placeholder="Email" />
+                            </div>
+                        </div>
+                        <div id="login_page-content-form-pwd">
+                            <div id="login_page-content-form-pwd-wrap">
+                                <input type="password" name="password" id="login_page-content-form-pwd-field" placeholder="Mật khẩu" />
+                            </div>
+                        </div>
+                        <div id="login_page-content-form-btn">
+                            <button type="submit">Đăng nhập</button>
+                            <div id="login_page-content-form-otherLogin">
+                                @if (Route::has('password.request'))
+                                    <a href="{{ route('password.request') }}" target="_blank">
+                                        Quên mật khẩu
+                                    </a>
+                                @endif
+                                <a href="http://" target="_blank" rel="noopener noreferrer">Đăng nhập với SMS</a>
+                            </div>
+                        </div>
+                        <div id="login_page-content-form-pageSep">
+                            <div id="login_page-content-form-pageSep-wrap">
+                                <div class="login_page-content-form-pageSep-line"></div>
+                                <div id="login_page-content-form-pageSep-content">hoặc</div>
+                                <div class="login_page-content-form-pageSep-line"></div>
+                            </div>
+                        </div>
+                        <div id="login_page-content-form-otherMethod">
+                            <div id="login_page-content-form-otherMethod-wrap">
+                                <button class="login_page_content_for_otherMethod" id="login_page-content-for-otherMethod-1">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                    <div id="login_page_content_for_otherMethod-face">Facebook</div>
+                                </button>
+                                <button class="login_page_content_for_otherMethod" id="login_page-content-for-otherMethod-2">
+                                    <ion-icon name="logo-google"></ion-icon>
+                                    <div id="login_page_content_for_otherMethod-google">Google</div>
+                                </button>
+                                <button class="login_page_content_for_otherMethod" id="login_page-content-for-otherMethod-2">
+                                    <ion-icon name="logo-apple"></ion-icon>
+                                    <div id="login_page_content_for_otherMethod-google">Apple</div>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="login_page-content-form-loginSite">
+                            <span>Bạn mới biết đến Shopee? </span>
+                            <a href="{{ route('register') }}" rel="noopener noreferrer">Đăng ký</a>
+                        </div>
+                    </form>
+                </div>
+                <div id="login_page-content-respon"></div>
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-primary-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-primary-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+        </div>
+    </div>
+@endsection
