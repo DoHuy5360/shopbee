@@ -1,4 +1,3 @@
-
 <div class="mainHome_navbar_wrapper">
     <div class="mainHome_navbar">
         {{-- <div class="mainHome_navbar_aboutUs_respon_wrap"></div> --}}
@@ -32,17 +31,34 @@
                         <li class="mainHome_navbar-topic">Hỗ Trợ</li>
                         <li class="mainHome_navbar-topic">Ngôn ngữ</li>
                         @auth
-                        <a href="">
-                            <li class="mainHome_navbar-topic">{{ Auth::user()->name }}</li>
+                            <li class="mainHome_navbar-topic" id="mainHome-navbar-user">
+                                <img id="mainHome-avatar-ion" src="{{ asset(Auth::user()->avatar) }}
+                                " alt="">
+                                <a href="/profile" id="mainHome-profile-avatar">
+                                    <div id="mainHome-user-name">{{ Auth::user()->name }}</div>
+                                </a>
+                                <div id="mainHome-hidden-tramform">
+                                    <div id="mainHome-user-hidden-wrap">
+                                        <div id="mainHome-hidden-option-user">
+                                            <a class="mainHome__action--user" href="{{ route('profile.show', Auth::user()->code) }}">Hồ sơ của tôi</a>
+                                            <a class="mainHome__action--user" href="">Đơn mua</a>
+                                            <form action="{{ route('logout') }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="mainHome__action--user" id="mainHome-logout-btn">Đăng xuất</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        @endauth
+                        @if (Auth::guest())
+                            <a href="{{ route('register') }}">
+                                <li class="mainHome_navbar-topic">Đăng Ký</li>
                             </a>
-        
-                            @endauth
-                        <a href="{{ route('register') }}">
-                            <li class="mainHome_navbar-topic">Đăng Ký</li>
-                        </a>
-                        <a href="{{ route('login') }}">
-                            <li class="mainHome_navbar-topic">Đăng nhập</li>
-                        </a>
+                            <a href="{{ route('login') }}">
+                                <li class="mainHome_navbar-topic">Đăng nhập</li>
+                            </a>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -50,7 +66,7 @@
         <div class="mainHome_navbar_containt">
             <div class="mainHome_shopIcon">
                 <a href="/" class="no_decoration">
-                    <img id="mainHome-Icon" src="{{ asset('assets/imgs/shopbee.png') }}" alt="" />
+                    <img id="mainHome-Icon" src="{{ asset('assets/img/shopbee.png') }}" alt="" />
                 </a>
             </div>
             <div id="mainHone-search-field">

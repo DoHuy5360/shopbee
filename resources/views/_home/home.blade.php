@@ -121,12 +121,12 @@
                     </div>
                     <div id="mainHome-category-tray-wrap">
                         <div id="mainHome-listOfCate">
-                            @foreach ($product_categories as $category)
+                            {{-- @foreach ($product_categories as $category)
                                 <div id="mainHome-listType-1" class="mainHome-listOfType">
                                     <img src="{{ $category->category_image }}" alt="" loading="lazy" />
                                     <span class="mainHome-ListDescrib">{{ $category->category_name }}</span>
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                     </div>
                     <div id="mainHome-category-arrow-right">
@@ -282,11 +282,11 @@
                 <div id="mainHome-card-suggest-wrap">
                     {{-- {{ $test_products }} --}}
                     @foreach ($test_products as $products)
-                        <a href="{{ route('product.show', $products->id) }}" class="mainHome__cardSuggest-padding">
+                        <a href="{{ route('product.show', $products->code) }}" class="mainHome__cardSuggest-padding">
                             <div class="mainHome__cardSuggest-content">
                                 <div class="mainHome__cardSuggest--image">
                                     <div class="mainHome__cardSuggest--label-like">Yêu thích</div>
-                                    <img src="{{ $products->image }}" alt="" />
+                                    <img src="{{ asset($products->path) }}" alt="" />
                                 </div>
                                 <div class="mainHome__cardSuggest--text">
                                     <div class="mainHome__cardSuggest--name">{{ $products->name }}</div>
@@ -296,7 +296,7 @@
                                         </div>
                                         <div class="mainHome__cardSuggest--price-wrap">
                                             <div class="mainHome__cardSuggest--price"><span>₫</span><span>{{ $products->price }}</span></div>
-                                            <span>Đã bán {{ $products->sold }}</span>
+                                            <span>Đã bán ###</span>
                                         </div>
                                     </div>
                                 </div>

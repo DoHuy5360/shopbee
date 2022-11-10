@@ -3,13 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 require_once('functions\convert.php');
-
-class HomeController extends Controller
+class BuyerpageController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
+
+        // return $suggest_products;
         $suggest_products = toObj([
             'name',
             'price',
@@ -85,11 +92,84 @@ class HomeController extends Controller
             ['https://cf.shopee.vn/file/758ede02362e15c261a3c2eb4e130252_xhdpi', '80%'],
             ['https://cf.shopee.vn/file/d5f557dfbc5da10ce85c722bf4d40159_xhdpi', '70%'],
         ]);
+        $test_products = DB::select(
+            "SELECT pi.path, p.name, p.price, p.code
+            FROM products p, product_images pi
+            WHERE p.code = pi.product_code
+            AND pi.index = '0'
+            "
+        );
         return view('_home.home', [
-            'test_products' => $suggest_products,
+            'test_products' => $test_products,
             'product_categories' => $product_categories,
             'products_flash_sale' => $products_flash_sale,
             'malls' => $malls,
         ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
