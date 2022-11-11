@@ -1,4 +1,5 @@
 @extends('layouts.skeleton')
+@section('title', "Thông tin sản phẩm")
 @section('css')
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/header/header-home.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}"> --}}

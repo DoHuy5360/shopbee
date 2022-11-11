@@ -150,11 +150,12 @@
     width: 100%;
 }
 
-.cart_page_product_desc div {
+.cart_page_product_desc {
     width: 220px;
     height: inherit;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: left;
 }
 
 .cart_page_quantity div {
@@ -162,7 +163,6 @@
 }
 
 .cart_page_quantity_btn {
-    outline: none;
     cursor: pointer;
     display: grid;
     place-items: center;
@@ -170,10 +170,16 @@
     width: 32px;
     border: unset;
     background-color: white;
+    outline: unset !important;
 }
 
 .cart_page_quantity_btn:active {
-    background-color: #c5c5c5;
+    color: #c5c5c5;
+}
+.cartPage__item--amount:focus {
+    outline: 3px solid black;
+    outline-offset: 3px;
+    z-index: 3;
 }
 
 .cart_page_quantity div input {
@@ -337,22 +343,32 @@
 .cart_page_actionDel::before {
     content: "Xoá sản phẩm";
     position: absolute;
-    top: -70%;
-    right: -110%;
+    visibility: hidden;
+    opacity: 0;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100px;
     z-index: 10;
-    display: none;
+    color: #c04027;
+    background-color: white;
+    box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+    -webkit-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+    -moz-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+    font-size: 14px;
+    border-radius: 3px;
+    padding: 5px 10px;
+    transition: 500ms;
 }
 
 .cart_page_actionDel:hover::before {
-    border: 1px solid #c5c5c5;
-    color: #c04027;
-    background-color: white;
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .cart_page_actionDel ion-icon {
-    font-size: 30px;
+    font-size: 20px;
+    color: var(--color-4);
 }
 
 .cart_page_actionDel:hover,
@@ -413,7 +429,7 @@
 }
 
 .cart_page_actionAdd {
-    color: #f0582b;
+    color: black;
     font-size: 14px;
 }
 
@@ -441,7 +457,7 @@
     height: 32px;
 }
 
-.cart__set--number-product input {
+.cartPage__item--amount {
     width: 50px;
     height: inherit;
     border: unset;
@@ -587,4 +603,7 @@ ion-icon[name="ticket-outline"] {
 
 ion-icon[name="car-outline"] {
     color: limegreen;
+}
+#scroll-to-top{
+    display: none !important;
 }
