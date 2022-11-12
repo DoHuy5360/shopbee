@@ -46,6 +46,7 @@
     .cart_page_price_wrap_respon {
         grid-column-start: 3;
         grid-row-start: 2;
+        display: none;
     }
 
     .cart_page_btn {
@@ -79,10 +80,6 @@
 
         grid-column-start: 3;
         grid-row-start: 4;
-    }
-
-    .cart_page_price_wrap_respon {
-        display: none;
     }
 
     .cart_page_action_wrap {
