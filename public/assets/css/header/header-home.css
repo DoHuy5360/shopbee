@@ -22,21 +22,21 @@
 #mainHome-user-hidden-wrap {
     position: relative;
 }
-#mainHome-navbar-user{
+#mainHome-navbar-user {
     display: flex;
     gap: 5px;
 }
-#mainHome-navbar-user:hover #mainHome-hidden-tramform{
+#mainHome-navbar-user:hover #mainHome-hidden-tramform {
     transform: scale(1);
 }
-#mainHome-logout-btn{
+#mainHome-logout-btn {
     all: unset;
     color: black;
     padding: 7px 13px;
     white-space: nowrap;
     width: 100%;
 }
-#mainHome-hidden-tramform{
+#mainHome-hidden-tramform {
     position: absolute;
     transition: 100ms ease;
     transform-origin: top;
@@ -243,7 +243,7 @@
     transform: scale(1);
     opacity: 1;
 }
-#mainHome-cart-empty-wrap{
+#mainHome-cart-empty-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,7 +253,7 @@
     border-radius: inherit;
     padding: 100px 0;
 }
-#mainHome-cart-empty-wrap img{
+#mainHome-cart-empty-wrap img {
     width: 100px;
     aspect-ratio: 1;
 }
@@ -338,4 +338,20 @@
 }
 #mainHome-cart-view-btn-respon {
     display: none;
+}
+#headerHome-display-cart-number {
+    color: var(--color-1);
+    border: 2px solid var(--color-1);
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: -5px;
+    font-weight: bold;
+    right: -15px;
+    font-size: 12px;
+    z-index: 2;
+    height: 24px;
+    width: 30px;
+    display: grid;
+    place-items: center;
 }

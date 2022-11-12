@@ -67,10 +67,6 @@ Route::resource('/profile', UserController::class);
 
 Route::resource('/cart', CartController::class);
 
-Route::get('/cart', function () {
-    return view('_cart.cart');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

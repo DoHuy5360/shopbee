@@ -63,20 +63,39 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
-        $get_cart = DB::select(
-            "SELECT p.name, p.price, pi.path
-            FROM carts c, products p, product_images pi
-            WHERE c.user_code = '$id'
-            AND c.product_code = p.code
-            AND pi.product_code = p.code
-            AND pi.index = '0'
-            "
-        );
-        return response()->json([
-            'get_cart' => $get_cart
-        ]);
+        $action = $request->query("action");
+        if ($action === "watch") {
+            $get_itm_cart = DB::select(
+                "SELECT p.name, p.price, pi.path
+                FROM carts c, products p, product_images pi
+                WHERE c.user_code = '$id'
+                AND c.product_code = p.code
+                AND pi.product_code = p.code
+                AND pi.index = '0'
+                "
+
+            );
+            return view('_cart.cart_item', [
+                "get_itm_cart" => $get_itm_cart,
+            ]);
+        } else {
+            $get_itm_cart = DB::select(
+                "SELECT c.code AS cart_code, u.name AS user_name, *
+                FROM users u, carts c, products p, product_images pi
+                WHERE c.user_code = '$id'
+                AND u.code = p.user_code
+                AND c.product_code = p.code
+                AND pi.product_code = p.code
+                AND pi.index = '0'
+                "
+            );
+            // return $get_itm_cart;
+            return view('_cart.cart', [
+                'get_itm_cart' => $get_itm_cart,
+            ]);
+        }
     }
 
     /**
@@ -110,6 +129,13 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::delete(
+            "DELETE FROM carts
+            WHERE code = '$id'
+            "
+        );
+        return response()->json([
+            "status" => 200
+        ]);
     }
 }

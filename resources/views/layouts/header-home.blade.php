@@ -92,6 +92,7 @@
                     <ion-icon name="cart">
                     </ion-icon>
                 </a>
+                <div id="headerHome-display-cart-number"></div>
                 <ion-icon name="cart-outline">
                 </ion-icon>
                 <div id="mainHome-cart-hidden">
@@ -104,7 +105,7 @@
                         <input type="hidden" id="mainHome-user-code" name="" value="{{ Auth::user()->code }}">
                         <div id="mainHome-cart-product-title">Sản phẩm mới thêm</div>
                         <div id="mainHome-cart-list-product"></div>
-                        <a href="/cart" id="mainHome-cart-view-btn">Xem giỏ hàng</a>
+                        <a href="{{ route('cart.show', Auth::user()->code) }}" id="mainHome-cart-view-btn">Xem giỏ hàng</a>
                     @endif
                 </div>
             </div>

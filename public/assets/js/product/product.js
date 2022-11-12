@@ -47,6 +47,20 @@ $(document).ready(function () {
                         },
                     });
                 } else {
+                    $.ajax({
+                        type: "GET",
+                        url: `/cart/${$("#mainHome-user-code").val()}?action=watch`,
+                        success: function (response) {
+                            const number_item = $(
+                                "#headerHome-display-cart-number"
+                            );
+                            const wrap_item = $("#mainHome-cart-list-product");
+                            wrap_item.html(response);
+                            number_item.text(
+                                $(".mainHome__cart--product-wrap").length
+                            );
+                        },
+                    });
                     $("#product-alert-wrap").css("display", "flex");
                     setTimeout(() => {
                         $("#product-alert-wrap").css("display", "none");
