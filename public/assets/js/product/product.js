@@ -49,7 +49,7 @@ $(document).ready(function () {
                 } else {
                     $.ajax({
                         type: "GET",
-                        url: `/cart/${$("#mainHome-user-code").val()}`,
+                        url: `/cart/${$("#mainHome-user-code").val()}?action=watch`,
                         success: function (response) {
                             const number_item = $(
                                 "#headerHome-display-cart-number"

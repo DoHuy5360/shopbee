@@ -8,7 +8,13 @@
     <script src="{{ asset('assets/js/cart/cart.js') }}"></script>
 @endsection
 @section('content')
-    <input type="hidden" id="cartPage-csrf" value="{{csrf_token() }}">
+    <div id="cart-page-backdrop">
+        <div id="cartPage-limit-alert" open>
+            <div>Rất tiếc, bạn chỉ có thể mua <strong id="cart-page-amount-item"></strong> sản phẩm này.</div>
+            <button id="cart-page-close-alert" type="button">OK</button>
+        </div>
+    </div>
+    <input type="hidden" id="cartPage-csrf" value="{{ csrf_token() }}">
     <div id="cart-search-voucher">
         <div id="cart-header-wrap">
             <div class="mainHome_navbar_aboutUs">
@@ -106,7 +112,7 @@
                                 <input type="checkbox" name="" id="" />
                             </div>
                             <div class="cart_page_name_product">
-                                <div>Công ty trách nhiệm hữu hạn vài thành viên</div>
+                                <div>Đại diện cung cấp <strong>{{ $item->user_name }}</strong></div>
                                 <ion-icon style="color: red; font-size: 1.4rem" name="chatbubbles-sharp"></ion-icon>
                             </div>
                         </div>
@@ -119,7 +125,7 @@
                                 </div>
                                 <div class="cart_page_infor_warp">
                                     <div class="cart_page_btn">
-                                        <input type="checkbox" name="" id="" />
+                                        <input class="cartPage__choose--item" type="checkbox" name="" id="" data-cart-select="{{ $item->cart_code }}" />
                                     </div>
                                     <div class="cart_page_name_product">
                                         <div class="cart_page_product_img">
@@ -143,14 +149,13 @@
                                     </div>
                                     <div class="cart__set--number-product-wrap">
                                         <div class="cart__set--number-product">
-                                            <button class="cart_page_quantity_btn" class="cart_page_quantity_btn_minus" type="button">-</button>
-                                            <input class="cartPage__item--amount" type="text" value="1" />
-                                            <button class="cart_page_quantity_btn" class="cart_page_quantity_btn_plus" type="button">+</button>
+                                            <button class="cart_page_quantity_btn cart_page_quantity_btn_minus" type="button">-</button>
+                                            <input class="cartPage__item--amount" type="number" value="1" min="1" max="{{ $item->storage }}" data-item-code="{{ $item->cart_code }}" />
+                                            <button class="cart_page_quantity_btn cart_page_quantity_btn_plus" type="button">+</button>
                                         </div>
                                     </div>
-                                    <div class="cart_page_price_wrap_respon">
-                                        <div style="color: red">900.000</div>
-                                    </div>
+                                    <div class="cart_page_price_wrap_respon" data-item-code-price="{{ $item->cart_code }}" data-origin-price="{{ $item->price }}"
+                                        data-new-price="{{ $item->price }}">{{ number_format((int) $item->price) }}</div>
                                     <div class="cart_page_action_wrap_respon">
                                         <div class="cart_page_action_wrap">
                                             <div class="cart_page_actionDel" data-item-code="{{ $item->cart_code }}">
@@ -193,7 +198,7 @@
                             <input type="checkbox" name="" id="" />
                         </div>
                         <div class="cart_page_name_product">
-                            <div>Công ty trách nhiệm hữu hạn vài thành viên</div>
+                            <div>Đại diện cung cấp ###</div>
                             <ion-icon style="color: red; font-size: 1.4rem" name="chatbubbles-sharp"></ion-icon>
                         </div>
                     </div>
@@ -399,7 +404,7 @@
                             <div id="cart-page-sticky-coin-amount-display">Bạn chưa chọn sản phẩm</div>
                         </div>
                         <div id="cart-page-sticky-coin-amount">
-                            <span>₫<span>0</span></span>
+                            <span>₫ <span id="cart-page-total-price">0</span></span>
                         </div>
                     </div>
                     <div id="cart-page-sticky-function">

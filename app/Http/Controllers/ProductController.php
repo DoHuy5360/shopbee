@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\ProductVideo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 require_once('functions/convert.php');
@@ -44,6 +45,7 @@ class ProductController extends Controller
 
         $addProduct = new Product();
         $addProduct->code = $product_temp_code;
+        $addProduct->user_code = Auth::user()->code;
         $addProduct->name = $request->product_name;
         $addProduct->description = $request->product_description;
         $addProduct->category = $request->product_category;

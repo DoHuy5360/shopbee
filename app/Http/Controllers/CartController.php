@@ -82,9 +82,10 @@ class CartController extends Controller
             ]);
         } else {
             $get_itm_cart = DB::select(
-                "SELECT c.code AS cart_code, *
-                FROM carts c, products p, product_images pi
+                "SELECT c.code AS cart_code, u.name AS user_name, *
+                FROM users u, carts c, products p, product_images pi
                 WHERE c.user_code = '$id'
+                AND u.code = p.user_code
                 AND c.product_code = p.code
                 AND pi.product_code = p.code
                 AND pi.index = '0'
