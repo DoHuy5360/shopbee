@@ -32,6 +32,7 @@
                 <div id="login_page-content-form">
                     <form action="{{ route('login') }}" method="POST" id="login_page-content-form-logins">
                         @csrf
+                        <input type="hidden" name="previous_page" value="{{ $previous_page }}">
                         <div id="login_page-content-form-label">
                             <label for="login_page-content-form-input-field">Đăng nhập</label>
                             <div id="login_page-content-form-qr-login">

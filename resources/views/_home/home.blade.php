@@ -121,12 +121,12 @@
                     </div>
                     <div id="mainHome-category-tray-wrap">
                         <div id="mainHome-listOfCate">
-                            {{-- @foreach ($product_categories as $category)
+                            @foreach ($product_categories as $category)
                                 <div id="mainHome-listType-1" class="mainHome-listOfType">
                                     <img src="{{ $category->category_image }}" alt="" loading="lazy" />
                                     <span class="mainHome-ListDescrib">{{ $category->category_name }}</span>
                                 </div>
-                            @endforeach --}}
+                            @endforeach
                         </div>
                     </div>
                     <div id="mainHome-category-arrow-right">

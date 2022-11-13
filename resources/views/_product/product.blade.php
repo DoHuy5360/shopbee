@@ -1,4 +1,5 @@
 @extends('layouts.skeleton')
+@section('title', "Thông tin sản phẩm")
 @section('css')
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/header/header-home.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}"> --}}
@@ -10,7 +11,20 @@
     <script src="{{ asset('assets/js/product/product.js') }}"></script>
 @endsection
 @section('content')
+    <div id="product-alert-wrap">
+        <div id="product-alert-icon">
+            <ion-icon name="checkmark-outline"></ion-icon>
+        </div>
+        <div id="product-alert-mesage">Sản phẩm đã được thêm vào Giỏ hàng</div>
+    </div>
     @include('layouts.header-home')
+    <form action="{{ route('cart.store') }}" id="theForm" method="POST">
+        @csrf
+        @auth
+            <input name="buyer_code" type="hidden" value="{{ Auth::user()->code }}">
+        @endauth
+        <input name="product_code" type="hidden" value="{{ $get_pdt->code }}">
+    </form>
     <div id="product-page-content">
         <div id="product-body">
             <div class="product_content" id="product-img">

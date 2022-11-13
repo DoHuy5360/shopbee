@@ -15,9 +15,13 @@ class AuthenticatedSessionController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('auth.login');
+        $pre_page_param = $request->query("pre_page");
+        $previous_page =  isset($pre_page_param) ? $request->query("pre_page") : null;
+        return view('auth.login', [
+            'previous_page' => $previous_page,
+        ]);
     }
 
     /**
@@ -31,8 +35,8 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $dest = isset($request->previous_page) ? $request->previous_page : RouteServiceProvider::HOME;
+        return redirect()->intended($dest);
     }
 
     /**

@@ -34,6 +34,7 @@
     color: black;
     padding: 7px 13px;
     white-space: nowrap;
+    width: 100%;
 }
 #mainHome-hidden-tramform {
     position: absolute;
@@ -71,7 +72,7 @@
 .mainHome__action--user:hover {
     background-color: var(--gray-soft) !important;
     color: var(--color-6) !important;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 #mainHome-avatar-ion {
     width: 20px;
@@ -240,12 +241,25 @@
 
 .mainHome_personal:hover > #mainHome-cart-hidden {
     transform: scale(1);
-    visibility: visible;
+    opacity: 1;
 }
-
+#mainHome-cart-empty-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 15px;
+    border-radius: inherit;
+    padding: 100px 0;
+}
+#mainHome-cart-empty-wrap img {
+    width: 100px;
+    aspect-ratio: 1;
+}
 #mainHome-cart-hidden {
     transform: scale(0);
-    visibility: hidden;
+    opacity: 0;
     transform-origin: top right;
     transition: 200ms;
     background-color: white;
@@ -255,6 +269,9 @@
     left: -355px;
     border-radius: 2px;
     box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+    width: 408px;
+    /* aspect-ratio: 1; */
+    height: fit-content;
 }
 
 #mainHome-cart-hidden::before {
@@ -321,4 +338,20 @@
 }
 #mainHome-cart-view-btn-respon {
     display: none;
+}
+#headerHome-display-cart-number {
+    color: var(--color-1);
+    border: 2px solid var(--color-1);
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: -5px;
+    font-weight: bold;
+    right: -15px;
+    font-size: 12px;
+    z-index: 2;
+    height: 24px;
+    width: 30px;
+    display: grid;
+    place-items: center;
 }
