@@ -143,7 +143,70 @@
                                             </div>
                                             <div class="cart_page_about_choice">M</div>
                                         </div>
-                                    </div>
+                                        <div class="cart_page_option_items">
+                                            <div class="cart_page_option_items_wrap">
+                                                <div class="cart_page_option_fix">
+                                                    <div class="cart_page_option_fix_title">
+                                                        <span>Màu</span>:
+                                                    </div>
+                                                    <div class="cart_page_option_choice">
+                                                        <div class="cart_checkout--method-wrap">
+                                                            <label for="cart-page-payment-feature-1">
+                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1" value="white" />
+                                                                <span>Trắng</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="cart_checkout--method-wrap">
+                                                            <label for="cart-page-payment-feature-2">
+                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-2" value="Black" />
+                                                                <span>Đen</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="cart_checkout--method-wrap">
+                                                            <label for="cart-page-payment-feature-3">
+                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-3" value="Pink" />
+                                                                <span>Hồng</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_page_option_fix">
+                                                    <div class="cart_page_option_fix_title">
+                                                        <span>Size</span>:
+                                                    </div>
+                                                    <div class="cart_page_option_choice">
+                                                        <div class="cart_checkout--method-wrap">
+                                                            <label for="cart-page-payment-feature-1">
+                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-0" value="small" />
+                                                                <span>S</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="cart_checkout--method-wrap">
+                                                            <label for="cart-page-payment-feature-1">
+                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1" value="medium" />
+                                                                <span>M</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="cart_checkout--method-wrap">
+                                                            <label for="cart-page-payment-feature-2">
+                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-2" value="Lagre" />
+                                                                <span>L</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="cart_checkout--method-wrap">
+                                                            <label for="cart-page-payment-feature-3">
+                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-3" value="XLarge" />
+                                                                <span>XL</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="cart_page_option_submit_btn_wrap">
+                                                    Xác nhận
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div> 
                                     <div class="cart_page_pricePer_wrap_respon">
                                         <div>₫ <span>{{ number_format((int) $item->price) }}</span></div>
                                     </div>
@@ -262,15 +325,41 @@
                                                     <span>Size</span>:
                                                 </div>
                                                 <div class="cart_page_option_choice">
-                                                    <input type="radio" name="S" id="" class="cart_page_option_fix_btn">
-                                                    <input type="radio" name="M" id="" class="cart_page_option_fix_btn">
-                                                    <input type="radio" name="L" id="" class="cart_page_option_fix_btn">
-                                                    <input type="radio" name="XL" id="" class="cart_page_option_fix_btn">
+                                                    <div class="cart_checkout--method-wrap">
+                                                        <label for="cart-page-payment-feature-1">
+                                                            <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-0" value="small" />
+                                                            <span>S</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="cart_checkout--method-wrap">
+                                                        <label for="cart-page-payment-feature-1">
+                                                            <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1" value="medium" />
+                                                            <span>M</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="cart_checkout--method-wrap">
+                                                        <label for="cart-page-payment-feature-2">
+                                                            <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-2" value="Lagre" />
+                                                            <span>L</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="cart_checkout--method-wrap">
+                                                        <label for="cart-page-payment-feature-3">
+                                                            <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-3" value="XLarge" />
+                                                            <span>XL</span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
+<<<<<<< HEAD
+                                            <button type="submit" class="cart_page_option_submit_btn_wrap">
+                                                Xác nhận
+                                            </button>
+=======
                                             <div id="cart_page_option_submit_btn_wrap">
 
                                             </div>
+>>>>>>> master
                                         </div>
                                     </div>
                                 </div>
@@ -424,7 +513,7 @@
                             <div style="color: red">Lưu vào mục Yêu thích</div>
                         </div>
                         <div id="cart-page-sticky-function-sumCost">
-                            <div>Tổng thanh toán (<span>0</span>) sản phẩm: ₫<span>0</span></div>
+                            <div>Tổng thanh toán (<span>0</span>)</div>
                         </div>
                         <div id="cart-page-sticky-function-btnBuy">
                             <a href="/purchase" id="cart-page-go-buy">

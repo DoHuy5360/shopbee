@@ -16,7 +16,7 @@
     #cart-search-voucher,
     #cart-search-warp {
         width: 100%;
-        outline: 1px solid red;
+        /* overflow: hidden; */
     }
 
     #cart-search-inputVoucher {
@@ -38,36 +38,44 @@
     }
 
     .cart_page_infor_warp {
-        grid-template-columns: 50px 1fr 1fr;
+        grid-template-columns: 10% 90%;
         grid-template-rows: repeat(4, auto);
+        gap: 8px;
         width: 100%;
+        /* overflow: hidden; */
     }
 
-    .cart_page_price_wrap_respon {
-        grid-column-start: 3;
+    .cart_page_pricePer_wrap_respon {
+        grid-column-start: 2;
         grid-row-start: 2;
-        display: none;
+        padding-left: 90px;
     }
 
     .cart_page_btn {
         grid-column-start: 1;
     }
 
-    .cart_page_pricePer_wrap_respon {
-        justify-self: start;
-    }
-
     .cart_page_name_product {
         justify-self: start;
         grid-column-start: 2;
         grid-row-start: 1;
-        grid-row-end: 4;
+        grid-row-end: 2;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .cart_page_pricePer_wrap_respon {
+        justify-self: start;
+        grid-column-start: 2;
+        grid-row-start: 3;
+        padding-left: 90px;
     }
 
     .cart_page_option_wrap_respon {
         justify-self: start;
-        grid-column-start: 3;
-        grid-row-start: 3;
+        grid-column-start: 2;
+        grid-row-start: 4;
+        padding-left: 90px;
     }
 
     .cart_page_about_option {
@@ -77,9 +85,9 @@
 
     .cart__set--number-product-wrap {
         justify-self: start;
-
-        grid-column-start: 3;
-        grid-row-start: 4;
+        grid-column-start: 2;
+        grid-row-start: 5;
+        padding-left: 90px;
     }
 
     .cart_page_action_wrap {
@@ -135,5 +143,39 @@
     #cart-page-sticky-function-delInactive,
     #cart-page-sticky-function-saveToLike {
         display: none;
+    }
+
+    #cart-page-sticky-function,
+    #cart-page-sticky-voucher,
+    #cart-page-sticky-coin {
+        gap: 5px;
+        padding: 15px 0;
+    }
+
+    #cart-page-sticky-coin-check {
+        width: 100%;
+        gap: 0;
+    }
+
+    #cart-page-sticky-coin-check > div:nth-child(3) {
+        display: none;
+    }
+
+    #cart-page-sticky-coin-check input {
+        display: none;
+    }
+    #cart-page-sticky-function-btnBuy #cart-page-go-buy button {
+        width: 100px;
+    }
+    .cart_page_product_prize_infor {
+        padding: 0 10px;
+    }
+
+    #cart-page-sticky-block ion-icon {
+        margin: 0 10px 0 0;
+    }
+
+    #cart-page-sticky-voucher-input {
+        text-align: right;
     }
 }
