@@ -5,14 +5,19 @@
     --margin-space: 15px auto;
     --color-1: #191a21;
     --color-2: #ffd02e;
-    --color-3: #FC5931;
-    --color-4: #EE4D2D;
+    --color-3: #fc5931;
+    --color-4: #ee4d2d;
     --color-5: #2d77dd;
-    --color-6: #2ECAB5;
+    --color-6: #2ecab5;
     --gray-soft: #f5f5f5;
     --gray-light: #fbfbfb;
     --gray-hard: #939393;
     --gray-hard-2: #0000008a;
+}
+
+.add__color--gray {
+    color: #bbc1d3;
+    font-size: 14px;
 }
 
 * {
@@ -23,11 +28,11 @@
 }
 
 .logo__color--orange {
-    color: #F1582C;
+    color: #f1582c;
 }
 
 .logo__color--yellow {
-    color: #F4B528;
+    color: #f4b528;
 }
 
 .shadow__text {
