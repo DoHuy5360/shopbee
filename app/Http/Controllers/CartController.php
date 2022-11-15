@@ -75,7 +75,6 @@ class CartController extends Controller
                 AND pi.product_code = p.code
                 AND pi.index = '0'
                 "
-
             );
             return view('_cart.cart_item', [
                 "get_itm_cart" => $get_itm_cart,

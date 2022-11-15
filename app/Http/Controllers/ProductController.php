@@ -41,6 +41,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        return $request;
         $product_temp_code = genCode(52);
 
         $addProduct = new Product();
