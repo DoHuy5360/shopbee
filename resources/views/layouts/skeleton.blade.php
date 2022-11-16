@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous" />
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
     <link rel="stylesheet" href="{{ asset('assets/css/_root.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/header/header-home.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/header/header-home-respon.css') }}">
-
     <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home-respon.css') }}">
 

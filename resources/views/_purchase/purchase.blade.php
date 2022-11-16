@@ -2,12 +2,13 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase_respon.css') }}">
-
 @endsection
 @section('content')
-    <div id="purchase-page-containt">
-        <div id="purchage-header-wrap">
-            <div id="purchage-header-navbar-wrap">
+
+<div id="purchase-page-containt">
+    <div id="purchase-page-payment-method-about-wrap-respon" class="purchase_page_payment_wrap_hidden"></div>
+    <div id="purchage-header-wrap">
+        <div id="purchage-header-navbar-wrap">
                 <div class="mainHome_navbar_aboutUs">
                     <div class="mainHome_navbar_about_topic">
                         <ul>
@@ -68,15 +69,18 @@
                             <div class="purchase_page_product_name">
                                 <div>Sản Phẩm</div>
                             </div>
-                            <div class="purchase_page_product_about add__color--gray"></div>
-                            <div class="purchase_page_product_price add__color--gray">
-                                <div>Đơn Giá</div>
-                            </div>
-                            <div class="purchase_page_product_quantity add__color--gray">
-                                <div>Số Lượng</div>
-                            </div>
-                            <div class="purchase_page_product_priceSum add__color--gray">
-                                <div>Thành Tiền</div>
+                            <div class="purchase_page_product_detail_wrapper">
+                                <div class="purchase_page_product_name_title"></div>
+                                <div class="purchase_page_product_about add__color--gray"></div>
+                                <div class="purchase_page_product_price add__color--gray">
+                                    <div>Đơn Giá</div>
+                                </div>
+                                <div class="purchase_page_product_quantity add__color--gray">
+                                    <div>Số Lượng</div>
+                                </div>
+                                <div class="purchase_page_product_priceSum add__color--gray">
+                                    <div>Thành Tiền</div>
+                                </div>
                             </div>
                         </div>
                         <div class="purchase_page_productCompany_chat">
@@ -94,19 +98,22 @@
                                     <img class="purchase_page_product_name_img" src="https://i.dailymail.co.uk/1s/2020/01/21/22/23701324-7913735-image-a-19_1579646579999.jpg" alt=""
                                         srcset="" />
                                 </div>
+                            </div>
+                            <div class="purchase_page_product_detail_wrapper">
                                 <div class="purchase_page_product_name_title">100% Thảo Dược Từ Mỹ. Được Bộ Y Tế Chứng Nhận. Tư Vấn Bệnh Và Giao Thuốc Miễn Phí. Thảo Dược Tiêu Chuẩn Mỹ 100% Thảo Dược Từ
                                     Mỹ. Được Bộ Y Tế Chứng Nhận. Tư Vấn Bệnh Và Giao Thuốc Miễn Phí. Thảo Dược Tiêu Chuẩn Mỹ 100% Thảo Dược Từ Mỹ. Được Bộ Y Tế Chứng Nhận. Tư Vấn Bệnh Và Giao Thuốc Miễn
-                                    Phí. Thảo Dược Tiêu Chuẩn Mỹ</div>
-                            </div>
-                            <div class="purchase_page_product_about">Loại: Hoa cúc trắng + Hộp</div>
-                            <div class="purchase_page_product_price">
-                                <div>₫18.500</div>
-                            </div>
-                            <div class="purchase_page_product_quantity">
-                                <div>1</div>
-                            </div>
-                            <div class="purchase_page_product_priceSum">
-                                <div>₫18.500</div>
+                                    Phí. Thảo Dược Tiêu Chuẩn Mỹ
+                                </div>
+                                <div class="purchase_page_product_about">Loại: Hoa cúc trắng + Hộp</div>
+                                <div class="purchase_page_product_price">
+                                    <div>₫18.500</div>
+                                </div>
+                                <div class="purchase_page_product_quantity">
+                                    <div>1</div>
+                                </div>
+                                <div class="purchase_page_product_priceSum">
+                                    <div>₫18.500</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -157,7 +164,13 @@
             <div id="purchase-page-payment-wrap">
                 <div id="purchase-page-payment-method">
                     <div id="purchase-page-payment-method-title">Phương thức thanh toán <span class="required__star--red">*</span></div>
-                    <div id="purchase-page-payment-method-about">
+                    <div id="purchase-page-payment-method-about" class="purchase_page_payment_popDown">
+                        <div id="purchase-page-payment-method-hidden">
+                            <div>Phương thức thanh toán</div>
+                            <div id="purchase-page-payment-method-hidden-close">
+                                <i class="fa fa-remove"></i>
+                            </div>
+                        </div>
                         <div class="purchage__checkout--method-wrap">
                             <label class="de" for="purchase-page-payment-shopbeePay">
                                 <input class="purchage__check--method" type="radio" name="checkout-type" id="purchase-page-payment-shopbeePay" value="ví shopbeePay" />
@@ -198,5 +211,6 @@
             </div>
         </div>
     </div>
-    @include('layouts.footer-home')
+    <script src="{{ asset('assets/js/purchase/purchase_respon.js') }}"></script>
+
 @endsection

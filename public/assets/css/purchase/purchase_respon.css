@@ -1,15 +1,143 @@
 @media screen and (max-width: 1080px) {
     #purchase-page-containt {
         width: 100%;
-        overflow: hidden;
+    }
+    #scroll-to-top-respon {
+        display: none;
+    }
+    #purchage-header-navbar-wrap {
+        display: none;
+    }
+
+    #purchage-header-wrap {
+        height: fit-content;
+        display: block;
+    }
+
+    #purchage-logo-title-wrap {
+        text-align: center;
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+
+    #purchage-title {
+        margin: 0;
+        padding: 0;
+        height: 44px;
+    }
+
+    #purchase-page-wrap {
+        margin: 0%;
+        gap: 8px;
     }
 
     .purchase_page_product_chatFunct {
-        display: block;
+        display: flex;
+        padding: 0px 12px;
+        align-items: center;
+        height: fit-content;
+        justify-content: space-between;
+        background-color: #fff;
+    }
+
+    .purchase_page_product_chatFunct label {
+        margin: 0;
+    }
+
+    .purchase_page_product_chatInput {
+        outline: none;
+        height: 50px;
+        border: none;
+        width: 200px;
+        text-align: right;
+    }
+
+    .purchase_page_product_chatInput::placeholder {
+        text-align: right;
+    }
+    #purchage-logo-title-wrap a {
+        display: none;
+    }
+
+    #purchase-page-address-title {
+        transform: translateX(-20px);
+        margin: auto;
+    }
+
+    #purchase-page-address {
+        padding: 17px;
+        position: relative;
+    }
+    #purchage-letter-img {
+        bottom: 0%;
+        top: auto;
+        left: 0;
+        height: 5.6px;
+        width: 100%;
+        background-size: unset;
+        background-position-x: -30px;
+        background-image: repeating-linear-gradient(
+            45deg,
+            #6fa6d6,
+            #6fa6d6 15px,
+            transparent 0,
+            transparent 20px,
+            #f18d9b 0,
+            #f18d9b 35px,
+            transparent 0,
+            transparent 40px
+        );
+    }
+
+    #purchase-page-address-title > div {
+        font-size: 1rem;
+    }
+
+    #purchase-page-address {
+        height: fit-content;
+    }
+
+    #purchase-page-customerInfor {
+        flex-direction: column;
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    #purchase-page-infor {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #purchage-address-default {
+        display: none;
+    }
+
+    #purchase-page-address-detail {
+        display: flex;
+        width: fit-content;
+        white-space: unset;
+        overflow: auto;
+    }
+
+    #purchase-page-address::before {
+        content: "\250F";
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        font-size: 1.2rem;
+        transform: rotate(130deg) translateY(5px);
+    }
+
+    #purchase-page-customInfor input {
+        display: none;
     }
 
     .purchase_page_product_otherFunction {
-        display: block;
+        display: flex;
+        gap: 2px;
+        flex-direction: column-reverse;
+        background-color: #f6f6f6;
     }
 
     #purchase-page-prodcuctTilte {
@@ -19,33 +147,61 @@
     .purchase_page_product_transportFunct {
         grid-template-columns: repeat(4, calc(100% / 4));
         grid-template-rows: repeat(2, auto);
+        background-color: #f7fffe;
+        border-top: 1px solid #b4e5de;
+        border-bottom: 1px solid #b4e5de;
+        padding: 14px 12px;
+        position: relative;
     }
 
     .purchase_page_product_transTitle {
-        /* grid-column-start: 1; */
-        grid-column: 1/1;
+        grid-column: span 4;
         grid-row: 1/2;
-        /* grid-row-start: 1; */
+        border-bottom: 2px solid rgba(0, 0, 0, 0.09);
+        margin-bottom: 14px;
     }
 
     .purchase_page_product_transDetail {
         grid-row: 2/3;
-        grid-column: 1/1;
+        grid-column: 1/3;
     }
 
     .purchase_page_product_transChange {
         grid-row: 2/3;
         grid-column: 2/3;
+        display: none;
+    }
+
+    .ws-nowrap,
+    .purchage__trans--property {
+        white-space: unset;
+    }
+
+    .purchage__trans--property:last-child {
+        color: #000;
     }
 
     .purchase_page_product_transPrice {
-        grid-row: 2/3;
-        grid-column: 3/4;
+        grid-row: 2;
+        grid-column: 4/5;
+        justify-self: flex-start;
+        align-self: center;
+    }
+
+    .purchase_page_product_transPrice::after {
+        content: "\250F";
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        font-size: 1.2rem;
+        transform: rotate(130deg);
     }
 
     .purchase_page_productView_detail {
+        gap: 10px;
         width: 100%;
-        display: block;
+        display: flex;
+        background-color: #f6f6f6;
     }
 
     #purchase-page-payment-wrap {
@@ -53,7 +209,13 @@
     }
 
     .purchage__product--info-wrap {
-        background-color: #F6F6F6;
+        background-color: #fff;
+        padding: 0%;
+    }
+
+    .purchage__product--info-wrap > div {
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
     .purchase_page_product_priceSum {
@@ -63,5 +225,227 @@
     .purchase_page_product_quantity,
     .purchase_page_product_price {
         justify-content: flex-end;
+    }
+
+    .purchase_page_message {
+        display: none;
+    }
+    .purchase_page_productView_company {
+        width: calc(100% / 1.4);
+        background-color: #fff;
+    }
+    .purchase_page_productView_company div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .purchase_page_product_detail_wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        color: #9b9b9b;
+    }
+    .purchase_page_product_name_title {
+        grid-column: span 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: inherit;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .purchase_page_product_about {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .purchase_page_product_quantity {
+        grid-column-start: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .purchase_page_product_quantity::before {
+        content: "x";
+    }
+    .purchase_page_product_price {
+        grid-column-start: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    .purchase_page_product_sumPrice {
+        justify-content: space-between;
+        padding: 0 14px;
+        margin: 0;
+        width: 100%;
+    }
+    .purchase_page_product_sumDetail {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        width: 100%;
+    }
+
+    .purchase_page_product_sumDetail span:last-child {
+        font-size: 1rem;
+    }
+    #purchase-page-shop-voucherAndCoin > div {
+        padding: 10px 12px;
+    }
+    #purchage-coin-current {
+        display: none;
+    }
+    #purchase-page-payment-wrap > div {
+        padding: 0 12px;
+    }
+    #purchase-page-payment-method {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+    }
+    #purchase-page-payment-method-title {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+        padding-bottom: 15px;
+    }
+    #purchase-page-payment-method-title::before {
+        content: "\f155";
+        font-family: "FontAwesome";
+        margin: 0 10px 0 5px;
+        text-align: center;
+        color: red;
+        font-weight: bold;
+        vertical-align: middle;
+    }
+    #purchase-page-payment-method-title::after {
+        content: "Thanh toán dễ dàng hơn với Ví ShopBeePay !";
+        display: block;
+        width: 100%;
+        background-color: #fef7e7;
+        color: #f6a700;
+        border: 0.5px solid #f6a700;
+        margin-top: 15px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    #purchase-page-payment-method-about {
+        display: block;
+        height: 80%;
+    }
+    .purchase_page_payment_popDown {
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        z-index: 2;
+        transform: translateY(100%);
+        transition: 0.5s;
+        background-color: #fff;
+    }
+    .purchase_page_payment_popUp {
+        -ms-transform: translateY(0%); /* IE 9 */
+        -webkit-transform: translateY(0%); /* Chrome, Safari, Opera */
+        transform: translateY(0%);
+    }
+    #purchase-page-payment-method-about-wrap-respon {
+        width: 100%;
+        padding: 0%;
+        margin: 0%;
+        background-color: rgb(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        z-index: 2;
+    }
+    #purchase-page-payment-method-hidden {
+        width: 100%;
+        height: 2.75rem;
+        background: #fbfbfb;
+        padding: 0 0.9375rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+        max-width: 37.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    #purchase-page-payment-method-hidden-close {
+        width: 1.5rem;
+        aspect-ratio: 1;
+        border-radius: 0.75rem;
+        border: 1px solid #ee4d2d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 15px;
+        top: 0.625rem;
+    }
+    #purchase-page-payment-method-about label {
+        width: 100%;
+        padding: 15px;
+        margin: 0%;
+    }
+    .purchase_page_payment_wrap_hidden {
+        display: none;
+    }
+    #purchase-page-payment-sumbit-containt {
+        gap: 0;
+        padding: 0;
+        text-align: left;
+    }
+    #purchase-page-payment-sumbit-containt div:nth-child(2n) {
+        text-align: right;
+    }
+    #purchase-page-payment-sumbit-wrap {
+        display: block;
+        width: 100%;
+    }
+    #purchase-page-payment-sumbitSum span {
+        font-size: 1rem;
+    }
+    #purchage-page-warn-policy {
+        display: block;
+    }
+    #purchase-page-payment-sumbitBtn::before {
+        content: "\f1ea";
+        font-family: "FontAwesome";
+        color: #f6a700;
+        float: left;
+        margin-right: 10px;
+    }
+    #purchase-page-payment-sumbitBtn {
+        float: left;
+        align-items: unset;
+        border-top: 8px solid #e9e4e484;
+    }
+    #purchase-page-payment-sumbitButton {
+        position: fixed;
+        bottom: 0%;
+        right: 0%;
+        width: 120px;
+        height: fit-content;
+        padding: 16px 24px;
+        z-index: 2;
+    }
+    #purchase-page-payment-sumbitSum {
+        position: fixed;
+        bottom: 0%;
+        right: calc(130px);
+        z-index: 2;
+    }
+    #purchase-page-payment-sumbitTransTitle {
+        position: fixed;
+        width: calc(100% - 120px);
+        height: 56px;
+        bottom: 0%;
+        background-color: #fff;
+        padding: 3px 5px 32px;
+        right: calc(120px);
+        z-index: 2;
+        text-align: right;
     }
 }
