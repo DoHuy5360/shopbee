@@ -358,7 +358,7 @@ select:invalid {
 }
 #seller-product-classification-type1,
 #seller-product-classification-type2 {
-    /* display: none; */
+    display: none;
 }
 .sellerProduct__classification--inp-wrap {
     display: flex;
@@ -697,6 +697,7 @@ select:invalid {
     min-height: 600px;
     z-index: 10;
     box-shadow: 0px 0px 0px 1000px black;
+    overflow: visible !important;
 }
 #sellerProduct-video-view {
     cursor: pointer;
@@ -720,6 +721,7 @@ select:invalid {
     width: fit-content;
     height: fit-content;
     background-color: black;
+    overflow: hidden;
 }
 
 #sellerProduct__close--model {

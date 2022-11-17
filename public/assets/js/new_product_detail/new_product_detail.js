@@ -308,7 +308,7 @@ function displayClassificationNode() {
             ${string__classification_image_column}
             <th id="classification2--name-${index1}-${index2}" class="productDetail__classification--name">${input2.value}</th>
             <th><input name="classification_price_${index1}_${index2}" class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"/></th>
-            <th><input name="classification_storage_${index1}_${index2}" class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="number" min="0" value="0"/></th>
+            <th><input name="classification_storage_${index1}_${index2}" class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" value="0"/></th>
             <th><input name="classification_sku_${index1}_${index2}" class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"/></th>
           </tr>
         `;

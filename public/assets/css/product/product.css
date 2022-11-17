@@ -138,7 +138,9 @@ body {
     gap: 10px;
     flex-wrap: wrap;
 }
-
+#product-classification2--wrap .product_title_column-item-infor:not(:first-child){
+    display: none;
+}
 #product-title-transportItem-row1 span:hover {
     color: blue;
 }
@@ -164,6 +166,7 @@ body {
     border-radius: 2px;
     box-sizing: border-box;
     background-color: white;
+    cursor: pointer;
 }
 
 .product_title_colour-block:hover {

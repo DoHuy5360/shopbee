@@ -10,8 +10,8 @@
     <div id="seller_product_detail-wrapper">
         <form action="{{ route('product.store') }}" id="seller_product_detail-wrapper-detail" target="_blank" method="POST" enctype="multipart/form-data">
             @csrf
-            <input id="sellerProduct-classification1-post-field" type="hidden" name="classification_type1">
-            <input id="sellerProduct-classification2-post-field" type="hidden" name="classification_type2">
+            <input id="sellerProduct-classification1-post-field" type="hidden" name="classification1_values">
+            <input id="sellerProduct-classification2-post-field" type="hidden" name="classification2_values">
             <div id="seller_product_detail-basicInfor" class="seller_product_detail_inforWrapper">
                 <div id="seller_product_detail-basicInfor-label" class="sellerProduct__title--main">Thông tin cơ bản</div>
                 <div id="seller_product_detail-basicInfor-detail">
@@ -208,150 +208,111 @@
                 @endforeach
             </div>
         </div>
-        <div
-          id="seller_product_detail-wrapper-sellInfor"
-          class="seller_product_detail_inforWrapper"
-        >
-          <div id="seller_product_detail-sellInfor-label" class="sellerProduct__title--main">
-            Thông tin bán hàng
-          </div>
+        <div id="seller_product_detail-wrapper-sellInfor" class="seller_product_detail_inforWrapper">
+            <div id="seller_product_detail-sellInfor-label" class="sellerProduct__title--main">
+                Thông tin bán hàng
+            </div>
             <div id="seller_product_detail-sellInfor-detail">
-            <div class="seller_product_detail-sellInfor-Category">
+                <div class="seller_product_detail-sellInfor-Category">
                     <div class="sellerProduct__title--field-wrap">Phân loại hàng</div>
                     <button id="seller_product_detail-sellInfor-addCategoryBtn" type="button">
-                <ion-icon name="add-circle-outline"> </ion-icon>Thêm phân loại hàng
-              </button>
-            </div>
-            <div
-              id="seller-product-classification-type1"
-              class="seller_product_detail-sellInfor-Category"
-            >
-              <div class="sellerProduct__title--field-wrap">Nhóm phân loại 1</div>
-              <div class="sellerProduct__choose--classification-wrap">
-                <div class="sellerProduct__choose--classification-input">
-                  <div class="sellerProduct__choose--classification-field">
-                    <label for="">Tên nhóm phân loại</label>
-                    <input
-                      class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color"
-                      type="text"
-                      placeholder="Nhập tên nhóm loại hàng, ví dụ: màu sắc, kích thước,..."
-                    />
-                  </div>
-                  <div class="sellerProduct__choose--classification-field">
-                    <label for="">Phân loại hàng</label>
-                    <div class="sellerProduct__classification--add-wrap classification1--btn-remove">
-                      <div class="sellerProduct__classification--inp-wrap">
-                        <input
-                          class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color"
-                          type="text"
-                          placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..."
-                        />
-                        <div class="sellerProduct__classification--btn-remove">
-                          <ion-icon name="trash-outline"></ion-icon>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="sellerProduct__choose--classification-field">
-                  <span></span>
-                  <button class="seller_product_detail-sellInfor-classification" type="button">
-                        <ion-icon name="add-circle-outline"> </ion-icon>
-                    Đã thêm
+                        <ion-icon name="add-circle-outline"> </ion-icon>Thêm phân loại hàng
                     </button>
                 </div>
-              </div>
-            </div>
-            <div
-              id="seller-product-classification-type2"
-              class="seller_product_detail-sellInfor-Category"
-            >
-              <div class="sellerProduct__title--field-wrap">Nhóm phân loại 2</div>
-              <button
-                id="seller_product_detail-sellInfor-addCategoryBtn-classification2"
-                type="button"
-              >
-                <ion-icon name="add-circle-outline"> </ion-icon>Thêm
-              </button>
-              <div
-                id="seller-product-classification2-wrap"
-                class="sellerProduct__choose--classification-wrap"
-              >
-                <div class="sellerProduct__choose--classification-input">
-                  <div class="sellerProduct__choose--classification-field">
-                    <label for="">Tên nhóm phân loại</label>
-                    <input
-                      class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color"
-                      type="text"
-                      placeholder="Nhập tên nhóm loại hàng, ví dụ: màu sắc, kích thước,..."
-                    />
-                  </div>
-                  <div class="sellerProduct__choose--classification-field">
-                    <label for="">Phân loại hàng</label>
-                    <div class="sellerProduct__classification--add-wrap classification2--btn-remove">
-                      <div class="sellerProduct__classification--inp-wrap">
-                        <input
-                          class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color"
-                          type="text"
-                          placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..."
-                        />
-                        <div class="sellerProduct__classification--btn-remove">
-                          <ion-icon name="trash-outline"></ion-icon>
+                <div id="seller-product-classification-type1" class="seller_product_detail-sellInfor-Category">
+                    <div class="sellerProduct__title--field-wrap">Nhóm phân loại 1</div>
+                    <div class="sellerProduct__choose--classification-wrap">
+                        <div class="sellerProduct__choose--classification-input">
+                            <div class="sellerProduct__choose--classification-field">
+                                <label for="">Tên nhóm phân loại</label>
+                                <input name="classification1_title" class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                    placeholder="Nhập tên nhóm loại hàng, ví dụ: màu sắc, kích thước,..." />
+                            </div>
+                            <div class="sellerProduct__choose--classification-field">
+                                <label for="">Phân loại hàng</label>
+                                <div class="sellerProduct__classification--add-wrap classification1--btn-remove">
+                                    <div class="sellerProduct__classification--inp-wrap">
+                                        <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                            placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." />
+                                        <div class="sellerProduct__classification--btn-remove">
+                                            <ion-icon name="trash-outline"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
+                        <div class="sellerProduct__choose--classification-field">
+                            <span></span>
+                            <button class="seller_product_detail-sellInfor-classification" type="button">
+                                <ion-icon name="add-circle-outline"> </ion-icon>
+                                Đã thêm
+                            </button>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="sellerProduct__choose--classification-field">
-                  <span></span>
-                  <button class="seller_product_detail-sellInfor-classification" type="button">
-                    <ion-icon name="add-circle-outline"> </ion-icon>
-                    Đã thêm
-                  </button>
+                <div id="seller-product-classification-type2" class="seller_product_detail-sellInfor-Category">
+                    <div class="sellerProduct__title--field-wrap">Nhóm phân loại 2</div>
+                    <button id="seller_product_detail-sellInfor-addCategoryBtn-classification2" type="button">
+                        <ion-icon name="add-circle-outline"> </ion-icon>Thêm
+                    </button>
+                    <div id="seller-product-classification2-wrap" class="sellerProduct__choose--classification-wrap">
+                        <div class="sellerProduct__choose--classification-input">
+                            <div class="sellerProduct__choose--classification-field">
+                                <label for="">Tên nhóm phân loại</label>
+                                <input name="classification2_title" class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                    placeholder="Nhập tên nhóm loại hàng, ví dụ: màu sắc, kích thước,..." />
+                            </div>
+                            <div class="sellerProduct__choose--classification-field">
+                                <label for="">Phân loại hàng</label>
+                                <div class="sellerProduct__classification--add-wrap classification2--btn-remove">
+                                    <div class="sellerProduct__classification--inp-wrap">
+                                        <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                            placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." />
+                                        <div class="sellerProduct__classification--btn-remove">
+                                            <ion-icon name="trash-outline"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sellerProduct__choose--classification-field">
+                            <span></span>
+                            <button class="seller_product_detail-sellInfor-classification" type="button">
+                                <ion-icon name="add-circle-outline"> </ion-icon>
+                                Đã thêm
+                            </button>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="seller_product_detail-sellInfor-Category">
-              <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
-              <div id="seller-product-classification-tip-wrap">
-                <div id="seller-product-classification-tip-field">
-                  <input
-                    class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color"
-                    type="text"
-                    placeholder="Giá"
-                  />
-                  <input
-                    class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color"
-                    type="text"
-                    placeholder="Kho hàng"
-                  />
-                  <input
-                    class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color"
-                    type="text"
-                    placeholder="SKU phân loại"
-                  />
+                <div class="seller_product_detail-sellInfor-Category">
+                    <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
+                    <div id="seller-product-classification-tip-wrap">
+                        <div id="seller-product-classification-tip-field">
+                            <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Giá" />
+                            <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Kho hàng" />
+                            <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="SKU phân loại" />
+                        </div>
+                        <button id="sellerProduct-classification-code-apply" type="button" disabled style="cursor:not-allowed;" title="Chức năng đang được phát triển">
+                            Áp dụng cho tất cả phân loại
+                        </button>
+                    </div>
                 </div>
-                <button id="sellerProduct-classification-code-apply" type="button">
-                  Áp dụng cho tất cả phân loại
-                </button>
-              </div>
-            </div>
-            <div class="seller_product_detail-sellInfor-Category">
-              <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
-              <div id="productDetail-classification-wrap">
-                <table id="produtDetail-classification-table-head" border="0" cellspacing="0">
-                  <tr>
-                    <th class="produtDetail__classification-column">Nhóm phân loại 1</th>
-                    <th class="produtDetail__classification-column">Nhóm phân loại 2</th>
-                    <th>Giá</th>
-                    <th>Kho hàng</th>
-                    <th>SKU phân loại</th>
-                  </tr>
-                </table>
-                <div id="sellerProduct-classificatiom--item-wrap"></div>
-              </div>
-            </div>
-            <!-- !---------------------------------------- -->
+                <div class="seller_product_detail-sellInfor-Category">
+                    <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
+                    <div id="productDetail-classification-wrap">
+                        <table id="produtDetail-classification-table-head" border="0" cellspacing="0">
+                            <tr>
+                                <th class="produtDetail__classification-column">Nhóm phân loại 1</th>
+                                <th class="produtDetail__classification-column">Nhóm phân loại 2</th>
+                                <th>Giá</th>
+                                <th>Kho hàng</th>
+                                <th>SKU phân loại</th>
+                            </tr>
+                        </table>
+                        <div id="sellerProduct-classificatiom--item-wrap"></div>
+                    </div>
+                </div>
+                <!-- !---------------------------------------- -->
                 <div id="seller_product_detail-sellInfor-price">
                     <div class="sellerProduct__title--field-wrap">* Giá</div>
                     <div id="seller_product_detail-sellInfor-price-inputfield">

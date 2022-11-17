@@ -1,5 +1,5 @@
 @extends('layouts.skeleton')
-@section('title', "Thông tin sản phẩm")
+@section('title', 'Thông tin sản phẩm')
 @section('css')
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/header/header-home.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}"> --}}
@@ -118,23 +118,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product_title_column-item" id="product-title_colour">
-                            <div class="product_title_column_title">Màu Sắc</div>
-                            <div class="product_title_column-item-infor" id="product-title-columnItem3">
-                                <div class="product_title_colour-block">đen</div>
-                                <div class="product_title_colour-block">trắng</div>
-                                <div class="product_title_colour-block">vàng</div>
-                                <div class="product_title_colour-block">xanh dương</div>
-                                <div class="product_title_colour-block">hồng</div>
-                                <div class="product_title_colour-block">đỏ</div>
-                                <div class="product_title_colour-block">xanh lá</div>
-                                <div class="product_title_colour-block">cam</div>
-                                <div class="product_title_colour-block">vàng</div>
-                                <div class="product_title_colour-block">xanh dương</div>
-                                <div class="product_title_colour-block">hồng</div>
-                                <div class="product_title_colour-block">đỏ</div>
+                        @if (isset($get_pdt->classificationone))
+                            <div class="product_title_column-item" id="product-title_colour">
+                                <div class="product_title_column_title">{{ $get_pdt->classificationone }}</div>
+                                <div class="product_title_column-item-infor">
+                                    @foreach ($get_classification_one as $cls1)  
+                                        <div class="product_title_colour-block">{{ $cls1->name }}</div>
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
+                        @endif
+                        @if (isset($get_pdt->classificationtwo))
+                            <div class="product_title_column-item" id="product-title_colour">
+                                <div class="product_title_column_title">{{ $get_pdt->classificationtwo }}</div>
+                                <div id="product-classification2--wrap">
+                                    @foreach ($array_classification_two as $array_cls2)
+                                        <div class="product_title_column-item-infor">
+                                            @foreach ($array_cls2 as $cls2)
+                                                <div class="product_title_colour-block">{{ $cls2->name }}</div>
+                                            @endforeach
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
                         <div class="product_title_column-item" id="product-title_quantity">
                             <div class="product_title_column_title">Số Lượng</div>
                             <div class="product-title-column-item-infor" id="product-title-columnItem4">
@@ -144,7 +151,7 @@
                                         <input type="text" aria-valuenow="1" value="1" />
                                         <button id="product-title_quantity-plus">+</button>
                                     </div>
-                                    <span>{{ $get_pdt->storage }} Sản phẩm có sẵn</span>
+                                    <span><span id="product-storage-number">{{ $get_pdt->storage }}</span> Sản phẩm có sẵn</span>
                                 </div>
                             </div>
                         </div>
