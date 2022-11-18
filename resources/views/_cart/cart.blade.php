@@ -141,72 +141,52 @@
                                                 <div>Phân Loại Hàng</div>
                                                 <ion-icon name="chevron-down-outline"></ion-icon>
                                             </div>
-                                            <div class="cart_page_about_choice">M</div>
+                                            <div class="cart_page_about_choice">MS</div>
                                         </div>
                                         <div class="cart_page_option_items">
+                                            {{-- !----------------------- --}}
                                             <div class="cart_page_option_items_wrap">
                                                 <div class="cart_page_option_fix">
                                                     <div class="cart_page_option_fix_title">
-                                                        <span>Màu</span>:
+                                                        <span>{{ $item->classificationone }}</span>:
                                                     </div>
                                                     <div class="cart_page_option_choice">
-                                                        <div class="cart_checkout--method-wrap">
-                                                            <label for="cart-page-payment-feature-1">
-                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1" value="white" />
-                                                                <span>Trắng</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="cart_checkout--method-wrap">
-                                                            <label for="cart-page-payment-feature-2">
-                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-2" value="Black" />
-                                                                <span>Đen</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="cart_checkout--method-wrap">
-                                                            <label for="cart-page-payment-feature-3">
-                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-3" value="Pink" />
-                                                                <span>Hồng</span>
-                                                            </label>
-                                                        </div>
+                                                        @foreach ($item->classificationones as $cls1)
+                                                            <div class="cart_checkout--method-wrap">
+                                                                <label for="cart-page-payment-feature-1">
+                                                                    <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1" value="white" />
+                                                                    <span>{{ $cls1->name }}</span>
+                                                                </label>
+                                                            </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                                 <div class="cart_page_option_fix">
                                                     <div class="cart_page_option_fix_title">
-                                                        <span>Size</span>:
+                                                        <span>{{ $item->classificationtwo }}</span>:
                                                     </div>
-                                                    <div class="cart_page_option_choice">
-                                                        <div class="cart_checkout--method-wrap">
-                                                            <label for="cart-page-payment-feature-1">
-                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-0" value="small" />
-                                                                <span>S</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="cart_checkout--method-wrap">
-                                                            <label for="cart-page-payment-feature-1">
-                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1" value="medium" />
-                                                                <span>M</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="cart_checkout--method-wrap">
-                                                            <label for="cart-page-payment-feature-2">
-                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-2" value="Lagre" />
-                                                                <span>L</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="cart_checkout--method-wrap">
-                                                            <label for="cart-page-payment-feature-3">
-                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-3" value="XLarge" />
-                                                                <span>XL</span>
-                                                            </label>
-                                                        </div>
+                                                    <div id="cart-page-classification2-wrap">
+                                                        @foreach ($item->classificationtwos as $array_cls2)
+                                                            <div class="cart_page_option_choice">
+                                                                @foreach ($array_cls2 as $cls2)
+                                                                    <div class="cart_checkout--method-wrap">
+                                                                        <label for="cart-page-payment-feature-1">
+                                                                            <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-0" value="small" />
+                                                                            <span>{{ $cls2->name }}</span>
+                                                                        </label>
+                                                                    </div>
+                                                                @endforeach
+                                                            </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                                 <button type="submit" class="cart_page_option_submit_btn_wrap">
                                                     Xác nhận
                                                 </button>
                                             </div>
+                                            {{-- !----------------------- --}}
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="cart_page_pricePer_wrap_respon">
                                         <div>₫ <span>{{ number_format((int) $item->price) }}</span></div>
                                     </div>
@@ -351,15 +331,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-<<<<<<< HEAD
-                                            <button type="submit" class="cart_page_option_submit_btn_wrap">
+                                            <<<<<<< HEAD <button type="submit" class="cart_page_option_submit_btn_wrap">
                                                 Xác nhận
-                                            </button>
-=======
-                                            <div id="cart_page_option_submit_btn_wrap">
+                                                </button>
+                                                =======
+                                                <div id="cart_page_option_submit_btn_wrap">
 
-                                            </div>
->>>>>>> master
+                                                </div>
+                                                >>>>>>> master
                                         </div>
                                     </div>
                                 </div>

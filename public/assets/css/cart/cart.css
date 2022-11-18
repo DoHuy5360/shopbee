@@ -215,29 +215,27 @@
 
 .cart_page_option_items_wrap {
     width: 350px;
-    height: 200px;
-    overflow-x: scroll;
+    /* height: 200px;
+    overflow-x: scroll; */
     background-color: #fff;
-    padding: 27px 27px 0;
+    padding: 27px 27px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     position: relative;
 }
-
-.cart_page_option_items::before {
+.cart_page_option_items_wrap::before {
     content: "";
     width: 20px;
     aspect-ratio: 1;
     position: absolute;
-    top: -5%;
-    background-color: #fff;
-    border-top: 1px solid #c5c5c5;
-    border-right: 1px solid #c5c5c5;
-    transform: rotate(-45deg);
-    z-index: 999;
+    top: -10px;
+    left: 50%;
+    background-color: white;
+    transform: rotate(45deg);
+    border: 1px solid #c5c5c5;
+    z-index: -1;
 }
-
 .cart_page_option_items_wrap::-webkit-scrollbar,
 .cart_page_option_items_wrap::-webkit-scrollbar-thumb {
     width: 5px;
@@ -617,8 +615,9 @@ ion-icon[name="car-outline"] {
     left: 50%;
     transform-origin: top;
     transition: 200ms;
-    position: absolute;
+    z-index: 3;
 }
+
 .cart_page_option_wrap_respon:hover > .cart_page_option_items {
     transform: translateX(-50%) scale(1);
 }
@@ -682,4 +681,7 @@ ion-icon[name="car-outline"] {
     font-weight: bold;
     height: 40px;
     cursor: pointer;
+}
+#cart-page-classification2-wrap .cart_page_option_choice:not(:first-child){
+    display: none;
 }
