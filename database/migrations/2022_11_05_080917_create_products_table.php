@@ -32,6 +32,8 @@ return new class extends Migration
             $table->boolean("pre_order")->default(false);
             $table->string("status", 20);
             $table->string("sku_code", 120);
+            $table->string("classificationone",120)->nullable();
+            $table->string("classificationtwo",120)->nullable();
         });
     }
 

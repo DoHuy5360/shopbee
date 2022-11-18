@@ -65,6 +65,7 @@ class CartController extends Controller
      */
     public function show($id, Request $request)
     {
+        // return Auth::user()->code;
         $action = $request->query("action");
         if ($action === "watch") {
             $get_itm_cart = DB::select(
@@ -75,22 +76,42 @@ class CartController extends Controller
                 AND pi.product_code = p.code
                 AND pi.index = '0'
                 "
-
             );
             return view('_cart.cart_item', [
                 "get_itm_cart" => $get_itm_cart,
             ]);
         } else {
+            // todo: Chỗ này chưa xong về làm tiếp
             $get_itm_cart = DB::select(
-                "SELECT *, c.code AS cart_code, u.name AS user_name
+                "SELECT *, c.code AS cart_code, u.name AS user_name, p.code AS product_code
                 FROM users u, carts c, products p, product_images pi
-                WHERE c.user_code = '$id'
+                WHERE u.code = '$id'
                 AND u.code = p.user_code
                 AND c.product_code = p.code
                 AND pi.product_code = p.code
                 AND pi.index = '0'
                 "
             );
+            foreach ($get_itm_cart as $item) {
+                $get_classification_one = DB::select(
+                    "SELECT code, name, path
+                    FROM product_classificationones
+                    WHERE product_code = '{$item->product_code}'
+                    "
+                );
+                $item->classificationones = $get_classification_one;
+                $array_classificationtwos = [];
+                foreach ($get_classification_one as $cls1) {
+                    $get_classification_two = DB::select(
+                        "SELECT classificationone_code, name, price, storage, sku
+                        FROM product_classificationtwos
+                        WHERE classificationone_code = '{$cls1->code}'
+                        "
+                    );
+                    array_push($array_classificationtwos, $get_classification_two);
+                }
+                $item->classificationtwos = $array_classificationtwos;
+            }
             // return $get_itm_cart;
             return view('_cart.cart', [
                 'get_itm_cart' => $get_itm_cart,

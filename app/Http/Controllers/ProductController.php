@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductClassificationone;
+use App\Models\ProductClassificationtwo;
 use App\Models\ProductImage;
 use App\Models\ProductVideo;
 use Illuminate\Http\Request;
@@ -41,26 +43,30 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
         $product_temp_code = genCode(52);
 
-        $addProduct = new Product();
-        $addProduct->code = $product_temp_code;
-        $addProduct->user_code = Auth::user()->code;
-        $addProduct->name = $request->product_name;
-        $addProduct->description = $request->product_description;
-        $addProduct->category = $request->product_category;
-        $addProduct->brand = $request->product_brand;
-        $addProduct->origin = $request->product_origin;
-        $addProduct->weight = $request->product_weight;
-        $addProduct->price = $request->product_price;
-        $addProduct->storage = $request->product_storage;
-        $addProduct->weight_packed = $request->product_weight_packed;
-        $addProduct->r_packed = $request->product_r_packed;
-        $addProduct->d_packed = $request->product_d_packed;
-        $addProduct->c_packed = $request->product_c_packed;
-        $addProduct->pre_order = $request->product_pre_order;
-        $addProduct->status = $request->product_status;
-        $addProduct->sku_code = $request->product_sku_code;
+        $addProduct = new Product([
+            "code" => $product_temp_code,
+            "user_code" => Auth::user()->code,
+            "name" => $request->product_name,
+            "description" => $request->product_description,
+            "category" => $request->product_category,
+            "brand" => $request->product_brand,
+            "origin" => $request->product_origin,
+            "weight" => $request->product_weight,
+            "price" => $request->product_price,
+            "storage" => $request->product_storage,
+            "weight_packed" => $request->product_weight_packed,
+            "r_packed" => $request->product_r_packed,
+            "d_packed" => $request->product_d_packed,
+            "c_packed" => $request->product_c_packed,
+            "pre_order" => $request->product_pre_order,
+            "status" => $request->product_status,
+            "sku_code" => $request->product_sku_code,
+            "classificationone" => $request->classification1_title,
+            "classificationtwo" => $request->classification2_title,
+        ]);
         $addProduct->save();
 
         for ($index = 0; $index < 9; $index++) {
@@ -90,8 +96,37 @@ class ProductController extends Controller
             $sto_pro_vid->path = "assets/video/product/$video_name";
             $sto_pro_vid->save();
         }
+        if ($request->classification1_title !== null) {
+            $array_classification_one = explode(",", $request->classification1_values);
+            $array_classification_two = explode(",", $request->classification2_values);
+            for ($i = 0; $i < sizeOf($array_classification_one); $i++) {
+                $classification_one_name = $array_classification_one[$i];
+                $lassification_one_code = genCode(52);
+                $add_classification_one = new ProductClassificationone([
+                    "product_code" => $product_temp_code,
+                    "code" => $lassification_one_code,
+                    "name" => $classification_one_name,
+                    "path" => "/",
+                ]);
+                $add_classification_one->save();
+                for ($j = 0; $j < sizeOf($array_classification_two); $j++) {
+                    $classification_two_name = $array_classification_two[$j];
+                    $lassification_two_code = genCode(52);
+                    $add_classification_two = new ProductClassificationtwo([
+                        "classificationone_code" => $lassification_one_code,
+                        "code" => $lassification_two_code,
+                        "name" => $classification_two_name,
+                        "price" => $request["classification_price_{$i}_{$j}"],
+                        "storage" => $request["classification_storage_{$i}_{$j}"],
+                        "sku" => $request["classification_sku_{$i}_{$j}"],
+                    ]);
+                    $add_classification_two->save();
+                }
+            }
+        }
 
-        return ($request);
+
+        return $request;
     }
 
     /**
@@ -141,11 +176,29 @@ class ProductController extends Controller
             WHERE product_code = '$id'
             "
         )[0];
+        $get_classification_one = DB::select(
+            "SELECT code, name, path
+            FROM product_classificationones
+            WHERE product_code = '$id'
+            "
+        );
+        $array_classification_two = [];
+        foreach ($get_classification_one as $cls1) {
+            $get_classification_two = DB::select(
+                "SELECT name, price, storage, sku
+                FROM product_classificationtwos
+                WHERE classificationone_code = '{$cls1->code}'
+                "
+            );
+            array_push($array_classification_two, $get_classification_two);
+        }
         // return $get_pdt;
         return view('_product.product', [
             'get_pdt' => $get_pdt,
             'get_pdt_img' => $get_pdt_img,
             'get_pdt_vid' => $get_pdt_vid,
+            'get_classification_one' => $get_classification_one,
+            'array_classification_two' => $array_classification_two,
         ]);
     }
 
