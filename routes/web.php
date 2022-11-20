@@ -5,6 +5,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,10 +27,26 @@ Route::get('/purchase', function () {
     return view('_purchase.purchase');
 });
 
+Route::get('/manage-product', function () {
+    $user_id = Auth::user()->code;
+    $get_pdt = DB::select(
+        "SELECT *,  p.code AS product_code
+        FROM products p, product_images pi
+        WHERE p.user_code = '$user_id'
+        AND p.code = pi.product_code
+        AND pi.index = '0'
+        "
+    );
+    $amont_pdt = sizeof($get_pdt);
+    return view('_manage_product.manage_product', [
+        'get_pdt' => $get_pdt,
+        'amont_pdt'=>$amont_pdt,
+    ]);
+});
+
 Route::get('/new-product', function () {
     return view('_new_product.new_product');
 });
-
 
 Route::get('/new-product-detail', function () {
     // echo asset("storage/de.html");
@@ -46,13 +64,13 @@ Route::post('/new-product-detail', function (Request $request) {
         "942.482.482.244",
         "842.424.133.767"
     ];
-    $category_array = explode(',',$request->product_category);
+    $category_array = explode(',', $request->product_category);
     $product_name = $request->product_name;
     $random->product_price = getRandom($product_price_arr);
     return view('_new_product_detail.new_product_detail', [
         "random" => $random,
-        "category_array"=>$category_array,
-        "product_name"=>$product_name,
+        "category_array" => $category_array,
+        "product_name" => $product_name,
     ]);
 });
 
