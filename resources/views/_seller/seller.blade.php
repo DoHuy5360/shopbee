@@ -8,6 +8,7 @@
 @endsection
 @section('js')
     <script src="{{ asset('assets/js/seller/seller.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/seller/seller_respon.js') }}"></script> --}}
 @endsection
 
 @section('content')
@@ -199,6 +200,24 @@
                                 <li class="sidebar-subMenu">Nền tảng đối tác (Kết nối API)</li>
                             </ul>
                         </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="seller-listOfContent-respons">
+                <div class="seller-sidebar-respon">
+                    <div id="seller-sidebar-responMenu-title"></div>
+                    <ul id="seller-sidebar-responMenu">
+                        <li id="seller-sidebar-respon-transport" class="sidebarList_respon"></li>
+                        <li id="seller-sidebar-respon-sellManage" class="sidebarList_respon"></li>
+                        <li id="seller-sidebar-respon-productManage" class="sidebarList_respon"></li>
+                        <li id="seller-sidebar-respon-marketing" class="sidebarList_respon"></li>
+                        <li id="seller-sidebar-respon-finance" class="sidebarList_respon"></li>
+                        <li id="seller-sidebar-respon-data" class="sidebarList_respon"></li>
+                        <li id="seller-sidebar-respon-development" class="sidebarList_respon"></li>
+                        <li id="seller-sidebar-respon-clientCare" class="sidebarList_respon"></li>
+                        <li id="seller-sidebar-respon-shopMange" class="sidebarList_respon"></li>
+                        <li id="seller-sidebar-respon-shopSetup" class="sidebarList_respon"></li>
+                        <li id="seller-sidebar-respon-shopSetup1" class="sidebarList_respon"></li>
                     </ul>
                 </div>
             </div>
@@ -474,4 +493,6 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('assets/js/seller/seller_respon.js') }}"></script>
+
 @endsection
