@@ -1,5 +1,4 @@
 @media screen and (max-width: 1080px) {
-
     /* !header  */
     #seller-icon {
         display: none;
@@ -42,9 +41,7 @@
     }
 
     #seller-listOfContent {
-        display: flex;
-        width: 100%;
-        height: fit-content;
+        display: none;
     }
 
     .seller-sidebar {
@@ -65,7 +62,6 @@
         display: none;
     }
 
-
     .seller__arrow--sidebar {
         display: none;
     }
@@ -81,6 +77,7 @@
     /*! noi dung chinh */
     #seller-contentTable {
         width: 100%;
+        z-index: -1;
     }
 
     #seller-content-right-part {
@@ -115,7 +112,91 @@
         display: flex;
     }
 
-    .seller__marketing--card>div:nth-child(n+3) {
+    .seller__marketing--card > div:nth-child(n + 3) {
         display: none;
+    }
+    /*!seller list*/
+    #seller-listOfContent-respons {
+        display: block;
+        width: 100%;
+        height: fit-content;
+        z-index: 0;
+    }
+    .seller-sidebar-respon {
+        width: 100%;
+    }
+    li {
+        list-style: none;
+    }
+    #seller-sidebar-responMenu-title {
+        width: 100%;
+        overflow-x: scroll;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 5px;
+        background-color: #000;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    #seller-sidebar-responMenu-title div {
+        cursor: pointer;
+        width: 100px;
+        color: #fff;
+    }
+    .respons_list_title {
+        background-color: #252525;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 8px;
+        text-align: center;
+        z-index: 10;
+    }
+    .parent_active {
+        background-color: #ffb81d;
+        margin-bottom: 0%;
+        border-radius: 8px 8px 0 0;
+    }
+    .sidebarList_respon {
+        width: 100%;
+        height: fit-content;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        list-style: none;
+        text-decoration: none;
+        transition: 0.8s;
+        visibility: hidden;
+        opacity: 0;
+        transform: scaleY(-1);
+        transform-origin: top;
+        background-color: #ffb81d;
+        z-index: 1;
+    }
+    .respons_list_items {
+        background-color: #ffb81d;
+        /* border-radius: 0px 0px 8px 5px; */
+    }
+    .active {
+        opacity: 1;
+        padding: 10px;
+        transform: scaleY(1);
+        visibility: unset;
+        border-radius: 0px 0px 10px 10px;
+        z-index: 3;
+    }
+    #seller-sidebar-responMenu {
+        height: auto;
+        padding: 0%;
+        margin: 0%;
+        position: relative;
+        list-style: none;
+        z-index: 2;
+    }
+    .seller_icon_respon {
+        color: #fff;
+        font-size: 2rem;
     }
 }

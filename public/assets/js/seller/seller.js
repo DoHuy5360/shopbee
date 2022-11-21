@@ -103,50 +103,50 @@ manage_activity.setArrow();
 manage_activity.setTransformLeftRight()
 //! --------------------------respon seller list-----------------------------
 
-category = [
-  {
-    parent: "Vận chuyển",
-    child: ["Quản Lý Vận Chuyển", "Giao Hàng Loạt", "Cài Đặt Vận Chuyển"],
-  },
-  {
-    parent: "Quản Lý Đơn Hàng",
-    child: ["Tất cả", "Đơn huỷ", "Trả Hàng/Hoàn Tiền"],
-  },
-  {
-    parent: "Quản Lý Sản Phẩm",
-    child: ["Tất Cả Sản Phẩm", "Thêm Sản Phẩm", "Sản Phẩm Vi Phạm"],
-  },
-  {
-    parent: "Kênh Marketing",
-    child: ["Kênh Marketing", "Quảng Cáo Shopee", "Mã giảm giá của tôi"],
-  },
-  {
-    parent: "Tài Chính",
-    child: ["Doanh Thu", "Số dư TK Shopee", "Tài Khoản Ngân Hàng", "Thiết lập Thanh Toán"],
-  },
-  {
-    parent: "Dữ Liệu",
-    child: ["Phân Tích Bán Hàng", "Hiệu Quả Hoạt Động"],
-  },
-  {
-    parent: "Phát Triển",
-    child: ["Nhiệm Vụ Người Bán", "Shop Yêu Thích"],
-  },
-  {
-    parent: "Chăm Sóc Khách Hàng",
-    child: ["Trợ lý chat", "Hỏi - Đáp"],
-  },
-  {
-    parent: "Quản Lý Shop",
-    child: ["Đánh Giá Shop", "Hồ Sơ Shop", "Trang Trí Shop", "Danh Mục Của Shop", "Kho Hình Ảnh/Video", "Báo Cáo Của Tôi"],
-  },
-  {
-    parent: "Thiết Lập Shop",
-    child: ["Địa Chỉ", "Thiết Lập Shop", "Tài Khoản", "Nền tảng đối tác (Kết nối API)"],
-  },
-  {
-    parent: "Thiết Lập Shop 2",
-    child: ["Địa Chỉ", "Thiết Lập Shop", "Tài Khoản", "Nền tảng đối tác (Kết nối API 2)"],
-  },
-];
+// category = [
+//   {
+//     parent: "Vận chuyển",
+//     child: ["Quản Lý Vận Chuyển", "Giao Hàng Loạt", "Cài Đặt Vận Chuyển"],
+//   },
+//   {
+//     parent: "Quản Lý Đơn Hàng",
+//     child: ["Tất cả", "Đơn huỷ", "Trả Hàng/Hoàn Tiền"],
+//   },
+//   {
+//     parent: "Quản Lý Sản Phẩm",
+//     child: ["Tất Cả Sản Phẩm", "Thêm Sản Phẩm", "Sản Phẩm Vi Phạm"],
+//   },
+//   {
+//     parent: "Kênh Marketing",
+//     child: ["Kênh Marketing", "Quảng Cáo Shopee", "Mã giảm giá của tôi"],
+//   },
+//   {
+//     parent: "Tài Chính",
+//     child: ["Doanh Thu", "Số dư TK Shopee", "Tài Khoản Ngân Hàng", "Thiết lập Thanh Toán"],
+//   },
+//   {
+//     parent: "Dữ Liệu",
+//     child: ["Phân Tích Bán Hàng", "Hiệu Quả Hoạt Động"],
+//   },
+//   {
+//     parent: "Phát Triển",
+//     child: ["Nhiệm Vụ Người Bán", "Shop Yêu Thích"],
+//   },
+//   {
+//     parent: "Chăm Sóc Khách Hàng",
+//     child: ["Trợ lý chat", "Hỏi - Đáp"],
+//   },
+//   {
+//     parent: "Quản Lý Shop",
+//     child: ["Đánh Giá Shop", "Hồ Sơ Shop", "Trang Trí Shop", "Danh Mục Của Shop", "Kho Hình Ảnh/Video", "Báo Cáo Của Tôi"],
+//   },
+//   {
+//     parent: "Thiết Lập Shop",
+//     child: ["Địa Chỉ", "Thiết Lập Shop", "Tài Khoản", "Nền tảng đối tác (Kết nối API)"],
+//   },
+//   {
+//     parent: "Thiết Lập Shop 2",
+//     child: ["Địa Chỉ", "Thiết Lập Shop", "Tài Khoản", "Nền tảng đối tác (Kết nối API 2)"],
+//   },
+// ];
 

@@ -562,3 +562,7 @@
     gap: 23px;
     align-items: center;
 }
+
+#seller-listOfContent-respons {
+    display: none;
+}
