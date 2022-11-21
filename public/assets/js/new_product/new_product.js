@@ -1,4 +1,4 @@
-import { CATEGORIES } from "./categories.mjs";
+import { CATEGORIES } from "./categories.js";
 
 class Category {
     constructor(_array_categories) {

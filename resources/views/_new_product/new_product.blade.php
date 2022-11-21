@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/new_product/new_product.css') }}">
 @endsection
 @section('js')
-    <script type="module" src="{{ asset('assets/js/new_product/new_product.mjs') }}"></script>
+    <script type="module" src="{{ asset('assets/js/new_product/new_product.js') }}"></script>
 @endsection
 @section('content')
     <div id="seller-product-wrap">
@@ -14,7 +14,7 @@
         </div>
         <div id="seller-product-name">
             <label for="seller-product-name-input-field">Tên sản phẩm: </label>
-            <form action="/new-product-detail" method="POST" target="_blank" id="seller-product-name-field">
+            <form action="/new-product-detail" method="POST" id="seller-product-name-field">
                 @csrf
                 <input name="product_name" id="seller-product-name-input-field" value="Tàu sân bay nhập khẩu chính hãng" maxlength="120" minlength="10" placeholder="Nhập vào" type="text" />
                 <div id="seller-product-name-input-numb"><span id="seller-product-input-numb">0</span>/120</div>

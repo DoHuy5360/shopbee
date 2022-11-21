@@ -32,6 +32,8 @@ return new class extends Migration
             $table->boolean("pre_order")->default(false);
             $table->string("status", 20);
             $table->string("sku_code", 120);
+            $table->integer("sold")->default(0);
+            $table->char("user_code", 52)->nullable(); //todo: Sau khi tổng kết dự án, không cho cột 'user_code' null;
             $table->string("classificationone",120)->nullable();
             $table->string("classificationtwo",120)->nullable();
         });
