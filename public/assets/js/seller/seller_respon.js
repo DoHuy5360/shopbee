@@ -64,22 +64,20 @@ function clickEvent_respon(clickObj) {
             if (!parentTempt) {
                 parentTempt = titleTag;
                 parentTempt.classList.add("parent_active");
-                console.log(clickObj.id);
             } else {
                 titleNode_respon[clickObj.id].classList.add("parent_active");
                 parentTempt.classList.remove("parent_active");
                 parentTempt = titleTag;
-                console.log(clickObj.id);
             }
         });
         childLst_respon.forEach((children) => {
             if (!childTemp) {
                 // khac null la true
                 childTemp = children;
-                childTemp.classList.add("active");
+                childTemp.classList.add("seller_respon_active");
             } else {
-                childLst_respon[clickObj.id].classList.add("active");
-                childTemp.classList.remove("active");
+                childLst_respon[clickObj.id].classList.add("seller_respon_active");
+                childTemp.classList.remove("seller_respon_active");
                 childTemp = children;
             }
         });
@@ -103,7 +101,6 @@ for (let parentIndex = 0; parentIndex < amount_respon_category; parentIndex++) {
     parent_wrap.setAttribute("class", "respons_list_title_detail");
 
     const target_category = category[parentIndex];
-    console.log(target_category);
     parent_wrap.textContent = target_category.parent;
     //get child
     target_category.child.forEach((child) => {

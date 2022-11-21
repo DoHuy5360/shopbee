@@ -179,7 +179,7 @@
         background-color: #ffb81d;
         /* border-radius: 0px 0px 8px 5px; */
     }
-    .active {
+    .seller_respon_active {
         opacity: 1;
         padding: 10px;
         transform: scaleY(1);
