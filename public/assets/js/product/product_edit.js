@@ -127,6 +127,20 @@ node__add_video.addEventListener("change", (e) => {
         node__canvas_image.setAttribute("id", "sellerProduct-video-cover");
     }, 1000);
 });
+const node__video_origin = document.getElementById("product-edit-video-origin");
+setTimeout(()=>{
+    node__video_origin.width = node__video_contain.videoWidth;
+    node__video_origin.height = node__video_contain.videoHeight;
+    const canvas_pen = node__video_origin.getContext("2d");
+    canvas_pen.drawImage(
+        node__video_contain,
+        0,
+        0,
+        node__video_origin.width,
+        node__video_origin.height
+    );
+}, 1000)
+
 const body_page = document.querySelector("body");
 const view_video = document.getElementById("sellerProduct-video-view");
 const dialog_video = document.getElementById("sellerProduct-video-dialog");
@@ -142,31 +156,31 @@ close_dialog_video.addEventListener("click", (e) => {
     dialog_video.classList.remove("explain_video");
 });
 // todo: classification
-const node__classification_btn = document.getElementById(
-    "seller_product_detail-sellInfor-addCategoryBtn"
-);
-const node__classification_type1 = document.getElementById(
-    "seller-product-classification-type1"
-);
-const node__classification_type2 = document.getElementById(
-    "seller-product-classification-type2"
-);
-node__classification_btn.addEventListener("click", (e) => {
-    node__classification_btn.parentNode.style.display = "none";
-    node__classification_type1.style.display = "flex";
-    node__classification_type2.style.display = "flex";
-});
-const node__classification_btn2 = document.getElementById(
-    "seller_product_detail-sellInfor-addCategoryBtn-classification2"
-);
-const node__classification_field = document.getElementById(
-    "seller-product-classification2-wrap"
-);
-node__classification_btn2.addEventListener("click", (e) => {
-    node__classification_btn2.style.display = "none";
-    node__classification_type2.style.display = "flex";
-    node__classification_field.style.display = "flex";
-});
+// const node__classification_btn = document.getElementById(
+//     "seller_product_detail-sellInfor-addCategoryBtn"
+// );
+// const node__classification_type1 = document.getElementById(
+//     "seller-product-classification-type1"
+// );
+// const node__classification_type2 = document.getElementById(
+//     "seller-product-classification-type2"
+// );
+// node__classification_btn.addEventListener("click", (e) => {
+//     node__classification_btn.parentNode.style.display = "none";
+//     node__classification_type1.style.display = "flex";
+//     node__classification_type2.style.display = "flex";
+// });
+// const node__classification_btn2 = document.getElementById(
+//     "seller_product_detail-sellInfor-addCategoryBtn-classification2"
+// );
+// const node__classification_field = document.getElementById(
+//     "seller-product-classification2-wrap"
+// );
+// node__classification_btn2.addEventListener("click", (e) => {
+//     node__classification_btn2.style.display = "none";
+//     node__classification_type2.style.display = "flex";
+//     node__classification_field.style.display = "flex";
+// });
 // todo: Bắt sự kiện thêm mặt hàng
 function createClassificationInput() {
     const node__classification_wrap = document.createElement("div");
@@ -339,7 +353,7 @@ function displayClassificationNode() {
     node__classification_body.innerHTML =
         string__classification_info_column_left;
 }
-displayClassificationNode();
+// displayClassificationNode();
 
 function createHiddenInput(_node_input, _arg) {
     const array__value = [];

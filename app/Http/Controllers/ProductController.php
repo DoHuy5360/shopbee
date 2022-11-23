@@ -210,7 +210,63 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $get_pdt = DB::select(
+            "SELECT *
+            FROM products
+            WHERE code = '$id'
+            "
+        )[0];
+        $get_pdt_imgs = DB::select(
+            "SELECT path
+            FROM product_images pi
+            WHERE pi.product_code = '$id'
+            "
+        );
+        $get_pdt_video = DB::select(
+            "SELECT path
+            FROM product_videos
+            WHERE product_code = '$id'
+            "
+        )[0];
+        $get_classification_one = DB::select(
+            "SELECT code, name
+            FROM product_classificationones
+            WHERE product_code = '$id'
+            "
+        );
+        foreach ($get_classification_one as $cls1) {
+        }
+        $get_classification_two = DB::select(
+            "SELECT DISTINCT name
+            FROM product_classificationtwos
+            WHERE classificationone_code = '{$get_classification_one[0]->code}'
+            "
+        );
+        $create_classification_table = DB::select(
+            "SELECT code, name
+            FROM product_classificationones
+            WHERE product_code = '$id'
+            "
+        );
+        for ($index = 0; $index < sizeOf($create_classification_table); $index++) {
+            $cls1 = $create_classification_table[$index];
+            $get_cls2 = DB::select(
+                "SELECT name, price, storage, sku
+                FROM product_classificationtwos
+                WHERE classificationone_code = '$cls1->code'
+                "
+            );
+            $cls1->classificationtwos = $get_cls2;
+        }
+        // return $create_classification_table;
+        return view('_product.product_edit', [
+            'get_pdt' => $get_pdt,
+            'get_pdt_imgs' => $get_pdt_imgs,
+            'get_pdt_video' => $get_pdt_video,
+            'get_classification_one' => $get_classification_one,
+            'get_classification_two' => $get_classification_two,
+            'create_classification_table' => $create_classification_table,
+        ]);
     }
 
     /**
@@ -222,7 +278,30 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::update(
+            "UPDATE products
+            SET 
+                name = '{$request->product_name}',
+                description = '{$request->product_description}',
+                category = '{$request->product_category}',
+                brand = '{$request->product_brand}',
+                origin = '{$request->product_origin}',
+                weight = '{$request->product_weight}',
+                price = '{$request->product_price}',
+                storage = '{$request->product_storage}',
+                weight_packed = '{$request->product_weight_packed}',
+                r_packed = '{$request->product_r_packed}',
+                d_packed = '{$request->product_d_packed}',
+                c_packed = '{$request->product_c_packed}',
+                pre_order = '{$request->product_pre_order}',
+                status = '{$request->product_status}',
+                sku_code = '{$request->product_sku_code}',
+                classificationone = '{$request->classification1_title}',
+                classificationtwo = '{$request->classification2_title}'
+            WHERE code = '$id'
+            "
+        );
+        return $request;
     }
 
     /**

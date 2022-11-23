@@ -88,10 +88,10 @@
                 </div>
                 <div id="seller-all-product-action-field">
                     <a href="#">Tối ưu sản phẩm</a>
-                    <div id="seller-all-product-add">
+                    <a href="/new-product" id="seller-all-product-add">
                         <ion-icon name="add-outline"></ion-icon>
                         <div>Thêm 1 sản phẩm mới</div>
-                    </div>
+                    </a>
                     <div id="seller-all-product-multiply-handle">
                         <div>Công cụ xử lý hàng loạt</div>
                         <ion-icon name="chevron-down-outline"></ion-icon>
@@ -151,9 +151,9 @@
                             <div class="seller__allProduct--card-storage">{{ $item->storage }}</div>
                             <div class="seller__allProduct--card-sales">{{ $item->sold }}</div>
                             <div class="seller__allProduct--card-action">
-                                <a href="#">Cập nhật</a>
-                                <a href="#">Sao chép</a>
-                                <a href="#">Xem thêm</a>
+                                <a href="{{ route('product.edit', $item->product_code) }}" target="_blank">Cập nhật</a>
+                                <a href="#" target="_blank">Sao chép</a>
+                                <a href="#" target="_blank">Xem thêm</a>
                             </div>
                         </div>
                     @endforeach
