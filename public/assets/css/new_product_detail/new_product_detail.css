@@ -348,7 +348,6 @@ select:invalid {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    /* width: 700px; */
     margin-top: 20px;
 }
 
@@ -497,7 +496,7 @@ select:invalid {
     border-radius: 3px;
     height: 40px;
     outline: none;
-    padding: 0 5px;
+    padding: 0 10px;
     transition: 100ms linear;
 }
 /*! thong tin van chuyen */
@@ -685,6 +684,7 @@ select:invalid {
 .sellerProduct__image--display {
     width: 99%;
 }
+#product-edit-video-origin,
 #sellerProduct-video-cover {
     width: inherit;
     height: inherit;

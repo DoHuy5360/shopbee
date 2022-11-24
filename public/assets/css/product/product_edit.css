@@ -1,0 +1,17 @@
+#seller-product-classification-type1,
+#seller-product-classification-type2 {
+    display: flex;
+}
+#seller-product-classification2-wrap {
+    display: flex;
+}
+#seller_product_detail-sellInfor-addCategoryBtn-classification2 {
+    display: none;
+}
+#product-edit-change-catygory {
+    margin-left: 10px;
+    cursor: pointer;
+}
+#product-edit-change-catygory ion-icon {
+    color: var(--color-4) !important;
+}

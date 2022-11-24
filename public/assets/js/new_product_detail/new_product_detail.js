@@ -66,60 +66,65 @@ function elementInViewport(el) {
         left + width <= window.pageXOffset + window.innerWidth
     );
 }
-// !------------------------ add files
-const all_input_image_file = document.querySelectorAll(
+// !------------------------ add image files
+const node__all_input_image = document.querySelectorAll(
     ".sellerProduct__hidden--image-input"
 );
-all_input_image_file.forEach((inp) => {
+node__all_input_image.forEach((inp) => {
     inp.addEventListener("change", (e) => {
-        const display_image_box = inp.parentNode.querySelector(
+        const node__parent_display_image = inp.parentNode.querySelector(
             ".seller_product_detail-basicImg-containt"
         );
-        var preview = document.createElement("img");
-        preview.setAttribute("class", "sellerProduct__image--display");
+        var node__preview_image = document.createElement("img");
+        node__preview_image.setAttribute(
+            "class",
+            "sellerProduct__image--display"
+        );
         var file = inp.files[0];
         var reader = new FileReader();
 
         reader.onloadend = function () {
-            preview.src = reader.result;
-            display_image_box.innerHTML = "";
-            display_image_box.appendChild(preview);
+            node__preview_image.src = reader.result;
+            node__parent_display_image.innerHTML = "";
+            node__parent_display_image.appendChild(node__preview_image);
         };
 
         if (file) {
             reader.readAsDataURL(file);
         } else {
-            preview.src = "";
+            node__preview_image.src = "";
         }
     });
 });
-const display_video_block = document.getElementById(
+const node__display_video = document.getElementById(
     "seller_product_detail-basicVid-item"
 );
-const video_contain = document.getElementById("sellerProduct-video-contain");
-const add_video_over_btn = document.getElementById(
+const node__video_contain = document.getElementById(
+    "sellerProduct-video-contain"
+);
+const node__add_video = document.getElementById(
     "sellerProduct-add-video-cover"
 );
-add_video_over_btn.addEventListener("change", (e) => {
+node__add_video.addEventListener("change", (e) => {
     let file = e.target.files[0];
     let blobURL = URL.createObjectURL(file);
-    video_contain.src = blobURL;
-    const canvas_image = document.createElement("canvas");
+    node__video_contain.src = blobURL;
+    const node__canvas_image = document.createElement("canvas");
 
-    display_video_block.innerHTML = "";
-    display_video_block.appendChild(canvas_image);
+    node__display_video.innerHTML = "";
+    node__display_video.appendChild(node__canvas_image);
     setTimeout(() => {
-        canvas_image.width = video_contain.videoWidth;
-        canvas_image.height = video_contain.videoHeight;
-        const canvas_pen = canvas_image.getContext("2d");
+        node__canvas_image.width = node__video_contain.videoWidth;
+        node__canvas_image.height = node__video_contain.videoHeight;
+        const canvas_pen = node__canvas_image.getContext("2d");
         canvas_pen.drawImage(
-            video_contain,
+            node__video_contain,
             0,
             0,
-            canvas_image.width,
-            canvas_image.height
+            node__canvas_image.width,
+            node__canvas_image.height
         );
-        canvas_image.setAttribute("id", "sellerProduct-video-cover");
+        node__canvas_image.setAttribute("id", "sellerProduct-video-cover");
     }, 1000);
 });
 const body_page = document.querySelector("body");
@@ -129,11 +134,11 @@ const close_dialog_video = document.getElementById(
     "sellerProduct__close--model"
 );
 view_video.addEventListener("click", (e) => {
-    video_contain.classList.add("explain_video");
+    node__video_contain.classList.add("explain_video");
     dialog_video.classList.add("explain_video");
 });
 close_dialog_video.addEventListener("click", (e) => {
-    video_contain.classList.remove("explain_video");
+    node__video_contain.classList.remove("explain_video");
     dialog_video.classList.remove("explain_video");
 });
 // todo: classification
