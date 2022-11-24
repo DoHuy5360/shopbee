@@ -16,5 +16,6 @@ class ProductClassificationtwo extends Model
         "price",
         "storage",
         "sku",
+        "product_code",
     ];
 }

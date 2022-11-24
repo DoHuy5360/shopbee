@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('product_classificationtwos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->char('product_code',52);
             $table->char("classificationone_code",52);
             $table->char("code",52);
             $table->string("name",120)->nullable();

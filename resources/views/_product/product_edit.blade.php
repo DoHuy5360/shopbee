@@ -241,15 +241,25 @@
                                 <div class="sellerProduct__choose--classification-field">
                                     <label for="">Phân loại hàng</label>
                                     <div class="sellerProduct__classification--add-wrap classification1--btn-remove">
-                                        @foreach ($get_classification_one as $cls1)
+                                        @if ($get_classification_one != null)
+                                            @foreach ($get_classification_one as $cls1)
+                                                <div class="sellerProduct__classification--inp-wrap">
+                                                    <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                                        placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." value="{{ $cls1->name }}" />
+                                                    <div class="sellerProduct__classification--btn-remove">
+                                                        <ion-icon name="trash-outline"></ion-icon>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @else
                                             <div class="sellerProduct__classification--inp-wrap">
                                                 <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
-                                                    placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." value="{{ $cls1->name }}" />
+                                                    placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." />
                                                 <div class="sellerProduct__classification--btn-remove">
                                                     <ion-icon name="trash-outline"></ion-icon>
                                                 </div>
                                             </div>
-                                        @endforeach
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -277,15 +287,25 @@
                                 <div class="sellerProduct__choose--classification-field">
                                     <label for="">Phân loại hàng</label>
                                     <div class="sellerProduct__classification--add-wrap classification2--btn-remove">
-                                        @foreach ($get_classification_two as $cls2)
+                                        @if ($get_classification_two != null)
+                                            @foreach ($get_classification_two as $cls2)
+                                                <div class="sellerProduct__classification--inp-wrap">
+                                                    <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                                        placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." value="{{ $cls2->name }}" />
+                                                    <div class="sellerProduct__classification--btn-remove">
+                                                        <ion-icon name="trash-outline"></ion-icon>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @else
                                             <div class="sellerProduct__classification--inp-wrap">
                                                 <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
-                                                    placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." value="{{ $cls2->name }}" />
+                                                    placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." />
                                                 <div class="sellerProduct__classification--btn-remove">
                                                     <ion-icon name="trash-outline"></ion-icon>
                                                 </div>
                                             </div>
-                                        @endforeach
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -316,8 +336,8 @@
                         <div id="productDetail-classification-wrap">
                             <table id="produtDetail-classification-table-head" border="0" cellspacing="0">
                                 <tr>
-                                    <th class="produtDetail__classification-column">Nhóm phân loại 1</th>
-                                    <th class="produtDetail__classification-column">Nhóm phân loại 2</th>
+                                    <th class="produtDetail__classification-column">{{ $get_pdt->classificationone }}</th>
+                                    <th class="produtDetail__classification-column">{{ $get_pdt->classificationtwo }}</th>
                                     <th>Giá</th>
                                     <th>Kho hàng</th>
                                     <th>SKU phân loại</th>
@@ -325,42 +345,42 @@
                             </table>
                             <div id="sellerProduct-classificatiom--item-wrap">
                                 @foreach ($create_classification_table as $index1 => $cell)
-                                <table border="0" cellspacing="0">
-                                    @foreach ($cell->classificationtwos as $index2 => $cls2)
-                                        @if ($index2 == 0)
-                                            <tr>
-                                                <th rowspan="{{ sizeOf($get_classification_two) }}">
-                                                    <div id="classification1--name-{{ $index1 }}" class="productDetail__classification--name">{{ $cell->name }}</div>
-                                                    <img class="productDetail__clss_image" src="http://surl.li/dafng" alt="" />
-                                                </th>
-                                                <th id="classification2--name-{{ $index1 }}-{{ $index2 }}" class="productDetail__classification--name">{{ $cls2->name }}</th>
-                                                <th><input name="classification_price_{{ $index1 }}_{{ $index2 }}"
-                                                        class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
-                                                        value="{{ $cls2->price }}" /></th>
-                                                <th><input name="classification_storage_{{ $index1 }}_{{ $index2 }}"
-                                                        class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" value="0" value="{{ $cls2->storage }}" /></th>
-                                                <th><input name="classification_sku_{{ $index1 }}_{{ $index2 }}"
-                                                        class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
-                                                        value="{{ $cls2->sku }}" />
-                                                </th>
-                                            </tr>
-                                        @else
-                                            <tr>
-                                                <th id="classification2--name-{{ $index1 }}-{{ $index2 }}" class="productDetail__classification--name">{{ $cls2->name }}</th>
-                                                <th><input name="classification_price_{{ $index1 }}_{{ $index2 }}"
-                                                        class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
-                                                        value="{{ $cls2->price }}" /></th>
-                                                <th><input name="classification_storage_{{ $index1 }}_{{ $index2 }}"
-                                                        class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" value="0" value="{{ $cls2->storage }}" /></th>
-                                                <th><input name="classification_sku_{{ $index1 }}_{{ $index2 }}"
-                                                        class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
-                                                        value="{{ $cls2->sku }}" />
-                                                </th>
-                                            </tr>
-                                        @endif
-                                    @endforeach
-                                </table>
-                            @endforeach
+                                    <table border="0" cellspacing="0">
+                                        @foreach ($cell->classificationtwos as $index2 => $cls2)
+                                            @if ($index2 == 0)
+                                                <tr>
+                                                    <th rowspan="{{ sizeOf($get_classification_two) }}">
+                                                        <div id="classification1--name-{{ $index1 }}" class="productDetail__classification--name">{{ $cell->name }}</div>
+                                                        <img class="productDetail__clss_image" src="http://surl.li/dafng" alt="" />
+                                                    </th>
+                                                    <th id="classification2--name-{{ $index1 }}-{{ $index2 }}" class="productDetail__classification--name">{{ $cls2->name }}</th>
+                                                    <th><input name="classification_price_{{ $index1 }}_{{ $index2 }}"
+                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
+                                                            value="{{ $cls2->price }}" /></th>
+                                                    <th><input name="classification_storage_{{ $index1 }}_{{ $index2 }}"
+                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" value="{{ $cls2->storage }}" /></th>
+                                                    <th><input name="classification_sku_{{ $index1 }}_{{ $index2 }}"
+                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
+                                                            value="{{ $cls2->sku }}" />
+                                                    </th>
+                                                </tr>
+                                            @else
+                                                <tr>
+                                                    <th id="classification2--name-{{ $index1 }}-{{ $index2 }}" class="productDetail__classification--name">{{ $cls2->name }}</th>
+                                                    <th><input name="classification_price_{{ $index1 }}_{{ $index2 }}"
+                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
+                                                            value="{{ $cls2->price }}" /></th>
+                                                    <th><input name="classification_storage_{{ $index1 }}_{{ $index2 }}"
+                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" value="{{ $cls2->storage }}" /></th>
+                                                    <th><input name="classification_sku_{{ $index1 }}_{{ $index2 }}"
+                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
+                                                            value="{{ $cls2->sku }}" />
+                                                    </th>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                    </table>
+                                @endforeach
                             </div>
                         </div>
                     </div>

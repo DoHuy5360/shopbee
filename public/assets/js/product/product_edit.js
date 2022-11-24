@@ -268,6 +268,7 @@ node__classification_buttons_add.forEach((btn) => {
         }
     });
 });
+deleteClassifiactionInput()
 
 const node__classification_columns = document.querySelectorAll(
     ".produtDetail__classification-column"
