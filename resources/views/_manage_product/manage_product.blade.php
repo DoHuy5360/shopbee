@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="{{ asset('assets/css/manage_product/manage_product.css') }}">
 <script src="{{ asset('assets/js/manage_product/manage_product.js') }}"></script>
+<input id="seller-allProduct-csrf" type="hidden" name="" value="{{ csrf_token() }}">
 <div id="seller-all-product-wrap">
     <div id="seller-all-product-notification" class="seller__allProduct--wrap">
         <img src="{{ asset('assets/img/speaker.png') }}" alt="" />
@@ -122,8 +123,8 @@
                 <div id="seller-all-product-table-body">
                     @foreach ($get_pdt as $item)
                         <div class="seller__allProduct--card seller__allProduct--table-grid">
-                            <div class="seller__allProduct--card-checkbox">
-                                <input type="checkbox" name="" id="" />
+                            <div class="seller__allProduct--card-checkbox-wrap">
+                                <input class="seller__allProduct--card-checkbox" type="checkbox" name="" id="" data-product-code="{{ $item->product_code }}"/>
                             </div>
                             <div class="seller__allProduct--card-info">
                                 <img class="seller__allProduct--card-image" src="{{ asset($item->path) }}" alt="" />
@@ -168,6 +169,17 @@
                         <div><span>24</span>/trang</div>
                         <ion-icon name="chevron-down-outline"></ion-icon>
                     </div>
+                </div>
+            </div>
+            <div id="seller-allProduct-delete-card-wrap">
+                <div id="seller-allProduct-delete-left-part">
+                    <input type="checkbox" name="" id="">
+                    <span>Chọn Tất Cả</span>
+                </div>
+                <div id="seller-allProduct-delete-right-part">
+                    <span>1 Sản phẩm được chọn</span>
+                    <button id="seller-allProduct-card-delete-btn" type="button">Xóa</button>
+                    <button id="seller-allProduct-card-display-btn" type="button" >Hiển Thị</button>
                 </div>
             </div>
         </div>

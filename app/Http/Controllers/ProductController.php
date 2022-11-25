@@ -381,8 +381,21 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $array_pdt_code_del_fail = [];
+        $array_pdt_code = $request->products;
+        foreach ($array_pdt_code as $code) {
+            $successful_delete = DB::delete(
+                "DELETE
+                FROM products
+                WHERE code = '$code'
+                "
+            );
+            if($successful_delete){
+                array_push($array_pdt_code_del_fail, $code);
+            }
+        }
+        return $array_pdt_code_del_fail;
     }
 }
