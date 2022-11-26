@@ -84,12 +84,12 @@
                         <div id="seller-all-product-process-bar-percent"></div>
                     </div>
                     <div id="seller-all-product-remain">
-                        Có thể đăng thêm {{ 1000 - (int) $amont_pdt }} sản phẩm <span>?</span>
+                        Có thể đăng thêm {{ 1000 - (int) $amont_pdt }} sản phẩm <span><ion-icon name="help-circle-outline"></ion-icon></span>
                     </div>
                 </div>
                 <div id="seller-all-product-action-field">
                     <a href="#">Tối ưu sản phẩm</a>
-                    <a href="/new-product" id="seller-all-product-add">
+                    <a href="{{ route('product.index') }}" id="seller-all-product-add">
                         <ion-icon name="add-outline"></ion-icon>
                         <div>Thêm 1 sản phẩm mới</div>
                     </a>

@@ -28,15 +28,19 @@
                                 <span class="sellerProduct__image--number cover">* Ảnh bìa</span>
                                 <input type="file" name="image-0" id="sellerProduct-add-image-cover" class="sellerProduct__hidden--image-input">
                             </div>
-                            <div class="sellerProduct__image--add-wrap">
-                                <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-1">
-                                    <ion-icon name="add-circle-outline"></ion-icon>
-                                    <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[1]->path) }}" alt="">
-                                </label>
-                                <span class="sellerProduct__image--number">Hình ảnh 1</span>
-                                <input type="file" name="image-1" id="sellerProduct-add-image-1" class="sellerProduct__hidden--image-input">
-                            </div>
-                            <div class="sellerProduct__image--add-wrap">
+                            @for ($index = 1; $index < 9; $index++)
+                                <div class="sellerProduct__image--add-wrap">
+                                    <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-{{ $index }}">
+                                        <ion-icon name="add-circle-outline"></ion-icon>
+                                        @if (isset($get_pdt_imgs[$index]->path))
+                                            <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[$index]->path) }}" alt="">
+                                        @endif
+                                    </label>
+                                    <span class="sellerProduct__image--number">Hình ảnh {{ $index }}</span>
+                                    <input type="file" name="image-{{ $index }}" id="sellerProduct-add-image-{{ $index }}" class="sellerProduct__hidden--image-input">
+                                </div>
+                            @endfor
+                            {{-- <div class="sellerProduct__image--add-wrap">
                                 <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-2">
                                     <ion-icon name="add-circle-outline"></ion-icon>
                                     <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[2]->path) }}" alt="">
@@ -91,7 +95,7 @@
                                 </label>
                                 <span class="sellerProduct__image--number">Hình ảnh 8</span>
                                 <input type="file" name="image-8" id="sellerProduct-add-image-8" class="sellerProduct__hidden--image-input">
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicVid">
