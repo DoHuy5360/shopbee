@@ -19,7 +19,7 @@ return new class extends Migration
             $table->char("code", 52);
             $table->string("name", 120);
             $table->string("description", 3000);
-            $table->string("category", 50);
+            $table->string("category", 300);
             $table->string("brand", 120);
             $table->string("origin", 120);
             $table->string("weight", 10);

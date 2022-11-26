@@ -4,6 +4,7 @@ use App\Http\Controllers\BuyerpageController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\NewProductController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,11 +23,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/', BuyerpageController::class);
-
-
-Route::get('/purchase', function () {
-    return view('_purchase.purchase');
-});
 
 Route::get('/manage-product', function () {
     $user_id = Auth::user()->code;
@@ -50,7 +46,7 @@ Route::get('/manage-product', function () {
 Route::get('/seller', function () {
     return view('_seller.seller');
 });
-
+Route::resource('/purchase', PurchaseController::class);
 Route::resource('/product', ProductController::class);
 Route::resource('/profile', UserController::class);
 Route::resource('/cart', CartController::class);

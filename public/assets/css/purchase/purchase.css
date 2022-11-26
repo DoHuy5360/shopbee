@@ -102,7 +102,6 @@
 }
 #purchase-page-address {
     position: relative;
-    height: 135px;
     border-bottom: 1px solid #00000017;
     padding: 30px;
 }
@@ -198,6 +197,8 @@
     justify-content: flex-start;
     display: flex;
     align-items: center;
+    white-space: nowrap;
+    font-size: 20px;
 }
 
 .purchase_page_product_name_detail {
@@ -224,7 +225,7 @@
 }
 .purchase_page_product_name_title {
     width: 380px;
-    /* flex: 0; */
+    padding: 0 10px;
     text-overflow: ellipsis;
     overflow: hidden;
     line-height: 1rem;
