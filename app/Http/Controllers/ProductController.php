@@ -10,6 +10,7 @@ use App\Models\ProductVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use stdClass;
 
 require_once('functions/convert.php');
 require_once('functions/code_generate.php');
@@ -22,7 +23,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        // return genCode(52);
+        return view('_new_product.new_product');
     }
 
     /**
@@ -30,9 +31,14 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $category_array = explode(',', $request->product_category);
+        $product_name = $request->product_name;
+        return view('_new_product_detail.new_product_detail', [
+            "category_array" => $category_array,
+            "product_name" => $product_name,
+        ]);
     }
 
     /**
@@ -309,13 +315,22 @@ class ProductController extends Controller
                 $image_name = date("dmYHis") . '.' . $image_file->getClientOriginalName();
                 $image_file->move(public_path("assets/img/product"), $image_name);
 
-                DB::update(
+                $update_pdt_img = DB::update(
                     "UPDATE product_images
                     SET path = 'assets/img/product/$image_name'
-                    WHERE index = '$index'
-                    AND product_code = '$id'
+                    WHERE product_code = '$id'
+                    AND index = '$index'
                     "
                 );
+                if(!$update_pdt_img){
+                    $sto_pdt_img = new ProductImage();
+                    $sto_pdt_img->code = genCode(52);
+                    $sto_pdt_img->product_code = $id;
+                    $sto_pdt_img->index = $index;
+                    $sto_pdt_img->path = "assets/img/product/$image_name";
+                    $sto_pdt_img->save();
+                }
+
             }
         }
         $is_video_exist = $request->file("product_video");
@@ -392,7 +407,7 @@ class ProductController extends Controller
                 WHERE code = '$code'
                 "
             );
-            if($successful_delete){
+            if ($successful_delete) {
                 array_push($array_pdt_code_del_fail, $code);
             }
         }

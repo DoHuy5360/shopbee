@@ -22,7 +22,7 @@ $(document).ready(function () {
     function formatCurrency(raw_money) {
         return raw_money
             .toFixed(1)
-            .replace(/\d(?=(\d{3})+\.)/g, "$&,")
+            .replace(/\d(?=(\d{3})+\.)/g, "$&.")
             .slice(0, -2);
     }
     // todo: Cập nhật giá tiền theo số lượng vật phẩm | Cập nhật tổng giá tiền

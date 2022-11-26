@@ -1,5 +1,5 @@
 import { CATEGORIES } from "./categories.js";
-
+import { VALIDATION } from "../class/validation.js"
 class Category {
     constructor(_array_categories) {
         this.arr_categ = _array_categories;
@@ -122,5 +122,18 @@ accept_btn.addEventListener("click", (e) => {
     hidden_tranfer.setAttribute("name", "product_category");
     hidden_tranfer.value = category_string;
     accept_btn.form.prepend(hidden_tranfer);
-    accept_btn.form.submit();
+    if(object__product_name.isValid()){
+        accept_btn.form.submit();
+    }
+});
+
+// todo: Kiểm tra hợp lệ
+const object__product_name = new VALIDATION("#seller-product-name-input-field");
+object__product_name.checkLengthMinMax(10, 120)
+object__product_name.addEventInput((node__input) => {
+    object__product_name.changeValueByLength(
+        node__input,
+        "#seller-product-input-numb"
+    );
+    object__product_name.checkLengthMinMax(10, 120)
 });

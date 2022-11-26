@@ -318,7 +318,7 @@
                     <div id="seller_product_detail-sellInfor-price-inputfield">
                         <div id="seller_product_detail-sellInfor-price-currency">₫</div>
                         <input type="text" name="product_price" id="seller_product_detail-sellInfor-price-input" class="sellerProduct__placeholder--color" min="1000" max="100000000"
-                            placeholder="Nhập vào" required value="{{ $random->product_price }}" />
+                            placeholder="Nhập vào" required value="" />
                     </div>
                 </div>
                 <div id="seller_product_detail-sellInfor-storage">

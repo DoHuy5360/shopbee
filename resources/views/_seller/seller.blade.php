@@ -81,7 +81,7 @@
                             <ul class="sidebar__menu--content">
                                 <li id="seller-all-product-btn" class="sidebar-subMenu">Tất Cả Sản Phẩm</li>
                                 <li id="seller-new-product-btn" class="sidebar-subMenu">
-                                    <a href="/new-product" target="_blank">Thêm Sản Phẩm</a>
+                                    <a href="{{ route('product.index') }}" target="_blank">Thêm Sản Phẩm</a>
                                 </li>
                                 <li class="sidebar-subMenu">Sản Phẩm Vi Phạm</li>
                             </ul>

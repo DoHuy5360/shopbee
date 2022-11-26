@@ -110,11 +110,12 @@ body {
   width: 250px;
   display: flex;
   align-items: center;
-  padding: 0 5px;
+  padding: 0 5px 0 10px;
   border: 1px solid #E5E5E5;
   border-radius: 3px;
   color: #b7b7b7;
   padding-right: 10px;
+  font-size: 14px;
 }
 
 #seller-product-choice-search-input {
@@ -224,4 +225,7 @@ body {
 }
 #typeProduct__previous--transform{
     left: 10px;
+}
+#seller-product-input-numb{
+  color: var(--color-4);
 }

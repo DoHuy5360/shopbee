@@ -48,8 +48,8 @@
                 </div>
                 <div id="purchase-page-customerInfor">
                     <div id="purchase-page-infor">
-                        <span>pham duy (+84)</span>
-                        <span>0900008</span>
+                        <span>{{ Auth::user()->name }} (+84)</span>
+                        <span>{{ Auth::user()->phone }}</span>
                     </div>
                     <div id="purchase-page-address-detail">
                         <div>84 An Khánh Châu Thành, Ấp 4, Xã An Khánh, Huyện Châu Thành, Bến Tre</div>
@@ -92,30 +92,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="purchase_page_productView_detail">
-                            <div class="purchase_page_product_name">
-                                <div class="purchase_page_product_name_detail">
-                                    <img class="purchase_page_product_name_img" src="https://i.dailymail.co.uk/1s/2020/01/21/22/23701324-7913735-image-a-19_1579646579999.jpg" alt=""
-                                        srcset="" />
+                        @foreach ($array_pdt_slc as $item)
+                            <div class="purchase_page_productView_detail">
+                                <div class="purchase_page_product_name">
+                                    <div class="purchase_page_product_name_detail">
+                                        <img class="purchase_page_product_name_img" src="{{ asset($item['image']) }}" alt=""
+                                            srcset="" />
+                                    </div>
+                                </div>
+                                <div class="purchase_page_product_detail_wrapper">
+                                    <div class="purchase_page_product_name_title">{{ $item['name'] }}
+                                    </div>
+                                    <div class="purchase_page_product_about">---</div>
+                                    <div class="purchase_page_product_price">
+                                        <div>₫{{ number_format($item['price'],0,",",".") }}</div>
+                                    </div>
+                                    <div class="purchase_page_product_quantity">
+                                        <div>{{ $item['amount'] }}</div>
+                                    </div>
+                                    <div class="purchase_page_product_priceSum">
+                                        <div>₫{{ number_format($item['sum_price'],0,",",".") }}</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="purchase_page_product_detail_wrapper">
-                                <div class="purchase_page_product_name_title">100% Thảo Dược Từ Mỹ. Được Bộ Y Tế Chứng Nhận. Tư Vấn Bệnh Và Giao Thuốc Miễn Phí. Thảo Dược Tiêu Chuẩn Mỹ 100% Thảo Dược Từ
-                                    Mỹ. Được Bộ Y Tế Chứng Nhận. Tư Vấn Bệnh Và Giao Thuốc Miễn Phí. Thảo Dược Tiêu Chuẩn Mỹ 100% Thảo Dược Từ Mỹ. Được Bộ Y Tế Chứng Nhận. Tư Vấn Bệnh Và Giao Thuốc Miễn
-                                    Phí. Thảo Dược Tiêu Chuẩn Mỹ
-                                </div>
-                                <div class="purchase_page_product_about">Loại: Hoa cúc trắng + Hộp</div>
-                                <div class="purchase_page_product_price">
-                                    <div>₫18.500</div>
-                                </div>
-                                <div class="purchase_page_product_quantity">
-                                    <div>1</div>
-                                </div>
-                                <div class="purchase_page_product_priceSum">
-                                    <div>₫18.500</div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="purchase_page_product_otherFunction">
                         <div class="purchase_page_product_chatFunct">
@@ -135,8 +135,8 @@
                     </div>
                     <div class="purchase_page_product_sumPrice">
                         <div class="purchase_page_product_sumDetail">
-                            <span> Tổng số tiền (1 sản phẩm): </span>
-                            <span>₫40.700</span>
+                            <span> Tổng số tiền ({{ $amount_pdt }} sản phẩm): </span>
+                            <span>₫{{ number_format($total_price, 0, ",",".") }}</span>
                         </div>
                     </div>
                 </div>
@@ -153,10 +153,10 @@
                     <div id="purchage-page-shop-coin-wrap">
                         <ion-icon name="logo-bitcoin"></ion-icon>
                         <div>ShopBee Xu</div>
-                        <div id="purchage-coin-current">Dùng 8000300 ShopBee xu</div>
+                        <div id="purchage-coin-current">Dùng 0 ShopBee xu</div>
                     </div>
                     <div id="purchage-coin-shop-accept">
-                        <span>[ -₫8000300 ]</span>
+                        <span>[ -₫0 ]</span>
                         <input type="checkbox" name="" id="" />
                     </div>
                 </div>
@@ -194,11 +194,11 @@
                 <div id="purchase-page-payment-sumbit-wrap">
                     <div id="purchase-page-payment-sumbit-containt">
                         <div id="purchase-page-payment-sumbitProducTitle">Tổng tiền hàng</div>
-                        <div id="purchase-page-payment-sumbitTrans">₫ <span> 1.022.500 </span></div>
+                        <div id="purchase-page-payment-sumbitTrans">₫ <span> {{ number_format($total_price, 0, ",",".") }} </span></div>
                         <div id="purchase-page-payment-sumbitProduct">Phí vận chuyển</div>
-                        <div id="purchase-page-payment-sumbitSumTitle">₫ <span> 1.022.500 </span></div>
+                        <div id="purchase-page-payment-sumbitSumTitle">₫ <span> 0 </span></div>
                         <div id="purchase-page-payment-sumbitTransTitle">Tổng thanh toán:</div>
-                        <div id="purchase-page-payment-sumbitSum">₫ <span> 1.022.500.000 </span></div>
+                        <div id="purchase-page-payment-sumbitSum">₫ <span> {{ number_format($total_price, 0, ",",".") }} </span></div>
                     </div>
                 </div>
                 <div id="purchase-page-payment-sumbitBtn">
