@@ -104,17 +104,18 @@
     position: relative;
     border-bottom: 1px solid #00000017;
     padding: 30px;
+    background-color: white;
 }
 #purchase-page-address,
 #purchase-page-productReview,
 #purchase-page-shop-voucherAndCoin,
 #purchase-page-payment-wrap {
-    background-color: #fff;
     width: inherit;
     width: 100%;
 }
 #purchase-page-payment-wrap {
     border-bottom: 1px solid #00000017;
+    background-color: white;
 }
 #purchase-page-address-title {
     display: flex;
@@ -174,8 +175,9 @@
 
 #purchase-page-prodcuctTilte {
     display: flex;
-    height: 50px;
+    padding: 30px 30px 0 30px;
     align-items: center;
+    background-color: white;
 }
 #purchase-page-prodcuctTilte:nth-child(div) {
     justify-content: center;
@@ -261,13 +263,14 @@
     aspect-ratio: 1;
 }
 #purchase-page-productSight {
-    background-color: #fafdff;
+    /* background-color: #fafdff; */
 }
 /*! cac chuc nang trong muc san pham */
 .purchase_page_product_otherFunction {
     display: flex;
     border-bottom: 1px dashed #9b9b9b76;
     justify-content: space-between;
+    background-color: #fafdff;
 }
 
 .purchase_page_product_chatFunct {
@@ -301,8 +304,8 @@
 .purchase_page_product_sumPrice {
     display: flex;
     justify-content: flex-end;
-    margin-right: 30px;
-    padding: 20px 0;
+    padding: 20px 30px 20px 0;
+    background-color: #fafdff;
     box-shadow: 0 1px 1px 0 #00000017;
 }
 .purchase_page_product_transChange {
@@ -391,15 +394,7 @@
     align-items: center;
     padding: 30px;
 }
-.purchage__product--info-wrap {
-    padding: 30px;
-    background-color: white;
-    border-radius: 3px;
-    border-bottom: 1px dashed #cdcdcd83;
-    box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
-    -webkit-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
-    -moz-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
-}
+
 #purchase-page-payment-method-about {
     display: flex;
     align-items: center;
@@ -509,4 +504,18 @@
 
 #purchase-page-shop-voucher-select {
     text-transform: capitalize;
+}
+.purchase__product--list-product{
+    padding: 30px;
+    background-color: white;
+    border-radius: 3px;
+    border-bottom: 1px dashed #cdcdcd83;
+    box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+    -webkit-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+    -moz-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+}
+.purchase__product--list-product-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

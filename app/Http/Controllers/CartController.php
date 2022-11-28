@@ -25,9 +25,25 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        if ($request->id === Auth::user()->code) {
+            $get_itm_cart = DB::select(
+                "SELECT p.name, p.price, pi.path
+                FROM carts c, products p, product_images pi
+                WHERE c.user_code = '$request->id'
+                AND c.product_code = p.code
+                AND pi.product_code = p.code
+                AND pi.index = '0'
+                "
+            );
+            // return $get_itm_cart;
+            return view('_cart.cart_item', [
+                "get_itm_cart" => $get_itm_cart,
+            ]);
+        }else{
+            return '<b>Đây không phải giỏ hàng của bạn</b>';
+        }
     }
 
     /**
@@ -66,57 +82,55 @@ class CartController extends Controller
     public function show($id, Request $request)
     {
         // return Auth::user()->code;
-        $action = $request->query("action");
-        if ($action === "watch") {
-            $get_itm_cart = DB::select(
-                "SELECT p.name, p.price, pi.path
+        // return $request;
+        $get_pdt_creator = DB::select(
+            "SELECT DISTINCT p.user_code, u.name
+            FROM carts c, products p, users u
+            WHERE c.user_code = '$id'
+            AND c.product_code = p.code
+            AND p.user_code = u.code
+            "
+        );
+        // return $get_pdt_creator;
+        foreach ($get_pdt_creator as $index => $creator) {
+            $get_pdt_cart = DB::select(
+                "SELECT *, c.code AS cart_code, p.code AS product_code
                 FROM carts c, products p, product_images pi
                 WHERE c.user_code = '$id'
                 AND c.product_code = p.code
+                AND p.user_code = '$creator->user_code'
                 AND pi.product_code = p.code
                 AND pi.index = '0'
                 "
             );
-            return view('_cart.cart_item', [
-                "get_itm_cart" => $get_itm_cart,
-            ]);
-        } else {
-            // todo: Chỗ này chưa xong về làm tiếp
-            $get_itm_cart = DB::select(
-                "SELECT *, c.code AS cart_code, u.name AS user_name, p.code AS product_code
-                FROM users u, carts c, products p, product_images pi
-                WHERE u.code = '$id'
-                AND u.code = p.user_code
-                AND c.product_code = p.code
-                AND pi.product_code = p.code
-                AND pi.index = '0'
-                "
-            );
-            foreach ($get_itm_cart as $item) {
+            foreach ($get_pdt_cart as $item) {
                 $get_classification_one = DB::select(
                     "SELECT code, name, path
-                    FROM product_classificationones
-                    WHERE product_code = '{$item->product_code}'
-                    "
+                        FROM product_classificationones
+                        WHERE product_code = '{$item->product_code}'
+                        "
                 );
                 $item->classificationones = $get_classification_one;
                 $array_classificationtwos = [];
                 foreach ($get_classification_one as $cls1) {
                     $get_classification_two = DB::select(
                         "SELECT classificationone_code, name, price, storage, sku
-                        FROM product_classificationtwos
-                        WHERE classificationone_code = '{$cls1->code}'
-                        "
+                            FROM product_classificationtwos
+                            WHERE classificationone_code = '{$cls1->code}'
+                            "
                     );
                     array_push($array_classificationtwos, $get_classification_two);
                 }
                 $item->classificationtwos = $array_classificationtwos;
             }
-            // return $get_itm_cart;
-            return view('_cart.cart', [
-                'get_itm_cart' => $get_itm_cart,
-            ]);
+            $get_pdt_creator[$index]->products = $get_pdt_cart;
         }
+        // return $get_pdt_creator;
+
+        
+        return view('_cart.cart', [
+            'get_pdt_creator' => $get_pdt_creator,
+        ]);
     }
 
     /**

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->char("product_code", 52);
             $table->char("code", 52);
             $table->string("name", 120);
-            $table->string("path", 120);
+            $table->string("path", 500);
         });
     }
 

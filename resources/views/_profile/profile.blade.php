@@ -23,20 +23,20 @@
                 </div>
             </div>
             <div id="profile-menu-wrap">
-                <div class="profile__menu--element">25.9 Luong Ve Sale To</div>
+                <div class="profile__menu--element">25.9 Lương Về Sale To</div>
                 <div class="profile__menu--element-wrap">
                     <div class="profile__menu--element">
                         <svg class="profile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path fill="#1152B4"
                                 d="M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1,1,0,0,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1A10,10,0,0,0,15.71,12.71ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z" />
                         </svg>
-                        <span> Tai Khoan Cua Toi </span>
+                        <span> Tài Khoản Của Tôi </span>
                     </div>
                     <div class="profile__element--option-wrap">
-                        <div class="profile__element--option">Ho So</div>
-                        <div class="profile__element--option">Ngan Hang</div>
-                        <div class="profile__element--option">Dia Chi</div>
-                        <div class="profile__element--option">Doi Mat khau</div>
+                        <div class="profile__element--option">Hồ Sơ</div>
+                        <div class="profile__element--option">Ngân Hàng</div>
+                        <div class="profile__element--option">Địa Chỉ</div>
+                        <div class="profile__element--option">Đổi Mật khẩu</div>
                     </div>
                 </div>
                 <div class="profile__menu--element">
@@ -44,14 +44,14 @@
                         <path fill="#165EB7"
                             d="M9.5,10.5H12a1,1,0,0,0,0-2H11V8A1,1,0,0,0,9,8v.55a2.5,2.5,0,0,0,.5,4.95h1a.5.5,0,0,1,0,1H8a1,1,0,0,0,0,2H9V17a1,1,0,0,0,2,0v-.55a2.5,2.5,0,0,0-.5-4.95h-1a.5.5,0,0,1,0-1ZM21,12H18V3a1,1,0,0,0-.5-.87,1,1,0,0,0-1,0l-3,1.72-3-1.72a1,1,0,0,0-1,0l-3,1.72-3-1.72a1,1,0,0,0-1,0A1,1,0,0,0,2,3V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V13A1,1,0,0,0,21,12ZM5,20a1,1,0,0,1-1-1V4.73L6,5.87a1.08,1.08,0,0,0,1,0l3-1.72,3,1.72a1.08,1.08,0,0,0,1,0l2-1.14V19a3,3,0,0,0,.18,1Zm15-1a1,1,0,0,1-2,0V14h2Z" />
                     </svg>
-                    <span> Don Mua </span>
+                    <span> Đơn Mua </span>
                 </div>
                 <div class="profile__menu--element">
                     <svg class="profile__icon" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24">
                         <path fill="#F24D29"
                             d="M18,13.18V10a6,6,0,0,0-5-5.91V3a1,1,0,0,0-2,0V4.09A6,6,0,0,0,6,10v3.18A3,3,0,0,0,4,16v2a1,1,0,0,0,1,1H8.14a4,4,0,0,0,7.72,0H19a1,1,0,0,0,1-1V16A3,3,0,0,0,18,13.18ZM8,10a4,4,0,0,1,8,0v3H8Zm4,10a2,2,0,0,1-1.72-1h3.44A2,2,0,0,1,12,20Zm6-3H6V16a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z" />
                     </svg>
-                    <span> Thong Bao </span>
+                    <span> Thông Báo </span>
                 </div>
                 <div class="profile__menu--element">
                     <svg class="profile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -91,14 +91,14 @@
                             <div class="profile__edit--name">Email</div>
                             <div class="profile__edit--field-input">
                                 <span>{{ $get_user->email }}</span>
-                                <a href="">Thay doi</a>
+                                <a href="">Thay Đổi</a>
                             </div>
                         </div>
                         <div class="profile__edit--field-wrap">
                             <div class="profile__edit--name">Số điện thoại</div>
                             <div class="profile__edit--field-input">
                                 <span>{{ isset($get_user->phone) ? $get_user->phone : 'Chưa thêm' }}</span>
-                                <a href=""> Thay Doi </a>
+                                <a href=""> Thay Đổi </a>
                             </div>
                         </div>
                         <div class="profile__edit--field-wrap">
