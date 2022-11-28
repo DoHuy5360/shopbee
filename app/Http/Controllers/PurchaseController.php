@@ -73,17 +73,19 @@ class PurchaseController extends Controller
         $add_bill->buyer_code = Auth::user()->code;
         $add_bill->total = $request->product_total;
         $add_bill->save();
-        foreach ($request->product_information as $product) {
-            $add_pdt_bill = new BillProduct();
-            $add_pdt_bill->code = genCode(52);
-            $add_pdt_bill->bill_code = $bill_code;
-            $add_pdt_bill->product_code = $product["code"];
-            $add_pdt_bill->name = $product["name"];
-            $add_pdt_bill->path = $product["image"];
-            $add_pdt_bill->price = $product["price"];
-            $add_pdt_bill->amount = $product["amount"];
-            $add_pdt_bill->total = $product["sum_price"];
-            $add_pdt_bill->save();
+        foreach ($request->product_information as $item) {
+            foreach($item['products'] as $product){
+                $add_pdt_bill = new BillProduct();
+                $add_pdt_bill->code = genCode(52);
+                $add_pdt_bill->bill_code = $bill_code;
+                $add_pdt_bill->product_code = $product["product_code"];
+                $add_pdt_bill->name = $product["product_name"];
+                $add_pdt_bill->path = $product["image"];
+                $add_pdt_bill->price = $product["price"];
+                $add_pdt_bill->amount = $product["amount"];
+                $add_pdt_bill->total = $product["sum_price"];
+                $add_pdt_bill->save();
+            }
         }
         return $request;
     }

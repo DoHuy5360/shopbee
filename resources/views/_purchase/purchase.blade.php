@@ -66,7 +66,7 @@
                 <div id="purchase-page-productSight">
                     <div id="purchase-page-prodcuctTilte">
                         <div class="purchase_page_product_name">
-                            <div>Sản Phẩm</div>
+                            <div style="width: 68px;">Sản Phẩm</div>
                         </div>
                         <div class="purchase_page_product_detail_wrapper">
                             <div class="purchase_page_product_name_title"></div>
@@ -96,28 +96,28 @@
                                         </div>
                                     </div>
                                     @foreach ($creator['products'] as $index_item => $item)
-                                        {{-- <input type="hidden" name="product_information[{{ $index }}][code]" value="{{ $item['code'] }}"> --}}
+                                        <input type="hidden" name="product_information[{{ $index_creator }}][products][{{ $index_item }}][product_code]" value="{{ $item['product_code'] }}">
                                         <div class="purchase_page_productView_detail">
                                             <div class="purchase_page_product_name">
                                                 <div class="purchase_page_product_name_detail">
-                                                    {{-- <input type="hidden" name="product_information[{{ $index }}][image]" value="{{ $item['image'] }}"> --}}
+                                                    <input type="hidden" name="product_information[{{ $index_creator }}][products][{{ $index_item }}][image]" value="{{ $item['image'] }}">
                                                     <img class="purchase_page_product_name_img" src="{{ asset($item['image']) }}" alt="" srcset="" />
                                                 </div>
                                             </div>
                                             <div class="purchase_page_product_detail_wrapper">
-                                                {{-- <input type="hidden" name="product_information[{{ $index }}][name]" value="{{ $item['name'] }}"> --}}
+                                                <input type="hidden" name="product_information[{{ $index_creator }}][products][{{ $index_item }}][product_name]" value="{{ $item['name'] }}">
                                                 <div class="purchase_page_product_name_title">{{ $item['name'] }}
                                                 </div>
                                                 <div class="purchase_page_product_about">---</div>
                                                 <div class="purchase_page_product_price">
-                                                    {{-- <input type="hidden" name="product_information[{{ $index }}][price]" value="{{ $item['price'] }}"> --}}
+                                                    <input type="hidden" name="product_information[{{ $index_creator }}][products][{{ $index_item }}][price]" value="{{ $item['price'] }}">
                                                     <div>₫{{ number_format($item['price'], 0, ',', '.') }}</div>
                                                 </div>
                                                 <div class="purchase_page_product_quantity">
-                                                    {{-- <input type="hidden" name="product_information[{{ $index }}][amount]" value="{{ $item['amount'] }}"> --}}
+                                                    <input type="hidden" name="product_information[{{ $index_creator }}][products][{{ $index_item }}][amount]" value="{{ $item['amount'] }}">
                                                     <div>{{ $item['amount'] }}</div>
                                                 </div>
-                                                {{-- <input type="hidden" name="product_information[{{ $index }}][sum_price]" value="{{ $item['sum_price'] }}"> --}}
+                                                <input type="hidden" name="product_information[{{ $index_creator }}][products][{{ $index_item }}][sum_price]" value="{{ $item['sum_price'] }}">
                                                 <div class="purchase_page_product_priceSum">
                                                     <div>₫{{ number_format($item['sum_price'], 0, ',', '.') }}</div>
                                                 </div>

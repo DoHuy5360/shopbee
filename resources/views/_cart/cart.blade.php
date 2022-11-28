@@ -108,7 +108,6 @@
                 @foreach ($get_pdt_creator as $index_pdt => $product_creator)
                     <input type="hidden" name="product_information[{{ $index_pdt }}][user_code]" value="{{ $product_creator->user_code }}">
                     <input type="hidden" name="product_information[{{ $index_pdt }}][user_name]" value="{{ $product_creator->name }}">
-                    {{-- <input type="hidden" name="product_information[{{ $index_pdt }}][code]" value="{{ $item->code }}"> --}}
                     <div class="cart_page_product_infor">
                         <div class="cart_page_product_prize_infor">
                             <div class="cart_page_product_seller">
@@ -121,6 +120,7 @@
                                 </div>
                             </div>
                             @foreach ($product_creator->products as $index_item => $item)
+                            <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->code }}">
                                 <div class="cart_page_warp_containt_border">
                                     <div class="cart_page_wrap_containt">
                                         <div class="cart_page_voucher_cover">
