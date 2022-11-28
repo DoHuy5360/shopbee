@@ -66,7 +66,7 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
+        return $request;
         $bill_code = genCode(52);
         $add_bill = new Bill();
         $add_bill->code = $bill_code;
