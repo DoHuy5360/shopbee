@@ -4,11 +4,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase_respon.css') }}">
 @endsection
 @section('content')
-
-<div id="purchase-page-containt">
-    <div id="purchase-page-payment-method-about-wrap-respon" class="purchase_page_payment_wrap_hidden"></div>
-    <div id="purchage-header-wrap">
-        <div id="purchage-header-navbar-wrap">
+    <form action="{{ route('purchase.store') }}" id="purchase-page-containt" method="POST">
+        @csrf
+        <div id="purchase-page-payment-method-about-wrap-respon" class="purchase_page_payment_wrap_hidden"></div>
+        <div id="purchage-header-wrap">
+            <div id="purchage-header-navbar-wrap">
                 <div class="mainHome_navbar_aboutUs">
                     <div class="mainHome_navbar_about_topic">
                         <ul>
@@ -64,80 +64,92 @@
             </div>
             <div id="purchase-page-productReview">
                 <div id="purchase-page-productSight">
-                    <div class="purchage__product--info-wrap">
-                        <div id="purchase-page-prodcuctTilte">
-                            <div class="purchase_page_product_name">
-                                <div>Sản Phẩm</div>
+                    <div id="purchase-page-prodcuctTilte">
+                        <div class="purchase_page_product_name">
+                            <div>Sản Phẩm</div>
+                        </div>
+                        <div class="purchase_page_product_detail_wrapper">
+                            <div class="purchase_page_product_name_title"></div>
+                            <div class="purchase_page_product_about add__color--gray"></div>
+                            <div class="purchase_page_product_price add__color--gray">
+                                <div>Đơn Giá</div>
                             </div>
-                            <div class="purchase_page_product_detail_wrapper">
-                                <div class="purchase_page_product_name_title"></div>
-                                <div class="purchase_page_product_about add__color--gray"></div>
-                                <div class="purchase_page_product_price add__color--gray">
-                                    <div>Đơn Giá</div>
-                                </div>
-                                <div class="purchase_page_product_quantity add__color--gray">
-                                    <div>Số Lượng</div>
-                                </div>
-                                <div class="purchase_page_product_priceSum add__color--gray">
-                                    <div>Thành Tiền</div>
-                                </div>
+                            <div class="purchase_page_product_quantity add__color--gray">
+                                <div>Số Lượng</div>
+                            </div>
+                            <div class="purchase_page_product_priceSum add__color--gray">
+                                <div>Thành Tiền</div>
                             </div>
                         </div>
-                        <div class="purchase_page_productCompany_chat">
-                            <div class="purchase_page_productView_company">
-                                <div>Công ty trách nhiệm hữu hạn vài thành viên</div>
-                                <div class="purchase_page_message" style="color: red; font-size: 1.2rem">
-                                    <ion-icon name="chatbox-ellipses"></ion-icon>
-                                    <div>Chat ngay</div>
+                    </div>
+                    <div class="purchase__product--list-product-wrap">
+                        @foreach ($array_pdt_slc as $index_creator => $creator)
+                            <div class="purchase__product--list-product-content">
+                                <div class="purchase__product--list-product">
+                                    <div class="purchase_page_productCompany_chat">
+                                        <div class="purchase_page_productView_company">
+                                            <div>Công ty trách nhiệm hữu hạn vài thành viên</div>
+                                            <div class="purchase_page_message" style="color: red; font-size: 1.2rem">
+                                                <ion-icon name="chatbox-ellipses"></ion-icon>
+                                                <div>Chat ngay</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @foreach ($creator['products'] as $index_item => $item)
+                                        {{-- <input type="hidden" name="product_information[{{ $index }}][code]" value="{{ $item['code'] }}"> --}}
+                                        <div class="purchase_page_productView_detail">
+                                            <div class="purchase_page_product_name">
+                                                <div class="purchase_page_product_name_detail">
+                                                    {{-- <input type="hidden" name="product_information[{{ $index }}][image]" value="{{ $item['image'] }}"> --}}
+                                                    <img class="purchase_page_product_name_img" src="{{ asset($item['image']) }}" alt="" srcset="" />
+                                                </div>
+                                            </div>
+                                            <div class="purchase_page_product_detail_wrapper">
+                                                {{-- <input type="hidden" name="product_information[{{ $index }}][name]" value="{{ $item['name'] }}"> --}}
+                                                <div class="purchase_page_product_name_title">{{ $item['name'] }}
+                                                </div>
+                                                <div class="purchase_page_product_about">---</div>
+                                                <div class="purchase_page_product_price">
+                                                    {{-- <input type="hidden" name="product_information[{{ $index }}][price]" value="{{ $item['price'] }}"> --}}
+                                                    <div>₫{{ number_format($item['price'], 0, ',', '.') }}</div>
+                                                </div>
+                                                <div class="purchase_page_product_quantity">
+                                                    {{-- <input type="hidden" name="product_information[{{ $index }}][amount]" value="{{ $item['amount'] }}"> --}}
+                                                    <div>{{ $item['amount'] }}</div>
+                                                </div>
+                                                {{-- <input type="hidden" name="product_information[{{ $index }}][sum_price]" value="{{ $item['sum_price'] }}"> --}}
+                                                <div class="purchase_page_product_priceSum">
+                                                    <div>₫{{ number_format($item['sum_price'], 0, ',', '.') }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
-                            </div>
-                        </div>
-                        @foreach ($array_pdt_slc as $item)
-                            <div class="purchase_page_productView_detail">
-                                <div class="purchase_page_product_name">
-                                    <div class="purchase_page_product_name_detail">
-                                        <img class="purchase_page_product_name_img" src="{{ asset($item['image']) }}" alt=""
-                                            srcset="" />
+                                <div class="purchase_page_product_otherFunction">
+                                    <div class="purchase_page_product_chatFunct">
+                                        <label for="purchase_page_product_chatInput">Lời nhắn: </label>
+                                        <input class="purchase_page_product_chatInput" type="text" name="purchase_page_sellerChat" placeholder="Lưu ý cho người bán..." />
+                                    </div>
+                                    <div class="purchase_page_product_transportFunct">
+                                        <div class="purchase_page_product_transTitle">Đơn vị vận chuyển:</div>
+                                        <div class="purchase_page_product_transDetail">
+                                            <div class="purchage__trans--property">Nhanh</div>
+                                            <div class="purchage__trans--property">Nhận hàng vào 5 Th10</div>
+                                            <div class="purchage__trans--property ws-nowrap">(Nhanh tay vào ngay "Shopee Voucher" để săn mã Miễn phí vận chuyển nhé!)</div>
+                                        </div>
+                                        <div class="purchase_page_product_transChange">THAY ĐỔI</div>
+                                        <div class="purchase_page_product_transPrice">₫22.200</div>
                                     </div>
                                 </div>
-                                <div class="purchase_page_product_detail_wrapper">
-                                    <div class="purchase_page_product_name_title">{{ $item['name'] }}
-                                    </div>
-                                    <div class="purchase_page_product_about">---</div>
-                                    <div class="purchase_page_product_price">
-                                        <div>₫{{ number_format($item['price'],0,",",".") }}</div>
-                                    </div>
-                                    <div class="purchase_page_product_quantity">
-                                        <div>{{ $item['amount'] }}</div>
-                                    </div>
-                                    <div class="purchase_page_product_priceSum">
-                                        <div>₫{{ number_format($item['sum_price'],0,",",".") }}</div>
+                                <div class="purchase_page_product_sumPrice">
+                                    <div class="purchase_page_product_sumDetail">
+                                        <input type="hidden" name="product_total" value="{{ $total_price }}">
+                                        <span> Tổng số tiền ({{ $creator['sum_amount'] }} sản phẩm): </span>
+                                        <span>₫{{ number_format($creator['total_price'], 0, ',', '.') }}</span>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
-                    </div>
-                    <div class="purchase_page_product_otherFunction">
-                        <div class="purchase_page_product_chatFunct">
-                            <label for="purchase_page_sellerChat">Lời nhắn: </label>
-                            <input class="purchase_page_product_chatInput" type="text" name="purchase_page_sellerChat" placeholder="Lưu ý cho người bán..." />
-                        </div>
-                        <div class="purchase_page_product_transportFunct">
-                            <div class="purchase_page_product_transTitle">Đơn vị vận chuyển:</div>
-                            <div class="purchase_page_product_transDetail">
-                                <div class="purchage__trans--property">Nhanh</div>
-                                <div class="purchage__trans--property">Nhận hàng vào 5 Th10</div>
-                                <div class="purchage__trans--property ws-nowrap">(Nhanh tay vào ngay "Shopee Voucher" để săn mã Miễn phí vận chuyển nhé!)</div>
-                            </div>
-                            <div class="purchase_page_product_transChange">THAY ĐỔI</div>
-                            <div class="purchase_page_product_transPrice">₫22.200</div>
-                        </div>
-                    </div>
-                    <div class="purchase_page_product_sumPrice">
-                        <div class="purchase_page_product_sumDetail">
-                            <span> Tổng số tiền ({{ $amount_pdt }} sản phẩm): </span>
-                            <span>₫{{ number_format($total_price, 0, ",",".") }}</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -194,11 +206,11 @@
                 <div id="purchase-page-payment-sumbit-wrap">
                     <div id="purchase-page-payment-sumbit-containt">
                         <div id="purchase-page-payment-sumbitProducTitle">Tổng tiền hàng</div>
-                        <div id="purchase-page-payment-sumbitTrans">₫ <span> {{ number_format($total_price, 0, ",",".") }} </span></div>
+                        <div id="purchase-page-payment-sumbitTrans">₫ <span> {{ number_format($total_price, 0, ',', '.') }} </span></div>
                         <div id="purchase-page-payment-sumbitProduct">Phí vận chuyển</div>
                         <div id="purchase-page-payment-sumbitSumTitle">₫ <span> 0 </span></div>
                         <div id="purchase-page-payment-sumbitTransTitle">Tổng thanh toán:</div>
-                        <div id="purchase-page-payment-sumbitSum">₫ <span> {{ number_format($total_price, 0, ",",".") }} </span></div>
+                        <div id="purchase-page-payment-sumbitSum">₫ <span> {{ number_format($total_price, 0, ',', '.') }} </span></div>
                     </div>
                 </div>
                 <div id="purchase-page-payment-sumbitBtn">
@@ -210,7 +222,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </form>
     <script src="{{ asset('assets/js/purchase/purchase_respon.js') }}"></script>
-
 @endsection

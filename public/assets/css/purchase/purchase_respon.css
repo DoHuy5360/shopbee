@@ -202,6 +202,8 @@
         width: 100%;
         display: flex;
         background-color: #f6f6f6;
+        padding: 20px;
+        border-radius: 2px;
     }
 
     #purchase-page-payment-wrap {
