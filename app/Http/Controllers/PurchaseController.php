@@ -6,6 +6,7 @@ use App\Models\Bill;
 use App\Models\BillProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 require_once('functions/code_generate.php');
 class PurchaseController extends Controller
@@ -27,7 +28,7 @@ class PurchaseController extends Controller
      */
     public function create(Request $request)
     {
-        // return $request;
+        return $request;
         $array_pdt_slc = [];
         $total_price = 0;
         foreach ($request->product_information as $creator) {
@@ -39,15 +40,14 @@ class PurchaseController extends Controller
                     $sum_price = (int)$item["price"] * (int)$item["amount"];
                     $creator['products'][$index_item]["sum_price"] = $sum_price;
                     $total_price += $sum_price;
-                    $sum_price_each+= $sum_price;
+                    $sum_price_each += $sum_price;
                 } else {
                     unset($creator['products'][$index_item]);
                 }
-
             }
             $creator["total_price"] = $sum_price_each;
             $creator["sum_amount"] = $sum_amount;
-            if(sizeOf($creator['products']) > 0){
+            if (sizeOf($creator['products']) > 0) {
                 array_push($array_pdt_slc, $creator);
             }
         }
@@ -74,7 +74,7 @@ class PurchaseController extends Controller
         $add_bill->total = $request->product_total;
         $add_bill->save();
         foreach ($request->product_information as $item) {
-            foreach($item['products'] as $product){
+            foreach ($item['products'] as $product) {
                 $add_pdt_bill = new BillProduct();
                 $add_pdt_bill->code = genCode(52);
                 $add_pdt_bill->bill_code = $bill_code;
@@ -98,7 +98,20 @@ class PurchaseController extends Controller
      */
     public function show($id)
     {
-        //
+        $get_user = DB::select(
+            "SELECT *
+             FROM users
+             WHERE code = '$id'
+            "
+        )[0];
+        return view('_purchase.purchase_process', [
+            'get_user' => $get_user,
+        ]);
+
+        // if ($id == Auth::user()->code) {
+        // } else {
+        //     return redirect()->back();
+        // }
     }
 
     /**

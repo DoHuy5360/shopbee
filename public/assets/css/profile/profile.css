@@ -22,7 +22,8 @@ body {
   width: 1200px;
   margin: 20px auto 50px auto;
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 180px auto;
+  justify-content: space-between;
 }
 .profile__menu--element {
   display: flex;

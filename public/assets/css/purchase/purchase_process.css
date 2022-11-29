@@ -1,0 +1,217 @@
+#profile-process-bar-wrap {
+    display: flex;
+    background-color: white;
+    width: 995px;
+    box-shadow: 0 2px 2px 0 #0000001a;
+    -webkit-box-shadow: 0 2px 2px 0 #0000001a;
+    -moz-box-shadow: 0 2px 2px 0 #0000001a;
+}
+#profile-process-bar-wrap a {
+    text-decoration: none;
+    color: black;
+    height: 55px;
+    width: 140px;
+    display: grid;
+    place-items: center;
+    box-sizing: content-box;
+    white-space: nowrap;
+}
+#profile-process-bar-wrap a.active_link {
+    color: var(--color-4);
+    border-bottom: 2px solid;
+}
+#profile-process-search-bar-wrap{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: #EAEAEA;
+    height: 45px;
+    border-radius: 2px;
+}
+#profile-process-search-bar-wrap ion-icon{
+    color: #BBBBBB;
+    font-size: 24px;
+}
+#profile-process-search-input{
+    all: unset;
+    width: 100%;
+}
+#profile-process-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#profile-process-list-product-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.profile__process--card-product-wrap{
+    background-color: #F5F5F5;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+    -webkit-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+    -moz-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+}
+.profile__process--card-info{
+    padding: 25px 25px 15px 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+}
+.profile__process--card-info::before,
+.profile__process--card-info::after{
+    content: "";
+    width: 10px;
+    aspect-ratio: 1;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+}
+.profile__process--card-info::before{
+    left: 0;
+    transform: translate(-50% , 50%);
+}
+.profile__process--card-info::after{
+    right: 0;
+    transform: translate(50%, 50%);
+}
+.profile__process--card-product-owner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 15px;
+}
+.profile__process--card-owner-wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.profile__process--shop-name{
+    font-weight: bold;
+}
+.profile__process--shop-chat-btn,
+.profile__process--shop-view-btn{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 25px;
+    border-radius: 2px;
+    cursor: pointer;
+    justify-content: center;
+    padding: 0 5px;
+    font-size: 13px;
+}
+.profile__process--shop-chat-btn{
+    background-color: var(--color-4);
+    color: white;
+}
+.profile__process--shop-view-btn{
+    background-color: white;
+    border: 1px solid #E8E8E8;
+}
+.profile__process--card-status{
+    font-size: 17px;
+    color: var(--color-4);
+}
+.profile__process--card-product-info{
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+.profile__process--card-image{
+    width: 80px;
+    aspect-ratio: 1;
+    border: 1px solid #E8E8E8;
+    object-fit: contain;
+}
+.profile__process--card-name-amount{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+.profile__process--card-price{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-self: right;
+}
+.profile__process--origin-price,
+.profile__process--new-price{
+    display: flex;
+    font-size: 14px;
+}
+
+.profile__process--origin-price{
+    color: #BBBBBB;
+    text-decoration: line-through;
+}
+.profile__process--new-price{
+    color: var(--color-4);
+}
+.profile__process--card-actions{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 25px;
+    background-color: #FFFEFB;
+}
+.profile__process--card-total-price-wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: right;
+}
+.profile__process--guraranteed{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.profile__process--guraranteed ion-icon{
+    columns: var(--color-4);
+}
+.profile__process--total-price{
+    display: flex;
+    align-items: center;
+    color: var(--color-4);
+}
+.profile__process--total-price span{
+    font-size: 25px;
+}
+.profile__process--actions-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile__process--card-actions-wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.profile__process--cart-action-status{
+    font-size: 13px;
+    color: #BBBBBB;
+}
+.profile__process--card-actions-btn{
+    all: unset;
+    width: 150px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #E8E8E8;
+}
+.profile-process-buy-again-btn{
+    background-color: var(--color-4);
+    color: white;
+}

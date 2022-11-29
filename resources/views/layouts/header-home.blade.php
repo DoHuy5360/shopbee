@@ -89,12 +89,10 @@
             </div>
             <div class="mainHome_personal">
                 <a href="/cart" id="mainHome-cart-view-btn-respon">
-                    <ion-icon name="cart">
-                    </ion-icon>
+                    <ion-icon name="cart"></ion-icon>
                 </a>
                 <div id="headerHome-display-cart-number"></div>
-                <ion-icon name="cart-outline">
-                </ion-icon>
+                <ion-icon name="cart-outline"></ion-icon>
                 <div id="mainHome-cart-hidden">
                     @if (Auth::guest())
                         <div id="mainHome-cart-empty-wrap">
