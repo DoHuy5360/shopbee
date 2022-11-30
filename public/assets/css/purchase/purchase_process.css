@@ -13,11 +13,14 @@
     color: black;
     height: 55px;
     width: calc(100% / 7);
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: content-box;
     white-space: nowrap;
     cursor: pointer;
+    font-size: 14px;
+    user-select: none;
 }
 .profile__process-navbar-btn:last-child{
     padding-right: 5px;
@@ -224,8 +227,40 @@
     color: white;
 }
 .profile__process-wait-btn{
-    cursor: not-allowed;
+    cursor: wait;
     color: #C2C1BF;
     background-color: #E5E4E1;
     border-color: #D4D3D1;
+}
+.profile__process-hack-next-btn{
+    background-color: var(--color-2);
+}
+.profile__process-hack-back-btn{
+    background-color: var(--color-3);
+    color: white;
+}
+#profile-process-emty-order-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    width: 100%;
+    height: 600px;
+    background-color: white;
+    border-radius: 2px;
+}
+#profile-process-empty-order-image{
+    width: 170px;
+    aspect-ratio: 1;
+    opacity: 1;
+    animation: faded 300ms linear;
+}
+@keyframes faded {
+    0%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+    }
 }

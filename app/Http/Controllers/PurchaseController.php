@@ -38,10 +38,31 @@ class PurchaseController extends Controller
             AND u.code = b.buyer_code
             "
         );
+        $arr_status = [
+            "wait_confirm",
+            "wait_get",
+            "delivering",
+            "delivered",
+            "cancel",
+            "refund",
+        ];
+        $amount_order = [];
+        $amount_order['all'] = 0;
+        foreach ($arr_status as $index => $status) {
+            $get_amount_each_status = DB::select(
+                "SELECT COUNT(*)
+                FROM bill_products
+                WHERE status = '$status'
+                "
+            )[0];
+            $amount_order[$status] = $get_amount_each_status->count;
+            $amount_order['all'] += $get_amount_each_status->count;
+        }
         // return $get_bill_pdt;
         return view('_purchase.purchase_process_full', [
             'get_user' => $get_user,
             'get_bill_pdt' => $get_bill_pdt,
+            'amount_order' => $amount_order,
         ]);
     }
 
@@ -90,7 +111,7 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
+        return "Route store";
         $bill_code = genCode(52);
         $add_bill = new Bill();
         $add_bill->code = $bill_code;
@@ -123,19 +144,21 @@ class PurchaseController extends Controller
     public function show(Request $request, $id)
     {
         // return $request;
-        if($id == Auth::user()->code){
+        if ($id == Auth::user()->code) {
             $get_user = DB::select(
                 "SELECT *
                  FROM users
                  WHERE code = '$id'
                 "
             )[0];
-            if($request->type == 'all'){
+
+            if ($request->status == 'all') {
                 $get_bill_pdt = DB::select(
                     "SELECT u.name AS owner_name, 
                             bp.name AS product_name, 
-                            path, 
                             bp.total AS product_total, 
+                            bp.product_code AS product_code,
+                            path, 
                             amount,
                             status
                     FROM bills b, bill_products bp, users u
@@ -148,30 +171,34 @@ class PurchaseController extends Controller
                 return view('_purchase.purchase_process', [
                     'get_user' => $get_user,
                     'get_bill_pdt' => $get_bill_pdt,
+                    'isHack' => false,
                 ]);
-                
-            }else{
+            } else {
                 $get_bill_pdt = DB::select(
                     "SELECT u.name AS owner_name, 
                             bp.name AS product_name, 
-                            path, 
                             bp.total AS product_total, 
+                            bp.product_code AS product_code,
+                            path, 
                             amount,
                             status
                     FROM bills b, bill_products bp, users u
                     WHERE b.buyer_code = '$id'
                     AND b.code = bp.bill_code
                     AND u.code = b.buyer_code
-                    AND bp.status = '$request->type'
+                    AND bp.status = '$request->status'
                     "
                 );
+
                 // return $get_bill_pdt;
                 return view('_purchase.purchase_process', [
                     'get_user' => $get_user,
                     'get_bill_pdt' => $get_bill_pdt,
+                    'isHack' => true,
+                    'current_status' => $request->status,
                 ]);
             }
-        }else{
+        } else {
             return redirect()->back();
         }
 
@@ -201,7 +228,53 @@ class PurchaseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // return $request;
+        $arr_status = [
+            "wait_confirm",
+            "wait_get",
+            "delivering",
+            "delivered",
+            "cancel",
+            "refund",
+        ];
+        $current_status_index = array_search($request->current_status, $arr_status);
+        $new_status = "---";
+
+        if ($request->action == "hack_next") {
+            $new_status = $arr_status[$current_status_index + 1];
+        } else {
+            $new_status = $arr_status[$current_status_index - 1];
+        }
+        $update_bill_pdt = DB::update(
+            "UPDATE bill_products
+            SET status = '$new_status'
+            WHERE product_code = '$request->product_code'
+            "
+        );
+        if ($update_bill_pdt) {
+            $arr_status = [
+                "all",
+                "wait_confirm",
+                "wait_get",
+                "delivering",
+                "delivered",
+                "cancel",
+                "refund",
+            ];
+            $amount_order = [];
+            foreach ($arr_status as $index => $status) {
+                $get_amount_each_status = DB::select(
+                    "SELECT COUNT(*)
+                    FROM bill_products
+                    WHERE status = '$status'
+                    "
+                )[0];
+                array_push($amount_order, $get_amount_each_status->count);
+            }
+            return $amount_order;
+        } else {
+            return $update_bill_pdt;
+        }
     }
 
     /**

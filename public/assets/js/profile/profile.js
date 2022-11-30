@@ -44,7 +44,7 @@ $(document).ready(function () {
   $("#profile-edit-save-btn").click(function () {
     $.ajax({
       url: "profile.php",
-      type: "post",
+      type: "POST",
       dataType: "json",
       data: $("#profile-edit-form").serialize(),
       success: function (data) {
