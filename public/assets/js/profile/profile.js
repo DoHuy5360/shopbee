@@ -52,4 +52,29 @@ $(document).ready(function () {
       },
     });
   });
+
+  $("#profile-menu-element-order").click(function(){
+    $.ajax({
+      type: 'GET',
+      url: '/purchase',
+      data: {
+        user_code: $("#profile-user-code").val()
+      },
+      success: function(response){
+        $("#profile-body-tranfer-wrap").html(response)
+      }
+    })
+  // $("#profile-menu-element-order").click(function(){
+  //   $.ajax({
+  //     type: 'GET',
+  //     url: `/purchase/${$("#profile-user-code").val()}`,
+  //     data: {
+  //       type: 'wait_confirm'
+  //     },
+  //     success: function(response){
+  //       $("#profile-body-tranfer-wrap").html(response)
+  //     }
+  //   })
+  })
+
 });

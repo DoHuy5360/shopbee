@@ -1,22 +1,28 @@
 #profile-process-bar-wrap {
     display: flex;
     background-color: white;
-    width: 995px;
     box-shadow: 0 2px 2px 0 #0000001a;
     -webkit-box-shadow: 0 2px 2px 0 #0000001a;
     -moz-box-shadow: 0 2px 2px 0 #0000001a;
+    position: sticky;
+    z-index: 8;
+    top: 0;
 }
-#profile-process-bar-wrap a {
-    text-decoration: none;
+.profile__process-navbar-btn {
+    text-decoration: none !important;
     color: black;
     height: 55px;
-    width: 140px;
+    width: calc(100% / 7);
     display: grid;
     place-items: center;
     box-sizing: content-box;
     white-space: nowrap;
+    cursor: pointer;
 }
-#profile-process-bar-wrap a.active_link {
+.profile__process-navbar-btn:last-child{
+    padding-right: 5px;
+}
+.profile__process-navbar-btn.active_link {
     color: var(--color-4);
     border-bottom: 2px solid;
 }
@@ -41,6 +47,8 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 995px;
+    position: relative;
 }
 #profile-process-list-product-wrap{
     display: flex;
@@ -211,7 +219,13 @@
     border-radius: 3px;
     border: 1px solid #E8E8E8;
 }
-.profile-process-buy-again-btn{
+.profile__process-buy-again-btn{
     background-color: var(--color-4);
     color: white;
+}
+.profile__process-wait-btn{
+    cursor: not-allowed;
+    color: #C2C1BF;
+    background-color: #E5E4E1;
+    border-color: #D4D3D1;
 }

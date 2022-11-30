@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bill;
 use App\Models\BillProduct;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,9 +17,32 @@ class PurchaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $get_user = DB::select(
+            "SELECT *
+             FROM users
+             WHERE code = '$request->user_code'
+            "
+        )[0];
+        $get_bill_pdt = DB::select(
+            "SELECT u.name AS owner_name, 
+                    bp.name AS product_name, 
+                    path, 
+                    bp.total AS product_total, 
+                    amount,
+                    status
+            FROM bills b, bill_products bp, users u
+            WHERE b.buyer_code = '$request->user_code'
+            AND b.code = bp.bill_code
+            AND u.code = b.buyer_code
+            "
+        );
+        // return $get_bill_pdt;
+        return view('_purchase.purchase_process_full', [
+            'get_user' => $get_user,
+            'get_bill_pdt' => $get_bill_pdt,
+        ]);
     }
 
     /**
@@ -96,17 +120,60 @@ class PurchaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        $get_user = DB::select(
-            "SELECT *
-             FROM users
-             WHERE code = '$id'
-            "
-        )[0];
-        return view('_purchase.purchase_process', [
-            'get_user' => $get_user,
-        ]);
+        // return $request;
+        if($id == Auth::user()->code){
+            $get_user = DB::select(
+                "SELECT *
+                 FROM users
+                 WHERE code = '$id'
+                "
+            )[0];
+            if($request->type == 'all'){
+                $get_bill_pdt = DB::select(
+                    "SELECT u.name AS owner_name, 
+                            bp.name AS product_name, 
+                            path, 
+                            bp.total AS product_total, 
+                            amount,
+                            status
+                    FROM bills b, bill_products bp, users u
+                    WHERE b.buyer_code = '$id'
+                    AND b.code = bp.bill_code
+                    AND u.code = b.buyer_code
+                    "
+                );
+                // return $get_bill_pdt;
+                return view('_purchase.purchase_process', [
+                    'get_user' => $get_user,
+                    'get_bill_pdt' => $get_bill_pdt,
+                ]);
+                
+            }else{
+                $get_bill_pdt = DB::select(
+                    "SELECT u.name AS owner_name, 
+                            bp.name AS product_name, 
+                            path, 
+                            bp.total AS product_total, 
+                            amount,
+                            status
+                    FROM bills b, bill_products bp, users u
+                    WHERE b.buyer_code = '$id'
+                    AND b.code = bp.bill_code
+                    AND u.code = b.buyer_code
+                    AND bp.status = '$request->type'
+                    "
+                );
+                // return $get_bill_pdt;
+                return view('_purchase.purchase_process', [
+                    'get_user' => $get_user,
+                    'get_bill_pdt' => $get_bill_pdt,
+                ]);
+            }
+        }else{
+            return redirect()->back();
+        }
 
         // if ($id == Auth::user()->code) {
         // } else {
