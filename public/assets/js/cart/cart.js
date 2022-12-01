@@ -19,6 +19,15 @@ $(document).ready(function () {
             });
         });
     });
+    // todo : Mở bảng Xóa sản phẩm trong giỏ [ Mobile ]
+    $.each($(".cart__page-product-edit"), function (index, node__btn) { 
+         node__btn.addEventListener("click", e =>{
+            const node__card_pdt = node__btn.parentNode.parentNode.querySelectorAll(".cart_page_infor_warp")
+            node__card_pdt.forEach(node =>{
+                node.classList.toggle('cart_page--card-transform')
+            })
+         })
+    });
     function formatCurrency(raw_money) {
         return raw_money
             .toFixed(1)
@@ -159,7 +168,6 @@ $(document).ready(function () {
                 });
             });
         });
-        console.log(1)
     } else {
         const top_scroll = document.getElementById("scroll-to-top-respon")
         top_scroll.style.display = "none"
@@ -177,6 +185,5 @@ $(document).ready(function () {
                 });
             });
         });
-        console.log(2)
     }
 });

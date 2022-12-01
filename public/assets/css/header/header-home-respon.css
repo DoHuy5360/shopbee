@@ -1,11 +1,7 @@
 @media screen and (max-width: 1080px) {
-    .mainHome_navbar {
-        width: 100%;
-        position: relative;
-    }
-
     #mainHome_navbar_about_topic-respon-hidden {
-        display: block;
+        display: grid;
+        place-items: center;
         width: 50px;
         color: #fff;
         font-size: 2.3rem;
@@ -18,8 +14,11 @@
         top: 0;
         width: 100%;
         transition: top 0.3s;
+        width: 100%;
+        position: relative;
+        padding: 0;
     }
-
+    
     .mainHome_navbar_aboutUs {
         display: block;
         height: 100vh;
@@ -34,7 +33,7 @@
     .mainHome_navbar_about_topic ul {
         display: flex;
         flex-direction: column;
-        padding: 20px 20px 0;
+        padding: 20px;
         border-bottom: 1px solid #ffb81d;
     }
 
@@ -71,7 +70,7 @@
         padding: 0 10px;
         display: flex;
         width: 100%;
-        gap: 10px;
+        gap: 5px;
     }
 
     #mainHone-search-field {

@@ -15,7 +15,6 @@ prev_btn.addEventListener("click", (e) => {
     const all_img_refreshed = refreshImageIndex();
     image_container.prepend(all_img_refreshed[all_img_refreshed.length - 1]);
 });
-const main_product_media = document.getElementById("product-main-img");
 const all_main_media = document.querySelectorAll(".product__media--display");
 let first_media = all_main_media[0];
 all_product_images.forEach((media) => {
@@ -38,7 +37,7 @@ $(document).ready(function () {
             type: "post",
             success: function (response, statusText, xhr, form) {
                 const resp_msg = $(response)[0];
-                if (resp_msg.status === 500) {
+                if (resp_msg.status === "login") {
                     $.ajax({
                         type: "GET",
                         url: `/login?pre_page=${window.location.pathname}`,
@@ -46,30 +45,34 @@ $(document).ready(function () {
                             $("#body").html(response);
                         },
                     });
+                } else if (resp_msg.status === "duplicate") {
+                    alertMessage();
                 } else {
-                    $.ajax({
-                        type: "GET",
-                        url: `/cart/create`,
-                        data: {
-                            id: $("#mainHome-user-code").val()
-                        },
-                        success: function (response) {
-                            const number_item = $(
-                                "#headerHome-display-cart-number"
-                            );
-                            const wrap_item = $("#mainHome-cart-list-product");
-                            wrap_item.html(response);
-                            number_item.text(
-                                $(".mainHome__cart--product-wrap").length
-                            );
-                        },
-                    });
-                    $("#product-alert-wrap").css("display", "flex");
-                    setTimeout(() => {
-                        $("#product-alert-wrap").css("display", "none");
-                    }, 1500);
+                    refreshCart();
+                    alertMessage();
                 }
             },
         });
     });
+    function alertMessage() {
+        $("#product-alert-wrap").css("display", "flex");
+        setTimeout(() => {
+            $("#product-alert-wrap").css("display", "none");
+        }, 1500);
+    }
+    function refreshCart() {
+        $.ajax({
+            type: "GET",
+            url: `/cart/create`,
+            data: {
+                id: $("#mainHome-user-code").val(),
+            },
+            success: function (response) {
+                const number_item = $("#headerHome-display-cart-number");
+                const wrap_item = $("#mainHome-cart-list-product");
+                wrap_item.html(response);
+                number_item.text($(".mainHome__cart--product-wrap").length);
+            },
+        });
+    }
 });

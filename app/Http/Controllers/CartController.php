@@ -41,7 +41,7 @@ class CartController extends Controller
             return view('_cart.cart_item', [
                 "get_itm_cart" => $get_itm_cart,
             ]);
-        }else{
+        } else {
             return '<b>Đây không phải giỏ hàng của bạn</b>';
         }
     }
@@ -54,18 +54,35 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
         $message = "Đã thêm sản phẩm vào giỏ hàng thành công!";
-        $status = 200;
+        $status = true;
         if (Auth::user()) {
-            $g_code = genCode(52);
-            $add_pdt_cart = new Cart();
-            $add_pdt_cart->code = $g_code;
-            $add_pdt_cart->user_code = $request->buyer_code;
-            $add_pdt_cart->product_code = $request->product_code;
-            $add_pdt_cart->save();
+            $pdt_code = $request->product_code;
+            $buyer_code = $request->buyer_code;
+
+            $check_pdt_in_cart = DB::select(
+                "SELECT *
+                FROM carts c, users u
+                WHERE c.product_code = '$pdt_code'
+                AND u.code = '$buyer_code'
+                "
+            );
+            // return $check_pdt_in_cart;
+            if ($check_pdt_in_cart) {
+                $message = "Thêm thất bại, sản phẩm đã tồn tại trong giỏ";
+                $status = 'duplicate';
+            } else {
+                $g_code = genCode(52);
+                $add_pdt_cart = new Cart();
+                $add_pdt_cart->code = $g_code;
+                $add_pdt_cart->user_code = $buyer_code;
+                $add_pdt_cart->product_code = $pdt_code;
+                $add_pdt_cart->save();
+            }
         } else {
             $message = "Thêm thất bại, hãy đăng nhập.";
-            $status = 500;
+            $status = 'login';
         }
         return response()->json([
             "status" => $status,
@@ -127,7 +144,7 @@ class CartController extends Controller
         }
         // return $get_pdt_creator;
 
-        
+
         return view('_cart.cart', [
             'get_pdt_creator' => $get_pdt_creator,
         ]);

@@ -80,17 +80,23 @@
 
 	#login_page-content-form-logins {
 		margin: 0px 35px;
-		box-shadow: 0 0 14px rgb(0 0 0 / 50%);
+		box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+		-webkit-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+		-moz-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
 		background-color: #fff;
 		border-radius: 4px;
 		z-index: 999;
 		gap: 10px;
+		padding: 0 0 20px 0;
 	}
 
 	#login_page-content-form-otherMethod-wrap {
 		justify-content: space-around;
+		margin: 5px 0 10px 0;
 	}
-
+	#scroll-to-top-respon{
+		display: none !important;
+	}
 	.login_page_content_for_otherMethod {
 		aspect-ratio: 1/1;
 		flex: 0;

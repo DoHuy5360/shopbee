@@ -119,6 +119,7 @@
                                     <div>Đại diện cung cấp <strong>{{ $product_creator->name }}</strong></div>
                                     <ion-icon style="color: red; font-size: 1.4rem" name="chatbubbles-sharp"></ion-icon>
                                 </div>
+                                <span class="cart__page-product-edit">Sửa</span>
                             </div>
                             @foreach ($product_creator->products as $index_item => $item)
                             <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->code }}">
@@ -129,93 +130,96 @@
                                             <div class="cart_page_voucher_detail">Mua 2 sản phẩm giảm 8%</div>
                                             <div class="cart_page_voucher_add"><a href="http://" target="_blank" rel="noopener noreferrer">Thêm ></a></div>
                                         </div>
-                                        <div class="cart_page_infor_warp">
-                                            <div class="cart_page_btn">
-                                                <input class="cartPage__choose--item" type="checkbox" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][checked]" data-cart-select="{{ $item->cart_code }}" />
-                                            </div>
-                                            <div class="cart_page_name_product">
-                                                <div class="cart_page_product_img">
-                                                    <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][image]" value="{{ $item->path }}">
-                                                    <img src="{{ asset($item->path) }}" alt="" />
+                                        <div class="cart__page--hidden-wrap">
+
+                                            <div class="cart_page_infor_warp">
+                                                <div class="cart_page_btn">
+                                                    <input class="cartPage__choose--item" type="checkbox" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][checked]" data-cart-select="{{ $item->cart_code }}" />
                                                 </div>
-                                                <div class="cart_page_product_desc">
-                                                    <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][name]" value="{{ $item->name }}">
-                                                    {{ $item->name }}
-                                                </div>
-                                            </div>
-                                            <div class="cart_page_option_wrap_respon">
-                                                <div class="cart_page_about_option">
-                                                    <div class="cart_page_about_title">
-                                                        <div>Phân Loại Hàng</div>
-                                                        <ion-icon name="chevron-down-outline"></ion-icon>
+                                                <div class="cart_page_name_product">
+                                                    <div class="cart_page_product_img">
+                                                        <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][image]" value="{{ $item->path }}">
+                                                        <img src="{{ asset($item->path) }}" alt="" />
                                                     </div>
-                                                    <div class="cart_page_about_choice">MS</div>
+                                                    <div class="cart_page_product_desc">
+                                                        <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][name]" value="{{ $item->name }}">
+                                                        {{ $item->name }}
+                                                    </div>
                                                 </div>
-                                                <div class="cart_page_option_items">
-                                                    <div class="cart_page_option_items_wrap">
-                                                        <div class="cart_page_option_fix">
-                                                            <div class="cart_page_option_fix_title">
-                                                                <span>{{ $item->classificationone }}</span>:
-                                                            </div>
-                                                            <div class="cart_page_option_choice">
-                                                                @foreach ($item->classificationones as $cls1)
-                                                                    <div class="cart_checkout--method-wrap">
-                                                                        <label for="cart-page-payment-feature-1">
-                                                                            <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1" value="white" />
-                                                                            <span>{{ $cls1->name }}</span>
-                                                                        </label>
-                                                                    </div>
-                                                                @endforeach
-                                                            </div>
+                                                <div class="cart_page_option_wrap_respon">
+                                                    <div class="cart_page_about_option">
+                                                        <div class="cart_page_about_title">
+                                                            <span>Phân Loại Hàng</span>
+                                                            <ion-icon name="chevron-down-outline"></ion-icon>
                                                         </div>
-                                                        <div class="cart_page_option_fix">
-                                                            <div class="cart_page_option_fix_title">
-                                                                <span>{{ $item->classificationtwo }}</span>:
+                                                        <div class="cart_page_about_choice">MS</div>
+                                                    </div>
+                                                    <div class="cart_page_option_items">
+                                                        <div class="cart_page_option_items_wrap">
+                                                            <div class="cart_page_option_fix">
+                                                                <div class="cart_page_option_fix_title">
+                                                                    <span>{{ $item->classificationone }}</span>:
+                                                                </div>
+                                                                <div class="cart_page_option_choice">
+                                                                    @foreach ($item->classificationones as $cls1)
+                                                                        <div class="cart_checkout--method-wrap">
+                                                                            <label for="cart-page-payment-feature-1">
+                                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1" value="white" />
+                                                                                <span>{{ $cls1->name }}</span>
+                                                                            </label>
+                                                                        </div>
+                                                                    @endforeach
+                                                                </div>
                                                             </div>
-                                                            <div id="cart-page-classification2-wrap">
-                                                                @foreach ($item->classificationtwos as $array_cls2)
-                                                                    <div class="cart_page_option_choice">
-                                                                        @foreach ($array_cls2 as $cls2)
-                                                                            <div class="cart_checkout--method-wrap">
-                                                                                <label for="cart-page-payment-feature-1">
-                                                                                    <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-0"
-                                                                                        value="small" />
-                                                                                    <span>{{ $cls2->name }}</span>
-                                                                                </label>
-                                                                            </div>
-                                                                        @endforeach
-                                                                    </div>
-                                                                @endforeach
+                                                            <div class="cart_page_option_fix">
+                                                                <div class="cart_page_option_fix_title">
+                                                                    <span>{{ $item->classificationtwo }}</span>:
+                                                                </div>
+                                                                <div id="cart-page-classification2-wrap">
+                                                                    @foreach ($item->classificationtwos as $array_cls2)
+                                                                        <div class="cart_page_option_choice">
+                                                                            @foreach ($array_cls2 as $cls2)
+                                                                                <div class="cart_checkout--method-wrap">
+                                                                                    <label for="cart-page-payment-feature-1">
+                                                                                        <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-0"
+                                                                                            value="small" />
+                                                                                        <span>{{ $cls2->name }}</span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            @endforeach
+                                                                        </div>
+                                                                    @endforeach
+                                                                </div>
                                                             </div>
+                                                            <button type="button" class="cart_page_option_submit_btn_wrap">
+                                                                Xác nhận
+                                                            </button>
                                                         </div>
-                                                        <button type="button" class="cart_page_option_submit_btn_wrap">
-                                                            Xác nhận
-                                                        </button>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="cart_page_pricePer_wrap_respon">
-                                                <div>₫ <span>{{ number_format((int) $item->price, 0, ',', '.') }}</span></div>
-                                            </div>
-                                            <div class="cart__set--number-product-wrap">
-                                                <div class="cart__set--number-product">
-                                                    <button class="cart_page_quantity_btn cart_page_quantity_btn_minus" type="button">-</button>
-                                                    <input class="cartPage__item--amount" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][amount]" type="number" value="1" min="1"
-                                                        max="{{ $item->storage }}" data-item-code="{{ $item->cart_code }}" />
-                                                    <button class="cart_page_quantity_btn cart_page_quantity_btn_plus" type="button">+</button>
+                                                <div class="cart_page_pricePer_wrap_respon">
+                                                    <div>₫ <span>{{ number_format((int) $item->price, 0, ',', '.') }}</span></div>
                                                 </div>
-                                            </div>
-                                            <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][price]" value="{{ $item->price }}">
-                                            <div class="cart_page_price_wrap_respon" data-item-code-price="{{ $item->cart_code }}" data-origin-price="{{ $item->price }}"
-                                                data-new-price="{{ $item->price }}">{{ number_format((int) $item->price, 0, ',', '.') }}</div>
-                                            <div class="cart_page_action_wrap_respon">
-                                                <div class="cart_page_action_wrap">
-                                                    <div class="cart_page_actionDel" data-item-code="{{ $item->cart_code }}">
-                                                        <ion-icon name="trash-outline"></ion-icon>
+                                                <div class="cart__set--number-product-wrap">
+                                                    <div class="cart__set--number-product">
+                                                        <button class="cart_page_quantity_btn cart_page_quantity_btn_minus" type="button">-</button>
+                                                        <input class="cartPage__item--amount" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][amount]" type="number" value="1" min="1"
+                                                            max="{{ $item->storage }}" data-item-code="{{ $item->cart_code }}" />
+                                                        <button class="cart_page_quantity_btn cart_page_quantity_btn_plus" type="button">+</button>
                                                     </div>
-                                                    <div class="cart_page_actionAdd">
-                                                        <div>Tìm sản phảm tương tự</div>
-                                                        <ion-icon name="chevron-down-outline"></ion-icon>
+                                                </div>
+                                                <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][price]" value="{{ $item->price }}">
+                                                <div class="cart_page_price_wrap_respon" data-item-code-price="{{ $item->cart_code }}" data-origin-price="{{ $item->price }}"
+                                                    data-new-price="{{ $item->price }}">{{ number_format((int) $item->price, 0, ',', '.') }}</div>
+                                                <div class="cart_page_action_wrap_respon">
+                                                    <div class="cart_page_action_wrap">
+                                                        <div class="cart_page_actionDel" data-item-code="{{ $item->cart_code }}">
+                                                            <ion-icon name="trash-outline"></ion-icon>
+                                                        </div>
+                                                        <div class="cart_page_actionAdd">
+                                                            <div>Tìm sản phảm tương tự</div>
+                                                            <ion-icon name="chevron-down-outline"></ion-icon>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -271,7 +275,7 @@
                                     <div class="cart_page_option_wrap_respon">
                                         <div class="cart_page_about_option">
                                             <div class="cart_page_about_title">
-                                                <div>Phân Loại Hàng</div>
+                                                <span>Phân Loại Hàng</span>
                                                 <ion-icon name="chevron-down-outline"></ion-icon>
                                             </div>
                                             <div class="cart_page_about_choice">M</div>
