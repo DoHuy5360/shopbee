@@ -686,3 +686,6 @@ ion-icon[name="car-outline"] {
 .stickydown {
     box-shadow: 0px -5px 8px -6px #8c8888;
 }
+.cart__page-product-edit{
+    display: none;
+}
