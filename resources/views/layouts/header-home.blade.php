@@ -1,6 +1,5 @@
 <div class="mainHome_navbar_wrapper">
     <div class="mainHome_navbar">
-        {{-- <div class="mainHome_navbar_aboutUs_respon_wrap"></div> --}}
         <div class="mainHome_navbar_aboutUs">
             <div class="mainHome_navbar_aboutUs-wrapper">
                 <div class="mainHome_navbar_about_topic">
@@ -113,8 +112,5 @@
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
         </div>
-        {{-- <div id="mainHome_navbar_about_topic-respon-hidden">
-            <ion-icon name="menu-outline"></ion-icon>
-        </div> --}}
     </div>
 </div>

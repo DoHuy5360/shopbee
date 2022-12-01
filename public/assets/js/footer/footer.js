@@ -1,4 +1,4 @@
-const categories = [
+const array__ctgr = [
     {
         parent: "THỜI TRANG NAM",
         childrend: [
@@ -412,36 +412,43 @@ const categories = [
         ],
     },
 ];
-let category_child;
-const amount_columns = 5;
-const amount_category = Math.round(categories.length); //26 -> 26 / 5 = 5
-const amount_items_separate = amount_category / amount_columns;
-const category_node = document.getElementById("mainHome-category-wrap");
+const int__total_col = 5,
+    int__total_ctgr = array__ctgr.length,
+    int__ctgr_per_col = int__total_ctgr / int__total_col, //26 -> 26 / 5 = 5
+    node__display_ctgr = document.getElementById("mainHome-category-wrap");
 
-for (let column = 0; column < amount_category; column += amount_columns) {
+let str__target_ctgr,
+    node__ctgr_block,
+    node__ctgr_wrap,
+    node__ctgr_title,
+    node__ctgr_list,
+    node__ctgr_child;
+    
+for (let column = 0; column < int__total_ctgr; column += int__total_col) {
+    node__ctgr_block = crtClsEle("div", "mainHome__category--card-wrap");
 
-    const category_wrap_card = document.createElement("div");
-    category_wrap_card.setAttribute("class", "mainHome__category--card-wrap");
+    for (let row = 0; row <= int__ctgr_per_col; row++) {
+        str__target_ctgr = array__ctgr[column + row];
+        if (!str__target_ctgr) break;
 
-    for (let row = 0; row < amount_items_separate; row++) {
-        
-        const category_wrap = document.createElement("div");
-        category_wrap.setAttribute("class", "mainHome__category--card");
-        const category_title = document.createElement("div");
-        category_title.setAttribute("class", "mainHome__category--title");
-        const category_list = document.createElement("div");
-        category_list.setAttribute("class", "mainHome__category--items-wrap");
+        node__ctgr_wrap = crtClsEle("div", "mainHome__category--card");
+        node__ctgr_title = crtClsEle("div", "mainHome__category--title");
+        node__ctgr_list = crtClsEle("div", "mainHome__category--items-wrap");
 
-        const target_category = categories[column + row];
-        category_title.textContent = target_category.parent;
-        target_category.childrend.forEach((child) => {
-            category_child = document.createElement("a");
-            category_child.textContent = child;
-            category_list.appendChild(category_child);
+        node__ctgr_title.textContent = str__target_ctgr.parent;
+        str__target_ctgr.childrend.forEach((str__child) => {
+            node__ctgr_child = crtClsEle("a", null, str__child);
+            node__ctgr_list.appendChild(node__ctgr_child);
         });
-        category_wrap.appendChild(category_title);
-        category_wrap.appendChild(category_list);
-        category_wrap_card.appendChild(category_wrap);
+        node__ctgr_wrap.appendChild(node__ctgr_title);
+        node__ctgr_wrap.appendChild(node__ctgr_list);
+        node__ctgr_block.appendChild(node__ctgr_wrap);
     }
-    category_node.appendChild(category_wrap_card);
+    node__display_ctgr.appendChild(node__ctgr_block);
+}
+function crtClsEle(_tag, _class = null, _inText = null) {
+    var node = document.createElement(_tag);
+    if (_class) node.setAttribute("class", _class);
+    if (_inText) node.textContent = _inText;
+    return node;
 }
