@@ -159,7 +159,6 @@ $(document).ready(function () {
                 });
             });
         });
-        console.log(1)
     } else {
         const top_scroll = document.getElementById("scroll-to-top-respon")
         top_scroll.style.display = "none"
@@ -177,6 +176,5 @@ $(document).ready(function () {
                 });
             });
         });
-        console.log(2)
     }
 });

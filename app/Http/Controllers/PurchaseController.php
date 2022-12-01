@@ -50,7 +50,7 @@ class PurchaseController extends Controller
         $amount_order['all'] = 0;
         foreach ($arr_status as $index => $status) {
             $get_amount_each_status = DB::select(
-                "SELECT COUNT(*)
+                "SELECT COUNT(*) AS count
                 FROM bill_products
                 WHERE status = '$status'
                 "
@@ -73,7 +73,7 @@ class PurchaseController extends Controller
      */
     public function create(Request $request)
     {
-        return $request;
+        // return $request;
         $array_pdt_slc = [];
         $total_price = 0;
         foreach ($request->product_information as $creator) {
@@ -111,7 +111,6 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        return "Route store";
         $bill_code = genCode(52);
         $add_bill = new Bill();
         $add_bill->code = $bill_code;
@@ -266,7 +265,7 @@ class PurchaseController extends Controller
             $total_status = 0;
             foreach ($arr_status as $index => $status) {
                 $get_amount_each_status = DB::select(
-                    "SELECT COUNT(*)
+                    "SELECT COUNT(*) AS count
                     FROM bill_products
                     WHERE status = '$status'
                     "
