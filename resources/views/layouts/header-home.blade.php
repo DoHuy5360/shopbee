@@ -87,17 +87,19 @@
                 </div>
             </div>
             <div class="mainHome_personal">
-                <a href="/cart" id="mainHome-cart-view-btn-respon">
-                    <ion-icon name="cart"></ion-icon>
-                </a>
-                <div id="headerHome-display-cart-number"></div>
+                @if (!Auth::guest())
+                    <div id="headerHome-display-cart-number"></div>
+                    <a href="{{ route('cart.show', Auth::user()->code) }}" id="mainHome-cart-view-btn-respon">
+                        <ion-icon name="cart"></ion-icon>
+                    </a>
+                @endif
                 <ion-icon name="cart-outline"></ion-icon>
                 <div id="mainHome-cart-hidden">
                     @if (Auth::guest())
-                        <div id="mainHome-cart-empty-wrap">
-                            <img src="{{ asset('assets/img/empty_cart.png') }}" alt="Giỏ hàng của bạn">
-                            <div>Chưa Có Sản Phẩm</div>
-                        </div>
+                    <div id="mainHome-cart-empty-wrap">
+                        <img src="{{ asset('assets/img/empty_cart.png') }}" alt="Giỏ hàng của bạn">
+                        <div>Chưa Có Sản Phẩm</div>
+                    </div>
                     @else
                         <input type="hidden" id="mainHome-user-code" name="" value="{{ Auth::user()->code }}">
                         <div id="mainHome-cart-product-title">Sản phẩm mới thêm</div>

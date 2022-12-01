@@ -400,6 +400,10 @@
     align-items: center;
     gap: 20px;
 }
+
+#purchase-page-payment-method-hidden {
+    display: none;
+}
 .purchage__check--method {
     display: none;
 }
@@ -505,7 +509,7 @@
 #purchase-page-shop-voucher-select {
     text-transform: capitalize;
 }
-.purchase__product--list-product{
+.purchase__product--list-product {
     padding: 30px;
     background-color: white;
     border-radius: 3px;
@@ -514,7 +518,7 @@
     -webkit-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
     -moz-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
 }
-.purchase__product--list-product-wrap{
+.purchase__product--list-product-wrap {
     display: flex;
     flex-direction: column;
     gap: 10px;

@@ -43,7 +43,7 @@
     width: 100%;
     gap: 10px;
 }
-#mainHome-activity-wrapper{
+#mainHome-activity-wrapper {
     display: flex;
     gap: 10px;
     height: 100px;
@@ -67,7 +67,7 @@
     align-items: center;
     border-radius: 10px;
 }
-.mainHome__act--icon img{
+.mainHome__act--icon img {
     width: 45px;
 }
 .mainHome__act--name {
@@ -93,7 +93,7 @@
     padding: 10px;
     background-color: white;
 }
-#mainHome-category-tray-wrap{
+#mainHome-category-tray-wrap {
     overflow-x: hidden;
 }
 #mainHome-listOfCate {
@@ -110,7 +110,7 @@
 }
 #mainHome__category--wrap-arrow:hover
     :is(#mainHome-category-arrow-left, #mainHome-category-arrow-right) {
-        transform: scale(2);
+    transform: scale(2);
 }
 #mainHome-category-arrow-left,
 #mainHome-category-arrow-right {
@@ -202,9 +202,9 @@
     object-fit: cover;
     padding: 10px;
 }
-.mainHome__flashSale--processBar-wrap{
+.mainHome__flashSale--processBar-wrap {
     position: relative;
-    background-color: #FEBCA5;
+    background-color: #febca5;
     border-radius: 10px;
     width: 80%;
     align-self: center;
@@ -212,14 +212,14 @@
     overflow: hidden;
     text-align: center;
 }
-.mainHome__flashSale--processBar{
+.mainHome__flashSale--processBar {
     position: absolute;
     background-color: var(--color-4);
     height: 100%;
     top: 0;
     left: 0;
 }
-.mainHome__flashSal--text{
+.mainHome__flashSal--text {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -244,7 +244,7 @@
     padding-bottom: 20px;
 }
 
-.mainHome-ads-inside_respons{
+.mainHome-ads-inside_respons {
     display: none;
 }
 
@@ -296,7 +296,7 @@
     object-fit: cover;
     width: 180px;
 }
-.mainHome__mall--sale{
+.mainHome__mall--sale {
     position: absolute;
     bottom: 0;
     color: var(--color-4);
@@ -308,7 +308,8 @@
     background-color: var(--gray-soft);
     padding-bottom: 20px;
 }
-#mainHome-top-finding-wrap, .mainHome__part--title-wrap {
+#mainHome-top-finding-wrap,
+.mainHome__part--title-wrap {
     width: var(--layout-width);
     margin: auto;
     background-color: white;
@@ -347,7 +348,7 @@
     color: white;
     bottom: 0;
     width: 100%;
-    opacity: .9;
+    opacity: 0.9;
     background-color: #bdbdbd;
 }
 .mainHome__card--topfind:hover .mainHome__topFind--top {
@@ -441,6 +442,9 @@
     word-wrap: break-word;
     white-space: normal;
     overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     display: -webkit-box;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
