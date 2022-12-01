@@ -6,6 +6,7 @@
         <div>Chưa có đơn hàng</div>
     </div>
 @else
+    <input id="profile-process-csrf-token" type="hidden" name="" value="{{ csrf_token() }}">
     @foreach ($get_bill_pdt as $pdt)
         <div class="profile__process--card-product-wrap" data-card-product-code="{{ $pdt->product_code }}">
             <div class="profile__process--card-info">
@@ -49,8 +50,8 @@
                 <div class="profile__process--actions-wrap">
                     <x-purchase-final-status>{{ $pdt->status }}</x-purchase-final-status>
                     <div class="profile__process--card-actions-wrap">
-                        @if($isHack)
-                            <input id="profile-process-csrf-token" type="hidden" name="" value="{{ csrf_token() }}">
+                        <input class="profile__process--card-product-code" type="hidden" name="" value="{{ $pdt->product_code }}">
+                        @if ($isHack)
                             <x-purchase-hack-button>
                                 <x-slot name="current_status">{{ $current_status }}</x-slot>
                                 <x-slot name="product_code">{{ $pdt->product_code }}</x-slot>

@@ -1,14 +1,14 @@
 @switch($slot)
     @case('wait_confirm')
-        <button class="profile__process--card-actions-btn" type="button">Hủy Đơn Hàng</button>
+        <button data-status="cancel" data-action="cancel" class="profile__process--card-actions-btn profile__process--cancel-btn" type="button">Hủy Đơn Hàng</button>
     @break
 
     @case('wait_get')
-        <button class="profile__process--card-actions-btn" type="button">Hủy Đơn Hàng</button>
+        <button data-status="cancel" data-action="cancel" class="profile__process--card-actions-btn profile__process--cancel-btn" type="button">Hủy Đơn Hàng</button>
     @break
 
     @case('delivering')
-        <button class="profile__process--card-actions-btn" type="button">Hủy Đơn Hàng</button>
+        <button data-status="cancel" data-action="cancel" class="profile__process--card-actions-btn profile__process--cancel-btn" type="button">Hủy Đơn Hàng</button>
     @break
 
     @case('delivered')

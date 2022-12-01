@@ -237,13 +237,15 @@ class PurchaseController extends Controller
             "cancel",
             "refund",
         ];
-        $current_status_index = array_search($request->current_status, $arr_status);
+        $crnt_sts_idx = array_search($request->current_status, $arr_status);
         $new_status = "---";
 
         if ($request->action == "hack_next") {
-            $new_status = $arr_status[$current_status_index + 1];
-        } else {
-            $new_status = $arr_status[$current_status_index - 1];
+            $new_status = $arr_status[$crnt_sts_idx + 1];
+        } else if ($request->action == "hack_back") {
+            $new_status = $arr_status[$crnt_sts_idx - 1];
+        }else{
+            $new_status = $request->current_status;
         }
         $update_bill_pdt = DB::update(
             "UPDATE bill_products
@@ -253,7 +255,6 @@ class PurchaseController extends Controller
         );
         if ($update_bill_pdt) {
             $arr_status = [
-                "all",
                 "wait_confirm",
                 "wait_get",
                 "delivering",
@@ -262,6 +263,7 @@ class PurchaseController extends Controller
                 "refund",
             ];
             $amount_order = [];
+            $total_status = 0;
             foreach ($arr_status as $index => $status) {
                 $get_amount_each_status = DB::select(
                     "SELECT COUNT(*)
@@ -270,7 +272,9 @@ class PurchaseController extends Controller
                     "
                 )[0];
                 array_push($amount_order, $get_amount_each_status->count);
+                $total_status+= (int)$get_amount_each_status->count;
             }
+            array_unshift($amount_order, $total_status);
             return $amount_order;
         } else {
             return $update_bill_pdt;

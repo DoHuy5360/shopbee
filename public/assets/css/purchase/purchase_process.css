@@ -221,6 +221,7 @@
     cursor: pointer;
     border-radius: 3px;
     border: 1px solid #E8E8E8;
+    outline: unset !important;
 }
 .profile__process-buy-again-btn{
     background-color: var(--color-4);
@@ -231,6 +232,9 @@
     color: #C2C1BF;
     background-color: #E5E4E1;
     border-color: #D4D3D1;
+}
+.profile__process-hack:hover{
+    opacity: .8;
 }
 .profile__process-hack-next-btn{
     background-color: var(--color-2);
