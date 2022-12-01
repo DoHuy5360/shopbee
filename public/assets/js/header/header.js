@@ -21,7 +21,6 @@ menuIcon.addEventListener("click", (e) => {
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        // url: `/cart/${$("#mainHome-user-code").val()}?action=watch`,
         url: `/cart/create`,
         data: {
             id: $("#mainHome-user-code").val()

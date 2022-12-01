@@ -129,4 +129,54 @@ $(document).ready(function () {
         });
         $("#cart-page-total-price").text(int__total_price);
     }
+    //todo: scroll finish bar
+    const sticky_bar = document.getElementById("cart-page-sticky-block");
+    const sticky_bar_wrap = document.getElementById("cart-page-warp-containt");
+    window.onscroll = function () {
+        let objBottom = sticky_bar.getBoundingClientRect().bottom;
+        let objWrapBottom = sticky_bar_wrap.getBoundingClientRect().bottom;
+
+        if (Math.floor(objBottom) == Math.floor(objWrapBottom)) {
+            sticky_bar.classList.remove("stickydown");
+
+        } else {
+            sticky_bar.classList.add("stickydown");
+        }
+    };
+    //todo: pop down cart page feature
+    const prod_wrap = document.querySelectorAll(".cart_page_option_wrap_respon")
+    const mediaQuery = window.matchMedia('(max-width: 768px)').matches
+    if (!mediaQuery) {
+        prod_wrap.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const box = btn.parentNode.querySelector(".cart_page_option_items");
+                box.classList.toggle("cart_page_option_wrap_action");
+                prod_wrap.forEach((btn2) => {
+                    if (btn2 !== btn) {
+                        const box2 = btn2.parentNode.querySelector(".cart_page_option_items");
+                        box2.classList.remove("cart_page_option_wrap_action");
+                    }
+                });
+            });
+        });
+        console.log(1)
+    } else {
+        const top_scroll = document.getElementById("scroll-to-top-respon")
+        top_scroll.style.display = "none"
+        prod_wrap.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const cart_page_hidden_wrap = document.getElementById("cart-page-warp-hidden")
+                const box = btn.parentNode.querySelector(".cart_page_option_items");
+                cart_page_hidden_wrap.classList.toggle("cart_hidden_respon");
+                box.classList.toggle("cart_page_option_wrap_action_respon");
+                prod_wrap.forEach((btn2) => {
+                    if (btn2 !== btn) {
+                        const box2 = btn2.parentNode.querySelector(".cart_page_option_items");
+                        box2.classList.remove("cart_page_option_wrap_action_respon");
+                    }
+                });
+            });
+        });
+        console.log(2)
+    }
 });

@@ -2,7 +2,7 @@
     <div id="mainHome-foot-des-wrap">
         <div id="mainHome-foot-des-paragraph">
             <div class="mainHome__foot--part">
-                <b id="mainHome-foot-product-vision">NHỮNG GÌ BẠN KHÔNG THẤY, CÓ HẾT Ở <span class="logo__color--orange shadow__text">SHOP</span><span
+                <b id="mainHome-foot-product-vision">MUA HẾT Ở <span class="logo__color--orange shadow__text">SHOP</span><span
                         class="logo__color--yellow shadow__text">BEE</span>!</b>
                 <p>Shopbee - ứng dụng mua sắm trực tuyến thú vị, tin cậy, an toàn và miễn phí! Shopbee là nền tảng giao dịch trực tuyến hàng đầu ở Đông Nam Á, có trụ sở chính ở Singapore, đã có
                     mặt ở khắp các khu vực Singapore, Malaysia, Indonesia, Thái Lan, Philippines, Đài Loan, Brazil, México, Colombia, Chile, Poland, Spain, Argentina. Với sự đảm bảo của Shopbee,
