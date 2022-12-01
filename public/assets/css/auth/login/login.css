@@ -77,7 +77,6 @@
 
 #login_page-content-form {
 	background-color: #fff;
-	height: fit-content;
 	width: 400px;
 	box-sizing: border-box;
 	box-shadow: 0 3px 10px 0 rgb(0 0 0 / 14%);
@@ -182,6 +181,9 @@
 	height: 2.5rem;
 	width: 100%;
 	text-transform: uppercase;
+	border-radius: 2px;
+	font-size: 13px;
+    font-weight: bold;
 }
 
 #login_page-content-form-pageSep-wrap {
@@ -201,12 +203,12 @@
 }
 
 #login_page-content-form-pageSep-content {
-	text-transform: uppercase;
-	color: #ccc;
+	color: #939393;
 	background-color: #fff;
 	width: fit-content;
 	padding: 0 10px;
 	z-index: 1;
+	font-size: 14px;
 }
 
 #login_page-content-form-otherMethod-wrap {
@@ -269,7 +271,7 @@
 #login_page-content-form-otherLogin {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 3px;
+	margin-top: 10px;
 }
 
 #login_page-content-form-otherLogin a {

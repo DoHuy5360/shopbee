@@ -29,7 +29,6 @@
         flex: 2;
     }
 
-    /* !the chon */
     #cart-page-product-guide {
         display: none;
     }
@@ -37,16 +36,46 @@
     .cart_page_wrap_containt {
         width: 100%;
         margin: 0;
+        outline: unset;
     }
-
+.cart_page--card-transform{
+    transform: translateX(-138px);
+}
     .cart_page_infor_warp {
-        grid-template-columns: 10% 90%;
-        grid-template-rows: repeat(4, auto);
-        gap: 8px;
+        grid-template-columns: 10% 90% 0%;
+        grid-template-rows: 70px 0px 20px 25px 40px;
+        row-gap: 2px;
         width: 100%;
-        /* overflow: hidden; */
+        padding: 0;
+        transition: 300ms cubic-bezier(0.14, -0.41, 0.82, 1.37);
     }
-
+    .cart_page_actionDel{
+        width: 55px;
+        background-color: var(--color-4);
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+    .cart_page_actionDel ion-icon{
+        color: white;
+    }
+    .cart_page_actionAdd{
+        background-color: #F69113;
+        color: white;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        width: 90px;
+    }
+    .cart_page_actionAdd ion-icon{
+        display: none;
+    }
+    .cart_page_action_wrap_respon {
+        grid-column-start: 3;
+        grid-row: -6 / -1;
+        height: 100%;
+        display: flex;
+    }
     .cart_page_pricePer_wrap_respon {
         grid-column-start: 2;
         grid-row-start: 2;
@@ -79,21 +108,31 @@
         grid-row-start: 4;
         padding-left: 90px;
     }
-
+    .cart__page--hidden-wrap{
+        overflow: hidden;
+    }
+    .cart__page-product-edit{
+        padding-right: 20px;
+        cursor: pointer;
+    }
     .cart_page_about_option {
         display: flex;
         gap: 10px;
     }
-
+    .cart_page_about_title{
+        font-size: 13px !important;
+        white-space: nowrap;
+    }
     .cart__set--number-product-wrap {
         justify-self: start;
         grid-column-start: 2;
         grid-row-start: 5;
-        padding-left: 90px;
+        padding: 0 0 10px 90px;
     }
 
     .cart_page_action_wrap {
-        display: none;
+        display: flex;
+        flex-direction: row;
     }
 
     #cart-page-warp-containt {
