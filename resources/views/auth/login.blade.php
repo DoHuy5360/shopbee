@@ -68,7 +68,7 @@
                         <div id="login_page-content-form-pageSep">
                             <div id="login_page-content-form-pageSep-wrap">
                                 <div class="login_page-content-form-pageSep-line"></div>
-                                <div id="login_page-content-form-pageSep-content">hoặc</div>
+                                <div id="login_page-content-form-pageSep-content">HOẶC</div>
                                 <div class="login_page-content-form-pageSep-line"></div>
                             </div>
                         </div>
