@@ -223,10 +223,10 @@ class ProductController extends Controller
             "
         )[0];
         $get_pdt_imgs = DB::select(
-            "SELECT index, path
+            "SELECT pi.index, path
             FROM product_images pi
             WHERE pi.product_code = '$id'
-            ORDER BY index ASC
+            ORDER BY pi.index ASC
             "
         );
         $get_pdt_video = DB::select(
@@ -316,10 +316,10 @@ class ProductController extends Controller
                 $image_file->move(public_path("assets/img/product"), $image_name);
 
                 $update_pdt_img = DB::update(
-                    "UPDATE product_images
+                    "UPDATE product_images pi
                     SET path = 'assets/img/product/$image_name'
                     WHERE product_code = '$id'
-                    AND index = '$index'
+                    AND pi.index = '$index'
                     "
                 );
                 if(!$update_pdt_img){
