@@ -22,7 +22,12 @@ const category = [
     {
         parent: "Tài Chính",
         icon: "cash-outline",
-        child: ["Doanh Thu", "Số dư TK Shopee", "Tài Khoản Ngân Hàng", "Thiết lập Thanh Toán"],
+        child: [
+            "Doanh Thu",
+            "Số dư TK Shopee",
+            "Tài Khoản Ngân Hàng",
+            "Thiết lập Thanh Toán",
+        ],
     },
     {
         parent: "Dữ Liệu",
@@ -42,45 +47,55 @@ const category = [
     {
         parent: "Quản Lý Shop",
         icon: "storefront-outline",
-        child: ["Đánh Giá Shop", "Hồ Sơ Shop", "Trang Trí Shop", "Danh Mục Của Shop", "Kho Hình Ảnh/Video", "Báo Cáo Của Tôi"],
+        child: [
+            "Đánh Giá Shop",
+            "Hồ Sơ Shop",
+            "Trang Trí Shop",
+            "Danh Mục Của Shop",
+            "Kho Hình Ảnh/Video",
+            "Báo Cáo Của Tôi",
+        ],
     },
     {
         parent: "Thiết Lập Shop",
         icon: "library-outline",
-        child: ["Địa Chỉ", "Thiết Lập Shop", "Tài Khoản", "Nền tảng đối tác (Kết nối API)"],
+        child: [
+            "Địa Chỉ",
+            "Thiết Lập Shop",
+            "Tài Khoản",
+            "Nền tảng đối tác (Kết nối API)",
+        ],
     },
 ];
 
-const amount_respon_category = category.length; // 10
+const amount_respon_category = category.length;
 let childLst_respon = document.querySelectorAll(".sidebarList_respon");
-const titleLst_respon = document.getElementById("seller-sidebar-responMenu-title");
+const titleLst_respon = document.getElementById(
+    "seller-sidebar-responMenu-title"
+);
 const titleNode_respon = titleLst_respon.childNodes;
-//list field
-let childTemp; // null
+
+let childTemp;
 let parentTempt;
 function clickEvent_respon(clickObj) {
     clickObj.addEventListener("click", () => {
+        clickObj.classList.toggle("parent_active");
         titleNode_respon.forEach((titleTag) => {
-            if (!parentTempt) {
-                parentTempt = titleTag;
-                parentTempt.classList.add("parent_active");
-            } else {
-                titleNode_respon[clickObj.id].classList.add("parent_active");
-                parentTempt.classList.remove("parent_active");
-                parentTempt = titleTag;
+            if (titleTag != clickObj) {
+                titleTag.classList.remove("parent_active");
             }
         });
-        childLst_respon.forEach((children) => {
-            if (!childTemp) {
-                // khac null la true
-                childTemp = children;
-                childTemp.classList.add("seller_respon_active");
-            } else {
-                childLst_respon[clickObj.id].classList.add("seller_respon_active");
-                childTemp.classList.remove("seller_respon_active");
-                childTemp = children;
-            }
-        });
+        const node__target_respone = childLst_respon[clickObj.id];
+        if (node__target_respone.classList.contains("seller_respon_active")) {
+            node__target_respone.classList.remove("seller_respon_active");
+        } else {
+            node__target_respone.classList.add("seller_respon_active");
+            childLst_respon.forEach((childResponse) => {
+                if (childResponse != node__target_respone) {
+                    childResponse.classList.remove("seller_respon_active");
+                }
+            });
+        }
     });
 }
 for (let parentIndex = 0; parentIndex < amount_respon_category; parentIndex++) {

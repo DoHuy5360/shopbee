@@ -74,7 +74,7 @@ class SWITCHTAB {
         );
         this._arrow_forward.style.display = "none";
     }
-    setFirstTargetElement(_index_number) { }
+    setFirstTargetElement(_index_number) {}
     implement() {
         this._array_nodes.forEach((node) => {
             node.addEventListener("click", (tab) => {
@@ -121,16 +121,60 @@ const manage_activity = new SWITCHTAB("manage-activity");
 manage_activity.implement();
 manage_activity.setArrow();
 manage_activity.setTransformLeftRight();
-//! --------------------------respon seller list-----------------------------
+//! -------------------------- respon seller list-----------------------------
 // todo: Chuyển đổi nội dung thân trang
 $(document).ready(function () {
     $("#seller-all-product-btn").click(function () {
+        $("#seller-frame-cover").css("z-index", 16);
         $.ajax({
             type: "GET",
             url: "/manage-product",
             success: function (response) {
-                $("#seller-contentTable").html(response);
+                $("#seller-contentTable-tranfer").html(response);
+            },
+            complete: function () {
+                setTimeout(() => {
+                    $("#seller-frame-cover").css("z-index", -1);
+                }, 1000);
+                class__title.clearRedrtBar();
+                class__title.crtRedrNode("Trang Chủ","/seller");
+                class__title.crtRedrNode("Sản Phẩm");
             },
         });
     });
 });
+// todo: Cập nhật tiêu đề
+class REDIRECT {
+    constructor() {}
+    setRedrtBar(_node__redrt_bar) {
+        this.node__redrt_bar = document.getElementById(_node__redrt_bar);
+        this.str_origin_bar = this.node__redrt_bar.innerHTML;
+    }
+    clearRedrtBar() {
+        if (this.node__redrt_bar) this.node__redrt_bar.innerHTML = "";
+    }
+    crtEleClass(_name, _txt, _attrs) {
+        const node = document.createElement(_name);
+        if (_txt) node.textContent = _txt;
+        for (let key in _attrs) {
+            node.setAttribute(key, _attrs[key]);
+        }
+        return node;
+    }
+    crtRedrNode(_name, _path) {
+        const node__redrt_wrap = this.crtEleClass("div", null, {
+            class: "seller__redirect-wrap",
+        });
+        const node__redrt_link = this.crtEleClass("a", _name, {
+            class: "seller__redirect-link",
+            href: _path,
+        });
+        node__redrt_wrap.appendChild(node__redrt_link);
+        this.node__redrt_bar.appendChild(node__redrt_wrap);
+    }
+    setOrigrinBar() {
+        this.node__redrt_bar.innerHTML = this.str_origin_bar;
+    }
+}
+const class__title = new REDIRECT();
+class__title.setRedrtBar("seller-current-page");

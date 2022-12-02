@@ -22,7 +22,7 @@
     .mainHome_navbar_aboutUs {
         display: block;
         height: 100vh;
-        z-index: 2;
+        z-index: 3;
         width: 0%;
         background-color: rgb(101, 101, 101, 0);
         position: absolute;

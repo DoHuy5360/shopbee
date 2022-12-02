@@ -1,11 +1,11 @@
 // todo: Bắt sự kiện hiển thị thanh thao tác [xóa, hiển thị, ẩn] sản phẩm
-const node__hidden_action = document.getElementById(
+var node__hidden_action = document.getElementById(
     "seller-allProduct-delete-card-wrap"
 );
-const node__card_checkbox = document.querySelectorAll(
+var node__card_checkbox = document.querySelectorAll(
     ".seller__allProduct--card-checkbox"
 );
-const array__card_checked = [];
+var array__card_checked = [];
 node__card_checkbox.forEach((checkbox, index) => {
     checkbox.addEventListener("change", (e) => {
         if (checkbox.checked) {
