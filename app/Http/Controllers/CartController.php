@@ -181,13 +181,22 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        DB::delete(
-            "DELETE FROM carts
+        $user_code = Auth::user()->code;
+        $del_cart_pdt = DB::delete(
+            "DELETE 
+            FROM carts
             WHERE code = '$id'
+            AND user_code = '$user_code'
             "
         );
-        return response()->json([
-            "status" => 200
-        ]);
+        if($del_cart_pdt){
+            return response()->json([
+                "status" => 200
+            ]);
+        }else{
+            return response()->json([
+                "status" => 500
+            ]);
+        }
     }
 }
