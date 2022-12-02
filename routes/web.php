@@ -44,7 +44,13 @@ Route::get('/manage-product', function () {
 
 
 Route::get('/seller', function () {
-    return view('_seller.seller');
+    if(Auth::user()){
+        return view('_seller.seller');
+    }else{
+        return redirect()->route('login', [
+            'pre_page'=>'/seller'
+        ]);
+    }
 });
 Route::resource('/purchase', PurchaseController::class);
 Route::resource('/product', ProductController::class);
