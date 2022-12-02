@@ -58,7 +58,7 @@
                 <b class="mainHome__foot--title"> MUA HÀNG CHÍNH HÃNG TỪ CÁC THƯƠNG HIỆU LỚN VỚI SHOPBEE </b>
                 <p>Mua hàng trên Shopbee luôn là một trải nghiệm ấn tượng. Dù bạn đang có nhu cầu mua bất kỳ mặt hàng thời trang nam, thời trang nữ, đồng hồ, điện thoại, nước rửa tay khô hay khẩu
                     trang N95 thì Shopbee cũng sẽ đảm bảo cung cấp cho bạn những sản phẩm ưng ý. Bên cạnh đó, Shopbee cũng có sự tham gia của các thương hiệu hàng đầu thế giới ở đa dạng nhiều lĩnh
-                    vực khác nhau. Trong đó có thể kể đến Samsung, OPPO, Xiaomi, Innisfree, Unilever, P&G, Biti’s,...Các thương hiệu này hiện cũng đã có cửa hàng chính thức trên Shopbee Mall với
+                    vực khác nhau. Trong đó có thể kể đến Samsung, OPPO, Xiaomi, Innisfree, Unilever, P&G, Biti's,...Các thương hiệu này hiện cũng đã có cửa hàng chính thức trên Shopbee Mall với
                     hàng trăm mặt hàng chính hãng, được cập nhập liên tục. Là một kênh bán hàng uy tín, Shopbee luôn cam kết mang lại cho khách hàng những trải nghiệm mua sắm online giá rẻ, an
                     toàn và tin cậy. Mọi thông tin về người bán và người mua đều được bảo mật tuyệt đối. Các hoạt động giao dịch thanh toán tại Shopbee luôn được đảm bảo diễn ra nhanh chóng, an
                     toàn. Một vấn đề nữa khiến cho các khách hàng luôn quan tâm đó chính là mua hàng trên Shopbee có đảm bảo không.</p>
@@ -134,9 +134,9 @@
         <div id="about-5" class="footer-about">
             <p class="footer-about-title">THEO DÕI CHÚNG TÔI TRÊN</p>
             <ul>
-                <li><a href="">FACEBOOK</a></li>
-                <li><a href="">INSTARGRAM</a></li>
-                <li><a href="">GITHUP</a></li>
+                <li><a href="#">FACEBOOK</a></li>
+                <li><a href="#">INSTARGRAM</a></li>
+                <li><a href="#">GITHUB</a></li>
             </ul>
         </div>
     </div>
