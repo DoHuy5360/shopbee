@@ -111,24 +111,39 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
+        $user_code = Auth::user()->code;
+        // return $user_code;
         $bill_code = genCode(52);
         $add_bill = new Bill();
         $add_bill->code = $bill_code;
         $add_bill->buyer_code = Auth::user()->code;
         $add_bill->total = $request->product_total;
         $add_bill->save();
-        foreach ($request->product_information as $item) {
-            foreach ($item['products'] as $product) {
-                $add_pdt_bill = new BillProduct();
-                $add_pdt_bill->code = genCode(52);
-                $add_pdt_bill->bill_code = $bill_code;
-                $add_pdt_bill->product_code = $product["product_code"];
-                $add_pdt_bill->name = $product["product_name"];
-                $add_pdt_bill->path = $product["image"];
-                $add_pdt_bill->price = $product["price"];
-                $add_pdt_bill->amount = $product["amount"];
-                $add_pdt_bill->total = $product["sum_price"];
-                $add_pdt_bill->save();
+        if ($add_bill) {
+            foreach ($request->product_information as $item) {
+                foreach ($item['products'] as $product) {
+                    $pdt_code = $product["product_code"];
+                    $add_pdt_bill = new BillProduct();
+                    $add_pdt_bill->code = genCode(52);
+                    $add_pdt_bill->bill_code = $bill_code;
+                    $add_pdt_bill->product_code = $pdt_code;
+                    $add_pdt_bill->name = $product["product_name"];
+                    $add_pdt_bill->path = $product["image"];
+                    $add_pdt_bill->price = $product["price"];
+                    $add_pdt_bill->amount = $product["amount"];
+                    $add_pdt_bill->total = $product["sum_price"];
+                    $add_pdt_bill->save();
+                    
+                    if ($add_pdt_bill) {
+                        DB::delete(
+                            "DELETE 
+                            FROM carts
+                            WHERE product_code = '$pdt_code'
+                            AND user_code = '$user_code'
+                            "
+                        );
+                    }
+                }
             }
         }
         return $request;
@@ -243,7 +258,7 @@ class PurchaseController extends Controller
             $new_status = $arr_status[$crnt_sts_idx + 1];
         } else if ($request->action == "hack_back") {
             $new_status = $arr_status[$crnt_sts_idx - 1];
-        }else{
+        } else {
             $new_status = $request->current_status;
         }
         $update_bill_pdt = DB::update(
@@ -271,7 +286,7 @@ class PurchaseController extends Controller
                     "
                 )[0];
                 array_push($amount_order, $get_amount_each_status->count);
-                $total_status+= (int)$get_amount_each_status->count;
+                $total_status += (int)$get_amount_each_status->count;
             }
             array_unshift($amount_order, $total_status);
             return $amount_order;

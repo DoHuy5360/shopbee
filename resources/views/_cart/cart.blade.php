@@ -140,7 +140,7 @@
                             </div>
                             @foreach ($product_creator->products as $index_item => $item)
                                 <div class="cart_page_warp_containt_border">
-                                    <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->code }}">
+                                    <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->product_code }}">
                                     <div class="cart_page_wrap_containt">
                                         <div class="cart_page_voucher_cover">
                                             <div class="cart_page_voucher_title">Combo khuyến mãi</div>
