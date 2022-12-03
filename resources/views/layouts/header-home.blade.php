@@ -36,7 +36,7 @@
                                 <div id="mainHome-hidden-tramform">
                                     <div id="mainHome-user-hidden-wrap">
                                         <div id="mainHome-hidden-option-user">
-                                            <a class="mainHome__action--user" href="{{ route('profile.show', Auth::user()->code) }}">Hồ sơ của tôi</a>
+                                            <a class="mainHome__action--user" href="{{ route('profile.index') }}">Hồ sơ của tôi</a>
                                             <a class="mainHome__action--user" href="">Đơn mua</a>
                                             <form action="{{ route('logout') }}" method="POST">
                                                 @csrf
@@ -48,12 +48,16 @@
                             </li>
                         @endauth
                         @if (Auth::guest())
-                            <a href="{{ route('register') }}">
-                                <li class="mainHome_navbar-topic">Đăng Ký</li>
-                            </a>
-                            <a href="{{ route('login') }}">
-                                <li class="mainHome_navbar-topic">Đăng nhập</li>
-                            </a>
+                            <li class="mainHome_navbar-topic">
+                                <a href="{{ route('register') }}">
+                                    Đăng Ký
+                                </a>
+                            </li>
+                            <li class="mainHome_navbar-topic">
+                                <a href="{{ route('login') }}">
+                                    Đăng nhập
+                                </a>
+                            </li>
                         @endif
                         <div id="mainHome_navbar_about_topic-close-icon">
                             <ion-icon name="close-circle"></ion-icon>
@@ -96,10 +100,10 @@
                 <ion-icon name="cart-outline"></ion-icon>
                 <div id="mainHome-cart-hidden">
                     @if (Auth::guest())
-                    <div id="mainHome-cart-empty-wrap">
-                        <img src="{{ asset('assets/img/empty_cart.png') }}" alt="Giỏ hàng của bạn">
-                        <div>Chưa Có Sản Phẩm</div>
-                    </div>
+                        <div id="mainHome-cart-empty-wrap">
+                            <img src="{{ asset('assets/img/empty_cart.png') }}" alt="Giỏ hàng của bạn">
+                            <div>Chưa Có Sản Phẩm</div>
+                        </div>
                     @else
                         <input type="hidden" id="mainHome-user-code" name="" value="{{ Auth::user()->code }}">
                         <div id="mainHome-cart-product-title">Sản phẩm mới thêm</div>

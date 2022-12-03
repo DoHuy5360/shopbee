@@ -197,10 +197,8 @@
 }
 
 .mainHome-listOfFlash img {
-    width: inherit;
-    height: 200px;
+    height: clamp(200px, 200px, 200px);
     object-fit: cover;
-    padding: 10px;
 }
 .mainHome__flashSale--processBar-wrap {
     position: relative;
@@ -251,14 +249,29 @@
 .mainHome-ads-block-2 .mainHome-ads-inside {
     width: var(--layout-width);
     margin: auto;
-    height: 100px;
+    height: 130px;
+}
+.mainHome-ads-inside{
+    display: flex;
+    gap: 10px;
+}
+.mainHome__sale--img-wrap{
+    width: calc(100% / 3);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 130px;
+    place-items: center;
 }
 .mainHome-ads-inside img {
+    transition: 300ms;
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 2px;
 }
-/*! SHOPBEE MALL */
+.mainHome-ads-inside img:hover{
+    transform: scale(1.2);
+}
 .mainHome-shopbeeMall {
     height: 100%;
     width: 100%;
@@ -282,6 +295,7 @@
     height: inherit;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .mainHome-company {

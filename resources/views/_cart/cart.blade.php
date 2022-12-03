@@ -43,17 +43,34 @@
                         <li class="mainHome_navbar-topic">Hỗ Trợ</li>
                         <li class="mainHome_navbar-topic">Ngôn ngữ</li>
                         @auth
-                            <a href="">
-                                <li class="mainHome_navbar-topic">{{ Auth::user()->name }}</li>
-                            </a>
-
+                            <li class="mainHome_navbar-topic" id="mainHome-navbar-user">
+                                <img id="mainHome-avatar-ion" src="{{ asset(Auth::user()->avatar) }}
+                            " alt="">
+                                <a href="/profile" id="mainHome-profile-avatar">
+                                    <div id="mainHome-user-name">{{ Auth::user()->name }}</div>
+                                </a>
+                                <div id="mainHome-hidden-tramform">
+                                    <div id="mainHome-user-hidden-wrap">
+                                        <div id="mainHome-hidden-option-user">
+                                            <a class="mainHome__action--user" href="{{ route('profile.show', Auth::user()->code) }}">Hồ sơ của tôi</a>
+                                            <a class="mainHome__action--user" href="">Đơn mua</a>
+                                            <form action="{{ route('logout') }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="mainHome__action--user" id="mainHome-logout-btn">Đăng xuất</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                         @endauth
-                        <a href="{{ route('register') }}">
-                            <li class="mainHome_navbar-topic">Đăng Ký</li>
-                        </a>
-                        <a href="{{ route('login') }}">
-                            <li class="mainHome_navbar-topic">Đăng nhập</li>
-                        </a>
+                        @guest
+                            <li class="mainHome_navbar-topic">
+                                <a href="{{ route('register') }}">Đăng Ký</a>
+                            </li>
+                            <li class="mainHome_navbar-topic">
+                                <a href="{{ route('login') }}">Đăng nhập</a>
+                            </li>
+                        @endguest
                     </ul>
                 </div>
             </div>
@@ -107,9 +124,9 @@
             </div>
             <form action="{{ route('purchase.create') }}" id="cart-form-submit" class="cart_page_warp_containt_border" method="GET">
                 @foreach ($get_pdt_creator as $index_pdt => $product_creator)
-                    <input type="hidden" name="product_information[{{ $index_pdt }}][user_code]" value="{{ $product_creator->user_code }}">
-                    <input type="hidden" name="product_information[{{ $index_pdt }}][user_name]" value="{{ $product_creator->name }}">
                     <div class="cart_page_product_infor">
+                        <input type="hidden" name="product_information[{{ $index_pdt }}][user_code]" value="{{ $product_creator->user_code }}">
+                        <input type="hidden" name="product_information[{{ $index_pdt }}][user_name]" value="{{ $product_creator->name }}">
                         <div class="cart_page_product_prize_infor">
                             <div class="cart_page_product_seller">
                                 <div class="cart_page_btn">
@@ -122,8 +139,8 @@
                                 <span class="cart__page-product-edit">Sửa</span>
                             </div>
                             @foreach ($product_creator->products as $index_item => $item)
-                            <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->code }}">
                                 <div class="cart_page_warp_containt_border">
+                                    <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->product_code }}">
                                     <div class="cart_page_wrap_containt">
                                         <div class="cart_page_voucher_cover">
                                             <div class="cart_page_voucher_title">Combo khuyến mãi</div>
@@ -134,7 +151,8 @@
 
                                             <div class="cart_page_infor_warp">
                                                 <div class="cart_page_btn">
-                                                    <input class="cartPage__choose--item" type="checkbox" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][checked]" data-cart-select="{{ $item->cart_code }}" />
+                                                    <input class="cartPage__choose--item" type="checkbox" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][checked]"
+                                                        data-cart-select="{{ $item->cart_code }}" />
                                                 </div>
                                                 <div class="cart_page_name_product">
                                                     <div class="cart_page_product_img">
@@ -164,7 +182,8 @@
                                                                     @foreach ($item->classificationones as $cls1)
                                                                         <div class="cart_checkout--method-wrap">
                                                                             <label for="cart-page-payment-feature-1">
-                                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1" value="white" />
+                                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1"
+                                                                                    value="white" />
                                                                                 <span>{{ $cls1->name }}</span>
                                                                             </label>
                                                                         </div>
@@ -203,8 +222,8 @@
                                                 <div class="cart__set--number-product-wrap">
                                                     <div class="cart__set--number-product">
                                                         <button class="cart_page_quantity_btn cart_page_quantity_btn_minus" type="button">-</button>
-                                                        <input class="cartPage__item--amount" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][amount]" type="number" value="1" min="1"
-                                                            max="{{ $item->storage }}" data-item-code="{{ $item->cart_code }}" />
+                                                        <input class="cartPage__item--amount" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][amount]" type="number"
+                                                            value="1" min="1" max="{{ $item->storage }}" data-item-code="{{ $item->cart_code }}" />
                                                         <button class="cart_page_quantity_btn cart_page_quantity_btn_plus" type="button">+</button>
                                                     </div>
                                                 </div>
@@ -233,7 +252,7 @@
                                 </div>
                                 <div class="cart_page_voucher_detail">Shop Voucher giảm đến ₫50k</div>
                                 <div class="cart_page_voucherAdd">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer">Xem thêm Voucher</a>
+                                    <a href="http://" rel="noopener noreferrer">Xem thêm Voucher</a>
                                 </div>
                             </div>
                             <div class="cart_page_product_trans">
@@ -242,7 +261,7 @@
                                 </div>
                                 <div class="cart_page_trans_detail">Giảm ₫40.000 phí vận chuyển đơn tối thiểu ₫0</div>
                                 <div class="cart_page_transAdd">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer">Tìm hiểu thêm</a>
+                                    <a href="http://" rel="noopener noreferrer">Tìm hiểu thêm</a>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase_process.css') }}">
-<script src="{{ asset('assets/js/profile/purchase_process_full.js') }}"></script>
 <div id="profile-body-tranfer-wrap">
     <div id="profile-process-wrap">
         <div id="profile-process-bar-wrap">
@@ -70,3 +69,4 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('assets/js/profile/purchase_process_full.js') }}"></script>

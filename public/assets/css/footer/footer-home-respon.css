@@ -9,6 +9,7 @@
 
     #mainHome-foot-des-wrap {
         padding: 0;
+        background-color: #252525;
     }
 
     .mainHome__foot--part {
@@ -42,18 +43,18 @@
     #mainHome-foot-list-category {
         display: none;
     }
-
+    #about-5 {
+        grid-column: -3 / -1;
+    }
     .footer__about--wrap {
-        padding: 0 40px;
         width: 100%;
+        gap: 0;
+        background-color: white;
         grid-template-columns: repeat(2, 1fr);
     }
-
-    #mainHome-foot-des,
-    .footer-about {
-        background-color: #252525;
+    #mainHome-foot-product-vision {
+        text-align: center;
     }
-
     #mainHome-foot-product-vision,
     .footer-about-title,
     .mainHome__foot--part p {
@@ -62,22 +63,13 @@
 
     .footer_about {
         background-color: #252525;
+        padding: 0;
     }
 
     .footer-about {
         position: relative;
+        padding: 20px 0 10px 15px;
         background-color: #252525;
-    }
-
-    .footer-about::after {
-        content: "";
-        width: 0.5px;
-        height: 100%;
-        background-color: var(--gray-soft);
-        position: absolute;
-        top: 0%;
-        /* right: -5%; */
-        right: calc((100% / 20) * -1);
     }
 
     .footer-about:nth-child(2n):after {

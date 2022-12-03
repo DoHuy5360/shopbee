@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="{{ asset('assets/css/manage_product/manage_product.css') }}">
-<script src="{{ asset('assets/js/manage_product/manage_product.js') }}"></script>
 <input id="seller-allProduct-csrf" type="hidden" name="" value="{{ csrf_token() }}">
 <div id="seller-all-product-wrap">
     <div id="seller-all-product-notification" class="seller__allProduct--wrap">
@@ -110,7 +109,7 @@
             <div id="seller-all-product-table-wrap">
                 <div id="seller-all-product-table-header" class="seller__allProduct--table-grid">
                     <div class="seller__allProduct--header-title">
-                        <input type="checkbox" name="" id="" />
+                        <input class="manage__product-check-all" type="checkbox" name="" title="Checking all products" />
                     </div>
                     <div class="seller__allProduct--header-title">Tên sản phẩm</div>
                     <div class="seller__allProduct--header-title">SKU phân loại</div>
@@ -173,11 +172,11 @@
             </div>
             <div id="seller-allProduct-delete-card-wrap">
                 <div id="seller-allProduct-delete-left-part">
-                    <input type="checkbox" name="" id="">
+                    <input class="manage__product-check-all" type="checkbox" name="" title="Checking all products">
                     <span>Chọn Tất Cả</span>
                 </div>
                 <div id="seller-allProduct-delete-right-part">
-                    <span>1 Sản phẩm được chọn</span>
+                    <div><span id="manage__product--amount-card-delete"></span> Sản phẩm được chọn</div>
                     <button id="seller-allProduct-card-delete-btn" type="button">Xóa</button>
                     <button id="seller-allProduct-card-display-btn" type="button" >Hiển Thị</button>
                 </div>
@@ -185,3 +184,4 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('assets/js/manage_product/manage_product.js') }}"></script>

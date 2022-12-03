@@ -112,6 +112,7 @@
         overflow: hidden;
     }
     .cart__page-product-edit{
+        display: block;
         padding-right: 20px;
         cursor: pointer;
     }
