@@ -33,8 +33,8 @@ body {
     width: 100%;
     position: relative;
 }
-.product__media--display:nth-child(n + 2){
-  display: none;
+.product__media--display:nth-child(n + 2) {
+    display: none;
 }
 #product-main-img :is(video, img) {
     object-fit: cover;
@@ -138,7 +138,8 @@ body {
     gap: 10px;
     flex-wrap: wrap;
 }
-#product-classification2--wrap .product_title_column-item-infor:not(:first-child){
+#product-classification2--wrap
+    .product_title_column-item-infor:not(:first-child) {
     display: none;
 }
 #product-title-transportItem-row1 span:hover {
@@ -397,32 +398,32 @@ body {
     gap: 5px;
 }
 
-.product-rate-comment-section {
+.product_rate_comment_section {
     display: flex;
     margin-top: 20px;
 }
 
-#product-rate-comment-avat {
+.product_rate_comment_avat {
     width: 50px;
     height: 50px;
     margin: 0 10px;
     cursor: pointer;
 }
 
-#product-rate-comment-avat img {
+.product_rate_comment_avat img {
     border-radius: 50%;
     object-fit: cover;
     width: 40px;
     height: 40px;
 }
 
-#product-rate-comment-detail {
+.product_rate_comment_detail {
     position: relative;
 
     width: 100%;
 }
 
-#product-rate-comment-detail::after {
+.product_rate_comment_detail::after {
     content: "";
     width: 100%;
     height: 1px;
@@ -431,37 +432,37 @@ body {
     bottom: 0%;
 }
 
-#product-rate-comment-detail a {
+.product_rate_comment_detail a {
     text-decoration: none;
     color: #000;
     font-size: 13px;
 }
 
-#product-rate-cmt-date {
+.product_rate_cmt_date {
     font-size: 13px;
     color: #6f6f6f;
     margin: 20px 0;
 }
 
-#product-rate-comment_rate-star {
+.product_rate_comment_rate_star {
     display: flex;
     gap: 3px;
 }
 
-#product-rate-comment_rate-star ion-icon {
+.product_rate_comment_rate_star ion-icon {
     font-size: 14px;
     color: #ee4d2d;
 }
 
-#product-rate-cmt-typeOfProduct {
+.product_rate_cmt_typeOfProduct {
     margin: 17px 0;
 }
 
-.product-rate-cmt-productType {
+.product_rate_cmt_productType {
     color: #6f6f6f;
 }
 
-#product-rate-cmt-customer-img_vid {
+.product_rate_cmt_customer_img_vid {
     display: flex;
     gap: 5px;
 }
@@ -476,11 +477,11 @@ body {
     height: 100%;
 }
 
-#product-rate-cmt-like {
+.product_rate_cmt_like {
     color: #cccccc;
 }
 
-#product-rate-cmt-like_report {
+.product_rate_cmt_like_report {
     margin: 20px 0;
     display: flex;
     justify-content: space-between;
@@ -675,8 +676,8 @@ body {
     transform: translate(-50%, -50%);
     z-index: 4;
     display: none;
-  }
-  #product-alert-icon {
+}
+#product-alert-icon {
     font-size: 30px;
     background-color: #00bfa5;
     border-radius: 50%;
@@ -685,8 +686,8 @@ body {
     display: grid;
     place-items: center;
     color: white;
-  }
-  #product-alert-mesage {
+}
+#product-alert-mesage {
     color: white;
     white-space: nowrap;
-  }
+}
