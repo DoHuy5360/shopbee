@@ -59,6 +59,8 @@ Route::resource('/profile', ProfileController::class);
 Route::resource('/cart', CartController::class);
 
 Route::get('/dashboard', function () {
+    return date('D - d/m/Y - H:i:s - A');
+
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
