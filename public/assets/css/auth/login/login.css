@@ -63,7 +63,7 @@
 	margin: 0 80px;
 	height: 600px;
 	width: 1040px;
-	background-image: url("../../sale_regs.png");
+	background-image: url("../../../img/login_represent.png");
 	background-repeat: no-repeat;
 	background-size: 550px;
 	background-position: left center;
@@ -74,12 +74,14 @@
 #login_page-content-pic {
 	width: 1040px;
 }
-
+#scroll-to-top{
+	display: none !important;
+}
 #login_page-content-form {
 	background-color: #fff;
 	width: 400px;
 	box-sizing: border-box;
-	box-shadow: 0 3px 10px 0 rgb(0 0 0 / 14%);
+	box-shadow: 0 3px 10px 0 #00000024;
 	border-radius: 4px;
 }
 
@@ -139,6 +141,20 @@
 	top: 50%;
 	right: -0.75rem;
 	z-index: 2;
+}
+#login_page-content-form-qr-wrap-detail::before {
+	position: absolute;
+	content: "";
+	box-sizing: border-box;
+	width: 0.75rem;
+	height: 0.75rem;
+	transform: rotate(45deg) translateX(-50%);
+	border-top: 2px solid #ffbf00;
+	border-right: 2px solid #ffbf00;
+	background-color: #FEFAEC;
+	top: 50%;
+	right: -0.75rem;
+	z-index: 3;
 }
 
 #login_page-content-form-logins > div {

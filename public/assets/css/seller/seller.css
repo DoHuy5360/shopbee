@@ -1,4 +1,6 @@
-/*! navbar */
+body{
+    overflow-y: hidden;
+}
 #seller-navbar {
     width: 100%;
     height: 56px;
@@ -118,11 +120,11 @@
     background-color: var(--gray-soft);
 }
 
-/*! noi dung cua seller */
 #seller-content {
     width: 100%;
     display: grid;
     grid-template-columns: 220px auto;
+    position: relative;
 }
 
 #seller-listOfContent {
@@ -196,7 +198,6 @@
     justify-content: space-between;
 }
 
-/*! phan main content */
 #seller-contentTable {
     position: relative;
     background-color: var(--gray-soft);
@@ -207,7 +208,6 @@
     grid-template-columns: 1fr 300px;
     gap: 16px;
     width: 1100px;
-    margin: 20px auto;
 }
 
 .carousel-indicators {
@@ -296,7 +296,6 @@
     -webkit-user-drag: none;
 }
 
-/*? Danh sách cần làm */
 #seller-todoList {
     width: 100%;
     background-color: white;
@@ -358,7 +357,6 @@
     font-size: 12px;
 }
 
-/*? Phân Tích Bán Hàng */
 #chart-analyst {
     display: flex;
     gap: 10px;
@@ -452,7 +450,7 @@
     position: absolute;
     width: 50px;
     cursor: pointer;
-    z-index: 8888;
+    z-index: 10;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -565,4 +563,53 @@
 
 #seller-listOfContent-respons {
     display: none;
+}
+#seller-frame-cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    z-index: -1;
+    top: 0;
+    display: grid;
+    place-items: center;
+}
+#seller-frame-cover img{
+    animation-delay: 500ms;
+    animation: bee_move 1000ms alternate infinite;
+}
+@keyframes bee_move {
+    0%{
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+#seller-contentTable-tranfer{
+    max-width: 1105px;
+    max-height: 100vh;
+    margin: auto;
+    padding-top: 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+#seller-contentTable-tranfer::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+#scroll-to-top{
+    display: none;
+}
+#seller-current-page{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.seller__redirect-wrap:not(:first-child):before{
+    content: "> ";
+}
+.seller__redirect-link{
+    color: var(--color-4);
+    text-decoration: none !important;
 }

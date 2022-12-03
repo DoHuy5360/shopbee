@@ -4,6 +4,7 @@ use App\Http\Controllers\BuyerpageController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\NewProductController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -44,14 +45,22 @@ Route::get('/manage-product', function () {
 
 
 Route::get('/seller', function () {
-    return view('_seller.seller');
+    if(Auth::user()){
+        return view('_seller.seller');
+    }else{
+        return redirect()->route('login', [
+            'pre_page'=>'/seller'
+        ]);
+    }
 });
 Route::resource('/purchase', PurchaseController::class);
 Route::resource('/product', ProductController::class);
-Route::resource('/profile', UserController::class);
+Route::resource('/profile', ProfileController::class);
 Route::resource('/cart', CartController::class);
 
 Route::get('/dashboard', function () {
+    return date('D - d/m/Y - H:i:s - A');
+
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
