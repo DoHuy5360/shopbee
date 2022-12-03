@@ -26,34 +26,11 @@ document.querySelectorAll(".profile__birthday--list-value").forEach((list_dateti
   });
 });
 //! ---------------
-// $(document).ready(function () {
-//   $("#profile-edit-save-btn").click(function (e) {
-//     e.preventDefault();
-//     $.post(
-//       "profile.php",
-//       {
-//         user_name: $("#profile-edit-user-name").val(),
-//       },
-//       function (ketqua) {
-//         $("#noidung").html(ketqua);
-//       }
-//     );
-//   });
-// });
 $(document).ready(function () {
-  $("#profile-edit-save-btn").click(function () {
-    $.ajax({
-      url: "profile.php",
-      type: "POST",
-      dataType: "json",
-      data: $("#profile-edit-form").serialize(),
-      success: function (data) {
-        $("#noidung").html(ketqua);
-      },
-    });
-  });
-
+  // todo: Hiện đơn mua
   $("#profile-menu-element-order").click(function(){
+    // window.history.pushState(null,null,'/1')
+    window.history.replaceState('state name', null, '/profile/order')
     $.ajax({
       type: 'GET',
       url: '/purchase',
@@ -64,17 +41,6 @@ $(document).ready(function () {
         $("#profile-body-tranfer-wrap").html(response)
       }
     })
-  // $("#profile-menu-element-order").click(function(){
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: `/purchase/${$("#profile-user-code").val()}`,
-  //     data: {
-  //       type: 'wait_confirm'
-  //     },
-  //     success: function(response){
-  //       $("#profile-body-tranfer-wrap").html(response)
-  //     }
-  //   })
   })
 
 });

@@ -81,13 +81,15 @@
 
     .mainHome-listOfFlashcate {
         display: flex;
+        width: fit-content;
+        padding: 10px;
     }
 
     .mainHome-listOfFlashcate_wrapper {
         overflow-x: scroll;
         scrollbar-width: none;
         width: 100%;
-        padding: 10px;
+        padding: 10px 0 0 0;
     }
 
     #mainHome-listOfFlash-1 {
@@ -108,6 +110,9 @@
     #mainHome-ads-inside-respon3 {
         flex: 1;
         height: 70px;
+    }
+    .mainHome-listOfFlash img{
+        width: clamp(200px, 200px, 200px);
     }
 
     :is(#mainHome-ads-inside-respon1, #mainHome-ads-inside-respon3) :is(img) {
