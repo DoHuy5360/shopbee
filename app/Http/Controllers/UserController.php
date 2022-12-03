@@ -15,16 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user_log = Auth::user()->code;
-        $get_user = DB::select(
-            "SELECT *
-             FROM users
-             WHERE code = '$user_log'
-            "
-        )[0];
-        return view('_profile.profile', [
-            'get_user' => $get_user,
-        ]);
+        //
     }
 
     /**
@@ -56,15 +47,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $get_user = DB::select(
-            "SELECT *
-             FROM users
-             WHERE code = '$id'
-            "
-        )[0];
-        return view('_profile.profile', [
-            'get_user' => $get_user,
-        ]);
+        //
     }
 
     /**

@@ -142,6 +142,20 @@
 	right: -0.75rem;
 	z-index: 2;
 }
+#login_page-content-form-qr-wrap-detail::before {
+	position: absolute;
+	content: "";
+	box-sizing: border-box;
+	width: 0.75rem;
+	height: 0.75rem;
+	transform: rotate(45deg) translateX(-50%);
+	border-top: 2px solid #ffbf00;
+	border-right: 2px solid #ffbf00;
+	background-color: #FEFAEC;
+	top: 50%;
+	right: -0.75rem;
+	z-index: 3;
+}
 
 #login_page-content-form-logins > div {
 	padding: 0 30px;

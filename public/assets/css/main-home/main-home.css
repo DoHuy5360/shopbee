@@ -197,10 +197,8 @@
 }
 
 .mainHome-listOfFlash img {
-    width: clamp(200px, 200px, 200px);
     height: clamp(200px, 200px, 200px);
     object-fit: cover;
-    padding: 10px;
 }
 .mainHome__flashSale--processBar-wrap {
     position: relative;

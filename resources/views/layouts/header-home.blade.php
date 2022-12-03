@@ -36,7 +36,7 @@
                                 <div id="mainHome-hidden-tramform">
                                     <div id="mainHome-user-hidden-wrap">
                                         <div id="mainHome-hidden-option-user">
-                                            <a class="mainHome__action--user" href="{{ route('profile.show', Auth::user()->code) }}">Hồ sơ của tôi</a>
+                                            <a class="mainHome__action--user" href="{{ route('profile.index') }}">Hồ sơ của tôi</a>
                                             <a class="mainHome__action--user" href="">Đơn mua</a>
                                             <form action="{{ route('logout') }}" method="POST">
                                                 @csrf
