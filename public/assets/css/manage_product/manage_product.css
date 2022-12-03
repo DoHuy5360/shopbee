@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    height: calc(100vh - 75px);
 }
 .seller__allProduct--wrap {
     background-color: white;
@@ -400,4 +401,8 @@
 #seller-allProduct-card-display-btn {
     background-color: var(--color-4);
     color: white;
+}
+#manage__product--amount-card-delete{
+    color: var(--color-4);
+    font-weight: bold;
 }
