@@ -212,6 +212,7 @@
     justify-content: center;
     gap: 5px;
     cursor: pointer;
+    text-decoration: none !important;
 }
 #seller-all-product-multiply-handle {
     cursor: pointer;

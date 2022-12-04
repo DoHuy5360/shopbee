@@ -1,5 +1,5 @@
 import { CATEGORIES } from "./categories.js";
-import { VALIDATION } from "../class/validation.js"
+import { InputValidation } from "../module/class/validation.js";
 class Category {
     constructor(_array_categories) {
         this.arr_categ = _array_categories;
@@ -13,7 +13,7 @@ class Category {
         );
         this.tray_wrap = document.getElementById("typeProduct-columns-wrap");
     }
-    // Đệ quy để gắn sự kiện nhấp chuột cho các category
+    //todo: Đệ quy để gắn sự kiện nhấp chuột cho các category
     displayCategories(_where) {
         const display_node = document.querySelector(`[data-level="${_where}"]`),
             wrap_categories = document.createElement("div");
@@ -34,8 +34,8 @@ class Category {
                 category_node.insertAdjacentHTML("beforeend", arrow);
             }
             category_node.addEventListener("click", (e) => {
-                // category.level + 1
-                // The next level (columns)
+                //! category.level + 1
+                //! The next level (columns)
                 this.removeSelectedChildrend(category.level + 1);
                 this.addClassChoiceed(category_node);
                 this.displayStringCategories();
@@ -48,7 +48,7 @@ class Category {
         });
     }
     removeSelectedChildrend(_where) {
-        // Loại bỏ các tùy chọn con
+        //todo: Loại bỏ các tùy chọn con
         let display_node;
         for (let index = _where; index <= this.amount_column; index++) {
             display_node = document.querySelector(`[data-level="${index}"]`);
@@ -56,7 +56,7 @@ class Category {
         }
     }
     addClassChoiceed(_node) {
-        // Thêm class để đánh dấu category được chọn
+        //todo: Thêm class để đánh dấu category được chọn
         if (this.choice_node_temp) {
             this.choice_node_temp.classList.remove("choiceed");
             _node.classList.add("choiceed");
@@ -67,7 +67,7 @@ class Category {
         }
     }
     displayStringCategories() {
-        // Hiển thị dãy thể loại đã chọn
+        //todo: Hiển thị dãy thể loại đã chọn
         const tray_select = document.getElementById(
             "seller-product-submit-items"
         );
@@ -80,7 +80,7 @@ class Category {
             tray_select.appendChild(clone_category);
         });
     }
-    // Hiển thị nút mở rộng tầm nhìn bên trái và phải
+    //todo: Hiển thị nút mở rộng tầm nhìn bên trái và phải
     showLeftAndfRight(_category) {
         if (_category.level >= 3) {
             if (_category.childrend.length) {
@@ -108,8 +108,8 @@ class Category {
 const first_display = new Category(CATEGORIES);
 first_display.displayCategories(1);
 
-const accept_btn = document.getElementById("seller-product-submit-btn");
-accept_btn.addEventListener("click", (e) => {
+const node__acpt_btn = document.getElementById("seller-product-submit-btn");
+node__acpt_btn.addEventListener("click", (e) => {
     let category_string = [];
     const category_selected_all = document.querySelectorAll(
         "#seller-product-submit-items .typeProduct__category--selected"
@@ -117,23 +117,38 @@ accept_btn.addEventListener("click", (e) => {
     category_selected_all.forEach((category) => {
         category_string.push(category.innerText);
     });
-    const hidden_tranfer = document.createElement("input");
-    hidden_tranfer.setAttribute("type", "hidden");
-    hidden_tranfer.setAttribute("name", "product_category");
+    const hidden_tranfer = crtEleClass(
+        "input",
+        {
+            type: "hidden",
+            name: "product_category",
+        },
+        null
+    );
     hidden_tranfer.value = category_string;
-    accept_btn.form.prepend(hidden_tranfer);
-    if(object__product_name.isValid()){
-        accept_btn.form.submit();
+    node__acpt_btn.form.prepend(hidden_tranfer);
+    if (valid__pdt_name.isValid()) {
+        node__acpt_btn.form.submit();
     }
 });
 
 // todo: Kiểm tra hợp lệ
-const object__product_name = new VALIDATION("#seller-product-name-input-field");
-object__product_name.checkLengthMinMax(10, 120)
-object__product_name.addEventInput((node__input) => {
-    object__product_name.changeValueByLength(
-        node__input,
-        "#seller-product-input-numb"
-    );
-    object__product_name.checkLengthMinMax(10, 120)
+const valid__pdt_name = new InputValidation("#seller-product-name-input-field");
+valid__pdt_name.checkNotEmpty();
+valid__pdt_name.addEventInput((this_obj) => {
+    this_obj.changeValueByLength("#seller-product-input-numb");
+    this_obj.checkLengthMinMax(10, 120);
+    this_obj.checkNotEmpty();
 });
+valid__pdt_name.addEventKeyPress((this_obj) => {
+    this_obj.preventKeyPress("special");
+});
+
+function crtEleClass(_name, _attrs, _txt) {
+    const node = document.createElement(_name);
+    if (_txt) node.innerHTML = _txt;
+    for (let key in _attrs) {
+        node.setAttribute(key, _attrs[key]);
+    }
+    return node;
+}
