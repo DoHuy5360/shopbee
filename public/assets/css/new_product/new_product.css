@@ -137,6 +137,7 @@ body {
   cursor: pointer;
   border-radius: 5px;
   outline: unset;
+  user-select: none;
 }
 
 #seller-product-submit-btn:hover {
