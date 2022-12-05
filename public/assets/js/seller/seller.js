@@ -44,111 +44,28 @@ menuList.forEach((menu) => {
     });
 });
 
-// !----------------------------- switch tab ----------------------
-class SWITCHTAB {
-    constructor(_parent_node, _line_class = ".___") {
-        this._color_orange = "#f0572b";
-        this._color_black = "#000000";
-        this._parent_lv1 = document.querySelector(
-            `[data-switch-name="${_parent_node}"]`
-        );
-        this._parent_lv2 = this._parent_lv1.querySelector(
-            ".seller__opttion--bar"
-        );
-        this._parent_lv3 = this._parent_lv2.querySelector(
-            ".seller__option--element-wrap"
-        );
-        this._array_nodes = this._parent_lv3.querySelectorAll(
-            ".seller__option--element"
-        );
-        this._first_node = this._array_nodes[0];
-        this._last_node = this._array_nodes[this._array_nodes.length - 1];
-        this._under_line = this._parent_lv3.querySelector(_line_class);
-        this._under_line.style.width = this._first_node.offsetWidth + "px";
-        this._first_node.style.color = this._color_orange;
-        this._arrow_back = this._parent_lv2.querySelector(
-            ".seller__arrow--back"
-        );
-        this._arrow_forward = this._parent_lv2.querySelector(
-            ".seller__arrow--forward"
-        );
-        this._arrow_forward.style.display = "none";
-    }
-    setFirstTargetElement(_index_number) {}
-    implement() {
-        this._array_nodes.forEach((node) => {
-            node.addEventListener("click", (tab) => {
-                const tab_index_width = node.offsetWidth;
-                const tab_index_left = node.offsetLeft;
-                this._under_line.style.left = tab_index_left + "px";
-                this._under_line.style.width = tab_index_width + "px";
-                this._first_node.style.color = this._color_black;
-                this._first_node = node;
-                node.style.color = this._color_orange;
-            });
-        });
-    }
-    setArrow() {
-        this._arrow_forward.style.display = "grid";
-        this._arrow_back.addEventListener("click", (e) => {
-            this._parent_lv3.style.transform = "translateX(0)";
-            this._arrow_forward.style.display = "grid";
-            this._arrow_back.style.display = "none";
-        });
-        this._arrow_forward.addEventListener("click", (e) => {
-            this._parent_lv3.style.transform = "translateX(-120px)";
-            this._arrow_forward.style.display = "none";
-            this._arrow_back.style.display = "grid";
-        });
-    }
-    setTransformLeftRight() {
-        this._first_node.addEventListener("click", (e) => {
-            this._parent_lv3.style.transform = "translateX(0)";
-            this._arrow_forward.style.display = "grid";
-            this._arrow_back.style.display = "none";
-        });
-        this._last_node.addEventListener("click", (e) => {
-            this._parent_lv3.style.transform = "translateX(-120px)";
-            this._arrow_forward.style.display = "none";
-            this._arrow_back.style.display = "grid";
-        });
-    }
-}
-const manage_marketing = new SWITCHTAB("manage-marketing");
-manage_marketing.implement();
-
-const manage_activity = new SWITCHTAB("manage-activity");
-manage_activity.implement();
-manage_activity.setArrow();
-manage_activity.setTransformLeftRight();
 //! -------------------------- respon seller list-----------------------------
 // todo: Chuyển đổi nội dung thân trang
-$(document).ready(function () {
-    $("#seller-all-product-btn").click(function () {
-        $("#seller-frame-cover").css("z-index", 16);
-        $.ajax({
-            type: "GET",
-            url: "/manage-product",
-            success: function (response) {
-                $("#seller-contentTable-tranfer").html(response);
-            },
-            complete: function () {
-                setTimeout(() => {
-                    $("#seller-frame-cover").css("z-index", -1);
-                }, 1000);
-                class__title.clearRedrtBar();
-                class__title.crtRedrNode("Trang Chủ","/seller");
-                class__title.crtRedrNode("Sản Phẩm");
-            },
-        });
-    });
-});
+
+function setNewState(_slug) {
+    window.history.replaceState("state name", null, _slug);
+}
 // todo: Cập nhật tiêu đề
 class REDIRECT {
-    constructor() {}
+    constructor(_name) {
+        this.str__name = _name;
+        this.node__target = document.querySelector(this.str__name);
+    }
+    addEventClick(_callback) {
+        this.node__target.addEventListener("click", (e) => {
+            _callback(this);
+        });
+    }
+    setNewState(_slug) {
+        window.history.replaceState("state name", null, _slug);
+    }
     setRedrtBar(_node__redrt_bar) {
         this.node__redrt_bar = document.getElementById(_node__redrt_bar);
-        this.str_origin_bar = this.node__redrt_bar.innerHTML;
     }
     clearRedrtBar() {
         if (this.node__redrt_bar) this.node__redrt_bar.innerHTML = "";
@@ -161,20 +78,66 @@ class REDIRECT {
         }
         return node;
     }
-    crtRedrNode(_name, _path) {
-        const node__redrt_wrap = this.crtEleClass("div", null, {
+    crtRedrNode(_name, _id) {
+        const node__redrt_wrap = this.crtEleClass("div", _name, {
             class: "seller__redirect-wrap",
+            id: _id,
         });
-        const node__redrt_link = this.crtEleClass("a", _name, {
-            class: "seller__redirect-link",
-            href: _path,
-        });
-        node__redrt_wrap.appendChild(node__redrt_link);
-        this.node__redrt_bar.appendChild(node__redrt_wrap);
+        if (this.node__redrt_bar)
+            this.node__redrt_bar.appendChild(node__redrt_wrap);
     }
-    setOrigrinBar() {
-        this.node__redrt_bar.innerHTML = this.str_origin_bar;
+    displayLoading(_boll) {
+        if (_boll) {
+            $("#seller-frame-cover").css("z-index", 16);
+        } else {
+            setTimeout(() => {
+                $("#seller-frame-cover").css("z-index", -1);
+            }, 1000);
+        }
+    }
+    callAjax(_type, _url, _success, _complete) {
+        $.ajax({
+            type: _type,
+            dataType: "json",
+            url: _url,
+            success: function (response) {
+                _success(response);
+            },
+            complete: function () {
+                _complete();
+            },
+        });
     }
 }
-const class__title = new REDIRECT();
-class__title.setRedrtBar("seller-current-page");
+const rdrt__pdt_manage = new REDIRECT("#seller-all-product-btn");
+rdrt__pdt_manage.addEventClick((this_obj) => {
+    this_obj.displayLoading(true);
+    this_obj.setNewState("/seller/manage_product");
+    this_obj.callAjax(
+        "GET",
+        "/manage_product",
+        (response) => {
+            $("#seller-contentTable-tranfer").html(response);
+        },
+        () => {
+            this_obj.displayLoading(false);
+        }
+    );
+});
+
+const rdrt_monitor = new REDIRECT("#seller-navbar-current-title");
+rdrt_monitor.addEventClick((this_obj) => {
+    this_obj.setRedrtBar("#seller-current-page");
+    this_obj.displayLoading(true);
+    this_obj.setNewState("/seller/monitor");
+    this_obj.callAjax(
+        "GET",
+        "/monitor",
+        (response) => {
+            $("#seller-contentTable-tranfer").html(response);
+        },
+        () => {
+            this_obj.displayLoading(false);
+        }
+    );
+});

@@ -6,24 +6,24 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class UserController extends Controller
+class SellerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $get_user = DB::select(
-            "SELECT *
-             FROM users
-             WHERE code = '$request->user_code'
-            "
-        )[0];
-        return view('_profile.profile_edit', [
-            'get_user' => $get_user,
-        ]);
+        if (Auth::user()) {
+            return view('_seller.seller', [
+                'content' => '_seller.seller_index',
+            ]);
+        } else {
+            return redirect()->route('login', [
+                'pre_page' => '/seller'
+            ]);
+        }
     }
 
     /**
@@ -55,7 +55,32 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user_id = Auth::user()->code;
+        switch ($id) {
+            case 'manage_product':
+                $get_pdt = DB::select(
+                    "SELECT *,  p.code AS product_code
+                    FROM products p, product_images pi
+                    WHERE p.user_code = '$user_id'
+                    AND p.code = pi.product_code
+                    AND pi.index = '0'
+        "
+                );
+                $amont_pdt = sizeof($get_pdt);
+                return view('_seller.seller', [
+                    'content' => '_manage_product.manage_product',
+                    'get_pdt' => $get_pdt,
+                    'amont_pdt' => $amont_pdt,
+                ]);
+
+            case 'monitor':
+                return view('_seller.seller', [
+                    'content' => '_seller.seller_index',
+                ]);
+
+            default:
+                return "404";
+        }
     }
 
     /**

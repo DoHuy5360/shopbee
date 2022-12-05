@@ -4,7 +4,7 @@
             <div class="mainHome_navbar_aboutUs-wrapper">
                 <div class="mainHome_navbar_about_topic">
                     <ul>
-                        <a href="/seller" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ route('seller.index') }}" target="_blank" rel="noopener noreferrer">
                             <li class="mainHome_navbar-topic">Kênh người bán</li>
                         </a>
                         <li class="mainHome__split--line">|</li>

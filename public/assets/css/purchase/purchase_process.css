@@ -67,6 +67,7 @@
     box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
     -webkit-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
     -moz-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
+    overflow: hidden;
 }
 .profile__process--card-info{
     padding: 25px 25px 15px 25px;
