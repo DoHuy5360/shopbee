@@ -564,10 +564,10 @@ node__submit_button.addEventListener("click", (e) => {
 
     if (obj__total_validation) {
         const node__classification1_names = queryAll(
-            "#seller-product-classification-type1 .sellerProduct__classification--ver"
+            ".sellerProduct__classification--ver-1"
         );
         const node__classification2_names = queryAll(
-            "#seller-product-classification-type2 .sellerProduct__classification--ver"
+            ".sellerProduct__classification--ver-2"
         );
         const node__classification1_hidden_input = getById(
             "sellerProduct-classification1-post-field"
