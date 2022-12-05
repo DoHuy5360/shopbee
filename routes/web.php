@@ -57,6 +57,7 @@ Route::resource('/purchase', PurchaseController::class);
 Route::resource('/product', ProductController::class);
 Route::resource('/profile', ProfileController::class);
 Route::resource('/cart', CartController::class);
+Route::resource('/user', UserController::class);
 
 Route::get('/dashboard', function () {
     return date('D - d/m/Y - H:i:s - A');
