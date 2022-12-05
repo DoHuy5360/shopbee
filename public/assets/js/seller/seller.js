@@ -137,7 +137,7 @@ $(document).ready(function () {
                     $("#seller-frame-cover").css("z-index", -1);
                 }, 1000);
                 class__title.clearRedrtBar();
-                class__title.crtRedrNode("Trang Chủ","/seller");
+                class__title.crtRedrNode("Trang Chủ", "/seller");
                 class__title.crtRedrNode("Sản Phẩm");
             },
         });
