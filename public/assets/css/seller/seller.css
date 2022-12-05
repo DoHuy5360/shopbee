@@ -7,8 +7,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 8888;
     background-color: white;
     box-shadow: 0 2px 2px 0 #0000001a;
@@ -23,7 +22,6 @@ body {
 
 #seller-navbar-icon span {
     font-size: 18px;
-    transform: translateY(8px);
 }
 
 #seller-icon {
@@ -598,6 +596,7 @@ body {
     padding-bottom: 2px;
     z-index: 0;
     animation: transformX 300ms ease-in;
+    cursor: pointer;
 }
 .seller__redirect-wrap:not(:first-child):before {
     content: "";
@@ -613,11 +612,11 @@ body {
 .seller__redirect-link {
     color: var(--color-4);
     font-size: 20px;
-    text-decoration: none !important;
 }
 .seller__redirect-wrap {
     position: relative;
     animation: transformX 300ms ease-in;
+    cursor: pointer;
 }
 @keyframes transformX {
     0% {
