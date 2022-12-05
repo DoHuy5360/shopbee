@@ -36,6 +36,7 @@ $(document).ready(function () {
     const str__user_code = $("#profile-user-code").val();
     // todo: Hiện đơn mua
     $("#profile-menu-element-order").click(function () {
+        toogleFrameCover(true);
         $.ajax({
             type: "GET",
             url: "/purchase",
@@ -45,10 +46,14 @@ $(document).ready(function () {
             success: function (response) {
                 $("#profile-body-tranfer-wrap").html(response);
             },
+            complete: function () {
+                toogleFrameCover(false);
+            },
         });
     });
     //todo: hiện chỉnh sửa hồ sơ
     $("#profile-menu-element-info").click(function () {
+        toogleFrameCover(true);
         $.ajax({
             type: "GET",
             url: "/user",
@@ -57,6 +62,9 @@ $(document).ready(function () {
             },
             success: function (response) {
                 $("#profile-body-tranfer-wrap").html(response);
+            },
+            complete: function () {
+                toogleFrameCover(false);
             },
         });
     });
@@ -70,4 +78,13 @@ $(document).ready(function () {
             );
         });
     });
+    function toogleFrameCover(_boll_display) {
+        if (_boll_display) {
+            $("#seller-frame-cover").css("z-index", 16);
+        } else {
+            setTimeout(() => {
+                $("#seller-frame-cover").css("z-index", -1);
+            }, 500);
+        }
+    }
 });

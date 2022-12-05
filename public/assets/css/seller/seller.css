@@ -576,28 +576,6 @@ body {
 #seller-listOfContent-respons {
     display: none;
 }
-#seller-frame-cover {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: white;
-    z-index: -1;
-    top: 0;
-    display: grid;
-    place-items: center;
-}
-#seller-frame-cover img {
-    animation-delay: 500ms;
-    animation: bee_move 1000ms alternate infinite;
-}
-@keyframes bee_move {
-    0% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
 #seller-contentTable-tranfer {
     max-width: 1105px;
     max-height: 100vh;

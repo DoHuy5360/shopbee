@@ -71,8 +71,13 @@
                 </div>
             </div>
         </div>
-        <div id="profile-body-tranfer-wrap">
-            @include($content)
+        <div id="profile-body-right-wrap-all">
+            <div id="seller-frame-cover">
+                <img src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+            </div>
+            <div id="profile-body-tranfer-wrap">
+                @include($content)
+            </div>
         </div>
     </div>
     <div id="noidung"></div>
