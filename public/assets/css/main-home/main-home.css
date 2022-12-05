@@ -1,7 +1,6 @@
-/*! HOME PAGE PART ONE CAROUSEL */
 .mainHome-homeCarousel {
     width: var(--layout-width);
-    margin: var(--margin-space);
+    margin: 15px auto;
     height: 250px;
     display: grid;
     grid-template-columns: 800px 1fr;
@@ -20,11 +19,14 @@
 .carousel-inner {
     height: 100%;
 }
-.carousel-item {
-    height: 100%;
+
+.mainHome-carousel-top img {
+    height: 235px;
+    width: 100%;
+    object-fit: cover;
 }
-.carousel-item img {
-    height: 470px;
+.mainHome-carousel-bot img {
+    height: 500px;
     width: 100%;
     object-fit: cover;
 }
@@ -49,7 +51,7 @@
     height: 100px;
     width: 100%;
     width: var(--layout-width);
-    margin: var(--margin-space);
+    margin: 15px auto;
 }
 .mainHome__activity--card {
     display: flex;

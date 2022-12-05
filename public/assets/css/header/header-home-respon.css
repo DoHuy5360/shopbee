@@ -18,16 +18,15 @@
         position: relative;
         padding: 0;
     }
-    
     .mainHome_navbar_aboutUs {
         display: block;
         height: 100vh;
         z-index: 3;
         width: 0%;
-        background-color: rgb(101, 101, 101, 0);
+        background-color: #191A21;
         position: absolute;
         right: 0%;
-        transition: all linear 500ms;
+        transition: all ease 200ms;
     }
 
     .mainHome_navbar_about_topic ul {
@@ -52,7 +51,7 @@
         background-repeat: no-repeat;
         background-position: left 50% top;
         background-size: cover;
-        background-color: #252525;
+        background-color: #191A21;
         height: 100%;
         width: 0%;
         position: absolute;
@@ -101,7 +100,7 @@
     }
 
     .menuItems {
-        width: 40%;
+        width: 50%;
     }
     #mainHome-cart-hidden,
     ion-icon[name="cart-outline"] {
@@ -111,5 +110,8 @@
     #mainHome-cart-view-btn-respon {
         display: block;
         color: #ffb81d;
+    }
+    #mainHome_navbar_about_topic-close-icon{
+        margin: 250px 0 0 20px;
     }
 }

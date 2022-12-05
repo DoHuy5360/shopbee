@@ -59,10 +59,10 @@
                                 </a>
                             </li>
                         @endif
-                        <div id="mainHome_navbar_about_topic-close-icon">
-                            <ion-icon name="close-circle"></ion-icon>
-                        </div>
                     </ul>
+                    <div id="mainHome_navbar_about_topic-close-icon">
+                        <ion-icon name="close-circle"></ion-icon>
+                    </div>
                 </div>
             </div>
         </div>

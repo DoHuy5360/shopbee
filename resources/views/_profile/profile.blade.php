@@ -7,6 +7,9 @@
     <script src="{{ asset('assets/js/profile/profile.js') }}"></script>
 @endsection
 @section('content')
+    <div id="seller-frame-cover-fixed">
+        <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+    </div>
     @include('layouts.header-home')
     <input id="profile-user-code" type="hidden" name="" value="{{ $get_user->code }}">
     <div id="profile-body-wrap">
@@ -73,7 +76,7 @@
         </div>
         <div id="profile-body-right-wrap-all">
             <div id="seller-frame-cover">
-                <img src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+                <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
             </div>
             <div id="profile-body-tranfer-wrap">
                 @include($content)

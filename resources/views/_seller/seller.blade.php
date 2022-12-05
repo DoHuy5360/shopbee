@@ -10,6 +10,9 @@
 @endsection
 
 @section('content')
+    <div id="seller-frame-cover-fixed">
+        <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+    </div>
     <div id="seller-navbar">
         <div id="seller-navbar-icon">
             <div id="seller-icon"><img src="{{ asset('assets/img/shopbee.png') }}" alt="" /></div>
@@ -223,7 +226,7 @@
             </div>
             <div id="seller-contentTable">
                 <div id="seller-frame-cover">
-                    <img src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+                    <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
                 </div>
                 <div id="seller-contentTable-tranfer">
                     @include($content)

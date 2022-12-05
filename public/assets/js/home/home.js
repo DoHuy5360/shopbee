@@ -4,7 +4,7 @@ const category_arrow_left = document.getElementById(
 const category_arrow_right = document.getElementById(
     "mainHome-category-arrow-right"
 );
-const category_wrap = document.getElementById("mainHome-listOfCate")
+const category_wrap = document.getElementById("mainHome-listOfCate");
 category_arrow_left.addEventListener("click", (e) => {
     category_arrow_left.style.display = "none";
     category_arrow_right.style.display = "grid";

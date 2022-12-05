@@ -8,6 +8,9 @@
     <script src="{{ asset('assets/js/home/home.js') }}"></script>
 @endsection
 @section('content')
+    <div id="seller-frame-cover-fixed">
+        <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+    </div>
     @include('layouts.header-home')
     <div id="data-body-transfer">
         <div class="mainHome-homeCarousel">
@@ -19,13 +22,13 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <div class="mainHome-carousel-top carousel-item active">
                             <img class="d-block" src="http://surl.li/dafng" alt="First slide" />
                         </div>
-                        <div class="carousel-item">
+                        <div class="mainHome-carousel-top carousel-item">
                             <img class="d-block" src="http://surl.li/dafnd" alt="Second slide" />
                         </div>
-                        <div class="carousel-item">
+                        <div class="mainHome-carousel-top carousel-item">
                             <img class="d-block" src="http://surl.li/dafnj" alt="Third slide" />
                         </div>
                     </div>
@@ -40,71 +43,71 @@
                 </div>
             </div>
             <div class="mainHome-homeCarousel-block-right">
-                <img src="http://surl.li/dafnp" alt="" />
+                <img src="http://surl.li/dafnp" alt="" draggable="false" />
             </div>
             <div class="mainHome-homeCarousel-block-right">
-                <img src="http://surl.li/dafnq" alt="" />
+                <img src="http://surl.li/dafnq" alt="" draggable="false" />
             </div>
         </div>
         <div id="mainHome-activity">
             <div id="mainHome-activity-wrapper">
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/46a2a2c810622f314d78455da5e5d926_xhdpi" alt="" loading="lazy">
+                        <img src="https://cf.shopee.vn/file/46a2a2c810622f314d78455da5e5d926_xhdpi" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Khung Giờ Săn Sale</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/b3535d7e56c58c4ebe9a87672d38cc5e_xhdpi" alt="">
+                        <img src="https://cf.shopee.vn/file/b3535d7e56c58c4ebe9a87672d38cc5e_xhdpi" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Gì Cũng Rẻ - Mua Là Freeship</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/c7a2e1ae720f9704f92f72c9ef1a494a_xhdpi" alt="">
+                        <img src="https://cf.shopee.vn/file/c7a2e1ae720f9704f92f72c9ef1a494a_xhdpi" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Miễn Phí Vận Chuyển</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/1975fb1af4ae3c22878d04f6f440b6f9_xhdpi" alt="">
+                        <img src="https://cf.shopee.vn/file/1975fb1af4ae3c22878d04f6f440b6f9_xhdpi" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Bắt Trend - Giá Sốc</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/21a4856d1fecd4eda143748661315dba_xhdpi" alt="">
+                        <img src="https://cf.shopee.vn/file/21a4856d1fecd4eda143748661315dba_xhdpi" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Hoàn Xu Xtra Từ 100K</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/8d6d5ee795e7675fed39d31ba04c3b92_xhdpi" alt="">
+                        <img src="https://cf.shopee.vn/file/8d6d5ee795e7675fed39d31ba04c3b92_xhdpi" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Hàng Hiệu Giá Tốt</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/a08ab28962514a626195ef0415411585_xhdpi" alt="">
+                        <img src="https://cf.shopee.vn/file/a08ab28962514a626195ef0415411585_xhdpi" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Hàng Quốc Tế</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/9df57ba80ca225e67c08a8a0d8cc7b85_xhdpi" alt="">
+                        <img src="https://cf.shopee.vn/file/9df57ba80ca225e67c08a8a0d8cc7b85_xhdpi" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Nạp Thẻ & Dịch Vụ</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/b898e8b6a0ba6fc2a86beb99f9420f06_xhdpi" alt="">
+                        <img src="https://cf.shopee.vn/file/b898e8b6a0ba6fc2a86beb99f9420f06_xhdpi" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Chọn 6 Số Trúng Trăm Triệu</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/93acaac785c19b09180b01cc34a4c17e_xhdpi" alt="">
+                        <img src="https://cf.shopee.vn/file/93acaac785c19b09180b01cc34a4c17e_xhdpi" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Flash Sale</div>
                 </div>
@@ -139,15 +142,15 @@
             <div class="mainHome__flashSale--wrap">
                 <div class="mainHome__part--title-wrap">
                     <div class="mainHome__part--title">FLASH SALE</div>
-                    <a href="http://" class="mainHome__link--to" target="_blank">Xem tất cả ></a>
+                    <a href="#" class="mainHome__link--to" target="">Xem tất cả ></a>
                 </div>
                 <!--! làm đồng hồ đếm ngược -->
                 <!-- <p id="flash-sale-end"><span id="hours">12</span><span id="minutes">12</span><span id="seconds">12</span></p> -->
                 <div class="mainHome-listOfFlashcate_wrapper">
                     <div class="mainHome-listOfFlashcate">
-                        @foreach ($products_flash_sale as $product)
-                            <div id="mainHome-listOfFlash-1" class="mainHome-listOfFlash">
-                                <img src="{{ $product->product_image }}" alt="" />
+                        @foreach ($products_flash_sale as $index => $product)
+                            <div id="mainHome-listOfFlash-{{ $index }}" class="mainHome-listOfFlash">
+                                <img src="{{ $product->product_image }}" alt="" draggable="false" />
                                 <p class="mainHome__flashSale--price">{{ $product->product_price }}</p>
                                 <div class="mainHome__flashSale--processBar-wrap">
                                     <div class="mainHome__flashSale--processBar" style="width: {{ $product->product_sold_proportion }}%"></div>
@@ -188,14 +191,14 @@
                                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                                 </ol>
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img class="d-block w-100" src="http://surl.li/dafnp" alt="First slide" />
+                                    <div class="mainHome-carousel-bot carousel-item active">
+                                        <img class="d-block w-100" src="http://surl.li/dafnp" alt="First slide" loading="lazy"/>
                                     </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="http://surl.li/dafnq" alt="Second slide" />
+                                    <div class="mainHome-carousel-bot carousel-item">
+                                        <img class="d-block w-100" src="http://surl.li/dafnq" alt="Second slide" loading="lazy"/>
                                     </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="http://surl.li/dafnr" alt="Third slide" />
+                                    <div class="mainHome-carousel-bot carousel-item">
+                                        <img class="d-block w-100" src="http://surl.li/dafnr" alt="Third slide" loading="lazy"/>
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -13,7 +13,7 @@ class MonitorController extends Controller
      */
     public function index()
     {
-        return view('_seller.seller_index');
+        return view('_seller.seller_monitor');
     }
 
     /**

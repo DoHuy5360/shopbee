@@ -1,5 +1,19 @@
 export class Primitive {
     constructor() {
+        this.arr__numbers = [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+        ];
         this.arr__letters = [
             "A",
             "a",
@@ -88,5 +102,43 @@ export class Primitive {
             "}",
             "~",
         ];
+        this.arr__months_en = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+        this.arr__months_vn_T = [
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T5",
+            "T6",
+            "T7",
+            "T8",
+            "T9",
+            "T10",
+            "T11",
+            "T12",
+        ];
+    }
+}
+export class PrimitiveInteractive extends Primitive {
+    constructor() {
+        super();
+    }
+    arrayBeginToCurrent(_type) {}
+    arrayFromTo(_from, _to, _arr_origin = undefined) {
+        let array_temp = _arr_origin || this.arr__numbers;
+        return array_temp.slice(_from - 1, _to);
     }
 }

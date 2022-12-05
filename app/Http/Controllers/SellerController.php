@@ -17,7 +17,7 @@ class SellerController extends Controller
     {
         if (Auth::user()) {
             return view('_seller.seller', [
-                'content' => '_seller.seller_index',
+                'content' => '_seller.seller_monitor',
             ]);
         } else {
             return redirect()->route('login', [
@@ -75,7 +75,7 @@ class SellerController extends Controller
 
             case 'monitor':
                 return view('_seller.seller', [
-                    'content' => '_seller.seller_index',
+                    'content' => '_seller.seller_monitor',
                 ]);
 
             default:
