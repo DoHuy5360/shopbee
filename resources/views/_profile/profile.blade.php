@@ -1,4 +1,5 @@
 @extends('layouts.skeleton')
+@section('title', 'Tài khoản')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/profile/profile.css') }}">
 @endsection
