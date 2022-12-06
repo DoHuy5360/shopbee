@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\BuyerpageController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\NewProductController;
+use App\Http\Controllers\MonitorController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\SellerController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/', BuyerpageController::class);
 
-Route::get('/manage-product', function () {
+Route::get('/manage_product', function () {
     $user_id = Auth::user()->code;
     $get_pdt = DB::select(
         "SELECT *,  p.code AS product_code
@@ -43,20 +43,13 @@ Route::get('/manage-product', function () {
 });
 
 
-
-Route::get('/seller', function () {
-    if(Auth::user()){
-        return view('_seller.seller');
-    }else{
-        return redirect()->route('login', [
-            'pre_page'=>'/seller'
-        ]);
-    }
-});
+Route::resource('/monitor', MonitorController::class);
+Route::resource('/seller', SellerController::class);
 Route::resource('/purchase', PurchaseController::class);
 Route::resource('/product', ProductController::class);
 Route::resource('/profile', ProfileController::class);
 Route::resource('/cart', CartController::class);
+Route::resource('/user', UserController::class);
 
 Route::get('/dashboard', function () {
     return date('D - d/m/Y - H:i:s - A');

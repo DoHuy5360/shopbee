@@ -27,11 +27,12 @@ class CartController extends Controller
      */
     public function create(Request $request)
     {
-        if ($request->id === Auth::user()->code) {
+        $user_code = $request->user_code;
+        if ($user_code === Auth::user()->code) {
             $get_itm_cart = DB::select(
                 "SELECT p.name, p.price, pi.path
                 FROM carts c, products p, product_images pi
-                WHERE c.user_code = '$request->id'
+                WHERE c.user_code = '$user_code'
                 AND c.product_code = p.code
                 AND pi.product_code = p.code
                 AND pi.index = '0'

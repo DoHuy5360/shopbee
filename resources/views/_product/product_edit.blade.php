@@ -40,62 +40,6 @@
                                     <input type="file" name="image-{{ $index }}" id="sellerProduct-add-image-{{ $index }}" class="sellerProduct__hidden--image-input">
                                 </div>
                             @endfor
-                            {{-- <div class="sellerProduct__image--add-wrap">
-                                <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-2">
-                                    <ion-icon name="add-circle-outline"></ion-icon>
-                                    <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[2]->path) }}" alt="">
-                                </label>
-                                <span class="sellerProduct__image--number">Hình ảnh 2</span>
-                                <input type="file" name="image-2" id="sellerProduct-add-image-2" class="sellerProduct__hidden--image-input">
-                            </div>
-                            <div class="sellerProduct__image--add-wrap">
-                                <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-3">
-                                    <ion-icon name="add-circle-outline"></ion-icon>
-                                    <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[3]->path) }}" alt="">
-                                </label>
-                                <span class="sellerProduct__image--number">Hình ảnh 3</span>
-                                <input type="file" name="image-3" id="sellerProduct-add-image-3" class="sellerProduct__hidden--image-input">
-                            </div>
-                            <div class="sellerProduct__image--add-wrap">
-                                <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-4">
-                                    <ion-icon name="add-circle-outline"></ion-icon>
-                                    <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[4]->path) }}" alt="">
-                                </label>
-                                <span class="sellerProduct__image--number">Hình ảnh 4</span>
-                                <input type="file" name="image-4" id="sellerProduct-add-image-4" class="sellerProduct__hidden--image-input">
-                            </div>
-                            <div class="sellerProduct__image--add-wrap">
-                                <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-5">
-                                    <ion-icon name="add-circle-outline"></ion-icon>
-                                    <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[5]->path) }}" alt="">
-                                </label>
-                                <span class="sellerProduct__image--number">Hình ảnh 5</span>
-                                <input type="file" name="image-5" id="sellerProduct-add-image-5" class="sellerProduct__hidden--image-input">
-                            </div>
-                            <div class="sellerProduct__image--add-wrap">
-                                <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-6">
-                                    <ion-icon name="add-circle-outline"></ion-icon>
-                                    <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[6]->path) }}" alt="">
-                                </label>
-                                <span class="sellerProduct__image--number">Hình ảnh 6</span>
-                                <input type="file" name="image-6" id="sellerProduct-add-image-6" class="sellerProduct__hidden--image-input">
-                            </div>
-                            <div class="sellerProduct__image--add-wrap">
-                                <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-7">
-                                    <ion-icon name="add-circle-outline"></ion-icon>
-                                    <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[7]->path) }}" alt="">
-                                </label>
-                                <span class="sellerProduct__image--number">Hình ảnh 7</span>
-                                <input type="file" name="image-7" id="sellerProduct-add-image-7" class="sellerProduct__hidden--image-input">
-                            </div>
-                            <div class="sellerProduct__image--add-wrap">
-                                <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-8">
-                                    <ion-icon name="add-circle-outline"></ion-icon>
-                                    <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[8]->path) }}" alt="">
-                                </label>
-                                <span class="sellerProduct__image--number">Hình ảnh 8</span>
-                                <input type="file" name="image-8" id="sellerProduct-add-image-8" class="sellerProduct__hidden--image-input">
-                            </div> --}}
                         </div>
                     </div>
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicVid">

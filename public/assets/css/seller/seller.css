@@ -1,5 +1,5 @@
-body{
-    overflow-y: hidden;
+body {
+    overflow-y: hidden !important;
 }
 #seller-navbar {
     width: 100%;
@@ -7,8 +7,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 8888;
     background-color: white;
     box-shadow: 0 2px 2px 0 #0000001a;
@@ -18,21 +17,22 @@ body{
 
 #seller-navbar-icon {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
 #seller-navbar-icon span {
     font-size: 18px;
-    transform: translateY(8px);
 }
 
 #seller-icon {
     width: 100px;
+    z-index: 1;
 }
 
 #seller-icon img {
     object-fit: cover;
     width: 100%;
+    background-color: white;
 }
 
 #seller-navbar-content {
@@ -338,16 +338,26 @@ body{
     text-decoration: none !important;
 }
 
-.seller__todoList--box:is(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4)) {
+.seller__todoList--box:is(
+        :nth-child(1),
+        :nth-child(2),
+        :nth-child(3),
+        :nth-child(4)
+    ) {
     padding-bottom: 10px;
 }
 
-.seller__todoList--box:is(:nth-child(5), :nth-child(6), :nth-child(7), :nth-child(8)) {
+.seller__todoList--box:is(
+        :nth-child(5),
+        :nth-child(6),
+        :nth-child(7),
+        :nth-child(8)
+    ) {
     padding-top: 10px;
 }
 
 .todoList__boxItem--amount {
-    color: #2673dd;
+    color: #2672dd;
     margin-bottom: 0;
     font-weight: 600;
 }
@@ -359,11 +369,11 @@ body{
 
 #chart-analyst {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 #seller-shopAnalyst {
-    height: 400px;
+    height: fit-content;
     width: 100%;
     background-color: #fff;
 }
@@ -372,7 +382,7 @@ body{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: auto 0;
+    margin: 30px 0 auto 0;
     row-gap: 1px;
     background-color: var(--gray-soft);
 }
@@ -564,52 +574,55 @@ body{
 #seller-listOfContent-respons {
     display: none;
 }
-#seller-frame-cover{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: white;
-    z-index: -1;
-    top: 0;
-    display: grid;
-    place-items: center;
-}
-#seller-frame-cover img{
-    animation-delay: 500ms;
-    animation: bee_move 1000ms alternate infinite;
-}
-@keyframes bee_move {
-    0%{
-        transform: translateX(-50%);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-#seller-contentTable-tranfer{
+#seller-contentTable-tranfer {
     max-width: 1105px;
     max-height: 100vh;
     margin: auto;
-    padding-top: 20px;
+    padding: 20px 0 70px 0;
     overflow-x: hidden;
     overflow-y: scroll;
 }
-#seller-contentTable-tranfer::-webkit-scrollbar{
+#seller-contentTable-tranfer::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
-#scroll-to-top{
+#scroll-to-top {
     display: none;
 }
-#seller-current-page{
+#seller-current-page {
     display: flex;
-    gap: 10px;
+    gap: 25px;
     align-items: center;
+    padding-bottom: 2px;
+    z-index: 0;
+    animation: transformX 300ms ease-in;
+    cursor: pointer;
 }
-.seller__redirect-wrap:not(:first-child):before{
-    content: "> ";
+.seller__redirect-wrap:not(:first-child):before {
+    content: "";
+    width: 10px;
+    aspect-ratio: 1;
+    border: solid var(--color-4);
+    border-width: 2px 2px 0px 0px;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
 }
-.seller__redirect-link{
+.seller__redirect-link {
     color: var(--color-4);
-    text-decoration: none !important;
+    font-size: 20px;
+}
+.seller__redirect-wrap {
+    position: relative;
+    animation: transformX 300ms ease-in;
+    cursor: pointer;
+}
+@keyframes transformX {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }

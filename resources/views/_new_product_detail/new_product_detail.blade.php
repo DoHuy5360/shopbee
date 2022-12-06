@@ -4,11 +4,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/new_product_detail/new_product_detail.css') }}">
 @endsection
 @section('js')
-    <script src="{{ asset('assets/js/new_product_detail/new_product_detail.js') }}"></script>
+    <script type="module" src="{{ asset('assets/js/new_product_detail/new_product_detail.js') }}"></script>
 @endsection
 @section('content')
     <div id="seller_product_detail-wrapper">
-        <form action="{{ route('product.store') }}" id="seller_product_detail-wrapper-detail" target="_blank" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('product.store') }}" id="seller_product_detail-wrapper-detail" method="POST" enctype="multipart/form-data">
             @csrf
             <input id="sellerProduct-classification1-post-field" type="hidden" name="classification1_values">
             <input id="sellerProduct-classification2-post-field" type="hidden" name="classification2_values">
@@ -23,63 +23,63 @@
                                     <ion-icon name="add-circle-outline"> </ion-icon>
                                 </label>
                                 <span class="sellerProduct__image--number cover">* Ảnh bìa</span>
-                                <input type="file" name="image-0" id="sellerProduct-add-image-cover" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-0" id="sellerProduct-add-image-cover" class="sellerProduct__hidden--image-input" accept=".png,.jpg">
                             </div>
                             <div class="sellerProduct__image--add-wrap">
                                 <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-1">
                                     <ion-icon name="add-circle-outline"></ion-icon>
                                 </label>
                                 <span class="sellerProduct__image--number">Hình ảnh 1</span>
-                                <input type="file" name="image-1" id="sellerProduct-add-image-1" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-1" id="sellerProduct-add-image-1" class="sellerProduct__hidden--image-input" accept=".png,.jpg">
                             </div>
                             <div class="sellerProduct__image--add-wrap">
                                 <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-2">
                                     <ion-icon name="add-circle-outline"></ion-icon>
                                 </label>
                                 <span class="sellerProduct__image--number">Hình ảnh 2</span>
-                                <input type="file" name="image-2" id="sellerProduct-add-image-2" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-2" id="sellerProduct-add-image-2" class="sellerProduct__hidden--image-input" accept=".png,.jpg">
                             </div>
                             <div class="sellerProduct__image--add-wrap">
                                 <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-3">
                                     <ion-icon name="add-circle-outline"></ion-icon>
                                 </label>
                                 <span class="sellerProduct__image--number">Hình ảnh 3</span>
-                                <input type="file" name="image-3" id="sellerProduct-add-image-3" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-3" id="sellerProduct-add-image-3" class="sellerProduct__hidden--image-input" accept=".png,.jpg">
                             </div>
                             <div class="sellerProduct__image--add-wrap">
                                 <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-4">
                                     <ion-icon name="add-circle-outline"></ion-icon>
                                 </label>
                                 <span class="sellerProduct__image--number">Hình ảnh 4</span>
-                                <input type="file" name="image-4" id="sellerProduct-add-image-4" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-4" id="sellerProduct-add-image-4" class="sellerProduct__hidden--image-input" accept=".png,.jpg">
                             </div>
                             <div class="sellerProduct__image--add-wrap">
                                 <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-5">
                                     <ion-icon name="add-circle-outline"></ion-icon>
                                 </label>
                                 <span class="sellerProduct__image--number">Hình ảnh 5</span>
-                                <input type="file" name="image-5" id="sellerProduct-add-image-5" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-5" id="sellerProduct-add-image-5" class="sellerProduct__hidden--image-input" accept=".png,.jpg">
                             </div>
                             <div class="sellerProduct__image--add-wrap">
                                 <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-6">
                                     <ion-icon name="add-circle-outline"></ion-icon>
                                 </label>
                                 <span class="sellerProduct__image--number">Hình ảnh 6</span>
-                                <input type="file" name="image-6" id="sellerProduct-add-image-6" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-6" id="sellerProduct-add-image-6" class="sellerProduct__hidden--image-input" accept=".png,.jpg">
                             </div>
                             <div class="sellerProduct__image--add-wrap">
                                 <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-7">
                                     <ion-icon name="add-circle-outline"></ion-icon>
                                 </label>
                                 <span class="sellerProduct__image--number">Hình ảnh 7</span>
-                                <input type="file" name="image-7" id="sellerProduct-add-image-7" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-7" id="sellerProduct-add-image-7" class="sellerProduct__hidden--image-input" accept=".png,.jpg">
                             </div>
                             <div class="sellerProduct__image--add-wrap">
                                 <label class="seller_product_detail-basicImg-containt" for="sellerProduct-add-image-8">
                                     <ion-icon name="add-circle-outline"></ion-icon>
                                 </label>
                                 <span class="sellerProduct__image--number">Hình ảnh 8</span>
-                                <input type="file" name="image-8" id="sellerProduct-add-image-8" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-8" id="sellerProduct-add-image-8" class="sellerProduct__hidden--image-input" accept=".png,.jpg">
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                                 </button>
                             </div>
 
-                            <input type="file" name="product_video" id="sellerProduct-add-video-cover" class="sellerProduct__hidden--video-input">
+                            <input type="file" name="product_video" id="sellerProduct-add-video-cover" class="sellerProduct__hidden--video-input" accept=".mp4">
                         </div>
                         <div id="sellerProduct-required-video">
                             <p>1. Kích thước: Tối đa 30Mb, độ phân giải không vượt quá 1280x1280px</p>
@@ -111,17 +111,17 @@
                     </div>
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicName">
                         <label class="sellerProduct__title--field-wrap" for="seller_product_detail-basicName-input">* Tên sản phẩm</label>
-                        <div id="seller_product_detail-basicName-inputfield" class="sellerProduct__input--wrap">
-                            <input id="seller_product_detail-basicName-input" name="product_name" value="{{ $product_name }}" type="text" />
-                            <span id="sellerProduct-product-name-countLenght">0<span>/120</span></span>
+                        <div id="seller_product_detail-basicName-inputfield" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus">
+                            <input id="seller_product_detail-basicName-input" name="product_name" value="{{ $product_name }}" type="text" minlength="10" maxlength="120" />
+                            <div><span id="sellerProduct-product-name-countLenght">0</span>/120</div>
                         </div>
                     </div>
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicProdDesc">
                         <label class="sellerProduct__title--field-wrap" for="seller_product_detail-basicProdDesc-input">* Mô tả sản phẩm</label>
                         <div id="seller_product_detail-basicProdDesc-inputfield">
                             <textarea type="textarea" name="product_description" id="seller_product_detail-basicProdDesc-input" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus" resize="none"
-                                autosize="true" maxlength="Infinity" restrictiontype="input" max="Infinity" min="-Infinity" spellcheck="false"></textarea>
-                            <div id="seller_product_detail-basicProdDesc-inputLimit"><span>0</span>/3000</div>
+                                autosize="true" restrictiontype="input" minlength="0" maxlength="3000" spellcheck="false"></textarea>
+                            <div id="seller_product_detail-basicProdDesc-inputLimit"><span id="seller-product-detail-desc-length">0</span>/3000</div>
                         </div>
                     </div>
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicCategory">
@@ -225,14 +225,15 @@
                         <div class="sellerProduct__choose--classification-input">
                             <div class="sellerProduct__choose--classification-field">
                                 <label for="">Tên nhóm phân loại</label>
-                                <input name="classification1_title" class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                <input id="seller-product-clsfctn-1" name="classification1_title"
+                                    class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
                                     placeholder="Nhập tên nhóm loại hàng, ví dụ: màu sắc, kích thước,..." />
                             </div>
                             <div class="sellerProduct__choose--classification-field">
                                 <label for="">Phân loại hàng</label>
                                 <div class="sellerProduct__classification--add-wrap classification1--btn-remove">
                                     <div class="sellerProduct__classification--inp-wrap">
-                                        <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                        <input class="sellerProduct__classification--ver-1 sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
                                             placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." />
                                         <div class="sellerProduct__classification--btn-remove">
                                             <ion-icon name="trash-outline"></ion-icon>
@@ -248,6 +249,9 @@
                                 Đã thêm
                             </button>
                         </div>
+                        <button class="seller__product--close-table-btn" type="button">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
                     </div>
                 </div>
                 <div id="seller-product-classification-type2" class="seller_product_detail-sellInfor-Category">
@@ -259,14 +263,15 @@
                         <div class="sellerProduct__choose--classification-input">
                             <div class="sellerProduct__choose--classification-field">
                                 <label for="">Tên nhóm phân loại</label>
-                                <input name="classification2_title" class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                <input id="seller-product-clsfctn-2" name="classification2_title"
+                                    class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
                                     placeholder="Nhập tên nhóm loại hàng, ví dụ: màu sắc, kích thước,..." />
                             </div>
                             <div class="sellerProduct__choose--classification-field">
                                 <label for="">Phân loại hàng</label>
                                 <div class="sellerProduct__classification--add-wrap classification2--btn-remove">
                                     <div class="sellerProduct__classification--inp-wrap">
-                                        <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                        <input class="sellerProduct__classification--ver-2 sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
                                             placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." />
                                         <div class="sellerProduct__classification--btn-remove">
                                             <ion-icon name="trash-outline"></ion-icon>
@@ -282,42 +287,46 @@
                                 Đã thêm
                             </button>
                         </div>
-                    </div>
-                </div>
-                <div class="seller_product_detail-sellInfor-Category">
-                    <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
-                    <div id="seller-product-classification-tip-wrap">
-                        <div id="seller-product-classification-tip-field">
-                            <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Giá" />
-                            <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Kho hàng" />
-                            <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="SKU phân loại" />
-                        </div>
-                        <button id="sellerProduct-classification-code-apply" type="button" disabled style="cursor:not-allowed;" title="Chức năng đang được phát triển">
-                            Áp dụng cho tất cả phân loại
+                        <button class="seller__product--close-table-btn" type="button">
+                            <ion-icon name="close-outline"></ion-icon>
                         </button>
                     </div>
                 </div>
-                <div class="seller_product_detail-sellInfor-Category">
-                    <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
-                    <div id="productDetail-classification-wrap">
-                        <table id="produtDetail-classification-table-head" border="0" cellspacing="0">
-                            <tr>
-                                <th class="produtDetail__classification-column">Nhóm phân loại 1</th>
-                                <th class="produtDetail__classification-column">Nhóm phân loại 2</th>
-                                <th>Giá</th>
-                                <th>Kho hàng</th>
-                                <th>SKU phân loại</th>
-                            </tr>
-                        </table>
-                        <div id="sellerProduct-classificatiom--item-wrap"></div>
+                <div id="seller-product-classification-table-display">
+                    <div class="seller_product_detail-sellInfor-Category">
+                        <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
+                        <div id="seller-product-classification-tip-wrap">
+                            <div id="seller-product-classification-tip-field">
+                                <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Giá" />
+                                <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Kho hàng" />
+                                <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="SKU phân loại" />
+                            </div>
+                            <button id="sellerProduct-classification-code-apply" type="button" disabled style="cursor:not-allowed;" title="Chức năng đang được phát triển">
+                                Áp dụng cho tất cả phân loại
+                            </button>
+                        </div>
+                    </div>
+                    <div class="seller_product_detail-sellInfor-Category">
+                        <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
+                        <div id="productDetail-classification-wrap">
+                            <table id="produtDetail-classification-table-head" border="0" cellspacing="0">
+                                <tr>
+                                    <th class="produtDetail__classification-column">Nhóm phân loại 1</th>
+                                    <th class="produtDetail__classification-column">Nhóm phân loại 2</th>
+                                    <th>Giá</th>
+                                    <th>Kho hàng</th>
+                                    <th>SKU phân loại</th>
+                                </tr>
+                            </table>
+                            <div id="sellerProduct-classificatiom--item-wrap"></div>
+                        </div>
                     </div>
                 </div>
-                <!-- !---------------------------------------- -->
                 <div id="seller_product_detail-sellInfor-price">
                     <div class="sellerProduct__title--field-wrap">* Giá</div>
                     <div id="seller_product_detail-sellInfor-price-inputfield">
                         <div id="seller_product_detail-sellInfor-price-currency">₫</div>
-                        <input type="text" name="product_price" id="seller_product_detail-sellInfor-price-input" class="sellerProduct__placeholder--color" min="1000" max="100000000"
+                        <input type="text" name="product_price" id="seller_product_detail-sellInfor-price-input" class="sellerProduct__placeholder--color" minlength="3" maxlength="9"
                             placeholder="Nhập vào" required value="" />
                     </div>
                 </div>
@@ -328,8 +337,8 @@
                     </div>
                     <div id="seller_product_detail-sellInfor-storage-inputfield">
                         <input type="text" name="product_storage" id="seller_product_detail-sellInfor-storage-input" class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color"
-                            placeholder="Nhập vào" />
-                        <div class="sellerProduct__alert--no-empty">Không được để trống ô</div>
+                            minlength="1" maxlength="9" placeholder="Nhập vào" />
+                        {{-- <div class="sellerProduct__alert--no-empty">Không được để trống ô</div> --}}
                     </div>
                 </div>
             </div>
@@ -380,7 +389,7 @@
                 <div id="seller_product_detail-transport-weight">
                     <div class="sellerProduct__title--field-wrap">* Cân nặng (Sau khi đóng gói)</div>
                     <div id="seller_product_detail-transport-weight-inputfield" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                        <input type="text" name="product_weight_packed" id="seller_product_detail-transport-weight-input" placeholder="Nhập vào" />
+                        <input type="text" name="product_weight_packed" id="seller_product_detail-transport-weight-input" minlength="1" maxlength="5" placeholder="Nhập vào" />
                         <div class="sellerProduct__unit">gr</div>
                     </div>
                 </div>
@@ -388,15 +397,18 @@
                     <div class="sellerProduct__title--field-wrap">Kích thước đóng gói (Phí vận chuyển thực tế sẽ thay đổi nếu bạn nhập sai kích thước)</div>
                     <div id="seller_product_detail-transport-size-inputfield">
                         <div class="seller_product_detail_transport_size_input sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                            <input type="text" name="product_r_packed" class="seller_product_detail_transport_size_input_block" placeholder="R" />
+                            <input id="selle-product-package-r" type="text" name="product_r_packed" class="seller_product_detail_transport_size_input_block" minlength="1" maxlength="3"
+                                placeholder="R" />
                             <div class="sellerProduct__unit">cm</div>
                         </div>
                         <div class="seller_product_detail_transport_size_input sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                            <input type="text" name="product_d_packed" class="seller_product_detail_transport_size_input_block" placeholder="D" />
+                            <input id="selle-product-package-d" type="text" name="product_d_packed" class="seller_product_detail_transport_size_input_block" minlength="1" maxlength="3"
+                                placeholder="D" />
                             <div class="sellerProduct__unit">cm</div>
                         </div>
                         <div class="seller_product_detail_transport_size_input sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                            <input type="text" name="product_c_packed" class="seller_product_detail_transport_size_input_block" placeholder="C" />
+                            <input id="selle-product-package-c" type="text" name="product_c_packed" class="seller_product_detail_transport_size_input_block" minlength="1" maxlength="3"
+                                placeholder="C" />
                             <div class="sellerProduct__unit">cm</div>
                         </div>
                     </div>
@@ -439,14 +451,15 @@
                 </div>
                 <div id="seller_product_detail-otherInfor-SKU">
                     <div class="sellerProduct__title--field-wrap">SKU sản phẩm</div>
-                    <input name="product_sku_code" type="text" id="seller_product_detail-otherInfor-SKU-detail" placeholder="Mã Stock Keeping Unit" title="Tính năng không khả dụng" />
+                    <input name="product_sku_code" type="text" id="seller_product_detail-otherInfor-SKU-detail" minlength="10" maxlength="20" placeholder="Mã Stock Keeping Unit"
+                        title="Tính năng không khả dụng" />
                 </div>
             </div>
         </div>
         <div id="sellerProduct-finishStep-wrap">
-            <button id="sellerProduct-finishStep-cancel">Hủy</button>
+            <button id="sellerProduct-finishStep-cancel" onclick="javascript:window.close()">Hủy</button>
             <button id="sellerProduct-finishStep-save-hidden" type="button">Lưu & ẩn</button>
-            <button id="sellerProduct-finishStep-save-display" type="submit">Lưu & Hiển thị</button>
+            <button id="sellerProduct-finishStep-save-display" type="button">Lưu & Hiển thị</button>
         </div>
     </form>
     <div id="sellerProduct-menu-right-wrap">

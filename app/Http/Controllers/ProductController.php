@@ -125,14 +125,16 @@ class ProductController extends Controller
                         "price" => $request["classification_price_{$i}_{$j}"],
                         "storage" => $request["classification_storage_{$i}_{$j}"],
                         "sku" => $request["classification_sku_{$i}_{$j}"],
+                        "product_code" => $product_temp_code
                     ]);
                     $add_classification_two->save();
                 }
             }
         }
-
-
-        return $request;
+        return response()->json([
+            'status' => true
+        ]);
+        // return redirect()->route('seller.show','manage_product');
     }
 
     /**
@@ -216,6 +218,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        // return $id;
         $get_pdt = DB::select(
             "SELECT *
             FROM products
@@ -241,8 +244,6 @@ class ProductController extends Controller
             WHERE product_code = '$id'
             "
         );
-        foreach ($get_classification_one as $cls1) {
-        }
         $get_classification_two = DB::select(
             "SELECT DISTINCT name
             FROM product_classificationtwos
@@ -322,7 +323,7 @@ class ProductController extends Controller
                     AND pi.index = '$index'
                     "
                 );
-                if(!$update_pdt_img){
+                if (!$update_pdt_img) {
                     $sto_pdt_img = new ProductImage();
                     $sto_pdt_img->code = genCode(52);
                     $sto_pdt_img->product_code = $id;
@@ -330,7 +331,6 @@ class ProductController extends Controller
                     $sto_pdt_img->path = "assets/img/product/$image_name";
                     $sto_pdt_img->save();
                 }
-
             }
         }
         $is_video_exist = $request->file("product_video");

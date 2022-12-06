@@ -630,7 +630,8 @@ body {
     position: absolute;
 }
 .product__image--carousel-element {
-    width: inherit;
+    width: 100%;
+    height: 100px;
     object-fit: contain;
 }
 #product__carousel--arrow-previous,

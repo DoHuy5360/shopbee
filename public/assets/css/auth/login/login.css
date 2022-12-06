@@ -299,3 +299,7 @@
 ion-icon[name="logo-facebook"] {
 	color: blue;
 }
+#login-page-wrap-all{
+	position: relative;
+	width: 100%;
+}

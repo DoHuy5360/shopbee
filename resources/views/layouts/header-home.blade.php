@@ -4,7 +4,7 @@
             <div class="mainHome_navbar_aboutUs-wrapper">
                 <div class="mainHome_navbar_about_topic">
                     <ul>
-                        <a href="/seller" target="_blank" rel="noopener noreferrer">
+                        <a href="{{ route('seller.index') }}" target="_blank" rel="noopener noreferrer">
                             <li class="mainHome_navbar-topic">Kênh người bán</li>
                         </a>
                         <li class="mainHome__split--line">|</li>
@@ -59,10 +59,10 @@
                                 </a>
                             </li>
                         @endif
-                        <div id="mainHome_navbar_about_topic-close-icon">
-                            <ion-icon name="close-circle"></ion-icon>
-                        </div>
                     </ul>
+                    <div id="mainHome_navbar_about_topic-close-icon">
+                        <ion-icon name="close-circle"></ion-icon>
+                    </div>
                 </div>
             </div>
         </div>

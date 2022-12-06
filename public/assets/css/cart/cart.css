@@ -115,7 +115,6 @@
     background-color: white;
     min-height: 55px;
     border-radius: 3px;
-    /* overflow: hidden; */
 }
 
 .cart_page_product_guide {
@@ -245,7 +244,6 @@
     background-color: #fff;
 }
 
-/*! cart choice  */
 .cart_page_option_fix_title {
     text-align: left;
     margin-bottom: 10px;
@@ -271,7 +269,6 @@
     background-color: #fff;
     outline: 1px solid #c5c5c5;
     border: none;
-    /* outline: none; */
     border-radius: 2px;
 }
 
@@ -502,7 +499,6 @@
 
 .cart_page_product_prize_infor {
     border-radius: 3px;
-    /* overflow: hidden; */
 }
 
 .cart_page_product_blur {
