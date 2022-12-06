@@ -106,7 +106,7 @@
             </div>
             <div class="cart_page_product_guide" id="cart-page-product-guide">
                 <div class="cart_page_btn">
-                    <input type="checkbox" name="" id="" />
+                    <input type="checkbox" name="" class="cart__page-check-all" />
                 </div>
                 <div class="cart_page_name_product">
                     <div>Sản Phẩm</div>
@@ -127,13 +127,13 @@
             </div>
             <form action="{{ route('purchase.create') }}" id="cart-form-submit" class="cart_page_warp_containt_border" method="GET">
                 @foreach ($get_grp_pdt as $index_pdt => $product_creator)
-                    <div class="cart_page_product_infor">
+                    <div class="cart_page_product_infor" data-owner-wrap-code="{{ $product_creator->user_code }}">
                         <input type="hidden" name="product_information[{{ $index_pdt }}][user_code]" value="{{ $product_creator->user_code }}">
                         <input type="hidden" name="product_information[{{ $index_pdt }}][user_name]" value="{{ $product_creator->name }}">
                         <div class="cart_page_product_prize_infor">
                             <div class="cart_page_product_seller">
                                 <div class="cart_page_btn">
-                                    <input type="checkbox" name="" id="" />
+                                    <input type="checkbox" name="" id="" class="cart__page--owner-check" data-owner-check-code="{{ $product_creator->user_code }}" title="Check all this shop's products"/>
                                 </div>
                                 <div class="cart_page_name_product">
                                     <div>Đại diện cung cấp <strong>{{ $product_creator->name }}</strong></div>
@@ -155,7 +155,7 @@
                                             <div class="cart_page_infor_warp">
                                                 <div class="cart_page_btn">
                                                     <input class="cartPage__choose--item" type="checkbox" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][checked]"
-                                                        data-cart-select="{{ $item->cart_code }}" />
+                                                        data-cart-select="{{ $item->cart_code }}" data-owner-code="{{ $product_creator->user_code }}"/>
                                                 </div>
                                                 <div class="cart_page_name_product">
                                                     <div class="cart_page_product_img">
@@ -301,7 +301,7 @@
     
                                             <div class="cart_page_infor_warp">
                                                 <div class="cart_page_btn">
-                                                    <input class="cartPage__choose--item" type="checkbox"/>
+                                                    <input type="checkbox" disabled/>
                                                 </div>
                                                 <div class="cart_page_name_product">
                                                     <div class="cart_page_product_img">
@@ -407,7 +407,7 @@
                             <ion-icon style="color: red" name="ticket-outline"></ion-icon>
                             <div>ShopBee Voucher</div>
                         </div>
-                        <div id="cart-page-sticky-voucher-input"><a href="http://" target="_blank" rel="noopener noreferrer">Chon Hoặc Nhập Mã</a></div>
+                        <div id="cart-page-sticky-voucher-input"><a href="http://" target="_blank" rel="noopener noreferrer">Chọn Hoặc Nhập Mã</a></div>
                     </div>
                     <div id="cart-page-sticky-coin">
                         <div id="cart-page-sticky-coin-check">
@@ -422,10 +422,10 @@
                     </div>
                     <div id="cart-page-sticky-function">
                         <div id="cart-page-sticky-function-check">
-                            <input type="checkbox" name="" id="" />
+                            <input type="checkbox" name="" class="cart__page-check-all" />
                         </div>
                         <div id="cart-page-sticky-function-selectAll">
-                            <div>Chọn Tất Cả (<span>2</span>)</div>
+                            <div>Chọn Tất Cả (<span>0</span>)</div>
                         </div>
                         <div id="cart-page-sticky-function-del">
                             <div>Xoá</div>

@@ -115,13 +115,13 @@ class CartController extends Controller
             foreach ($get_pdt_creator as $index => $creator) {
                 $get_pdt_cart = DB::select(
                     "SELECT *, c.code AS cart_code, p.code AS product_code, hidden
-                FROM carts c, products p, product_images pi
-                WHERE c.user_code = '$id'
-                AND c.product_code = p.code
-                AND p.user_code = '$creator->user_code'
-                AND pi.product_code = p.code
-                AND pi.index = '0'
-                AND p.hidden = '$hidden'
+                    FROM carts c, products p, product_images pi
+                    WHERE c.user_code = '$id'
+                    AND c.product_code = p.code
+                    AND p.user_code = '$creator->user_code'
+                    AND pi.product_code = p.code
+                    AND pi.index = '0'
+                    AND p.hidden = '$hidden'
                 "
                 );
                 foreach ($get_pdt_cart as $item) {
@@ -144,7 +144,12 @@ class CartController extends Controller
                     }
                     $item->classificationtwos = $array_classificationtwos;
                 }
-                $get_pdt_creator[$index]->products = $get_pdt_cart;
+                if($get_pdt_cart){
+                    $get_pdt_creator[$index]->products = $get_pdt_cart;
+                }else{
+                    unset($get_pdt_creator[$index]);
+                }
+                
             }
             return $get_pdt_creator;
         }
