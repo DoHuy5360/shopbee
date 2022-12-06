@@ -3,6 +3,9 @@ window.addEventListener("load", (e) => {
         $("#seller-frame-cover-fixed").css({
             display: "none",
         });
+        $("#body").css({
+            overflow: "visible",
+        });
     }, 500);
 });
 
