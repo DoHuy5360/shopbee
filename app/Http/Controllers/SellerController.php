@@ -50,13 +50,13 @@ class SellerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
         $user_id = Auth::user()->code;
-        switch ($id) {
+        switch ($slug) {
             case 'manage_product':
                 $get_pdt = DB::select(
                     "SELECT *,  p.code AS product_code

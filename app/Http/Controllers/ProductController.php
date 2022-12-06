@@ -131,9 +131,10 @@ class ProductController extends Controller
                 }
             }
         }
-
-
-        return $request;
+        return response()->json([
+            'status' => true
+        ]);
+        // return redirect()->route('seller.show','manage_product');
     }
 
     /**

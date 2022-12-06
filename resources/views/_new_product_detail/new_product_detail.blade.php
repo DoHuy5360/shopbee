@@ -8,7 +8,7 @@
 @endsection
 @section('content')
     <div id="seller_product_detail-wrapper">
-        <form action="{{ route('product.store') }}" id="seller_product_detail-wrapper-detail" target="_blank" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('product.store') }}" id="seller_product_detail-wrapper-detail" method="POST" enctype="multipart/form-data">
             @csrf
             <input id="sellerProduct-classification1-post-field" type="hidden" name="classification1_values">
             <input id="sellerProduct-classification2-post-field" type="hidden" name="classification2_values">
@@ -322,7 +322,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- !---------------------------------------- -->
                 <div id="seller_product_detail-sellInfor-price">
                     <div class="sellerProduct__title--field-wrap">* Giá</div>
                     <div id="seller_product_detail-sellInfor-price-inputfield">
@@ -458,9 +457,9 @@
             </div>
         </div>
         <div id="sellerProduct-finishStep-wrap">
-            <button id="sellerProduct-finishStep-cancel">Hủy</button>
+            <button id="sellerProduct-finishStep-cancel" onclick="javascript:window.close()">Hủy</button>
             <button id="sellerProduct-finishStep-save-hidden" type="button">Lưu & ẩn</button>
-            <button id="sellerProduct-finishStep-save-display" type="submit">Lưu & Hiển thị</button>
+            <button id="sellerProduct-finishStep-save-display" type="button">Lưu & Hiển thị</button>
         </div>
     </form>
     <div id="sellerProduct-menu-right-wrap">

@@ -583,7 +583,20 @@ node__submit_button.addEventListener("click", (e) => {
             node__classification2_hidden_input,
             node__classification2_names
         );
-        node__form_submit.submit();
+        // node__form_submit.submit();
+        console.log(1);
+        const str__action_link = node__form_submit.getAttribute("action");
+        $("#seller_product_detail-wrapper-detail").ajaxSubmit({
+            type: "POST",
+            url: str__action_link,
+            success: function (response) {
+                if (response.status) {
+                    window.close();
+                } else {
+                    console.log("Fail to save product");
+                }
+            },
+        });
     } else {
         console.log(obj__total_validation);
     }
