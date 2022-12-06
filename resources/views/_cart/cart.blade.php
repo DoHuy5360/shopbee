@@ -133,7 +133,8 @@
                         <div class="cart_page_product_prize_infor">
                             <div class="cart_page_product_seller">
                                 <div class="cart_page_btn">
-                                    <input type="checkbox" name="" id="" class="cart__page--owner-check" data-owner-check-code="{{ $product_creator->user_code }}" title="Check all this shop's products"/>
+                                    <input type="checkbox" name="" id="" class="cart__page--owner-check" data-owner-check-code="{{ $product_creator->user_code }}"
+                                        title="Check all this shop's products" />
                                 </div>
                                 <div class="cart_page_name_product">
                                     <div>Đại diện cung cấp <strong>{{ $product_creator->name }}</strong></div>
@@ -155,7 +156,7 @@
                                             <div class="cart_page_infor_warp">
                                                 <div class="cart_page_btn">
                                                     <input class="cartPage__choose--item" type="checkbox" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][checked]"
-                                                        data-cart-select="{{ $item->cart_code }}" data-owner-code="{{ $product_creator->user_code }}"/>
+                                                        data-cart-select="{{ $item->cart_code }}" data-owner-code="{{ $product_creator->user_code }}" />
                                                 </div>
                                                 <div class="cart_page_name_product">
                                                     <div class="cart_page_product_img">
@@ -298,10 +299,10 @@
                                             <div class="cart_page_voucher_add"><a href="http://" target="_blank" rel="noopener noreferrer">Thêm ></a></div>
                                         </div>
                                         <div class="cart__page--hidden-wrap">
-    
+
                                             <div class="cart_page_infor_warp">
                                                 <div class="cart_page_btn">
-                                                    <input type="checkbox" disabled/>
+                                                    <input type="checkbox" disabled />
                                                 </div>
                                                 <div class="cart_page_name_product">
                                                     <div class="cart_page_product_img">
@@ -437,7 +438,8 @@
                             <div style="color: red">Lưu vào mục Yêu thích</div>
                         </div>
                         <div id="cart-page-sticky-function-sumCost">
-                            <div>Tổng thanh toán (<span>0</span>)</div>
+                            <span>Tổng thanh toán</span>
+                            <div>(₫<span id="cart-page-final-cost">0</span>)</div>
                         </div>
                         <div id="cart-page-sticky-function-btnBuy">
                             <button id="cart-page-go-buy" form="cart-form-submit" type="submit">Thanh Toán</button>

@@ -39,11 +39,11 @@
         outline: unset;
     }
 .cart_page--card-transform{
-    transform: translateX(-138px);
+    transform: translateX(-145px);
 }
     .cart_page_infor_warp {
         grid-template-columns: 10% 90% 0%;
-        grid-template-rows: 70px 0px 20px 25px 40px;
+        grid-template-rows: 85px 0px 20px 25px 40px;
         row-gap: 2px;
         width: 100%;
         padding: 0;
@@ -65,7 +65,8 @@
         height: 100%;
         display: grid;
         place-items: center;
-        width: 90px;
+        width: 100px;
+        padding-right: 15px;
     }
     .cart_page_actionAdd ion-icon{
         display: none;
@@ -93,6 +94,8 @@
         grid-row-end: 2;
         overflow: hidden;
         width: 100%;
+        height: 70px;
+        align-self: flex-end;
     }
 
     .cart_page_pricePer_wrap_respon {
@@ -190,7 +193,6 @@
         float: right;
     }
 
-    /*! thanh toan field */
     #cart-page-sticky-function-del,
     #cart-page-sticky-function-delInactive,
     #cart-page-sticky-function-saveToLike {
@@ -247,9 +249,6 @@
         margin: 0 10px 0 0;
     }
 
-    #cart-page-sticky-voucher-input {
-        text-align: right;
-    }
     .cart_page_price_wrap_respon {
         display: none;
     }
@@ -273,8 +272,9 @@
     #cart-page-sticky-voucher-wrap {
         width: fit-content;
     }
-    #cart-page-sticky-function-sumCost span {
-        color: red;
+    #cart-page-sticky-function-sumCost {
+        width: 150px;
+        justify-content: center;
     }
 
     /*! pop up feature field */
@@ -328,5 +328,11 @@
         height: 100vh;
         z-index: 4;
         background-color: rgb(0, 0, 0, 0.5);
+    }
+    .cart_page_product_img img{
+        height: 70px;
+    }
+    .cart__page-check-all{
+        vertical-align: middle;
     }
 }
