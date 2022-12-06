@@ -108,9 +108,12 @@
     place-items: center;
     opacity: 1;
 }
-body::-webkit-scrollbar{
+/* body::-webkit-scrollbar{
     width: 0;
     height: 0;
+} */
+#body{
+    overflow: hidden;
 }
 #seller-frame-cover-fixed img {
     position: absolute;

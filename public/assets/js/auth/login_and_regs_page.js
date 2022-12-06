@@ -17,18 +17,18 @@ function AutoGradient() {
     color1 = randomColor();
     getLoginBg.style.background =
         "linear-gradient( 270deg," + color2 + "," + color1 + ")";
-    getRegsBg.style.background =
-        "linear-gradient( 270deg," + color2 + "," + color1 + ")";
+    if(getRegsBg){
+        getRegsBg.style.background =
+            "linear-gradient( 270deg," + color2 + "," + color1 + ")";
+    }
 }
 
 setInterval(AutoGradient, 10000);
 function handleTabletChange(e) {
     const testTime = "";
     if (e.matches) {
-        console.log('Media Query Matched!')
         setInterval(AutoGradient, 10000) = testTime;
     } else {
-        console.log('Media Query No Matched!')
         setTimeout(() => { setInterval(testTime) })
     }
 }

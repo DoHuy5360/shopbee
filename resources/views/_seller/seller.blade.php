@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/seller/seller_respon.css') }}">
 @endsection
 @section('js')
-    <script src="{{ asset('assets/js/seller/seller.js') }}"></script>
     <script src="{{ asset('assets/js/seller/seller_respon.js') }}"></script>
+    <script type="module" src="{{ asset('assets/js/seller/seller.js') }}"></script>
+    <script type="module" src="{{ asset('assets/js/monitor/monitor.js') }}"></script>
 @endsection
 
 @section('content')
