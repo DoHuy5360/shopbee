@@ -101,53 +101,66 @@ class CartController extends Controller
     {
         // return Auth::user()->code;
         // return $request;
-        $get_pdt_creator = DB::select(
-            "SELECT DISTINCT p.user_code, u.name
-            FROM carts c, products p, users u
-            WHERE c.user_code = '$id'
-            AND c.product_code = p.code
-            AND p.user_code = u.code
-            "
-        );
-        // return $get_pdt_creator;
-        foreach ($get_pdt_creator as $index => $creator) {
-            $get_pdt_cart = DB::select(
-                "SELECT *, c.code AS cart_code, p.code AS product_code
-                FROM carts c, products p, product_images pi
+        function getGroupProduct($id, $hidden)
+        {
+            $get_pdt_creator = DB::select(
+                "SELECT DISTINCT p.user_code, u.name
+                FROM carts c, products p, users u
                 WHERE c.user_code = '$id'
                 AND c.product_code = p.code
-                AND p.user_code = '$creator->user_code'
-                AND pi.product_code = p.code
-                AND pi.index = '0'
-                "
+                AND p.user_code = u.code
+            "
             );
-            foreach ($get_pdt_cart as $item) {
-                $get_classification_one = DB::select(
-                    "SELECT code, name, path
+            // return $get_pdt_creator;
+            foreach ($get_pdt_creator as $index => $creator) {
+                $get_pdt_cart = DB::select(
+                    "SELECT *, c.code AS cart_code, p.code AS product_code, hidden
+                    FROM carts c, products p, product_images pi
+                    WHERE c.user_code = '$id'
+                    AND c.product_code = p.code
+                    AND p.user_code = '$creator->user_code'
+                    AND pi.product_code = p.code
+                    AND pi.index = '0'
+                    AND p.hidden = '$hidden'
+                "
+                );
+                foreach ($get_pdt_cart as $item) {
+                    $get_classification_one = DB::select(
+                        "SELECT code, name, path
                         FROM product_classificationones
                         WHERE product_code = '{$item->product_code}'
                         "
-                );
-                $item->classificationones = $get_classification_one;
-                $array_classificationtwos = [];
-                foreach ($get_classification_one as $cls1) {
-                    $get_classification_two = DB::select(
-                        "SELECT classificationone_code, name, price, storage, sku
+                    );
+                    $item->classificationones = $get_classification_one;
+                    $array_classificationtwos = [];
+                    foreach ($get_classification_one as $cls1) {
+                        $get_classification_two = DB::select(
+                            "SELECT classificationone_code, name, price, storage, sku
                             FROM product_classificationtwos
                             WHERE classificationone_code = '{$cls1->code}'
                             "
-                    );
-                    array_push($array_classificationtwos, $get_classification_two);
+                        );
+                        array_push($array_classificationtwos, $get_classification_two);
+                    }
+                    $item->classificationtwos = $array_classificationtwos;
                 }
-                $item->classificationtwos = $array_classificationtwos;
+                if($get_pdt_cart){
+                    $get_pdt_creator[$index]->products = $get_pdt_cart;
+                }else{
+                    unset($get_pdt_creator[$index]);
+                }
+                
             }
-            $get_pdt_creator[$index]->products = $get_pdt_cart;
+            return $get_pdt_creator;
         }
-        // return $get_pdt_creator;
+        $get_grp_pdt = getGroupProduct($id, 'false');
+        $get_grp_pdt_hid = getGroupProduct($id, 'true');
+        // return $get_grp_pdt_hid;
 
 
         return view('_cart.cart', [
-            'get_pdt_creator' => $get_pdt_creator,
+            'get_grp_pdt' => $get_grp_pdt,
+            'get_grp_pdt_hid' => $get_grp_pdt_hid,
         ]);
     }
 
@@ -190,11 +203,11 @@ class CartController extends Controller
             AND user_code = '$user_code'
             "
         );
-        if($del_cart_pdt){
+        if ($del_cart_pdt) {
             return response()->json([
                 "status" => 200
             ]);
-        }else{
+        } else {
             return response()->json([
                 "status" => 500
             ]);
