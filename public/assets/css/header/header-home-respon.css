@@ -18,7 +18,7 @@
         position: relative;
         padding: 0;
     }
-    
+
     .mainHome_navbar_aboutUs {
         display: block;
         height: 100vh;
@@ -104,7 +104,7 @@
         width: 40%;
     }
     #mainHome-cart-hidden,
-    ion-icon[name="cart-outline"] {
+    .mainHome_personal ion-icon[name="cart-outline"] {
         display: none;
     }
 

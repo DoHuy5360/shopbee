@@ -97,6 +97,9 @@
                         </div>
                     </div>
                     <div id="product-title-column">
+                        <div class="product_title_column-item" id="product-title-price">
+                            <div class="product_title_column-item-infor">₫<span>{{ $get_pdt->price }}</span></div>
+                        </div>
                         <div class="product_title_column-item" id="product-title_insurance">
                             <div class="product_title_column_title">Bảo Hiểm</div>
                             <div class="product_title_column-item-infor" id="product-title-columnItem1">Bảo hiểm Thiết bị điện tử</div>
@@ -383,12 +386,13 @@
                             </div>
                             <div class="product_rate_cmt_like_report">
                                 <div class="product_rate_cmt_like">
-                                    <ion-icon name="thumbs_up_sharp"></ion-icon>
+                                    <ion-icon name="thumbs-up-sharp"></ion-icon>
                                     <span>1</span>
                                 </div>
-                                <div class="product_rate_cmt_report">
+                                <label class="product_rate_cmt_report">
                                     <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                                </div>
+                                    <input type="checkbox" class="product_rate_cmt_report_btn">
+                                </label>
                             </div>
                         </div>
                     </div>

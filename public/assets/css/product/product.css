@@ -691,3 +691,50 @@ body {
     color: white;
     white-space: nowrap;
 }
+
+#product-title-price {
+    color: #ee4d2d;
+    font-size: 1.6rem;
+}
+
+.product_rate_cmt_report {
+    position: relative;
+    cursor: pointer;
+}
+
+.product_rate_cmt_report::after {
+    content: "Báo cáo";
+    padding: 5px 12px;
+    width: 100px;
+    background-color: #252525;
+    border-radius: 4px;
+    color: #fff;
+    position: absolute;
+    right: 20%;
+    bottom: 0%;
+    transform: translateY(10px) scale(0);
+    transition: bottom 140ms linear;
+}
+
+.product_rate_cmt_report::before {
+    content: "▲";
+    font-size: 1rem;
+    color: #000;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    transform: scale(0);
+    z-index: 2;
+}
+
+.product_rate_cmt_report_btn {
+    visibility: collapse;
+}
+
+.product_rate_cmt_report:has(.product_rate_cmt_report_btn:checked)::after {
+    transform: translateY(38px) scale(1);
+}
+
+.product_rate_cmt_report:has(.product_rate_cmt_report_btn:checked)::before {
+    transform: translateY(10px) translateX(-20px) scale(1);
+}
