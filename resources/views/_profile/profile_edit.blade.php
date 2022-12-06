@@ -1,6 +1,6 @@
 <div id="profile-body-right-wrap">
     <div id="profile-my-profile">
-        <div id="profile-my-profile-title">Hồ Sơ Của Tôi</div>
+        <div id="profile-my-profile-title">Tài Khoản Của Tôi</div>
         <span>Quản lý thông tin hồ sơ để bảo mật tài khoản</span>
     </div>
     <form action="./profile.php" id="profile-edit-form" method="post">

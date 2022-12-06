@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->char("code", 52);
             $table->string("name", 120);
-            $table->string("description", 3000);
+            $table->string("description", 3000)->nullable();
             $table->string("category", 300);
             $table->string("brand", 120);
             $table->string("origin", 120);

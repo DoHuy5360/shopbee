@@ -184,7 +184,7 @@
         color: black;
     }
     #seller-contentTable-tranfer{
-        max-height: unset;
+        max-height: unset !important;
     }
     body{
         overflow: unset;

@@ -88,7 +88,7 @@
                 </div>
                 <div id="seller-all-product-action-field">
                     <a href="#">Tối ưu sản phẩm</a>
-                    <a href="{{ route('product.index') }}" id="seller-all-product-add">
+                    <a href="{{ route('product.index') }}" id="seller-all-product-add" target="_blank">
                         <ion-icon name="add-outline"></ion-icon>
                         <div>Thêm 1 sản phẩm mới</div>
                     </a>
