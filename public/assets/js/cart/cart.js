@@ -154,7 +154,7 @@ $(document).ready(function () {
                 );
             }
         });
-        $("#cart-page-total-price").text(int__total_price);
+        $("#cart-page-total-price").text(formatCurrency(int__total_price));
     }
     //todo: scroll finish bar
     const sticky_bar = document.getElementById("cart-page-sticky-block");
