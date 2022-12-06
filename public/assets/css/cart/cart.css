@@ -685,3 +685,7 @@ ion-icon[name="car-outline"] {
 .cart__page-product-edit{
     display: none;
 }
+#cart-page-amnt-pdt-slct{
+    color: var(--color-4);
+    font-weight: bold;
+}        

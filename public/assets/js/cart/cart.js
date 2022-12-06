@@ -139,7 +139,9 @@ $(document).ready(function () {
     //todo: Bắt sự kiện check chọn sản phẩm | Cập nhật tổng giá tiền | [Check|unCheck] nhóm sản phẩm | [Check|unCheck] tất cả sản phẩm
     $(".cartPage__choose--item").change(function (e) {
         const str__owner_code = e.target.getAttribute("data-owner-code");
-        const node__owner_chckbox = document.querySelector(`[data-owner-check-code='${str__owner_code}']`);
+        const node__owner_chckbox = document.querySelector(
+            `[data-owner-check-code='${str__owner_code}']`
+        );
         if (checkAllIsChecked(getSamePdtLvlChckbxs(str__owner_code))) {
             checkOne(node__owner_chckbox, true);
             if (checkAllIsChecked(node__grp_sgl_chckbxs)) {
@@ -149,6 +151,7 @@ $(document).ready(function () {
             checkOne(node__owner_chckbox, false);
             checkAll(node__all_chckbxs, false);
         }
+        updateAmntPdtSlct()
         updateTotalPrice();
     });
     // todo: [Check|uncheck] một checkbox
@@ -267,6 +270,7 @@ $(document).ready(function () {
                 checkAll(node__owner_chckbxs, false);
                 checkAll(node__sgl_chckbx, false);
             }
+            updateAmntPdtSlct()
             updateTotalPrice();
         });
     });
@@ -301,6 +305,7 @@ $(document).ready(function () {
                 checkAll(node__pdt_chckbxs, false);
                 checkAll(node__all_chckbxs, false);
             }
+            updateAmntPdtSlct()
             updateTotalPrice();
         });
     });
@@ -312,5 +317,15 @@ $(document).ready(function () {
         _arr_checkbox.forEach((checkbox) => {
             checkbox.checked = _bool;
         });
+    }
+    const node__amnt_pdt_slct = document.getElementById(
+        "cart-page-amnt-pdt-slct"
+    );
+    function updateAmntPdtSlct() {
+        let int__amnt_pdt_slct = 0;
+        node__sgl_chckbx.forEach((chckbx) => {
+            if (chckbx.checked) int__amnt_pdt_slct++;
+        });
+        node__amnt_pdt_slct.innerText = int__amnt_pdt_slct;
     }
 });

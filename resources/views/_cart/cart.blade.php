@@ -425,7 +425,7 @@
                             <input type="checkbox" name="" class="cart__page-check-all" />
                         </div>
                         <div id="cart-page-sticky-function-selectAll">
-                            <div>Chọn Tất Cả (<span>0</span>)</div>
+                            <div>Chọn Tất Cả (<span id="cart-page-amnt-pdt-slct">0</span>)</div>
                         </div>
                         <div id="cart-page-sticky-function-del">
                             <div>Xoá</div>
