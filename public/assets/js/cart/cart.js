@@ -27,7 +27,7 @@ $(document).ready(function () {
                                 ".cart_page_warp_containt_border"
                             );
                         if (!arr__product_cards) {
-                            node__pdt_group.remove();
+                            node__pdt_group.remove()
                         }
                     }
                 },
@@ -136,45 +136,10 @@ $(document).ready(function () {
         $("#body").css("overflow", "scroll");
         $("#cart-page-backdrop").css("display", "none");
     });
-    //todo: Bắt sự kiện check chọn sản phẩm | Cập nhật tổng giá tiền | [Check|unCheck] nhóm sản phẩm | [Check|unCheck] tất cả sản phẩm
+    //todo: Bắt sự kiện check chọn sản phẩm | Cập nhật tổng giá tiền
     $(".cartPage__choose--item").change(function (e) {
-        const str__owner_code = e.target.getAttribute("data-owner-code");
-        const node__owner_chckbox = document.querySelector(
-            `[data-owner-check-code='${str__owner_code}']`
-        );
-        if (checkAllIsChecked(getSamePdtLvlChckbxs(str__owner_code))) {
-            checkOne(node__owner_chckbox, true);
-            if (checkAllIsChecked(node__grp_sgl_chckbxs)) {
-                checkAll(node__all_chckbxs, true);
-            }
-        } else {
-            checkOne(node__owner_chckbox, false);
-            checkAll(node__all_chckbxs, false);
-        }
-        updateAmntPdtSlct()
         updateTotalPrice();
     });
-    // todo: [Check|uncheck] một checkbox
-    function checkOne(_node, _bool) {
-        _node.checked = _bool;
-    }
-    //todo: Lấy tất cả [checkbox node] của sản phẩm [cùng nhóm]
-    function getSamePdtLvlChckbxs(_owner_code) {
-        const node__owner_wrap = document.querySelector(
-            `[data-owner-wrap-code='${_owner_code}']`
-        );
-        const node__pdt_inside = node__owner_wrap.querySelectorAll(
-            ".cartPage__choose--item"
-        );
-        return node__pdt_inside;
-    }
-    //todo: Kiểm tra [tất cả checkbox] đã [được check]
-    function checkAllIsChecked(_arr_checkbox) {
-        const bool__all_checked = [..._arr_checkbox].every((_checkbox) => {
-            return _checkbox.checked;
-        });
-        return bool__all_checked;
-    }
     //todo: cập nhật tổng giá tiềm
     function updateTotalPrice() {
         int__total_price = 0;
@@ -189,8 +154,7 @@ $(document).ready(function () {
                 );
             }
         });
-        $("#cart-page-total-price").text(formatCurrency(int__total_price));
-        $("#cart-page-final-cost").text(formatCurrency(int__total_price));
+        $("#cart-page-total-price").text(int__total_price);
     }
     //todo: scroll finish bar
     const sticky_bar = document.getElementById("cart-page-sticky-block");
@@ -252,81 +216,5 @@ $(document).ready(function () {
                 });
             });
         });
-    }
-    // todo: Bắt sự kiện [check|unCheck] theo [tất cả] sản phẩm
-    const node__sgl_chckbx = document.querySelectorAll(
-        ".cartPage__choose--item"
-    );
-    const node__all_chckbxs = document.querySelectorAll(
-        ".cart__page-check-all"
-    );
-    node__all_chckbxs.forEach((checkbox, indx) => {
-        checkbox.addEventListener("click", (e) => {
-            if (checkbox.checked) {
-                toggleCheckAll(indx, true);
-                checkAll(node__owner_chckbxs, true);
-                checkAll(node__sgl_chckbx, true);
-            } else {
-                toggleCheckAll(indx, false);
-                checkAll(node__owner_chckbxs, false);
-                checkAll(node__sgl_chckbx, false);
-            }
-            updateAmntPdtSlct()
-            updateTotalPrice();
-        });
-    });
-    function toggleCheckAll(_indx, _bool) {
-        if (_indx) {
-            checkOne(node__all_chckbxs[0], _bool);
-        } else {
-            checkOne(node__all_chckbxs[1], _bool);
-        }
-    }
-    // todo: Bắt sự kiện [check|unCheck] theo [nhóm] sản phẩm
-    const node__owner_chckbxs = document.querySelectorAll(
-        ".cart__page--owner-check"
-    );
-    node__owner_chckbxs.forEach((checkbox) => {
-        checkbox.addEventListener("change", (e) => {
-            const str__owner_code = checkbox.getAttribute(
-                "data-owner-check-code"
-            );
-            const node__owner_wrap = document.querySelector(
-                `[data-owner-wrap-code="${str__owner_code}"]`
-            );
-            const node__pdt_chckbxs = node__owner_wrap.querySelectorAll(
-                ".cartPage__choose--item"
-            );
-            if (checkbox.checked) {
-                checkAll(node__pdt_chckbxs, true);
-                if (checkAllIsChecked(node__grp_sgl_chckbxs)) {
-                    checkAll(node__all_chckbxs, true);
-                }
-            } else {
-                checkAll(node__pdt_chckbxs, false);
-                checkAll(node__all_chckbxs, false);
-            }
-            updateAmntPdtSlct()
-            updateTotalPrice();
-        });
-    });
-    const node__grp_sgl_chckbxs = [...node__sgl_chckbx].concat([
-        ...node__owner_chckbxs,
-    ]);
-    // todo: [Check|unCheck] nhiều
-    function checkAll(_arr_checkbox, _bool) {
-        _arr_checkbox.forEach((checkbox) => {
-            checkbox.checked = _bool;
-        });
-    }
-    const node__amnt_pdt_slct = document.getElementById(
-        "cart-page-amnt-pdt-slct"
-    );
-    function updateAmntPdtSlct() {
-        let int__amnt_pdt_slct = 0;
-        node__sgl_chckbx.forEach((chckbx) => {
-            if (chckbx.checked) int__amnt_pdt_slct++;
-        });
-        node__amnt_pdt_slct.innerText = int__amnt_pdt_slct;
     }
 });

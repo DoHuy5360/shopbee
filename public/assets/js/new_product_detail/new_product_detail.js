@@ -583,6 +583,8 @@ node__submit_button.addEventListener("click", (e) => {
             node__classification2_hidden_input,
             node__classification2_names
         );
+        // node__form_submit.submit();
+        console.log(1);
         const str__action_link = node__form_submit.getAttribute("action");
         $("#seller_product_detail-wrapper-detail").ajaxSubmit({
             type: "POST",
@@ -602,6 +604,9 @@ node__submit_button.addEventListener("click", (e) => {
 
 function queryAll(_name) {
     return document.querySelectorAll(_name);
+}
+function queryOne(_name) {
+    return document.querySelector(_name);
 }
 function getById(_name) {
     return document.getElementById(_name);
