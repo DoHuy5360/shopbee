@@ -97,6 +97,9 @@
                         </div>
                     </div>
                     <div id="product-title-column">
+                        <div class="product_title_column-item" id="product-title-price">
+                            <div class="product_title_column-item-infor">₫<span>{{ $get_pdt->price }}</span></div>
+                        </div>
                         <div class="product_title_column-item" id="product-title_insurance">
                             <div class="product_title_column_title">Bảo Hiểm</div>
                             <div class="product_title_column-item-infor" id="product-title-columnItem1">Bảo hiểm Thiết bị điện tử</div>
@@ -339,29 +342,29 @@
                     </div>
                 </div>
                 <div id="product-list-rate-wrap">
-                    <div class="product-rate-comment-section">
-                        <div id="product-rate-comment-avat">
+                    <div class="product_rate_comment_section">
+                        <div class="product_rate_comment_avat">
                             <a href="http://" target="_blank" rel="noopener noreferrer">
                                 <img src="https://cdn.britannica.com/33/233233-050-BD461F52/miniature-pinscher-dog.jpg" alt="" srcset="" />
                             </a>
                         </div>
-                        <div id="product-rate-comment-detail">
+                        <div class="product_rate_comment_detail">
                             <a href="http://" target="_blank" rel="noopener noreferrer">duypham189</a>
-                            <div id="product-rate-comment_rate-star">
+                            <div class="product_rate_comment_rate_star">
                                 <ion-icon name="star"></ion-icon>
                                 <ion-icon name="star"></ion-icon>
                                 <ion-icon name="star"></ion-icon>
                                 <ion-icon name="star"></ion-icon>
                                 <ion-icon name="star"></ion-icon>
                             </div>
-                            <div id="product-rate-cmt-date">24/9/2002 | Phân loại hàng: K880---đen và trắng</div>
-                            <div id="product-rate-cmt-typeOfProduct">
+                            <div class="product_rate_cmt_date">24/9/2002 | Phân loại hàng: K880---đen và trắng</div>
+                            <div class="product_rate_cmt_typeOfProduct">
                                 <div><span class="product-rate-cmt-productType">Chất liệu:</span> <span class="product-rate-cmt-productType-aws">n</span></div>
                                 <div><span class="product-rate-cmt-productType">Màu sắc: </span> <span class="product-rate-cmt-productType-aws">trắng</span></div>
                                 <div><span class="product-rate-cmt-productType">Đúng với mô tả:</span> <span class="product-rate-cmt-productType-aws">đúng</span></div>
                             </div>
-                            <div id="product-rate-cmt-customer-aws">Xl vì mình hơi lười chụp ảnh nhưng áo đẹp lắm mn nha vải mềm mịn trắng tinh ko bị dính dơ đc tặng kẹo nữa rất ưng lun</div>
-                            <div id="product-rate-cmt-customer-img_vid">
+                            <div class="product_rate_cmt_customer_aws">Xl vì mình hơi lười chụp ảnh nhưng áo đẹp lắm mn nha vải mềm mịn trắng tinh ko bị dính dơ đc tặng kẹo nữa rất ưng lun</div>
+                            <div class="product_rate_cmt_customer_img_vid">
                                 <div class="product__rate--img-video">
                                     <img src="https://i.etsystatic.com/28005916/r/il/21f7d3/3282311401/il_1588xN.3282311401_ehwy.jpg" alt="" />
                                 </div>
@@ -381,123 +384,19 @@
                                     <img src="https://th.bing.com/th/id/R.9bd00789cbd441f3fb32bdddaca31e65?rik=1zoZcFj7q5LHig&pid=ImgRaw&r=0" alt="" />
                                 </div>
                             </div>
-                            <div id="product-rate-cmt-like_report">
-                                <div id="product-rate-cmt-like">
+                            <div class="product_rate_cmt_like_report">
+                                <div class="product_rate_cmt_like">
                                     <ion-icon name="thumbs-up-sharp"></ion-icon>
                                     <span>1</span>
                                 </div>
-                                <div id="product-rate-cmt-report">
+                                <label class="product_rate_cmt_report">
                                     <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                                </div>
+                                    <input type="checkbox" class="product_rate_cmt_report_btn">
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <div class="product-rate-comment-section">
-                        <div id="product-rate-comment-avat">
-                            <a href="http://" target="_blank" rel="noopener noreferrer">
-                                <img src="https://cdn.britannica.com/33/233233-050-BD461F52/miniature-pinscher-dog.jpg" alt="" srcset="" />
-                            </a>
-                        </div>
-                        <div id="product-rate-comment-detail">
-                            <a href="http://" target="_blank" rel="noopener noreferrer">duypham189</a>
-                            <div id="product-rate-comment_rate-star">
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                            </div>
-                            <div id="product-rate-cmt-date">24/9/2002 | Phân loại hàng: K880---đen và trắng</div>
-                            <div id="product-rate-cmt-typeOfProduct">
-                                <div><span class="product-rate-cmt-productType">Chất liệu:</span> <span class="product-rate-cmt-productType-aws">n</span></div>
-                                <div><span class="product-rate-cmt-productType">Màu sắc: </span> <span class="product-rate-cmt-productType-aws">trắng</span></div>
-                                <div><span class="product-rate-cmt-productType">Đúng với mô tả:</span> <span class="product-rate-cmt-productType-aws">đúng</span></div>
-                            </div>
-                            <div id="product-rate-cmt-customer-aws">Xl vì mình hơi lười chụp ảnh nhưng áo đẹp lắm mn nha vải mềm mịn trắng tinh ko bị dính dơ đc tặng kẹo nữa rất ưng lun</div>
-                            <div id="product-rate-cmt-customer-img_vid">
-                                <div class="product__rate--img-video">
-                                    <img src="https://i.etsystatic.com/28005916/r/il/21f7d3/3282311401/il_1588xN.3282311401_ehwy.jpg" alt="" />
-                                </div>
-                                <div class="product__rate--img-video">
-                                    <img src="https://i.etsystatic.com/28005916/r/il/21f7d3/3282311401/il_1588xN.3282311401_ehwy.jpg" alt="" />
-                                </div>
-                                <div class="product__rate--img-video">
-                                    <img src="https://i.etsystatic.com/28005916/r/il/21f7d3/3282311401/il_1588xN.3282311401_ehwy.jpg" alt="" />
-                                </div>
-                                <div class="product__rate--img-video">
-                                    <img src="https://th.bing.com/th/id/R.9bd00789cbd441f3fb32bdddaca31e65?rik=1zoZcFj7q5LHig&pid=ImgRaw&r=0" alt="" />
-                                </div>
-                                <div class="product__rate--img-video">
-                                    <img src="https://i.etsystatic.com/28005916/r/il/21f7d3/3282311401/il_1588xN.3282311401_ehwy.jpg" alt="" />
-                                </div>
-                                <div class="product__rate--img-video">
-                                    <img src="https://th.bing.com/th/id/R.9bd00789cbd441f3fb32bdddaca31e65?rik=1zoZcFj7q5LHig&pid=ImgRaw&r=0" alt="" />
-                                </div>
-                            </div>
-                            <div id="product-rate-cmt-like_report">
-                                <div id="product-rate-cmt-like">
-                                    <ion-icon name="thumbs-up-sharp"></ion-icon>
-                                    <span>1</span>
-                                </div>
-                                <div id="product-rate-cmt-report">
-                                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-rate-comment-section">
-                        <div id="product-rate-comment-avat">
-                            <a href="http://" target="_blank" rel="noopener noreferrer">
-                                <img src="https://cdn.britannica.com/33/233233-050-BD461F52/miniature-pinscher-dog.jpg" alt="" srcset="" />
-                            </a>
-                        </div>
-                        <div id="product-rate-comment-detail">
-                            <a href="http://" target="_blank" rel="noopener noreferrer">duypham189</a>
-                            <div id="product-rate-comment_rate-star">
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                            </div>
-                            <div id="product-rate-cmt-date">24/9/2002 | Phân loại hàng: K880---đen và trắng</div>
-                            <div id="product-rate-cmt-typeOfProduct">
-                                <div><span class="product-rate-cmt-productType">Chất liệu:</span> <span class="product-rate-cmt-productType-aws">n</span></div>
-                                <div><span class="product-rate-cmt-productType">Màu sắc: </span> <span class="product-rate-cmt-productType-aws">trắng</span></div>
-                                <div><span class="product-rate-cmt-productType">Đúng với mô tả:</span> <span class="product-rate-cmt-productType-aws">đúng</span></div>
-                            </div>
-                            <div id="product-rate-cmt-customer-aws">Xl vì mình hơi lười chụp ảnh nhưng áo đẹp lắm mn nha vải mềm mịn trắng tinh ko bị dính dơ đc tặng kẹo nữa rất ưng lun</div>
-                            <div id="product-rate-cmt-customer-img_vid">
-                                <div class="product__rate--img-video">
-                                    <img src="https://i.etsystatic.com/28005916/r/il/21f7d3/3282311401/il_1588xN.3282311401_ehwy.jpg" alt="" />
-                                </div>
-                                <div class="product__rate--img-video">
-                                    <img src="https://i.etsystatic.com/28005916/r/il/21f7d3/3282311401/il_1588xN.3282311401_ehwy.jpg" alt="" />
-                                </div>
-                                <div class="product__rate--img-video">
-                                    <img src="https://i.etsystatic.com/28005916/r/il/21f7d3/3282311401/il_1588xN.3282311401_ehwy.jpg" alt="" />
-                                </div>
-                                <div class="product__rate--img-video">
-                                    <img src="https://th.bing.com/th/id/R.9bd00789cbd441f3fb32bdddaca31e65?rik=1zoZcFj7q5LHig&pid=ImgRaw&r=0" alt="" />
-                                </div>
-                                <div class="product__rate--img-video">
-                                    <img src="https://i.etsystatic.com/28005916/r/il/21f7d3/3282311401/il_1588xN.3282311401_ehwy.jpg" alt="" />
-                                </div>
-                                <div class="product__rate--img-video">
-                                    <img src="https://th.bing.com/th/id/R.9bd00789cbd441f3fb32bdddaca31e65?rik=1zoZcFj7q5LHig&pid=ImgRaw&r=0" alt="" />
-                                </div>
-                            </div>
-                            <div id="product-rate-cmt-like_report">
-                                <div id="product-rate-cmt-like">
-                                    <ion-icon name="thumbs-up-sharp"></ion-icon>
-                                    <span>1</span>
-                                </div>
-                                <div id="product-rate-cmt-report">
-                                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -21,8 +21,8 @@ class PurchaseController extends Controller
     {
         $get_user = DB::select(
             "SELECT *
-             FROM users
-             WHERE code = '$request->user_code'
+            FROM users
+            WHERE code = '$request->user_code'
             "
         )[0];
         $get_bill_pdt = DB::select(
@@ -161,8 +161,8 @@ class PurchaseController extends Controller
         if ($id == Auth::user()->code) {
             $get_user = DB::select(
                 "SELECT *
-                 FROM users
-                 WHERE code = '$id'
+                FROM users
+                WHERE code = '$id'
                 "
             )[0];
 
@@ -203,7 +203,6 @@ class PurchaseController extends Controller
                     AND bp.status = '$request->status'
                     "
                 );
-
                 // return $get_bill_pdt;
                 return view('_purchase.purchase_process', [
                     'get_user' => $get_user,
