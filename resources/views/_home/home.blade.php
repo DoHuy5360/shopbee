@@ -6,6 +6,8 @@
 @endsection
 @section('js')
     <script src="{{ asset('assets/js/home/home.js') }}"></script>
+    <script src="{{ asset('assets/js/footer/footer.js') }}"></script>
+    <script src="{{ asset('assets/js/header/header.js') }}"></script>
 @endsection
 @section('content')
     <div id="seller-frame-cover-fixed">
@@ -192,13 +194,13 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="mainHome-carousel-bot carousel-item active">
-                                        <img class="d-block w-100" src="http://surl.li/dafnp" alt="First slide" loading="lazy"/>
+                                        <img class="d-block w-100" src="http://surl.li/dafnp" alt="First slide" loading="lazy" />
                                     </div>
                                     <div class="mainHome-carousel-bot carousel-item">
-                                        <img class="d-block w-100" src="http://surl.li/dafnq" alt="Second slide" loading="lazy"/>
+                                        <img class="d-block w-100" src="http://surl.li/dafnq" alt="Second slide" loading="lazy" />
                                     </div>
                                     <div class="mainHome-carousel-bot carousel-item">
-                                        <img class="d-block w-100" src="http://surl.li/dafnr" alt="Third slide" loading="lazy"/>
+                                        <img class="d-block w-100" src="http://surl.li/dafnr" alt="Third slide" loading="lazy" />
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

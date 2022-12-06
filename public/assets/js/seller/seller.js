@@ -1,3 +1,5 @@
+import { chart__index, starScript } from "../monitor/monitor.js";
+
 const menuList = document.querySelectorAll(".sidebar__menu--title");
 menuList.forEach((menu) => {
     menu.addEventListener("click", (e) => {
@@ -61,49 +63,38 @@ class REDIRECT {
             }, 1000);
         }
     }
-    callAjax(_type, _url, _success, _complete) {
+}
+$(document).ready(function () {
+    const rdrt_monitor = new REDIRECT("#seller-navbar-current-title");
+    rdrt_monitor.addEventClick((this_obj) => {
+        this_obj.displayLoading(true);
+        this_obj.setNewState("/seller/monitor");
         $.ajax({
-            type: _type,
-            dataType: "json",
-            url: _url,
+            type: "GET",
+            url: "/monitor",
             success: function (response) {
-                _success(response);
+                $("#seller-contentTable-tranfer").html(response);
             },
             complete: function () {
-                _complete();
+                chart__index.destroy();
+                starScript();
+                this_obj.displayLoading(false);
             },
         });
-    }
-}
-const rdrt__pdt_manage = new REDIRECT("#seller-all-product-btn");
-rdrt__pdt_manage.addEventClick((this_obj) => {
-    this_obj.displayLoading(true);
-    this_obj.setNewState("/seller/manage_product");
-    this_obj.callAjax(
-        "GET",
-        "/manage_product",
-        (response) => {
-            $("#seller-contentTable-tranfer").html(response);
-        },
-        () => {
-            this_obj.displayLoading(false);
-        }
-    );
-});
-
-const rdrt_monitor = new REDIRECT("#seller-navbar-current-title");
-rdrt_monitor.addEventClick((this_obj) => {
-    this_obj.setRedrtBar("#seller-current-page");
-    this_obj.displayLoading(true);
-    this_obj.setNewState("/seller/monitor");
-    this_obj.callAjax(
-        "GET",
-        "/monitor",
-        (response) => {
-            $("#seller-contentTable-tranfer").html(response);
-        },
-        () => {
-            this_obj.displayLoading(false);
-        }
-    );
+    });
+    const rdrt__pdt_manage = new REDIRECT("#seller-all-product-btn");
+    rdrt__pdt_manage.addEventClick((this_obj) => {
+        this_obj.displayLoading(true);
+        this_obj.setNewState("/seller/manage_product");
+        $.ajax({
+            type: "GET",
+            url: "/manage_product",
+            success: function (response) {
+                $("#seller-contentTable-tranfer").html(response);
+            },
+            complete: function () {
+                this_obj.displayLoading(false);
+            },
+        });
+    });
 });

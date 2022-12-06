@@ -93,7 +93,7 @@
                 <a class="see-all-content" href="">Xem tất cả ></a>
             </div>
             <div id="chart-analyst">
-                <canvas id="myChart" style="max-width: 500px; height: 100px"></canvas>
+                <canvas id="myChart" style="max-width: 500px"></canvas>
                 <div id="chart-component">
                     <div class="chart-component-item">
                         <p class="component-title"><span>Lượt truy cập</span>
@@ -260,4 +260,4 @@
         </div>
     </div>
 </div>
-<script type="module" defer src="{{ asset('assets/js/monior/monitor.js') }}"></script>
+{{-- <script type="module" src="{{ asset('assets/js/monitor/monitor.js') }}"></script> --}}

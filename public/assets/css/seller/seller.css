@@ -1,5 +1,5 @@
 body {
-    overflow-y: hidden;
+    overflow-y: hidden !important;
 }
 #seller-navbar {
     width: 100%;
@@ -578,7 +578,7 @@ body {
     max-width: 1105px;
     max-height: 100vh;
     margin: auto;
-    padding-top: 20px;
+    padding: 20px 0 70px 0;
     overflow-x: hidden;
     overflow-y: scroll;
 }
