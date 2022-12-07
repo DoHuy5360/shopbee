@@ -29,5 +29,6 @@ class Product extends Model
         "sku_code",
         "classificationone",
         "classificationtwo",
+        "hidden",
     ];
 }

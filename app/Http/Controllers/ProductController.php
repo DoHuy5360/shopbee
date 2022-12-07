@@ -72,6 +72,7 @@ class ProductController extends Controller
             "sku_code" => $request->product_sku_code,
             "classificationone" => $request->classification1_title,
             "classificationtwo" => $request->classification2_title,
+            "hidden"=> $request->hidden,
         ]);
         $addProduct->save();
 
