@@ -250,7 +250,9 @@ body {
     bottom: -15px;
     right: 0;
     font-size: 14px;
-    color: #b7b7be;
+}
+#seller-product-detail-desc-length{
+    color: #999999;
 }
 #sellerProduct-product-name-countLenght {
     border-left: 1px solid #dbdbdb;

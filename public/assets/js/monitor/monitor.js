@@ -23,7 +23,7 @@ export function starScript() {
             labels: xValues,
             datasets: [
                 {
-                    label: "Lượt truy cập",
+                    label: "Access View",
                     fill: false,
                     lineTension: 0,
                     backgroundColor: "#ee4d2d",
@@ -31,7 +31,7 @@ export function starScript() {
                     data: yValues1,
                 },
                 {
-                    label: "Lượt xem",
+                    label: "View Count",
                     fill: false,
                     lineTension: 0,
                     backgroundColor: "#191a21",
@@ -39,7 +39,7 @@ export function starScript() {
                     data: yValues2,
                 },
                 {
-                    label: "Đơn hàng",
+                    label: "Order",
                     fill: false,
                     lineTension: 0,
                     backgroundColor: "#ffd02e",

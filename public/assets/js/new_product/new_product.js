@@ -12,6 +12,15 @@ class Category {
             "typeProduct__next--transform"
         );
         this.tray_wrap = document.getElementById("typeProduct-columns-wrap");
+        this.obj__recrd_valid = {};
+    }
+    isValid() {
+        for (let i in this.obj__recrd_valid) {
+            if (!this.obj__recrd_valid[i]) {
+                return false;
+            }
+        }
+        return true;
     }
     //todo: Đệ quy để gắn sự kiện nhấp chuột cho các category
     displayCategories(_where) {
@@ -42,6 +51,12 @@ class Category {
                 this.showLeftAndfRight(category);
                 const recursive = new Category(category.childrend);
                 recursive.displayCategories(category.level + 1);
+                if (!category.childrend.length) {
+                    this.obj__recrd_valid.end_selected = true;
+                } else {
+                    this.obj__recrd_valid.end_selected = false;
+                }
+                bool__ctgry_valid = this.isValid();
             });
             wrap_categories.appendChild(category_node);
             display_node.append(wrap_categories);
@@ -104,7 +119,7 @@ class Category {
         }
     }
 }
-
+let bool__ctgry_valid = false;
 const first_display = new Category(CATEGORIES);
 first_display.displayCategories(1);
 
@@ -127,7 +142,13 @@ node__acpt_btn.addEventListener("click", (e) => {
     );
     hidden_tranfer.value = category_string;
     node__acpt_btn.form.prepend(hidden_tranfer);
-    if (valid__pdt_name.isValid()) {
+    const arr__check_valid = [
+        valid__pdt_name.isValid(),
+        bool__ctgry_valid,
+    ].every((_bool) => {
+        return _bool;
+    });
+    if (arr__check_valid) {
         node__acpt_btn.form.submit();
     }
 });
@@ -142,6 +163,12 @@ valid__pdt_name.addEventInput((this_obj) => {
 });
 valid__pdt_name.addEventKeyPress((this_obj) => {
     this_obj.preventKeyPress("special");
+});
+valid__pdt_name.addEventChange((this_obj) => {
+    this_obj.removeWhitespaceStartEnd();
+    this_obj.removeDuplicateWhitespace();
+    this_obj.changeValueByLength("#seller-product-input-numb");
+    this_obj.checkLengthMinMax(10, 120);
 });
 
 function crtEleClass(_name, _attrs, _txt) {

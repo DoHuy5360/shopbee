@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BuyerpageController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ManageProductController;
 use App\Http\Controllers\MonitorController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -24,32 +25,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/', BuyerpageController::class);
-
-Route::get('/manage_product', function () {
-    $user_id = Auth::user()->code;
-    $get_pdt = DB::select(
-        "SELECT *,  p.code AS product_code
-        FROM products p, product_images pi
-        WHERE p.user_code = '$user_id'
-        AND p.code = pi.product_code
-        AND pi.index = '0'
-        "
-    );
-    $amont_pdt = sizeof($get_pdt);
-    return view('_manage_product.manage_product', [
-        'get_pdt' => $get_pdt,
-        'amont_pdt'=>$amont_pdt,
-    ]);
-});
-
-
-Route::resource('/monitor', MonitorController::class);
-Route::resource('/seller', SellerController::class);
-Route::resource('/purchase', PurchaseController::class);
-Route::resource('/product', ProductController::class);
-Route::resource('/profile', ProfileController::class);
-Route::resource('/cart', CartController::class);
-Route::resource('/user', UserController::class);
+Route::resource('/manage_product', ManageProductController::class)->middleware(['auth']);
+Route::resource('/monitor', MonitorController::class)->middleware(['auth']);
+Route::resource('/seller', SellerController::class)->middleware(['auth']);
+Route::resource('/purchase', PurchaseController::class)->middleware(['auth']);
+Route::resource('/product', ProductController::class)->middleware(['auth']);
+Route::resource('/profile', ProfileController::class)->middleware(['auth']);
+Route::resource('/cart', CartController::class)->middleware(['auth']);
+Route::resource('/user', UserController::class)->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return date('D - d/m/Y - H:i:s - A');

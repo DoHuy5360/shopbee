@@ -41,12 +41,19 @@ export class NodeValidation extends Primitive {
 export class InputValidation extends NodeValidation {
     constructor(_target_name) {
         super(_target_name);
-        this.str__val_leng = [...this.node__target.value].length;
+        this.str__val_leng = [...this.node__target.value.trim()].length;
         this.event__key_click;
     }
     addEventInput(_callback, _debug = false) {
         this.node__target.addEventListener("input", (e) => {
-            this.str__val_leng = [...this.node__target.value].length;
+            _callback(this);
+            if (_debug) {
+                console.log(this.obj__rcd_vld);
+            }
+        });
+    }
+    addEventChange(_callback, _debug = false) {
+        this.node__target.addEventListener("change", (e) => {
             _callback(this);
             if (_debug) {
                 console.log(this.obj__rcd_vld);
@@ -67,10 +74,10 @@ export class InputValidation extends NodeValidation {
         node__change.innerHTML = this.str__val_leng;
     }
     checkNotEmpty() {
-        if ([...this.node__target.value].length === 0) {
-            this.obj__rcd_vld.not_empty = false;
-        } else {
+        if (this.node__target.value.trim()) {
             this.obj__rcd_vld.not_empty = true;
+        } else {
+            this.obj__rcd_vld.not_empty = false;
         }
     }
     checkLengthMinMax(_min, _max) {
@@ -115,7 +122,7 @@ export class InputValidation extends NodeValidation {
             }
         });
     }
-    checkRegexContainOnly(_str_require) {
+    checkContainOnly(_str_require) {
         let str__regex;
         switch (_str_require) {
             case "number":
@@ -143,8 +150,26 @@ export class InputValidation extends NodeValidation {
                 }
                 return;
             default:
+                if (_str__require == this.event__key_click.key) {
+                    this.event__key_click.preventDefault();
+                }
                 return;
         }
+    }
+    updateValueLength() {
+        this.str__val_leng = [...this.node__target.value.trim()].length;
+    }
+    removeWhitespace() {
+        this.node__target.value = this.node__target.value.replace(/\s+/g, "");
+    }
+    removeWhitespaceStartEnd() {
+        this.node__target.value = this.node__target.value.trim();
+    }
+    removeDuplicateWhitespace() {
+        this.node__target.value = this.node__target.value.replace(
+            /\s\s+/g,
+            " "
+        );
     }
 }
 export class MediaValidation {
@@ -174,8 +199,8 @@ export class MediaValidation {
             this.obj__rcd_vld.min_max_leng = false;
         }
     }
-    checkFileExtension(_arr_type){
-        if (_arr_type.includes(this.str__file_extension)){
+    checkFileExtension(_arr_type) {
+        if (_arr_type.includes(this.str__file_extension)) {
             this.obj__rcd_vld.valid_extension = true;
         } else {
             this.obj__rcd_vld.valid_extension = false;
