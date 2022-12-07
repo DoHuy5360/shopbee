@@ -43,13 +43,13 @@ Route::get('/manage_product', function () {
 });
 
 
-Route::resource('/monitor', MonitorController::class);
-Route::resource('/seller', SellerController::class);
-Route::resource('/purchase', PurchaseController::class);
-Route::resource('/product', ProductController::class);
-Route::resource('/profile', ProfileController::class);
-Route::resource('/cart', CartController::class);
-Route::resource('/user', UserController::class);
+Route::resource('/monitor', MonitorController::class)->middleware(['auth']);
+Route::resource('/seller', SellerController::class)->middleware(['auth']);
+Route::resource('/purchase', PurchaseController::class)->middleware(['auth']);
+Route::resource('/product', ProductController::class)->middleware(['auth']);
+Route::resource('/profile', ProfileController::class)->middleware(['auth']);
+Route::resource('/cart', CartController::class)->middleware(['auth']);
+Route::resource('/user', UserController::class)->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return date('D - d/m/Y - H:i:s - A');
