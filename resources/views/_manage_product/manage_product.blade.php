@@ -128,9 +128,9 @@
                             <div class="seller__allProduct--card-info">
                                 <img class="seller__allProduct--card-image" src="{{ asset($item->path) }}" alt="" />
                                 <div class="seller__allProduct-card-name-wrap">
-                                    <div class="seller__allProduct--card-status">Đã ẩn</div>
+                                    <div class="seller__allProduct--card-status">{{ ($item->hidden)? 'Hidden': 'Visible' }}</div>
                                     <div class="seller__allProduct--name">
-                                        <a href="{{ route('product.show', $item->product_code) }}" target="_blank">{{ $item->name }}</a>
+                                        <a href="{{ route('product.show', $item->product_code) }}" target="_blank">{{ $item->product_name }}</a>
                                     </div>
                                     <div class="seller__allProduct--card-sku">SKU sản phẩm: <span>{{ $item->sku_code }}</span></div>
                                     <div class="seller__allProduct--interactive-wrap">

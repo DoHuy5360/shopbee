@@ -17,13 +17,21 @@ class ManageProductController extends Controller
     {
         $user_id = Auth::user()->code;
         $get_pdt = DB::select(
-            "SELECT *,  p.code AS product_code
+            "SELECT p.code AS product_code,
+                    p.name AS product_name,
+                    path,
+                    hidden,
+                    sku_code,
+                    price,
+                    storage,
+                    sold
             FROM products p, product_images pi
             WHERE p.user_code = '$user_id'
             AND p.code = pi.product_code
             AND pi.index = '0'
             "
         );
+        return $get_pdt;
         $amont_pdt = sizeof($get_pdt);
         return view('_manage_product.manage_product', [
             'get_pdt' => $get_pdt,
