@@ -125,12 +125,12 @@
                     @foreach ($get_pdt as $item)
                         <div class="seller__allProduct--card seller__allProduct--table-grid">
                             <div class="seller__allProduct--card-checkbox-wrap">
-                                <input class="seller__allProduct--card-checkbox" type="checkbox" name="" id="" data-product-code="{{ $item->product_code }}" />
+                                <input class="seller__allProduct--card-checkbox" type="checkbox" name="" data-product-code="{{ $item->product_code }}" title="Click to check this product"/>
                             </div>
                             <div class="seller__allProduct--card-info">
                                 <img class="seller__allProduct--card-image" src="{{ asset($item->path) }}" alt="" />
                                 <div class="seller__allProduct-card-name-wrap">
-                                    <div class="seller__allProduct--card-status">{{ $item->hidden ? 'Hidden' : 'Visible' }}</div>
+                                    <div class="seller__allProduct--card-status" data-product-visibily-code="{{ $item->product_code }}">{{ $item->hidden ? 'Hidden' : 'Visible' }}</div>
                                     <div class="seller__allProduct--name">
                                         <a href="{{ route('product.show', $item->product_code) }}" target="_blank">{{ $item->product_name }}</a>
                                     </div>
@@ -180,6 +180,7 @@
                 <div id="seller-allProduct-delete-right-part">
                     <div><span id="manage__product--amount-card-delete"></span> products selected</div>
                     <button id="seller-allProduct-card-delete-btn" type="button">Delete</button>
+                    <button id="seller-allProduct-card-hidden-btn" type="button">Make hidden</button>
                     <button id="seller-allProduct-card-display-btn" type="button">Make visible</button>
                 </div>
             </div>

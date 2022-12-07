@@ -319,6 +319,8 @@
     font-size: 13px;
 }
 .seller__allProduct--card-image {
+    min-width: 60px;
+    min-height: 60px;
     width: 60px;
     height: 60px;
     object-fit: cover;
@@ -380,6 +382,7 @@
     gap: 15px;
 }
 
+#seller-allProduct-card-hidden-btn,
 #seller-allProduct-card-delete-btn,
 #seller-allProduct-card-display-btn {
     all: unset;
@@ -400,6 +403,10 @@
     background-color: #f5f5f5;
 }
 #seller-allProduct-card-display-btn {
+    background-color: var(--color-2);
+    color: black;
+}
+#seller-allProduct-card-hidden-btn{
     background-color: var(--color-4);
     color: white;
 }
