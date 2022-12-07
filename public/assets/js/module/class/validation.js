@@ -46,7 +46,15 @@ export class InputValidation extends NodeValidation {
     }
     addEventInput(_callback, _debug = false) {
         this.node__target.addEventListener("input", (e) => {
-            this.str__val_leng = [...this.node__target.value].length;
+            this.str__val_leng = [...this.node__target.value.trim()].length;
+            _callback(this);
+            if (_debug) {
+                console.log(this.obj__rcd_vld);
+            }
+        });
+    }
+    addEventChange(_callback, _debug = false) {
+        this.node__target.addEventListener("change", (e) => {
             _callback(this);
             if (_debug) {
                 console.log(this.obj__rcd_vld);
@@ -67,10 +75,10 @@ export class InputValidation extends NodeValidation {
         node__change.innerHTML = this.str__val_leng;
     }
     checkNotEmpty() {
-        if ([...this.node__target.value].length === 0) {
-            this.obj__rcd_vld.not_empty = false;
-        } else {
+        if (this.node__target.value.trim()) {
             this.obj__rcd_vld.not_empty = true;
+        } else {
+            this.obj__rcd_vld.not_empty = false;
         }
     }
     checkLengthMinMax(_min, _max) {
@@ -146,6 +154,14 @@ export class InputValidation extends NodeValidation {
                 return;
         }
     }
+    removeWhitespaceStartEnd() {
+        this.node__target.value = this.node__target.value.trim();
+        this.str__val_leng = [...this.node__target.value].length
+    }
+    removeDuplicateWhitespace() {
+        this.node__target.value = this.node__target.value.replace(/\s\s+/g, ' ');
+        this.str__val_leng = [...this.node__target.value].length
+    }
 }
 export class MediaValidation {
     constructor(_file_object) {
@@ -174,8 +190,8 @@ export class MediaValidation {
             this.obj__rcd_vld.min_max_leng = false;
         }
     }
-    checkFileExtension(_arr_type){
-        if (_arr_type.includes(this.str__file_extension)){
+    checkFileExtension(_arr_type) {
+        if (_arr_type.includes(this.str__file_extension)) {
             this.obj__rcd_vld.valid_extension = true;
         } else {
             this.obj__rcd_vld.valid_extension = false;
