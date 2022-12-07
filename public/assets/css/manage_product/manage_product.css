@@ -384,7 +384,8 @@
 #seller-allProduct-card-display-btn {
     all: unset;
     border-radius: 3px;
-    width: 70px;
+    width: fit-content;
+    padding: 0 10px;
     height: 30px;
     text-align: center;
     cursor: pointer;

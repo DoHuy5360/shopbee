@@ -31,7 +31,7 @@ class ManageProductController extends Controller
             AND pi.index = '0'
             "
         );
-        return $get_pdt;
+        // return $get_pdt;
         $amont_pdt = sizeof($get_pdt);
         return view('_manage_product.manage_product', [
             'get_pdt' => $get_pdt,
