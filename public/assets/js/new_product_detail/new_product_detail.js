@@ -391,7 +391,7 @@ node__classify_btn.addEventListener("click", (e) => {
         ths_obj.updateValueLength();
         ths_obj.checkLengthMinMax(1, 20);
     });
-    setValidationForClasifyVal(".sellerProduct__classification--ver-1")
+    setValidationForClasifyVal(".sellerProduct__classification--ver-1");
 });
 
 const node__classify_btn2 = getById(
@@ -427,7 +427,7 @@ node__classify_btn2.addEventListener("click", (e) => {
         ths_obj.updateValueLength();
         ths_obj.checkLengthMinMax(1, 20);
     });
-    setValidationForClasifyVal(".sellerProduct__classification--ver-2")
+    setValidationForClasifyVal(".sellerProduct__classification--ver-2");
 });
 const node__classify_table_display = getById(
     "seller-product-classification-table-display"
@@ -557,7 +557,8 @@ node__classify_btns_add.forEach((btn, indx) => {
         );
         if (node__classify_inps[node__classify_inps.length - 1].value.trim()) {
             const node__cls_inp_wrp = crteClassifyInp(indx + 1);
-            const str__cls_id = node__cls_inp_wrp.firstElementChild.getAttribute("id");
+            const str__cls_id =
+                node__cls_inp_wrp.firstElementChild.getAttribute("id");
             node__classify_input_wrap.appendChild(node__cls_inp_wrp);
             checkNotEmptyClsVal(indx + 1, str__cls_id);
             displayClassifyRow();
@@ -649,11 +650,22 @@ function createHiddenInput(_node_input, _arg) {
     });
     _node_input.value = array__value;
 }
-const node__submit_button = getById("sellerProduct-finishStep-save-display");
-const node__form_submit = getById("seller_product_detail-wrapper-detail");
-node__submit_button.addEventListener("click", (e) => {
+const node__pdt_hden_inp = document.getElementById("sellerProduct-pdt-hidden");
+const node__sbmit_save_hden = getById("sellerProduct-finishStep-save-hidden");
+node__sbmit_save_hden.addEventListener("click", (e) => {
     e.preventDefault();
+    node__pdt_hden_inp.value = true;
+    lastCheckBeforeSumit();
+});
+const node__sbmit_save_dsply = getById("sellerProduct-finishStep-save-display");
+const node__form_submit = getById("seller_product_detail-wrapper-detail");
+node__sbmit_save_dsply.addEventListener("click", (e) => {
+    e.preventDefault();
+    node__pdt_hden_inp.value = false;
+    lastCheckBeforeSumit();
+});
 
+function lastCheckBeforeSumit() {
     const obj__total_validation = [
         valid__pdt_name.isValid(),
         valid__pdt_desc.isValid(),
@@ -710,7 +722,7 @@ node__submit_button.addEventListener("click", (e) => {
     } else {
         console.log(obj__total_validation);
     }
-});
+}
 
 function queryAll(_name) {
     return document.querySelectorAll(_name);

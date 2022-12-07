@@ -35,7 +35,7 @@ class ManageProductController extends Controller
         $amont_pdt = sizeof($get_pdt);
         return view('_manage_product.manage_product', [
             'get_pdt' => $get_pdt,
-            'amont_pdt'=>$amont_pdt,
+            'amont_pdt' => $amont_pdt,
         ]);
     }
 
@@ -91,7 +91,22 @@ class ManageProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // return 1;
+        $is_updt_vis = DB::update(
+            "UPDATE products
+            SET hidden = $request->hidden
+            WHERE code = '$id'
+            "
+        );
+        if ($is_updt_vis) {
+            return response()->json([
+                'status' => true
+            ]);
+        } else {
+            return response()->json([
+                'status' => true
+            ]);
+        }
     }
 
     /**

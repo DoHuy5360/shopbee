@@ -156,19 +156,21 @@ node__acpt_btn.addEventListener("click", (e) => {
 // todo: Kiểm tra hợp lệ
 const valid__pdt_name = new InputValidation("#seller-product-name-input-field");
 valid__pdt_name.checkNotEmpty();
-valid__pdt_name.addEventInput((this_obj) => {
-    this_obj.changeValueByLength("#seller-product-input-numb");
-    this_obj.checkLengthMinMax(10, 120);
-    this_obj.checkNotEmpty();
+valid__pdt_name.addEventInput((ths_obj) => {
+    ths_obj.updateValueLength()
+    ths_obj.changeValueByLength("#seller-product-input-numb");
+    ths_obj.checkLengthMinMax(10, 120);
+    ths_obj.checkNotEmpty();
 });
-valid__pdt_name.addEventKeyPress((this_obj) => {
-    this_obj.preventKeyPress("special");
+valid__pdt_name.addEventKeyPress((ths_obj) => {
+    ths_obj.preventKeyPress("special");
 });
-valid__pdt_name.addEventChange((this_obj) => {
-    this_obj.removeWhitespaceStartEnd();
-    this_obj.removeDuplicateWhitespace();
-    this_obj.changeValueByLength("#seller-product-input-numb");
-    this_obj.checkLengthMinMax(10, 120);
+valid__pdt_name.addEventChange((ths_obj) => {
+    ths_obj.removeWhitespaceStartEnd();
+    ths_obj.removeDuplicateWhitespace();
+    ths_obj.updateValueLength()
+    ths_obj.changeValueByLength("#seller-product-input-numb");
+    ths_obj.checkLengthMinMax(10, 120);
 });
 
 function crtEleClass(_name, _attrs, _txt) {

@@ -1,6 +1,7 @@
 import { SWITCHTAB } from "../module/class/switch_tab.js";
 import { PrimitiveInteractive } from "../module/primitive/data.js";
 
+const node__chart = document.getElementById("myChart")
 export let chart__index
 export function starScript() {
     const pri__obj = new PrimitiveInteractive();
@@ -73,9 +74,6 @@ export function starScript() {
     manage_activity.setArrow();
     manage_activity.setTransformLeftRight();
 }
-starScript();
-// $("#seller-navbar-current-title").click(function (e) {
-//     e.preventDefault();
-//     chart__index.destroy()
-//     starScript();
-// });
+if(node__chart){
+    starScript();
+}
