@@ -18,7 +18,7 @@
         <div id="seller-navbar-icon">
             <div id="seller-icon"><img src="{{ asset('assets/img/shopbee.png') }}" alt="" /></div>
             <div id="seller-current-page">
-                <div id="seller-navbar-current-title">Kênh Người Bán</div>
+                <div id="seller-navbar-current-title">Seller Page</div>
             </div>
         </div>
         <div id="seller-navbar-content">
@@ -44,164 +44,164 @@
                             <div class="sidebar__menu--title">
                                 <div class="seller__name--title">
                                     <ion-icon class="seller_sidebarIcon" name="rocket-outline"></ion-icon>
-                                    <span>Vận chuyển</span>
+                                    <span>Deliver</span>
                                 </div>
                                 <span class="seller__arrow--sidebar">
                                     <ion-icon name="chevron-up-outline"></ion-icon>
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li class="sidebar-subMenu">Quản Lý Vận Chuyển</li>
-                                <li class="sidebar-subMenu">Giao Hàng Loạt</li>
-                                <li class="sidebar-subMenu">Cài Đặt Vận Chuyển</li>
+                                <li class="sidebar-subMenu">Deliver management</li>
+                                <li class="sidebar-subMenu">Mass delivery</li>
+                                <li class="sidebar-subMenu">Deliver setting</li>
                             </ul>
                         </li>
                         <li id="seller-sidebar-sellManage" class="sidebarList">
                             <div class="sidebar__menu--title">
                                 <div class="seller__name--title">
                                     <ion-icon class="seller_sidebarIcon" name="file-tray-stacked-outline"></ion-icon>
-                                    <span>Quản Lý Đơn Hàng</span>
+                                    <span>Order Management</span>
                                 </div>
                                 <span class="seller__arrow--sidebar">
                                     <ion-icon name="chevron-up-outline"></ion-icon>
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li class="sidebar-subMenu">Tất cả</li>
-                                <li class="sidebar-subMenu">Đơn huỷ</li>
-                                <li class="sidebar-subMenu">Trả Hàng/Hoàn Tiền</li>
+                                <li class="sidebar-subMenu">All</li>
+                                <li class="sidebar-subMenu">Cancellation Order</li>
+                                <li class="sidebar-subMenu">Cancel/Refund</li>
                             </ul>
                         </li>
                         <li id="seller-sidebar-productManage" class="sidebarList">
                             <div class="sidebar__menu--title">
                                 <div class="seller__name--title">
                                     <ion-icon class="seller_sidebarIcon" name="cube-outline"></ion-icon>
-                                    <span>Quản Lý Sản Phẩm</span>
+                                    <span>Product Management</span>
                                 </div>
                                 <span class="seller__arrow--sidebar">
                                     <ion-icon name="chevron-up-outline"></ion-icon>
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li id="seller-all-product-btn" class="sidebar-subMenu">Tất Cả Sản Phẩm</li>
+                                <li id="seller-all-product-btn" class="sidebar-subMenu">All Products</li>
                                 <li id="seller-new-product-btn" class="sidebar-subMenu">
-                                    <a href="{{ route('product.index') }}" target="_blank">Thêm Sản Phẩm</a>
+                                    <a href="{{ route('product.index') }}" target="_blank">Add New Products</a>
                                 </li>
-                                <li class="sidebar-subMenu">Sản Phẩm Vi Phạm</li>
+                                <li class="sidebar-subMenu">Product Violation</li>
                             </ul>
                         </li>
                         <li id="seller-sidebar-marketing" class="sidebarList">
                             <div class="sidebar__menu--title">
                                 <div class="seller__name--title">
                                     <ion-icon class="seller_sidebarIcon" name="flag-outline"></ion-icon>
-                                    <span>Kênh Marketing</span>
+                                    <span>Marketing Channel</span>
                                 </div>
                                 <span class="seller__arrow--sidebar">
                                     <ion-icon name="chevron-up-outline"></ion-icon>
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li class="sidebar-subMenu">Kênh Marketing</li>
-                                <li class="sidebar-subMenu">Quảng Cáo Shopee</li>
-                                <li class="sidebar-subMenu">Mã giảm giá của tôi</li>
+                                <li class="sidebar-subMenu">Marketing Channel</li>
+                                <li class="sidebar-subMenu">Shopee Advertisement</li>
+                                <li class="sidebar-subMenu">My Discount Code</li>
                             </ul>
                         </li>
                         <li id="seller-sidebar-finance" class="sidebarList">
                             <div class="sidebar__menu--title">
                                 <div class="seller__name--title">
                                     <ion-icon class="seller_sidebarIcon" name="cash-outline"></ion-icon>
-                                    <span>Tài Chính</span>
+                                    <span>Finance</span>
                                 </div>
                                 <span class="seller__arrow--sidebar">
                                     <ion-icon name="chevron-up-outline"></ion-icon>
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li class="sidebar-subMenu">Doanh Thu</li>
-                                <li class="sidebar-subMenu">Số dư TK Shopee</li>
-                                <li class="sidebar-subMenu">Tài Khoản Ngân Hàng</li>
-                                <li class="sidebar-subMenu">Thiết lập Thanh Toán</li>
+                                <li class="sidebar-subMenu">Turnover</li>
+                                <li class="sidebar-subMenu">Shopee Account Balance</li>
+                                <li class="sidebar-subMenu">Bank Account</li>
+                                <li class="sidebar-subMenu">Set up Payment</li>
                             </ul>
                         </li>
                         <li id="seller-sidebar-data" class="sidebarList">
                             <div class="sidebar__menu--title">
                                 <div class="seller__name--title">
                                     <ion-icon class="seller_sidebarIcon" name="bar-chart-outline"></ion-icon>
-                                    <span>Dữ Liệu</span>
+                                    <span>Data</span>
                                 </div>
                                 <span class="seller__arrow--sidebar">
                                     <ion-icon name="chevron-up-outline"></ion-icon>
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li class="sidebar-subMenu">Phân Tích Bán Hàng</li>
-                                <li class="sidebar-subMenu">Hiệu Quả Hoạt Động</li>
+                                <li class="sidebar-subMenu">Sales Analyzis</li>
+                                <li class="sidebar-subMenu">Operational Efficiency</li>
                             </ul>
                         </li>
                         <li id="seller-sidebar-development" class="sidebarList">
                             <div class="sidebar__menu--title">
                                 <div class="seller__name--title">
                                     <ion-icon class="seller_sidebarIcon" name="trending-up-outline"></ion-icon>
-                                    <span>Phát Triển</span>
+                                    <span>Development</span>
                                 </div>
                                 <span class="seller__arrow--sidebar">
                                     <ion-icon name="chevron-up-outline"></ion-icon>
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li class="sidebar-subMenu">Nhiệm Vụ Người Bán</li>
-                                <li class="sidebar-subMenu">Shop Yêu Thích</li>
+                                <li class="sidebar-subMenu">Seller Missions</li>
+                                <li class="sidebar-subMenu">Favorite Shop</li>
                             </ul>
                         </li>
                         <li id="seller-sidebar-clientCare" class="sidebarList">
                             <div class="sidebar__menu--title">
                                 <div class="seller__name--title">
                                     <ion-icon class="seller_sidebarIcon" name="people-outline"></ion-icon>
-                                    <span>Chăm Sóc Khách Hàng</span>
+                                    <span>Custom Care</span>
                                 </div>
                                 <span class="seller__arrow--sidebar">
                                     <ion-icon name="chevron-up-outline"></ion-icon>
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li class="sidebar-subMenu">Trợ lý chat</li>
-                                <li class="sidebar-subMenu">Hỏi - Đáp</li>
+                                <li class="sidebar-subMenu">Chat Assistant</li>
+                                <li class="sidebar-subMenu">Question & Answer</li>
                             </ul>
                         </li>
                         <li id="seller-sidebar-shopMange" class="sidebarList">
                             <div class="sidebar__menu--title">
                                 <div class="seller__name--title">
                                     <ion-icon class="seller_sidebarIcon" name="storefront-outline"></ion-icon>
-                                    <span>Quản Lý Shop</span>
+                                    <span>Shop Management</span>
                                 </div>
                                 <span class="seller__arrow--sidebar">
                                     <ion-icon name="chevron-up-outline"></ion-icon>
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li class="sidebar-subMenu">Đánh Giá Shop</li>
-                                <li class="sidebar-subMenu">Hồ Sơ Shop</li>
-                                <li class="sidebar-subMenu">Trang Trí Shop</li>
-                                <li class="sidebar-subMenu">Danh Mục Của Shop</li>
-                                <li class="sidebar-subMenu">Kho Hình Ảnh/Video</li>
-                                <li class="sidebar-subMenu">Báo Cáo Của Tôi</li>
+                                <li class="sidebar-subMenu">Shop Rate</li>
+                                <li class="sidebar-subMenu">Shop Profile</li>
+                                <li class="sidebar-subMenu">Shop Decoration</li>
+                                <li class="sidebar-subMenu">Shop Menu</li>
+                                <li class="sidebar-subMenu">Media</li>
+                                <li class="sidebar-subMenu">My Report</li>
                             </ul>
                         </li>
                         <li id="seller-sidebar-shopSetup" class="sidebarList">
                             <div class="sidebar__menu--title">
                                 <div class="seller__name--title">
                                     <ion-icon class="seller_sidebarIcon" name="library-outline"></ion-icon>
-                                    <span>Thiết Lập Shop</span>
+                                    <span>Shop Setup</span>
                                 </div>
                                 <span class="seller__arrow--sidebar">
                                     <ion-icon name="chevron-up-outline"></ion-icon>
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li class="sidebar-subMenu">Địa Chỉ</li>
-                                <li class="sidebar-subMenu">Thiết Lập Shop</li>
-                                <li class="sidebar-subMenu">Tài Khoản</li>
-                                <li class="sidebar-subMenu">Nền tảng đối tác (Kết nối API)</li>
+                                <li class="sidebar-subMenu">Address</li>
+                                <li class="sidebar-subMenu">Shop Setup</li>
+                                <li class="sidebar-subMenu">Account</li>
+                                <li class="sidebar-subMenu">API</li>
                             </ul>
                         </li>
                     </ul>

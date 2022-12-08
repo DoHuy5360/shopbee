@@ -85,4 +85,50 @@ $(document).ready(function () {
             },
         });
     });
+    $("#seller-allProduct-card-hidden-btn").click(function (e) {
+        e.preventDefault();
+        setVisibilyForPdt(true);
+    });
+    $("#seller-allProduct-card-display-btn").click(function (e) {
+        e.preventDefault();
+        setVisibilyForPdt(false);
+    });
+    function setVisibilyForPdt(_bool) {
+        array__card_checked.forEach((card) => {
+            const str__pdt_code = card.getAttribute("data-product-code");
+            $.ajax({
+                type: "POST",
+                url: `/manage_product/${str__pdt_code}`,
+                data: {
+                    _token: $("#seller-allProduct-csrf").val(),
+                    _method: "PUT",
+                    hidden: _bool,
+                },
+                success: function (response) {
+                    console.log(response);
+                },
+                complete: function () {
+                    const node__vis_stts = document.querySelector(
+                        `[data-product-visibily-code='${str__pdt_code}']`
+                    );
+                    node__vis_stts.innerText =
+                        node__vis_stts.innerText == "Hidden"
+                            ? "Visible"
+                            : "Hidden";
+                },
+            });
+        });
+    }
+    const node__dsply_hden_cls = document.querySelectorAll(".manage__product_view_more_classification")
+    node__dsply_hden_cls.forEach(_btn => {
+        _btn.addEventListener("click", e => {
+            _btn.classList.toggle('active')
+            const node__prnt_lv1 = _btn.parentNode
+            const node__hden_cls = node__prnt_lv1.querySelectorAll(".manage__product_wrap_by_classify")
+            const arr__hden_cls = [...node__hden_cls].slice(3, node__hden_cls.lenght)
+            arr__hden_cls.forEach(cls => {
+                cls.classList.toggle('active')
+            })
+        })
+    })
 });

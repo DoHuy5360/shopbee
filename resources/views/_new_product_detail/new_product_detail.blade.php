@@ -10,6 +10,7 @@
     <div id="seller_product_detail-wrapper">
         <form action="{{ route('product.store') }}" id="seller_product_detail-wrapper-detail" method="POST" enctype="multipart/form-data">
             @csrf
+            <input id="sellerProduct-pdt-hidden" type="hidden" name="hidden">
             <input id="sellerProduct-classification1-post-field" type="hidden" name="classification1_values">
             <input id="sellerProduct-classification2-post-field" type="hidden" name="classification2_values">
             <div id="seller_product_detail-basicInfor" class="seller_product_detail_inforWrapper">

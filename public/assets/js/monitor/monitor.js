@@ -1,6 +1,7 @@
 import { SWITCHTAB } from "../module/class/switch_tab.js";
 import { PrimitiveInteractive } from "../module/primitive/data.js";
 
+const node__chart = document.getElementById("myChart")
 export let chart__index
 export function starScript() {
     const pri__obj = new PrimitiveInteractive();
@@ -23,7 +24,7 @@ export function starScript() {
             labels: xValues,
             datasets: [
                 {
-                    label: "Lượt truy cập",
+                    label: "Access View",
                     fill: false,
                     lineTension: 0,
                     backgroundColor: "#ee4d2d",
@@ -31,7 +32,7 @@ export function starScript() {
                     data: yValues1,
                 },
                 {
-                    label: "Lượt xem",
+                    label: "View Count",
                     fill: false,
                     lineTension: 0,
                     backgroundColor: "#191a21",
@@ -39,7 +40,7 @@ export function starScript() {
                     data: yValues2,
                 },
                 {
-                    label: "Đơn hàng",
+                    label: "Order",
                     fill: false,
                     lineTension: 0,
                     backgroundColor: "#ffd02e",
@@ -73,9 +74,6 @@ export function starScript() {
     manage_activity.setArrow();
     manage_activity.setTransformLeftRight();
 }
-starScript();
-// $("#seller-navbar-current-title").click(function (e) {
-//     e.preventDefault();
-//     chart__index.destroy()
-//     starScript();
-// });
+if(node__chart){
+    starScript();
+}

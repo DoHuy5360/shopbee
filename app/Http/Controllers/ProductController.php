@@ -10,7 +10,6 @@ use App\Models\ProductVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use stdClass;
 
 require_once('functions/convert.php');
 require_once('functions/code_generate.php');
@@ -72,6 +71,7 @@ class ProductController extends Controller
             "sku_code" => $request->product_sku_code,
             "classificationone" => $request->classification1_title,
             "classificationtwo" => $request->classification2_title,
+            "hidden"=> $request->hidden,
         ]);
         $addProduct->save();
 

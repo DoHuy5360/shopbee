@@ -36,6 +36,7 @@ return new class extends Migration
             $table->char("user_code", 52);
             $table->string("classificationone",120)->nullable();
             $table->string("classificationtwo",120)->nullable();
+            $table->boolean("hidden");
         });
     }
 
