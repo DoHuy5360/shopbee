@@ -119,4 +119,16 @@ $(document).ready(function () {
             });
         });
     }
+    const node__dsply_hden_cls = document.querySelectorAll(".manage__product_view_more_classification")
+    node__dsply_hden_cls.forEach(_btn => {
+        _btn.addEventListener("click", e => {
+            _btn.classList.toggle('active')
+            const node__prnt_lv1 = _btn.parentNode
+            const node__hden_cls = node__prnt_lv1.querySelectorAll(".manage__product_wrap_by_classify")
+            const arr__hden_cls = [...node__hden_cls].slice(3, node__hden_cls.lenght)
+            arr__hden_cls.forEach(cls => {
+                cls.classList.toggle('active')
+            })
+        })
+    })
 });

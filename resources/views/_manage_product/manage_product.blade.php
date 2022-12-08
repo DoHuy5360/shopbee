@@ -99,7 +99,7 @@
                         <ion-icon name="chevron-down-outline"></ion-icon>
                     </div>
                     <div id="seller-all-product-view-type">
-                        <div id="seller-all-product-view-list" class="active">
+                        <div id="seller-all-product-view-list">
                             <ion-icon name="list-outline"></ion-icon>
                         </div>
                         <div id="seller-all-product-view-grid">
@@ -122,10 +122,11 @@
                     <div class="seller__allProduct--header-title">Actions</div>
                 </div>
                 <div id="seller-all-product-table-body">
-                    @foreach ($get_pdt as $item)
+                    @foreach ($get_pdt_cls as $item)
                         <div class="seller__allProduct--card seller__allProduct--table-grid">
                             <div class="seller__allProduct--card-checkbox-wrap">
-                                <input class="seller__allProduct--card-checkbox" type="checkbox" name="" data-product-code="{{ $item->product_code }}" title="Click to check this product"/>
+                                <input class="seller__allProduct--card-checkbox" type="checkbox" name="" data-product-code="{{ $item->product_code }}"
+                                    title="Click to check this product" />
                             </div>
                             <div class="seller__allProduct--card-info">
                                 <img class="seller__allProduct--card-image" src="{{ asset($item->path) }}" alt="" />
@@ -147,11 +148,63 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="seller__allProduct--card-sku-code">{{ $item->sku_code }}</div>
-                            <div class="seller__allProduct--card-classification">-</div>
-                            <div class="seller__allProduct--card-price">{{ $item->price }}</div>
-                            <div class="seller__allProduct--card-storage">{{ $item->storage }}</div>
-                            <div class="seller__allProduct--card-sales">{{ $item->sold }}</div>
+                            <div class="manage__product_group_classify">
+                                <div class="manage__product--group-classify-wrap">
+                                    @foreach ($item->classificationones as $cls1_idx => $cls1)
+                                        @foreach ($cls1->classificationtwos as $cls2_idx => $cls2)
+                                            <div class="manage__product_wrap_by_classify">
+                                                <div class="seller__allProduct--card-sku-code">{{ $cls2->sku }}</div>
+                                                <div class="seller__allProduct--card-classification">{{ $cls1->name }}, {{ $cls2->name }}</div>
+                                                <div class="seller__allProduct--card-price">{{ $cls2->price }}</div>
+                                                <div class="seller__allProduct--card-storage">{{ $cls2->storage }}</div>
+                                                <div class="seller__allProduct--card-storage">Add column 'sold' for cls2</div>
+                                                {{-- <div class="seller__allProduct--card-sales">{{ $cls2->sold }}</div> --}}
+                                            </div>
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                                @if (isset($item->classification_hidden))
+                                    <div class="manage__product_view_more_classification"><div class="manage__product--amnt-cls-hden">{{ $item->classification_hidden }} phân loại hàng khác <ion-icon name="chevron-down-outline"></ion-icon></div></div>
+                                @endif
+                            </div>
+                            <div class="seller__allProduct--card-action">
+                                <a href="{{ route('product.edit', $item->product_code) }}" target="_blank">Edit</a>
+                                <a href="#" target="_blank">Copy</a>
+                                <a href="#" target="_blank">View more</a>
+                            </div>
+                        </div>
+                    @endforeach
+                    @foreach ($get_pdt as $item)
+                        <div class="seller__allProduct--card seller__allProduct--table-grid">
+                            <div class="seller__allProduct--card-checkbox-wrap">
+                                <input class="seller__allProduct--card-checkbox" type="checkbox" name="" data-product-code="{{ $item->product_code }}"
+                                    title="Click to check this product" />
+                            </div>
+                            <div class="seller__allProduct--card-info">
+                                <img class="seller__allProduct--card-image" src="{{ asset($item->path) }}" alt="" />
+                                <div class="seller__allProduct-card-name-wrap">
+                                    <div class="seller__allProduct--card-status" data-product-visibily-code="{{ $item->product_code }}">{{ $item->hidden ? 'Hidden' : 'Visible' }}</div>
+                                    <div class="seller__allProduct--name">
+                                        <a href="{{ route('product.show', $item->product_code) }}" target="_blank">{{ $item->product_name }}</a>
+                                    </div>
+                                    <div class="seller__allProduct--card-sku">ProductS SKU: <span>{{ $item->sku_code }}</span></div>
+                                    <div class="seller__allProduct--interactive-wrap">
+                                        <div class="seller__allProduct--card-interactive">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                            <span>0</span>
+                                        </div>
+                                        <div class="seller__allProduct--card-interactive">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                            <span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="seller__allProduct--card-sku-code">{{ $item->sku_code }}</div>
+                                <div class="seller__allProduct--card-classification">-/-/-/-/-/-/-</div>
+                                <div class="seller__allProduct--card-price">{{ $item->price }}</div>
+                                <div class="seller__allProduct--card-storage">{{ $item->storage }}</div>
+                                <div class="seller__allProduct--card-sales">{{ $item->sold }}</div>
                             <div class="seller__allProduct--card-action">
                                 <a href="{{ route('product.edit', $item->product_code) }}" target="_blank">Edit</a>
                                 <a href="#" target="_blank">Copy</a>

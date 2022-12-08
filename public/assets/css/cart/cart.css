@@ -145,8 +145,9 @@
 }
 
 .cart_page_product_img img {
-    object-fit: 100%;
+    object-fit: contain;
     width: 100%;
+    aspect-ratio: 1;
 }
 
 .cart_page_product_desc {
@@ -538,12 +539,15 @@
     display: flex;
     align-items: center;
     width: 320px;
+    gap: 10px;
+    justify-content: right;
 }
 
 #cart-page-sticky-coin-amount {
     width: 200px;
     text-align: right;
 }
+#cart-page-final-cost,
 #cart-page-total-price {
     color: var(--color-4);
     font-weight: bold;
@@ -684,4 +688,23 @@ ion-icon[name="car-outline"] {
 }
 .cart__page-product-edit{
     display: none;
+}
+#cart-page-amnt-pdt-slct{
+    color: var(--color-4);
+    font-weight: bold;
+}
+.cartPage__choose--item,
+.cart__page--owner-check,
+.cart__page-check-all{
+    cursor: pointer;
+}
+#cart-page-sticky-function-sumCost {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+}
+#cart-page-sticky-voucher-input{
+    width: 200px;
+    text-align: right;
 }
