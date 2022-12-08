@@ -86,6 +86,7 @@ class ProfileController extends Controller
                         WHERE b.buyer_code = '$user_code'
                         AND b.code = bp.bill_code
                         AND u.code = b.buyer_code
+                        ORDER BY bp.id DESC
                         "
                     );
                     $arr_status = [

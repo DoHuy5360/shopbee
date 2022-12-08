@@ -3,7 +3,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase_respon.css') }}">
 @endsection
+@section('js')
+    <script src="{{ asset('assets/js/purchase/purchase_respon.js') }}"></script>
+@endsection
 @section('content')
+    <div id="seller-frame-cover-fixed">
+        <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+    </div>
     <form action="{{ route('purchase.store') }}" id="purchase-page-containt" method="POST">
         @csrf
         <div id="purchase-page-payment-method-about-wrap-respon" class="purchase_page_payment_wrap_hidden"></div>
@@ -223,5 +229,4 @@
             </div>
         </div>
     </form>
-    <script src="{{ asset('assets/js/purchase/purchase_respon.js') }}"></script>
 @endsection

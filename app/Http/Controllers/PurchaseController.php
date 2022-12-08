@@ -36,6 +36,7 @@ class PurchaseController extends Controller
             WHERE b.buyer_code = '$request->user_code'
             AND b.code = bp.bill_code
             AND u.code = b.buyer_code
+            ORDER BY bp.id DESC
             "
         );
         $arr_status = [
@@ -179,6 +180,7 @@ class PurchaseController extends Controller
                     WHERE b.buyer_code = '$id'
                     AND b.code = bp.bill_code
                     AND u.code = b.buyer_code
+                    ORDER BY bp.id DESC
                     "
                 );
                 // return $get_bill_pdt;
@@ -201,6 +203,7 @@ class PurchaseController extends Controller
                     AND b.code = bp.bill_code
                     AND u.code = b.buyer_code
                     AND bp.status = '$request->status'
+                    ORDER BY bp.id DESC
                     "
                 );
                 // return $get_bill_pdt;

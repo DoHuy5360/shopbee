@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone', 20)->nullable();
             $table->string('gender', 10)->nullable();
             $table->string('birthday', 20)->nullable();
-            $table->string('realName', 120)->nullable();
+            $table->string('real_name', 120)->nullable();
         });
     }
 
