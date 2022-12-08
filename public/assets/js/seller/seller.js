@@ -12,14 +12,8 @@ menuList.forEach((menu) => {
     });
 });
 
-//! -------------------------- respon seller list-----------------------------
-// todo: Chuyển đổi nội dung thân trang
-
-function setNewState(_slug) {
-    window.history.replaceState("state name", null, _slug);
-}
 // todo: Cập nhật tiêu đề
-class REDIRECT {
+class RedirectContent {
     constructor(_name) {
         this.str__name = _name;
         this.node__target = document.querySelector(this.str__name);
@@ -65,7 +59,7 @@ class REDIRECT {
     }
 }
 $(document).ready(function () {
-    const rdrt_monitor = new REDIRECT("#seller-navbar-current-title");
+    const rdrt_monitor = new RedirectContent("#seller-navbar-current-title");
     rdrt_monitor.addEventClick((this_obj) => {
         this_obj.displayLoading(true);
         this_obj.setNewState("/seller/monitor");
@@ -82,7 +76,7 @@ $(document).ready(function () {
             },
         });
     });
-    const rdrt__pdt_manage = new REDIRECT("#seller-all-product-btn");
+    const rdrt__pdt_manage = new RedirectContent("#seller-all-product-btn");
     rdrt__pdt_manage.addEventClick((this_obj) => {
         this_obj.displayLoading(true);
         this_obj.setNewState("/seller/manage_product");
