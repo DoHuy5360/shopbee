@@ -8,9 +8,6 @@
     <script src="{{ asset('assets/js/cart/cart.js') }}"></script>
 @endsection
 @section('content')
-    <div id="seller-frame-cover-fixed">
-        <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
-    </div>
     <div id="cart-page-backdrop">
         <div id="cartPage-limit-alert" open>
             <div>Rất tiếc, bạn chỉ có thể mua <strong id="cart-page-amount-item"></strong> sản phẩm này.</div>
@@ -106,7 +103,7 @@
             </div>
             <div class="cart_page_product_guide" id="cart-page-product-guide">
                 <div class="cart_page_btn">
-                    <input type="checkbox" name="" class="cart__page-check-all" />
+                    <input type="checkbox" name="" id="" />
                 </div>
                 <div class="cart_page_name_product">
                     <div>Sản Phẩm</div>
@@ -126,15 +123,14 @@
                 </div>
             </div>
             <form action="{{ route('purchase.create') }}" id="cart-form-submit" class="cart_page_warp_containt_border" method="GET">
-                @foreach ($get_grp_pdt as $index_pdt => $product_creator)
-                    <div class="cart_page_product_infor" data-owner-wrap-code="{{ $product_creator->user_code }}">
+                @foreach ($get_pdt_creator as $index_pdt => $product_creator)
+                    <div class="cart_page_product_infor">
                         <input type="hidden" name="product_information[{{ $index_pdt }}][user_code]" value="{{ $product_creator->user_code }}">
                         <input type="hidden" name="product_information[{{ $index_pdt }}][user_name]" value="{{ $product_creator->name }}">
                         <div class="cart_page_product_prize_infor">
                             <div class="cart_page_product_seller">
                                 <div class="cart_page_btn">
-                                    <input type="checkbox" name="" id="" class="cart__page--owner-check" data-owner-check-code="{{ $product_creator->user_code }}"
-                                        title="Check all this shop's products" />
+                                    <input type="checkbox" name="" id="" />
                                 </div>
                                 <div class="cart_page_name_product">
                                     <div>Đại diện cung cấp <strong>{{ $product_creator->name }}</strong></div>
@@ -156,7 +152,7 @@
                                             <div class="cart_page_infor_warp">
                                                 <div class="cart_page_btn">
                                                     <input class="cartPage__choose--item" type="checkbox" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][checked]"
-                                                        data-cart-select="{{ $item->cart_code }}" data-owner-code="{{ $product_creator->user_code }}" />
+                                                        data-cart-select="{{ $item->cart_code }}" />
                                                 </div>
                                                 <div class="cart_page_name_product">
                                                     <div class="cart_page_product_img">
@@ -272,135 +268,72 @@
                     </div>
                 @endforeach
             </form>
-            @foreach ($get_grp_pdt_hid as $index_pdt => $product_creator)
-                <div class="cart_page_product_infor" id="cart_page-product-inactive">
-                    <div id="cart_page-product-inactive-warp">
-                        <div id="cart_page-product-inactive-title">Danh Sách Sản Phẩm Không Hoạt Động</div>
-                        <input type="hidden" name="product_information[{{ $index_pdt }}][user_code]" value="{{ $product_creator->user_code }}">
-                        <input type="hidden" name="product_information[{{ $index_pdt }}][user_name]" value="{{ $product_creator->name }}">
-                        <div class="cart_page_product_prize_infor">
-                            <div class="cart_page_product_seller">
-                                <div class="cart_page_btn">
-                                    <input type="checkbox" name="" id="" />
+            <div class="cart_page_product_prize_infor" id="cart_page-product-inactive">
+                <div id="cart_page-product-inactive-warp">
+                    <div id="cart_page-product-inactive-title">Danh Sách Sản Phẩm Không Hoạt Động</div>
+                    <div id="cart_page-product-inactive-containt">
+                        <div class="cart_page_warp_containt_border">
+                            <div class="cart_page_wrap_containt">
+                                <div class="cart_page_voucher_cover">
+                                    <div class="cart_page_voucher_title">Combo khuyến mãi</div>
+                                    <div class="cart_page_voucher_detail">Mua 2 sản phẩm giảm 8%</div>
+                                    <div class="cart_page_voucher_add"><a href="http://" target="_blank" rel="noopener noreferrer">Thêm ></a></div>
                                 </div>
-                                <div class="cart_page_name_product">
-                                    <div>Đại diện cung cấp <strong>{{ $product_creator->name }}</strong></div>
-                                    <ion-icon style="color: red; font-size: 1.4rem" name="chatbubbles-sharp"></ion-icon>
-                                </div>
-                                <span class="cart__page-product-edit">Sửa</span>
-                            </div>
-                            @foreach ($product_creator->products as $index_item => $item)
-                                <div class="cart_page_warp_containt_border">
-                                    <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->product_code }}">
-                                    <div class="cart_page_wrap_containt">
-                                        <div class="cart_page_voucher_cover">
-                                            <div class="cart_page_voucher_title">Combo khuyến mãi</div>
-                                            <div class="cart_page_voucher_detail">Mua 2 sản phẩm giảm 8%</div>
-                                            <div class="cart_page_voucher_add"><a href="http://" target="_blank" rel="noopener noreferrer">Thêm ></a></div>
+                                <div class="cart_page_infor_warp">
+                                    <div class="cart_page_btn">
+                                        <input type="checkbox" name="" id="" />
+                                    </div>
+                                    <div class="cart_page_name_product">
+                                        <div class="cart_page_product_img">
+                                            <img src="https://gifimage.net/wp-content/uploads/2017/09/anime-pixel-gif-3.gif" alt="" srcset="" />
                                         </div>
-                                        <div class="cart__page--hidden-wrap">
-
-                                            <div class="cart_page_infor_warp">
-                                                <div class="cart_page_btn">
-                                                    <input type="checkbox" disabled />
-                                                </div>
-                                                <div class="cart_page_name_product">
-                                                    <div class="cart_page_product_img">
-                                                        <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][image]" value="{{ $item->path }}">
-                                                        <img src="{{ asset($item->path) }}" alt="" />
-                                                    </div>
-                                                    <div class="cart_page_product_desc">
-                                                        <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][name]" value="{{ $item->name }}">
-                                                        {{ $item->name }}
-                                                    </div>
-                                                </div>
-                                                <div class="cart_page_option_wrap_respon">
-                                                    <div class="cart_page_about_option">
-                                                        <div class="cart_page_about_title">
-                                                            <span>Phân Loại Hàng</span>
-                                                            <ion-icon name="chevron-down-outline"></ion-icon>
-                                                        </div>
-                                                        <div class="cart_page_about_choice">MS</div>
-                                                    </div>
-                                                    <div class="cart_page_option_items">
-                                                        <div class="cart_page_option_items_wrap">
-                                                            <div class="cart_page_option_fix">
-                                                                <div class="cart_page_option_fix_title">
-                                                                    <span>{{ $item->classificationone }}</span>:
-                                                                </div>
-                                                                <div class="cart_page_option_choice">
-                                                                    @foreach ($item->classificationones as $cls1)
-                                                                        <div class="cart_checkout--method-wrap">
-                                                                            <label for="cart-page-payment-feature-1">
-                                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1"
-                                                                                    value="white" />
-                                                                                <span>{{ $cls1->name }}</span>
-                                                                            </label>
-                                                                        </div>
-                                                                    @endforeach
-                                                                </div>
-                                                            </div>
-                                                            <div class="cart_page_option_fix">
-                                                                <div class="cart_page_option_fix_title">
-                                                                    <span>{{ $item->classificationtwo }}</span>:
-                                                                </div>
-                                                                <div id="cart-page-classification2-wrap">
-                                                                    @foreach ($item->classificationtwos as $array_cls2)
-                                                                        <div class="cart_page_option_choice">
-                                                                            @foreach ($array_cls2 as $cls2)
-                                                                                <div class="cart_checkout--method-wrap">
-                                                                                    <label for="cart-page-payment-feature-1">
-                                                                                        <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-0"
-                                                                                            value="small" />
-                                                                                        <span>{{ $cls2->name }}</span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            @endforeach
-                                                                        </div>
-                                                                    @endforeach
-                                                                </div>
-                                                            </div>
-                                                            <button type="button" class="cart_page_option_submit_btn_wrap">
-                                                                Xác nhận
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cart_page_pricePer_wrap_respon">
-                                                    <div>₫ <span>{{ number_format((int) $item->price, 0, ',', '.') }}</span></div>
-                                                </div>
-                                                <div class="cart__set--number-product-wrap">
-                                                    <div class="cart__set--number-product">
-                                                        <button class="cart_page_quantity_btn cart_page_quantity_btn_minus" type="button">-</button>
-                                                        <input class="cartPage__item--amount" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][amount]" type="number"
-                                                            value="1" min="1" max="{{ $item->storage }}" data-item-code="{{ $item->cart_code }}" />
-                                                        <button class="cart_page_quantity_btn cart_page_quantity_btn_plus" type="button">+</button>
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][price]" value="{{ $item->price }}">
-                                                <div class="cart_page_price_wrap_respon" data-item-code-price="{{ $item->cart_code }}" data-origin-price="{{ $item->price }}"
-                                                    data-new-price="{{ $item->price }}">{{ number_format((int) $item->price, 0, ',', '.') }}</div>
-                                                <div class="cart_page_action_wrap_respon">
-                                                    <div class="cart_page_action_wrap">
-                                                        <div class="cart_page_actionDel" data-item-code="{{ $item->cart_code }}">
-                                                            <ion-icon name="trash-outline"></ion-icon>
-                                                        </div>
-                                                        <div class="cart_page_actionAdd">
-                                                            <div>Tìm sản phảm tương tự</div>
-                                                            <ion-icon name="chevron-down-outline"></ion-icon>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cart_page_product_blur"></div>
+                                        <div class="cart_page_product_desc">
+                                            <div>Combo 5 quần lót nam tam giác Cotton thương hiệu Coolmate (đỏ, xanh, vàng, lam, lục tímmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm)</div>
+                                        </div>
+                                    </div>
+                                    <div class="cart_page_option_wrap_respon">
+                                        <div class="cart_page_about_option">
+                                            <div class="cart_page_about_title">
+                                                <span>Phân Loại Hàng</span>
+                                                <ion-icon name="chevron-down-outline"></ion-icon>
+                                            </div>
+                                            <div class="cart_page_about_choice">M</div>
+                                        </div>
+                                    </div>
+                                    <div class="cart_page_pricePer_wrap_respon">
+                                        <div>₫ <span>199.000</span></div>
+                                    </div>
+                                    <div class="cart__set--number-product-wrap">
+                                        <div class="cart__set--number-product">
+                                            <button class="cart_page_quantity_btn" id="cart_page_quantity_btn_plus">+</button>
+                                            <input type="text" aria-valuenow="1" value="1" />
+                                            <button class="cart_page_quantity_btn" id="cart_page_quantity_btn_minus">-</button>
+                                        </div>
+                                    </div>
+                                    <div class="cart_page_price_wrap_respon">
+                                        <div style="color: red">900.000</div>
+                                    </div>
+                                    <div class="cart_page_action_wrap_respon">
+                                        <div class="cart_page_action_wrap">
+                                            <div class="cart_page_actionDel">
+                                                <ion-icon name="trash-outline"></ion-icon>
+                                            </div>
+                                            <div class="cart_page_actionAdd">
+                                                <div>Tìm sản phảm tương tự</div>
+                                                <ion-icon name="chevron-down-outline"></ion-icon>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="cart_page_product_blur"></div>
                                 </div>
-                            @endforeach
+                            </div>
                         </div>
                     </div>
+                    <div id="cart_page-product-inactive-del-wrap">
+                        <div id="cart_page-product-inactive-del">Bỏ sản phẩm không hoạt động</div>
+                    </div>
                 </div>
-            @endforeach
+            </div>
             <div class="cart_page_product_prize_infor" id="cart-page-sticky-block">
                 <div id="cart-page-sticky-wrap">
                     <div id="cart-page-sticky-voucher">
@@ -408,7 +341,7 @@
                             <ion-icon style="color: red" name="ticket-outline"></ion-icon>
                             <div>ShopBee Voucher</div>
                         </div>
-                        <div id="cart-page-sticky-voucher-input"><a href="http://" target="_blank" rel="noopener noreferrer">Chọn Hoặc Nhập Mã</a></div>
+                        <div id="cart-page-sticky-voucher-input"><a href="http://" target="_blank" rel="noopener noreferrer">Chon Hoặc Nhập Mã</a></div>
                     </div>
                     <div id="cart-page-sticky-coin">
                         <div id="cart-page-sticky-coin-check">
@@ -423,10 +356,10 @@
                     </div>
                     <div id="cart-page-sticky-function">
                         <div id="cart-page-sticky-function-check">
-                            <input type="checkbox" name="" class="cart__page-check-all" />
+                            <input type="checkbox" name="" id="" />
                         </div>
                         <div id="cart-page-sticky-function-selectAll">
-                            <div>Chọn Tất Cả (<span id="cart-page-amnt-pdt-slct">0</span>)</div>
+                            <div>Chọn Tất Cả (<span>2</span>)</div>
                         </div>
                         <div id="cart-page-sticky-function-del">
                             <div>Xoá</div>
@@ -438,8 +371,7 @@
                             <div style="color: red">Lưu vào mục Yêu thích</div>
                         </div>
                         <div id="cart-page-sticky-function-sumCost">
-                            <span>Tổng thanh toán</span>
-                            <div>(₫<span id="cart-page-final-cost">0</span>)</div>
+                            <div>Tổng thanh toán (<span>0</span>)</div>
                         </div>
                         <div id="cart-page-sticky-function-btnBuy">
                             <button id="cart-page-go-buy" form="cart-form-submit" type="submit">Thanh Toán</button>
