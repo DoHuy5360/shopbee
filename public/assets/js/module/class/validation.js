@@ -122,6 +122,18 @@ export class InputValidation extends NodeValidation {
             }
         });
     }
+    checkValidEmail() {
+        const bool__check_email = String(this.node__target.value)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+        if (bool__check_email) {
+            this.obj__rcd_vld.valid_email = true;
+        } else {
+            this.obj__rcd_vld.valid_email = false;
+        }
+    }
     checkContainOnly(_str_require) {
         let str__regex;
         switch (_str_require) {

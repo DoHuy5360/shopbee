@@ -78,9 +78,37 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // return $request;
+        $user_code = $request->user_code;
+        $is_image_exist = $request->file("user_avatar");
+        if ($is_image_exist) {
+            $image_file = $is_image_exist;
+            $image_name = date("dmYHis") . '.' . $image_file->getClientOriginalName();
+            $image_file->move(public_path("assets/img/profile"), $image_name);
+            $avatar_path = "assets/img/profile/$image_name";
+            
+            DB::update(
+                "UPDATE users
+                SET avatar = '$avatar_path'
+                WHERE code = '$user_code'
+                "
+            );
+        }
+        $is_updt_pfle = DB::update(
+            "UPDATE users
+            SET
+                real_name = '$request->real_name',
+                gender = '$request->user_gender',
+                phone = '$request->phone',
+                birthday = '$request->user_birthday',
+                email = '$request->email'
+            WHERE code = '$user_code'
+            "
+        );
+        return $request;
     }
 
+    // "shop_name"
     /**
      * Remove the specified resource from storage.
      *

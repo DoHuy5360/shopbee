@@ -1,0 +1,13 @@
+.profile__edit-field-action{
+    min-width: 55px;
+    color: var(--color-5);
+    cursor: pointer;
+    user-select: none;
+}
+.profile__edit-field-action.active{
+    color: var(--color-4);
+}
+.profile__edit-field-action:hover{
+    text-shadow: 0 0 1px currentColor;
+    text-decoration: underline;
+}

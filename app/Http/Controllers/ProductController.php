@@ -10,7 +10,6 @@ use App\Models\ProductVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use stdClass;
 
 require_once('functions/convert.php');
 require_once('functions/code_generate.php');

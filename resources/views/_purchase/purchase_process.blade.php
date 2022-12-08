@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase_process.css') }}">
-<script src="{{ asset('assets/js/profile/purchase_process.js') }}"></script>
+<script src="{{ asset('assets/js/purchase/purchase_process.js') }}"></script>
 @if (!$get_bill_pdt)
     <div id="profile-process-emty-order-wrap">
         <img id="profile-process-empty-order-image" src="{{ asset('assets/img/empty_order.jpg') }}" alt="">

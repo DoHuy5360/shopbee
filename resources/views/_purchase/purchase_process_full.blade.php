@@ -67,4 +67,5 @@
         @endforeach
     </div>
 </div>
-<script src="{{ asset('assets/js/profile/purchase_process_full.js') }}"></script>
+<script src="{{ asset('assets/js/purchase/purchase_process_full.js') }}"></script>
+
