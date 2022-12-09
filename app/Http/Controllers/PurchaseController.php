@@ -74,6 +74,14 @@ class PurchaseController extends Controller
      */
     public function create(Request $request)
     {
+        $user_code = Auth::user()->code;
+        $get_user_address = DB::select(
+            "SELECT *
+            FROM user_addresses
+            WHERE user_code = '$user_code'
+            AND default_address = 'true'
+            "
+        )[0];
         // return $request;
         $array_pdt_slc = [];
         $total_price = 0;
@@ -101,6 +109,7 @@ class PurchaseController extends Controller
         return view('_purchase.purchase', [
             'array_pdt_slc' => $array_pdt_slc,
             'total_price' => $total_price,
+            'get_user_address' => $get_user_address,
         ]);
     }
 

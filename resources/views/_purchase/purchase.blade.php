@@ -58,7 +58,7 @@
                         <span>{{ Auth::user()->phone }}</span>
                     </div>
                     <div id="purchase-page-address-detail">
-                        <div>84 An Khánh Châu Thành, Ấp 4, Xã An Khánh, Huyện Châu Thành, Bến Tre</div>
+                        <div>{{ $get_user_address->province }}, {{ $get_user_address->district }}, {{ $get_user_address->wards }} / {{ $get_user_address->detail }}</div>
                     </div>
                     <div id="purchage-address-default">
                         <abbr title="Sản phẩm sẽ được giao đến địa chỉ này">Mặc định</abbr>

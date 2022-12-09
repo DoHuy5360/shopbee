@@ -19,20 +19,14 @@ function querySelect(_name) {
 }
 // todo: Chức năng hiển thị sản phẩm trong giỏ hàng
 $(document).ready(function () {
-    const str__user_code = $("#mainHome-user-code").val();
-    if (str__user_code) {
-        $.ajax({
-            type: "GET",
-            url: `/cart/create`,
-            data: {
-                user_code: str__user_code,
-            },
-            success: function (response) {
-                const number_item = $("#headerHome-display-cart-number");
-                const wrap_item = $("#mainHome-cart-list-product");
-                wrap_item.html(response);
-                number_item.text($(".mainHome__cart--product-wrap").length);
-            },
-        });
-    }
+    $.ajax({
+        type: "GET",
+        url: `/cart/create`,
+        success: function (response) {
+            const number_item = $("#headerHome-display-cart-number");
+            const wrap_item = $("#mainHome-cart-list-product");
+            wrap_item.html(response);
+            number_item.text($(".mainHome__cart--product-wrap").length);
+        },
+    });
 });

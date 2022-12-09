@@ -1,14 +1,13 @@
 @extends('layouts.skeleton')
 @section('title', 'Thông tin sản phẩm')
 @section('css')
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/header/header-home.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/footer/footer-home.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/product/product.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/product/product_respon.css') }}">
 @endsection
 @section('js')
     <script src="{{ asset('assets/js/product/product_respon.js') }}"></script>
     <script src="{{ asset('assets/js/product/product.js') }}"></script>
+    <script src="{{ asset('assets/js/header/header.js') }}"></script>
 @endsection
 @section('content')
     <div id="product-alert-wrap">
