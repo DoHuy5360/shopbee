@@ -1,0 +1,265 @@
+.profile__address--card-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.profile__address--card-wrp {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 25px 0;
+}
+.profile__address--card-action-wrp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.profile__address--card-name-phone-wrp {
+    display: flex;
+    align-items: baseline;
+}
+.profile__address--card-address-detail {
+    display: flex;
+    flex-direction: column;
+}
+#profile-address-wrap {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 100%;
+}
+#profile-address-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #efefef;
+    padding: 20px 30px;
+}
+#profile-address-add-new-wrp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    background-color: #ee4d2d;
+    border-radius: 2px;
+    width: 170px;
+    height: 40px;
+    font-size: 15px;
+    user-select: none;
+    cursor: pointer;
+}
+#profile-address-header-title {
+    font-size: 19px;
+}
+#profile-address-title {
+    font-size: 19px;
+    padding: 15px 0 0;
+}
+#profile-address-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    overflow-y: scroll;
+}
+#profile-address-body::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+.profile__address--card-status {
+    color: #ee4d2d;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    font-size: 12px;
+    display: grid;
+    place-items: center;
+    width: 65px;
+    height: 20px;
+}
+.profile__address--card-set-default {
+    all: unset;
+    color: #737373;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    padding: 0 10px;
+    font-size: 13px;
+    display: grid;
+    place-items: center;
+    width: 100px;
+    height: 30px;
+    outline: none !important;
+}
+.profile__address--card-set-default:hover {
+    background-color: #e8e8e8;
+}
+.profile__address--card-updt,
+.profile__address--card-del {
+    color: var(--color-5);
+    font-size: 14px;
+    cursor: pointer;
+}
+.profile__address--card-user-name {
+    font-size: 18px;
+}
+.profile__address--card-detail,
+.profile__address--card-address-name,
+.profile__address--card-user-phone {
+    color: #0000008a;
+    font-size: 14px;
+}
+.profile__address--card-user-name {
+    padding-right: 10px;
+}
+.profile__address--card-user-phone {
+    border-left: 1px solid #737373;
+    padding-left: 10px;
+}
+#profile-dialog-add-address {
+    width: 500px;
+    height: 560px;
+    background-color: white;
+    z-index: 9999;
+    border: unset;
+    border-radius: 2px;
+}
+#profile-dialog-add-address.active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#profile-dialog-add-address::backdrop {
+    background: #0000008a;
+}
+#profile-address-form-add-new {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    height: 100%;
+}
+#profile-address-form-head {
+    font-size: 19px;
+}
+#profile-address-form-head,
+#profile-address-form-foot {
+    height: 50px;
+}
+#profile-address-form-back-btn,
+#profile-address-form-complete-btn {
+    all: unset;
+    font-size: 14px;
+    height: 35px;
+    width: 140px;
+    display: grid;
+    place-items: center;
+    border-radius: 2px;
+    cursor: pointer;
+}
+#profile-address-form-back-btn:hover {
+    background-color: #efefef;
+}
+#profile-address-form-body {
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 40px;
+}
+#profile-address-form-body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+#profile-address-form-foot {
+    display: flex;
+    gap: 10px;
+    justify-content: right;
+    align-items: center;
+}
+#profile-address-form-back-btn {
+    color: black;
+    background-color: white;
+}
+#profile-address-form-complete-btn {
+    color: white;
+    background-color: var(--color-4);
+}
+#profile-address-form-field-inp {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#profile-address-form-name-phone-wrp {
+    display: flex;
+    gap: 20px;
+}
+#profile-address-check-use-wrp {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 5px;
+    margin-top: 10px;
+}
+#profile-address-form-field-check {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#profile-address-form-field-check label {
+    margin: 0;
+}
+.profile__address-check-use-wrp {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+#profile-address-check-type-wrp {
+    display: flex;
+}
+#profile-address-chck-type-home,
+#profile-address-chck-type-office {
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+    width: 100px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+#profile-address-chck-type-office {
+    margin: 0 0 0 10px !important;
+}
+#profile-address-chck-office:checked + #profile-address-chck-type-office,
+#profile-address-chck-home:checked + #profile-address-chck-type-home {
+    border-color: var(--color-4);
+    color: var(--color-4);
+}
+#profile-address-chck-home,
+#profile-address-chck-office {
+    width: 0;
+}
+#profile-address-inp-detail,
+#profile-address-inp-address,
+#profile-address-inp-name,
+#profile-address-inp-phone {
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    outline: unset;
+    padding: 10px;
+}
+#profile-address-inp-address,
+#profile-address-inp-name,
+#profile-address-inp-phone {
+    height: 40px;
+}
+#profile-address-inp-detail {
+    height: 55px;
+    min-height: 55px;
+    max-height: 100px;
+}
+#profile-address-form-google-map img {
+    width: 100%;
+}

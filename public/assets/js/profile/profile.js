@@ -1,4 +1,5 @@
-import { starScript } from "../profile/prodile_edit.js";
+import { starScriptEdit } from "../profile/profile_edit.js";
+import { starScriptAddress } from "../profile/profile_address.js"
 
 $(document).ready(function () {
     const str__user_code = $("#profile-user-code").val();
@@ -32,7 +33,22 @@ $(document).ready(function () {
                 $("#profile-body-tranfer-wrap").html(response);
             },
             complete: function () {
-                starScript();
+                starScriptEdit();
+                toogleFrameCover(false);
+            },
+        });
+    });
+    //todo: hiện danh sách địa chỉ
+    $("#profile-menu-element-address").click(function () {
+        toogleFrameCover(true);
+        $.ajax({
+            type: "GET",
+            url: "/user_address",
+            success: function (response) {
+                $("#profile-body-tranfer-wrap").html(response);
+            },
+            complete: function () {
+                starScriptAddress()
                 toogleFrameCover(false);
             },
         });

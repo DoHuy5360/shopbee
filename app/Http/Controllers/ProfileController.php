@@ -121,6 +121,19 @@ class ProfileController extends Controller
                         'get_user' => $get_user,
                         'content' => '_profile.profile_edit'
                     ]);
+                case "address":
+                    $get_address = DB::select(
+                        "SELECT *
+                        FROM user_addresses
+                        WHERE user_code = '$user_code'
+                        ORDER BY default_address DESC
+                        "
+                    );
+                    return view('_profile.profile', [
+                        'get_user' => $get_user,
+                        'get_address' => $get_address,
+                        'content' => '_profile.profile_address'
+                    ]);
 
                 default:
                     return "404";

@@ -1,6 +1,6 @@
 import { InputValidation } from "../module/class/validation.js";
 
-export function starScript() {
+export function starScriptEdit() {
     const all_birthday_choice = document.querySelectorAll(
         ".profile__birthday--option-wrap"
     );
@@ -252,4 +252,7 @@ export function starScript() {
         }
     }
 }
-starScript();
+const node__check_page = document.getElementById("profile-body-right-wrap")
+if(node__check_page){
+    starScriptEdit();
+}

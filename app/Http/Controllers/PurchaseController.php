@@ -217,11 +217,6 @@ class PurchaseController extends Controller
         } else {
             return redirect()->back();
         }
-
-        // if ($id == Auth::user()->code) {
-        // } else {
-        //     return redirect()->back();
-        // }
     }
 
     /**
