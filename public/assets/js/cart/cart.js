@@ -329,4 +329,14 @@ $(document).ready(function () {
         });
         node__amnt_pdt_slct.innerText = int__amnt_pdt_slct;
     }
+    const node__submit_form = document.getElementById("cart-form-submit")
+    node__submit_form.addEventListener("submit", e=>{
+        e.preventDefault()
+        const bool__is_slct = [...node__sgl_chckbx].some((chckbx)=>{
+            return chckbx.checked
+        })
+        if(bool__is_slct){
+            node__submit_form.submit()
+        }
+    })
 });
