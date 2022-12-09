@@ -121,6 +121,11 @@ class ProfileController extends Controller
                         'get_user' => $get_user,
                         'content' => '_profile.profile_edit'
                     ]);
+                case "address":
+                    return view('_profile.profile', [
+                        'get_user' => $get_user,
+                        'content' => '_profile.profile_address'
+                    ]);
 
                 default:
                     return "404";

@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SellerController;
+use App\Http\Controllers\UserAddressController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -33,6 +34,7 @@ Route::resource('/product', ProductController::class)->middleware(['auth']);
 Route::resource('/profile', ProfileController::class)->middleware(['auth']);
 Route::resource('/cart', CartController::class)->middleware(['auth']);
 Route::resource('/user', UserController::class)->middleware(['auth']);
+Route::resource('/user_address', UserAddressController::class)->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return date('D - d/m/Y - H:i:s - A');

@@ -40,7 +40,7 @@
                     <div class="profile__element--option-wrap">
                         <span id="profile-menu-element-info" class="profile__element--option" data-slug="info">Profile</span>
                         <div class="profile__element--option">Bank</div>
-                        <div class="profile__element--option">Address</div>
+                        <span id="profile-menu-element-address" class="profile__element--option" data-slug="address">Address</span>
                         <div class="profile__element--option">Change Password</div>
                     </div>
                 </div>
