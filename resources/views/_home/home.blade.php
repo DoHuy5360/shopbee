@@ -290,13 +290,12 @@
                     <a href="http://" class="mainHome__link--to" target="_blank">Xem tất cả ></a>
                 </div>
                 <div id="mainHome-card-suggest-wrap">
-                    {{-- {{ $test_products }} --}}
                     @foreach ($test_products as $products)
                         <a href="{{ route('product.show', $products->code) }}" class="mainHome__cardSuggest-padding">
                             <div class="mainHome__cardSuggest-content">
                                 <div class="mainHome__cardSuggest--image">
                                     <div class="mainHome__cardSuggest--label-like">Yêu thích</div>
-                                    <img src="{{ asset($products->path) }}" alt="" />
+                                    <img src="{{ asset($products->path) }}" alt="{{ $products->path }}" draggable="false"/>
                                 </div>
                                 <div class="mainHome__cardSuggest--text">
                                     <div class="mainHome__cardSuggest--name">{{ $products->name }}</div>

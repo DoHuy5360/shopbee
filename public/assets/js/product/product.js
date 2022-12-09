@@ -7,38 +7,36 @@ const next_btn = document.getElementById("product__carousel--arrow-next");
 const prev_btn = document.getElementById("product__carousel--arrow-previous");
 const all_main_media = document.querySelectorAll(".product__media--display");
 let first_media = all_main_media[0];
-let a = all_product_images.length - (all_product_images.length - 1)
-let tempt = 0
+let a = all_product_images.length - (all_product_images.length - 1);
+let tempt = 0;
 const image_text = document.getElementById("product-main-img");
-const mediaQuery = window.matchMedia('(max-width: 768px)').matches
+const mediaQuery = window.matchMedia("(max-width: 768px)").matches;
 
 if (mediaQuery) {
     next_btn.addEventListener("click", (e) => {
         if (tempt != all_product_images.length - 1) {
             first_media.style.display = "none";
-            tempt = (a - 1) + 1
+            tempt = a - 1 + 1;
             if (all_main_media[tempt] != first_media) {
                 all_main_media[tempt].style.display = "block";
                 all_main_media[0].style.display = "none";
                 first_media = all_main_media[tempt];
-                console.log("next" + tempt)
             }
-            a += 1
+            a += 1;
         } else {
-            a = 1
+            a = 1;
             all_main_media[tempt].style.display = "none";
-            tempt = 0
+            tempt = 0;
             all_main_media[0].style.display = "block";
             first_media = all_main_media[0];
         }
     });
     prev_btn.addEventListener("click", (e) => {
-        var b = first_media.getAttribute("data-index")
+        var b = first_media.getAttribute("data-index");
         if (tempt != 0) {
             tempt = b - 1; //0 3
             if (all_main_media[tempt] != first_media) {
                 first_media.style.display = "none";
-                console.log("prev" + tempt + "1")
                 all_main_media[tempt].style.display = "block";
                 first_media = all_main_media[tempt];
             }
@@ -46,14 +44,15 @@ if (mediaQuery) {
         } else {
             all_main_media[0].style.display = "none";
             first_media = all_main_media[all_product_images.length - 1];
-            tempt = all_product_images.length - 1 //4
+            tempt = all_product_images.length - 1; //4
             all_main_media[tempt].style.display = "block"; //4
-            console.log("prev" + tempt + "2")
         }
-    })
+    });
 } else {
     function refreshImageIndex() {
-        return document.querySelectorAll(".product__image--carousel-element-wrap");
+        return document.querySelectorAll(
+            ".product__image--carousel-element-wrap"
+        );
     }
     next_btn.addEventListener("click", (e) => {
         image_container.appendChild(refreshImageIndex()[0]);
@@ -61,8 +60,9 @@ if (mediaQuery) {
     });
     prev_btn.addEventListener("click", (e) => {
         const all_img_refreshed = refreshImageIndex();
-        image_container.prepend(all_img_refreshed[all_img_refreshed.length - 1]);
-
+        image_container.prepend(
+            all_img_refreshed[all_img_refreshed.length - 1]
+        );
     });
     all_product_images.forEach((media) => {
         media.addEventListener("mouseover", (e) => {
@@ -112,9 +112,6 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
             url: `/cart/create`,
-            data: {
-                id: $("#mainHome-user-code").val(),
-            },
             success: function (response) {
                 const number_item = $("#headerHome-display-cart-number");
                 const wrap_item = $("#mainHome-cart-list-product");

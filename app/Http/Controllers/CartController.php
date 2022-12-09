@@ -25,26 +25,22 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $user_code = $request->user_code;
-        if ($user_code === Auth::user()->code) {
-            $get_itm_cart = DB::select(
-                "SELECT p.name, p.price, pi.path
+        $user_code = Auth::user()->code;
+        $get_itm_cart = DB::select(
+            "SELECT p.name, p.price, pi.path
                 FROM carts c, products p, product_images pi
                 WHERE c.user_code = '$user_code'
                 AND c.product_code = p.code
                 AND pi.product_code = p.code
                 AND pi.index = '0'
                 "
-            );
-            // return $get_itm_cart;
-            return view('_cart.cart_item', [
-                "get_itm_cart" => $get_itm_cart,
-            ]);
-        } else {
-            return '<b>Đây không phải giỏ hàng của bạn</b>';
-        }
+        );
+        // return $get_itm_cart;
+        return view('_cart.cart_item', [
+            "get_itm_cart" => $get_itm_cart,
+        ]);
     }
 
     /**

@@ -261,8 +261,8 @@
     width: 100%;
     aspect-ratio: 1;
 }
-#purchase-page-productSight {
-    /* background-color: #fafdff; */
+.purchase_page_product_chatFunct label {
+    margin-bottom: 0;
 }
 /*! cac chuc nang trong muc san pham */
 .purchase_page_product_otherFunction {
@@ -392,6 +392,9 @@
     gap: 20px;
     align-items: center;
     padding: 30px;
+}
+#purchase-page-payment-method label{
+    margin-bottom: 0;
 }
 
 #purchase-page-payment-method-about {
