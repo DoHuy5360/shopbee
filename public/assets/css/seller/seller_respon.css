@@ -1,4 +1,7 @@
 @media screen and (max-width: 1080px) {
+    body{
+        overflow-y: unset !important;
+    }
     #seller-icon {
         display: none;
     }
