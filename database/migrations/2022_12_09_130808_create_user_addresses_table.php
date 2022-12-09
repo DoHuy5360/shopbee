@@ -25,8 +25,7 @@ return new class extends Migration
             $table->string('detail',1000);
             $table->string('phone', 20);
             $table->string('type', 30);
-            $table->string('use', 30);
-            $table->boolean('default')->default(false);
+            $table->boolean('default_address')->default(false);
         });
     }
 
