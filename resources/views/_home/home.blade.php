@@ -144,7 +144,7 @@
             <div class="mainHome__flashSale--wrap">
                 <div class="mainHome__part--title-wrap">
                     <div class="mainHome__part--title">FLASH SALE</div>
-                    <a href="#" class="mainHome__link--to" target="">Xem tất cả ></a>
+                    <a href="#" class="mainHome__link--to" target="">Veiw all ></a>
                 </div>
                 <!--! làm đồng hồ đếm ngược -->
                 <!-- <p id="flash-sale-end"><span id="hours">12</span><span id="minutes">12</span><span id="seconds">12</span></p> -->
@@ -181,7 +181,7 @@
             <div class="mainHome__shopbeeMall--wrap">
                 <div class="mainHome__part--title-wrap">
                     <div class="mainHome__part--title">SHOPBEE MALL</div>
-                    <a href="http://" class="mainHome__link--to" target="_blank">Xem tất cả ></a>
+                    <a href="http://" class="mainHome__link--to" target="_blank">Veiw all ></a>
                 </div>
                 <div class="mainHome__wrap--shop-carousel_wrapper">
                     <div class="mainHome__wrap--shop-carousel">
@@ -228,7 +228,7 @@
         <div id="mainHome-top-finding">
             <div class="mainHome__part--title-wrap">
                 <div class="mainHome__part--title">Bán Chạy</div>
-                <a href="http://" class="mainHome__link--to" target="_blank">Xem tất cả ></a>
+                <a href="http://" class="mainHome__link--to" target="_blank">Veiw all ></a>
             </div>
             <div id="mainHome-top-finding-wrap">
                 <div id="mainHome-card-topfind-wrap">
@@ -287,24 +287,24 @@
             <div id="mainHome-suggest-wrap">
                 <div class="mainHome__part--title-wrap">
                     <div class="mainHome__part--title">Gợi Ý Hôm Nay</div>
-                    <a href="http://" class="mainHome__link--to" target="_blank">Xem tất cả ></a>
+                    <a href="http://" class="mainHome__link--to" target="_blank">Veiw all ></a>
                 </div>
                 <div id="mainHome-card-suggest-wrap">
-                    @foreach ($test_products as $products)
-                        <a href="{{ route('product.show', $products->code) }}" class="mainHome__cardSuggest-padding">
+                    @foreach ($get_pdt as $pdt)
+                        <a href="{{ route('product.show', $pdt->code) }}" class="mainHome__cardSuggest-padding">
                             <div class="mainHome__cardSuggest-content">
                                 <div class="mainHome__cardSuggest--image">
                                     <div class="mainHome__cardSuggest--label-like">Yêu thích</div>
-                                    <img src="{{ asset($products->path) }}" alt="{{ $products->path }}" draggable="false"/>
+                                    <img src="{{ asset($pdt->path) }}" alt="{{ $pdt->path }}" draggable="false"/>
                                 </div>
                                 <div class="mainHome__cardSuggest--text">
-                                    <div class="mainHome__cardSuggest--name">{{ $products->name }}</div>
+                                    <div class="mainHome__cardSuggest--name">{{ $pdt->name }}</div>
                                     <div class="mainHome__cardSuggest--footer">
                                         <div class="mainhome__bonus--bebefit">
                                             <ion-icon name="cart-outline"></ion-icon>
                                         </div>
                                         <div class="mainHome__cardSuggest--price-wrap">
-                                            <div class="mainHome__cardSuggest--price"><span>₫</span><span>{{ $products->price }}</span></div>
+                                            <div class="mainHome__cardSuggest--price"><span>₫</span><span>{{ $pdt->price }}</span></div>
                                             <span>Đã bán ###</span>
                                         </div>
                                     </div>

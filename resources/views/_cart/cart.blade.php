@@ -222,8 +222,6 @@
                                                                 <button type="button" class="cart_page_option_submit_btn_wrap">Confirm</button>
                                                             </div>
                                                         </div>
-                                                    {{-- @else --}}
-                                                        
                                                     @endif
                                                 </div>
                                                 <div class="cart_page_pricePer_wrap_respon">
