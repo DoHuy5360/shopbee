@@ -1,4 +1,5 @@
 import { InputValidation } from "../module/class/validation.js";
+import { toggleLoadingAnimation } from "../module/function/profile_func.js";
 
 export function starScriptEdit() {
     const all_birthday_choice = document.querySelectorAll(
@@ -221,7 +222,7 @@ export function starScriptEdit() {
                     },
                     success: function (response) {},
                     complete: function () {
-                        toogleFrameCover(true);
+                        toggleLoadingAnimation(true);
                         const str__user_code = $("#profile-user-code").val();
                         $.ajax({
                             type: "GET",
@@ -234,7 +235,7 @@ export function starScriptEdit() {
                             },
                             complete: function () {
                                 starScript();
-                                toogleFrameCover(false);
+                                toggleLoadingAnimation(false);
                             },
                         });
                     },
@@ -242,17 +243,8 @@ export function starScriptEdit() {
             });
         }
     });
-    function toogleFrameCover(_boll_display) {
-        if (_boll_display) {
-            $("#seller-frame-cover").css("z-index", 16);
-        } else {
-            setTimeout(() => {
-                $("#seller-frame-cover").css("z-index", -1);
-            }, 500);
-        }
-    }
 }
-const node__check_page = document.getElementById("profile-body-right-wrap")
-if(node__check_page){
+const node__check_page = document.getElementById("profile-body-right-wrap");
+if (node__check_page) {
     starScriptEdit();
 }

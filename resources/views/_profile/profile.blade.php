@@ -5,6 +5,7 @@
 @endsection
 @section('js')
     <script type="module" src="{{ asset('assets/js/profile/profile.js') }}"></script>
+    <script src="{{ asset('assets/js/header/header.js') }}"></script>
 @endsection
 @section('content')
     <div id="seller-frame-cover-fixed">
@@ -38,9 +39,9 @@
                         <span> My Account </span>
                     </div>
                     <div class="profile__element--option-wrap">
-                        <span id="profile-menu-element-info" class="profile__element--option" data-slug="info">Profile</span>
+                        <span id="profile-menu-element-info" class="profile__element--option">Profile</span>
                         <div class="profile__element--option">Bank</div>
-                        <span id="profile-menu-element-address" class="profile__element--option" data-slug="address">Address</span>
+                        <span id="profile-menu-element-address" class="profile__element--option">Address</span>
                         <div class="profile__element--option">Change Password</div>
                     </div>
                 </div>
@@ -49,7 +50,7 @@
                         <path fill="#165EB7"
                             d="M9.5,10.5H12a1,1,0,0,0,0-2H11V8A1,1,0,0,0,9,8v.55a2.5,2.5,0,0,0,.5,4.95h1a.5.5,0,0,1,0,1H8a1,1,0,0,0,0,2H9V17a1,1,0,0,0,2,0v-.55a2.5,2.5,0,0,0-.5-4.95h-1a.5.5,0,0,1,0-1ZM21,12H18V3a1,1,0,0,0-.5-.87,1,1,0,0,0-1,0l-3,1.72-3-1.72a1,1,0,0,0-1,0l-3,1.72-3-1.72a1,1,0,0,0-1,0A1,1,0,0,0,2,3V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V13A1,1,0,0,0,21,12ZM5,20a1,1,0,0,1-1-1V4.73L6,5.87a1.08,1.08,0,0,0,1,0l3-1.72,3,1.72a1.08,1.08,0,0,0,1,0l2-1.14V19a3,3,0,0,0,.18,1Zm15-1a1,1,0,0,1-2,0V14h2Z" />
                     </svg>
-                    <span id="profile-menu-element-order" class="profile__element--option" data-slug="order"> Order Management </span>
+                    <span id="profile-menu-element-order" class="profile__element--option"> Order Management </span>
                 </div>
                 <div class="profile__menu--element">
                     <svg class="profile__icon" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24">
