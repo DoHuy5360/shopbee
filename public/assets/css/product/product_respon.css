@@ -173,7 +173,15 @@
         font-weight: 600;
         color: rgb(206, 47, 47);
     }
-
+    #product-title-price{
+        height: fit-content;
+        padding: 0;
+        background-color: unset;
+        margin-top: 0;
+    }
+    #product-title-column{
+        padding-bottom: 20px;
+    }
     #product-title_quantity-inputfield span {
         display: none;
     }

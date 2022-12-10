@@ -186,8 +186,8 @@
                                                                     @foreach ($item->classificationones as $cls1)
                                                                         <div class="cart_checkout--method-wrap">
                                                                             <label class="cart_check--method-feature">
-                                                                                <input class="cart_check--method" type="radio" name="checkout-type"
-                                                                                    value="type1" />
+                                                                                <input class="cart_check--method" type="radio" name="checkout-type" value="type1"
+                                                                                    {{ isset($cls1->checked) ? ($cls1->checked == $cls1->code ? 'checked' : '') : '' }} />
                                                                                 <span>{{ $cls1->name }}</span>
                                                                             </label>
                                                                         </div>
@@ -204,8 +204,8 @@
                                                                             @foreach ($array_cls2 as $cls2)
                                                                                 <div class="cart_checkout--method-wrap">
                                                                                     <label class="cart_check--method-feature">
-                                                                                        <input class="cart_check--method" type="radio" name="checkout-type2"
-                                                                                            value="type2" />
+                                                                                        <input class="cart_check--method" type="radio" name="checkout-type2" value="type2"
+                                                                                            {{ isset($cls2->checked) ? ($cls2->checked == $cls2->code ? 'checked' : '') : '' }} />
                                                                                         <span>{{ $cls2->name }}</span>
                                                                                     </label>
                                                                                 </div>
@@ -227,7 +227,7 @@
                                                     <div class="cart__set--number-product">
                                                         <button class="cart_page_quantity_btn cart_page_quantity_btn_minus" type="button">-</button>
                                                         <input class="cartPage__item--amount" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][amount]" type="number"
-                                                            value="1" min="1" max="{{ $item->storage }}" data-item-code="{{ $item->cart_code }}" />
+                                                            value="{{ $item->amount }}" min="1" max="{{ $item->storage }}" data-item-code="{{ $item->cart_code }}" />
                                                         <button class="cart_page_quantity_btn cart_page_quantity_btn_plus" type="button">+</button>
                                                     </div>
                                                 </div>
