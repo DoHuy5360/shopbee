@@ -185,9 +185,9 @@
                                                                 <div class="cart_page_option_choice">
                                                                     @foreach ($item->classificationones as $cls1)
                                                                         <div class="cart_checkout--method-wrap">
-                                                                            <label for="cart-page-payment-feature-1">
-                                                                                <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-1"
-                                                                                    value="white" />
+                                                                            <label class="cart_check--method-feature">
+                                                                                <input class="cart_check--method" type="radio" name="checkout-type"
+                                                                                    value="type1" />
                                                                                 <span>{{ $cls1->name }}</span>
                                                                             </label>
                                                                         </div>
@@ -203,9 +203,9 @@
                                                                         <div class="cart_page_option_choice">
                                                                             @foreach ($array_cls2 as $cls2)
                                                                                 <div class="cart_checkout--method-wrap">
-                                                                                    <label for="cart-page-payment-feature-1">
-                                                                                        <input class="cart_check--method" type="radio" name="checkout-type" id="cart-page-payment-feature-0"
-                                                                                            value="small" />
+                                                                                    <label class="cart_check--method-feature">
+                                                                                        <input class="cart_check--method" type="radio" name="checkout-type2"
+                                                                                            value="type2" />
                                                                                         <span>{{ $cls2->name }}</span>
                                                                                     </label>
                                                                                 </div>
