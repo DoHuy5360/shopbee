@@ -198,8 +198,7 @@ $(document).ready(function () {
     window.onscroll = function () {
         let objBottom = sticky_bar.getBoundingClientRect().bottom;
         let objWrapBottom = sticky_bar_wrap.getBoundingClientRect().bottom;
-
-        if (Math.floor(objBottom) == Math.floor(objWrapBottom)) {
+        if (Math.floor(objBottom + 1) >= Math.floor(objWrapBottom)) {
             sticky_bar.classList.remove("stickydown");
         } else {
             sticky_bar.classList.add("stickydown");
