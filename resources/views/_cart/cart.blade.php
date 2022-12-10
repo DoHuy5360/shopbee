@@ -186,7 +186,7 @@
                                                                     @foreach ($item->classificationones as $cls1)
                                                                         <div class="cart_checkout--method-wrap">
                                                                             <label class="cart_check--method-feature">
-                                                                                <input class="cart_check--method" type="radio" name="checkout-type" value="type1"
+                                                                                <input class="cart_check--method" type="radio" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][classification1]" value="{{ $cls1->name }}"
                                                                                     {{ isset($cls1->checked) ? ($cls1->checked == $cls1->code ? 'checked' : '') : '' }} />
                                                                                 <span>{{ $cls1->name }}</span>
                                                                             </label>
@@ -204,7 +204,7 @@
                                                                             @foreach ($array_cls2 as $cls2)
                                                                                 <div class="cart_checkout--method-wrap">
                                                                                     <label class="cart_check--method-feature">
-                                                                                        <input class="cart_check--method" type="radio" name="checkout-type2" value="type2"
+                                                                                        <input class="cart_check--method" type="radio" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][classification2]" value="{{ $cls2->name }}"
                                                                                             {{ isset($cls2->checked) ? ($cls2->checked == $cls2->code ? 'checked' : '') : '' }} />
                                                                                         <span>{{ $cls2->name }}</span>
                                                                                     </label>
