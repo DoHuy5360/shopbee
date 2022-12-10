@@ -2,7 +2,7 @@
     #mainHome_navbar_about_topic-respon-hidden {
         display: grid;
         place-items: center;
-        width: 50px;
+        width: auto;
         color: #fff;
         font-size: 2.3rem;
     }
@@ -17,6 +17,14 @@
         width: 100%;
         position: relative;
         padding: 0;
+        background-color: #191a21d0;
+    }
+
+    #headerHome-display-cart-number {
+        height: auto;
+        width: 24px;
+        aspect-ratio: 1;
+        border-radius: 50%;
     }
 
     .mainHome_navbar_aboutUs {
@@ -67,7 +75,8 @@
     .mainHome_navbar_containt {
         align-items: center;
         justify-content: space-around;
-        padding: 0 10px;
+        padding: 5px 10px 0px;
+        height: auto;
         display: flex;
         width: 100%;
         gap: 5px;
@@ -114,5 +123,50 @@
     }
     #mainHome_navbar_about_topic-close-icon {
         margin: 250px 0 0 20px;
+    }
+
+    #mainHome-search-inp {
+        border-radius: 3px;
+        padding: 0%;
+        height: 30px;
+        width: 0;
+        transition: 0.3s all ease;
+    }
+
+    #mainHome-search-inp:focus {
+        outline: none;
+    }
+
+    .mainHome_pageSearch {
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0%;
+    }
+    ion-icon[name="search-outline"] {
+        font-size: 1.8rem;
+    }
+    #mainHome_pageSearchHome_search {
+        padding: 0 10px 0 0;
+        background-color: rgba(255, 255, 255, 0);
+    }
+    #mainHome_pageSearchHome_search:focus {
+        outline: none;
+    }
+
+    :has(#mainHome_pageSearchHome_search:focus) #mainHome-search-inp,
+    #mainHome-search-inp:focus {
+        padding: 5px;
+        width: 100%;
+        margin-right: 5px;
+    }
+
+    :has(#mainHome_pageSearchHome_search:focus, #mainHome-search-inp:focus)
+        :is(.mainHome_personal, #mainHome_navbar_about_topic-respon-hidden) {
+        transform: scale(0);
+        opacity: 0;
+        width: 0%;
+    }
+    .mainHome_personal,
+    #mainHome_navbar_about_topic-respon-hidden {
+        transition: 0.3s;
     }
 }
