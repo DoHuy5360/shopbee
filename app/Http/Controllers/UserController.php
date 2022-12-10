@@ -13,12 +13,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
+        $user_code = Auth::user()->code;
         $get_user = DB::select(
             "SELECT *
              FROM users
-             WHERE code = '$request->user_code'
+             WHERE code = '$user_code'
             "
         )[0];
         return view('_profile.profile_edit', [

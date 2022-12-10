@@ -17,12 +17,13 @@ class PurchaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
+        $user_code = Auth::user()->code;
         $get_user = DB::select(
             "SELECT *
             FROM users
-            WHERE code = '$request->user_code'
+            WHERE code = '$user_code'
             "
         )[0];
         $get_bill_pdt = DB::select(
@@ -33,7 +34,7 @@ class PurchaseController extends Controller
                     amount,
                     status
             FROM bills b, bill_products bp, users u
-            WHERE b.buyer_code = '$request->user_code'
+            WHERE b.buyer_code = '$user_code'
             AND b.code = bp.bill_code
             AND u.code = b.buyer_code
             ORDER BY bp.id DESC
@@ -156,7 +157,7 @@ class PurchaseController extends Controller
                 }
             }
         }
-        return $request;
+        return redirect()->route("profile.show",'order');
     }
 
     /**

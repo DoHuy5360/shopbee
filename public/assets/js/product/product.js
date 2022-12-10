@@ -1,3 +1,5 @@
+import { displayProductsInCartPreview as refreshCartPreview } from "../module/function/header_func.js"
+
 // todo: Chức năng hiện thị ảnh, video theo sự kiện rê chuột
 const all_product_images = document.querySelectorAll(
     ".product__image--carousel-element-wrap"
@@ -96,7 +98,7 @@ $(document).ready(function () {
                 } else if (resp_msg.status === "duplicate") {
                     alertMessage();
                 } else {
-                    refreshCart();
+                    refreshCartPreview()
                     alertMessage();
                 }
             },
@@ -107,17 +109,5 @@ $(document).ready(function () {
         setTimeout(() => {
             $("#product-alert-wrap").css("display", "none");
         }, 1500);
-    }
-    function refreshCart() {
-        $.ajax({
-            type: "GET",
-            url: `/cart/create`,
-            success: function (response) {
-                const number_item = $("#headerHome-display-cart-number");
-                const wrap_item = $("#mainHome-cart-list-product");
-                wrap_item.html(response);
-                number_item.text($(".mainHome__cart--product-wrap").length);
-            },
-        });
     }
 });

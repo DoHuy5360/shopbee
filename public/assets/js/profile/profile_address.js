@@ -1,3 +1,5 @@
+import { toggleLoadingAnimation } from "../module/function/profile_func.js";
+
 export function starScriptAddress() {
     $(document).ready(function () {
         const node__body = document.getElementById("body");
@@ -69,34 +71,28 @@ export function starScriptAddress() {
             });
         });
         // todo: Xóa địa chỉ
-        const node__adrs_del = document.querySelectorAll(".profile__address--card-del")
-        node__adrs_del.forEach(btn => {
-            btn.addEventListener("click", e =>{
-                const str__adrs_code = btn.parentNode.getAttribute("data-addess-code")
+        const node__adrs_del = document.querySelectorAll(
+            ".profile__address--card-del"
+        );
+        node__adrs_del.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const str__adrs_code =
+                    btn.parentNode.getAttribute("data-addess-code");
                 $.ajax({
                     type: "POST",
                     url: `/user_address/${str__adrs_code}`,
                     data: {
                         _method: "DELETE",
-                        _token: $("[name='_token']").val()
+                        _token: $("[name='_token']").val(),
                     },
                     success: function (response) {
                         refreshListAddress();
-                    }
+                    },
                 });
-            })
-        })
-        function toogleFrameCover(_boll_display) {
-            if (_boll_display) {
-                $("#seller-frame-cover").css("z-index", 16);
-            } else {
-                setTimeout(() => {
-                    $("#seller-frame-cover").css("z-index", -1);
-                }, 500);
-            }
-        }
+            });
+        });
         function refreshListAddress() {
-            toogleFrameCover(true);
+            toggleLoadingAnimation(true);
             $.ajax({
                 type: "GET",
                 url: "/user_address",
@@ -105,7 +101,7 @@ export function starScriptAddress() {
                 },
                 complete: function () {
                     starScriptAddress();
-                    toogleFrameCover(false);
+                    toggleLoadingAnimation(false);
                 },
             });
         }
