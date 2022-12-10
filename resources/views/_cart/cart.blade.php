@@ -174,7 +174,7 @@
                                                             <span>Classify</span>
                                                             <ion-icon name="chevron-down-outline"></ion-icon>
                                                         </div>
-                                                        <div class="cart_page_about_choice">----</div>
+                                                        <div class="cart_page_about_choice">-/-/-/-/-</div>
                                                     </div>
                                                     @if (isset($item->classificationone))
                                                         <div class="cart_page_option_items">

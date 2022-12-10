@@ -106,7 +106,11 @@
                                 <div id="product-title-transportItem2">
                                     <div id="product-title-transportItem-row1">
                                         Vận Chuyển Tới
-                                        <span>{{ $get_user_adres->province }}, {{ $get_user_adres->district }}, {{ $get_user_adres->wards }}</span>
+                                        @if ($get_user_adres)
+                                            <span>{{ $get_user_adres->province }}, {{ $get_user_adres->district }}, {{ $get_user_adres->wards }}</span>
+                                        @else
+                                            <span>Chưa thiết lập</span>
+                                        @endif
                                         <ion-icon name="chevron-down-outline"></ion-icon>
                                     </div>
                                     <div id="product-title-transportItem-row2">
