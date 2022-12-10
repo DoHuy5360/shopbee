@@ -13,7 +13,7 @@
     </div>
     <div id="cart-page-backdrop">
         <div id="cartPage-limit-alert" open>
-            <div>Rất tiếc, bạn chỉ có thể mua <strong id="cart-page-amount-item"></strong> sản phẩm này.</div>
+            <div>Oops! You can only buy <strong id="cart-page-amount-item"></strong> these Products.</div>
             <button id="cart-page-close-alert" type="button">OK</button>
         </div>
     </div>
@@ -24,7 +24,7 @@
                 <div class="mainHome_navbar_about_topic">
                     <ul>
                         <a href="/seller" target="_blank" rel="noopener noreferrer">
-                            <li class="mainHome_navbar-topic">Kênh người bán</li>
+                            <li class="mainHome_navbar-topic">Seller page</li>
                         </a>
                         <li class="mainHome__split--line">|</li>
                         <a href="http://" target="_blank" rel="noopener noreferrer">
@@ -32,19 +32,19 @@
                         </a>
                         <li class="mainHome__split--line">|</li>
                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <li class="mainHome_navbar-topic">Tải ứng dụng</li>
+                            <li class="mainHome_navbar-topic">Download App</li>
                         </a>
                         <li class="mainHome__split--line">|</li>
                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <li class="mainHome_navbar-topic">Liên kết</li>
+                            <li class="mainHome_navbar-topic">Link</li>
                         </a>
                     </ul>
                 </div>
                 <div class="mainHome_navbar_about_topic">
                     <ul>
-                        <li class="mainHome_navbar-topic">Thông báo</li>
-                        <li class="mainHome_navbar-topic">Hỗ Trợ</li>
-                        <li class="mainHome_navbar-topic">Ngôn ngữ</li>
+                        <li class="mainHome_navbar-topic">Notification</li>
+                        <li class="mainHome_navbar-topic">Support</li>
+                        <li class="mainHome_navbar-topic">Language</li>
                         @auth
                             <li class="mainHome_navbar-topic" id="mainHome-navbar-user">
                                 <img id="mainHome-avatar-ion" src="{{ asset(Auth::user()->avatar) }}
@@ -55,11 +55,11 @@
                                 <div id="mainHome-hidden-tramform">
                                     <div id="mainHome-user-hidden-wrap">
                                         <div id="mainHome-hidden-option-user">
-                                            <a class="mainHome__action--user" href="{{ route('profile.show', Auth::user()->code) }}">Hồ sơ của tôi</a>
-                                            <a class="mainHome__action--user" href="">Đơn mua</a>
+                                            <a class="mainHome__action--user" href="{{ route('profile.show', Auth::user()->code) }}">My profile</a>
+                                            <a class="mainHome__action--user" href="">Order</a>
                                             <form action="{{ route('logout') }}" method="POST">
                                                 @csrf
-                                                <button type="submit" class="mainHome__action--user" id="mainHome-logout-btn">Đăng xuất</button>
+                                                <button type="submit" class="mainHome__action--user" id="mainHome-logout-btn">Logout</button>
                                             </form>
                                         </div>
                                     </div>
@@ -68,10 +68,10 @@
                         @endauth
                         @guest
                             <li class="mainHome_navbar-topic">
-                                <a href="{{ route('register') }}">Đăng Ký</a>
+                                <a href="{{ route('register') }}">Register</a>
                             </li>
                             <li class="mainHome_navbar-topic">
-                                <a href="{{ route('login') }}">Đăng nhập</a>
+                                <a href="{{ route('login') }}">Login</a>
                             </li>
                         @endguest
                     </ul>
@@ -84,7 +84,7 @@
                     <a href="/" class="no_decoration">
                         <img src="{{ asset('assets/img/shopbee.png') }}" alt="" srcset="" /></a>
                 </div>
-                <div id="cart-shopbee">Giỏ Hàng</div>
+                <div id="cart-shopbee">Cart</div>
             </div>
             <div id="cart-search-inputVoucher">
                 <input id="cart-search-input-field" placeholder="VOUCHER FREE SHIP ĐẾN 70K" type="text" />
@@ -102,27 +102,27 @@
                     <path fill="#00BFA5"
                         d="M19,9.5h-.32L17.43,6.38A3,3,0,0,0,14.65,4.5h-6A3,3,0,0,0,5.7,6.91L5.18,9.5H5a3,3,0,0,0-3,3v3a1,1,0,0,0,1,1H4a3,3,0,0,0,6,0h4a3,3,0,0,0,6,0h1a1,1,0,0,0,1-1v-3A3,3,0,0,0,19,9.5Zm-6-3h1.65a1,1,0,0,1,.92.63l.95,2.37H13Zm-5.34.8a1,1,0,0,1,1-.8H11v3H7.22ZM7,17.5a1,1,0,1,1,1-1A1,1,0,0,1,7,17.5Zm10,0a1,1,0,1,1,1-1A1,1,0,0,1,17,17.5Zm3-3h-.78a3,3,0,0,0-4.44,0H9.22a3,3,0,0,0-4.44,0H4v-2a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1Z" />
                 </svg>
-                <div>Nhấn vào mục Mã giảm giá ở cuối trang để hưởng miễn phí vận chuyển bạn nhé!</div>
+                <div>Click on the Coupon Code section at the bottom of the page to get your free shipping delivered!</div>
             </div>
             <div class="cart_page_product_guide" id="cart-page-product-guide">
                 <div class="cart_page_btn">
                     <input type="checkbox" name="" class="cart__page-check-all" />
                 </div>
                 <div class="cart_page_name_product">
-                    <div>Sản Phẩm</div>
+                    <div>Product</div>
                 </div>
                 <div class="cart_page_about_product"></div>
                 <div class="cart_page_pricePerNumb">
-                    <div>Đơn Giá</div>
+                    <div>Price</div>
                 </div>
                 <div class="cart_page_quantity">
-                    <div>Số Lượng</div>
+                    <div>Amount</div>
                 </div>
                 <div class="cart_page_price">
-                    <div>Số Tiền</div>
+                    <div>Total</div>
                 </div>
                 <div class="cart_page_otherAction">
-                    <div>Thao Tác</div>
+                    <div>Action</div>
                 </div>
             </div>
             <form action="{{ route('purchase.create') }}" id="cart-form-submit" class="cart_page_warp_containt_border" method="GET">
@@ -147,9 +147,9 @@
                                     <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->product_code }}">
                                     <div class="cart_page_wrap_containt">
                                         <div class="cart_page_voucher_cover">
-                                            <div class="cart_page_voucher_title">Combo khuyến mãi</div>
-                                            <div class="cart_page_voucher_detail">Mua 2 sản phẩm giảm 8%</div>
-                                            <div class="cart_page_voucher_add"><a href="http://" target="_blank" rel="noopener noreferrer">Thêm ></a></div>
+                                            <div class="cart_page_voucher_title">Sale combo</div>
+                                            <div class="cart_page_voucher_detail">Promotion comboBuy 2 products 8% off</div>
+                                            <div class="cart_page_voucher_add"><a href="http://" target="_blank" rel="noopener noreferrer">More ></a></div>
                                         </div>
                                         <div class="cart__page--hidden-wrap">
 
@@ -171,7 +171,7 @@
                                                 <div class="cart_page_option_wrap_respon">
                                                     <div class="cart_page_about_option">
                                                         <div class="cart_page_about_title">
-                                                            <span>Phân Loại Hàng</span>
+                                                            <span>Classify</span>
                                                             <ion-icon name="chevron-down-outline"></ion-icon>
                                                         </div>
                                                         <div class="cart_page_about_choice">MS</div>
@@ -214,9 +214,7 @@
                                                                     @endforeach
                                                                 </div>
                                                             </div>
-                                                            <button type="button" class="cart_page_option_submit_btn_wrap">
-                                                                Xác nhận
-                                                            </button>
+                                                            <button type="button" class="cart_page_option_submit_btn_wrap">Confirm</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -240,7 +238,7 @@
                                                             <ion-icon name="trash-outline"></ion-icon>
                                                         </div>
                                                         <div class="cart_page_actionAdd">
-                                                            <div>Tìm sản phảm tương tự</div>
+                                                            <div>Search similar products</div>
                                                             <ion-icon name="chevron-down-outline"></ion-icon>
                                                         </div>
                                                     </div>
@@ -254,18 +252,18 @@
                                 <div class="cart_page_voucher_icon">
                                     <ion-icon name="ticket-outline"></ion-icon>
                                 </div>
-                                <div class="cart_page_voucher_detail">Shop Voucher giảm đến ₫50k</div>
+                                <div class="cart_page_voucher_detail">Shop Voucher up to 50k</div>
                                 <div class="cart_page_voucherAdd">
-                                    <a href="http://" rel="noopener noreferrer">Xem thêm Voucher</a>
+                                    <a href="http://" rel="noopener noreferrer">More Voucher</a>
                                 </div>
                             </div>
                             <div class="cart_page_product_trans">
                                 <div class="cart_page_trans_icon">
                                     <ion-icon name="car-outline"></ion-icon>
                                 </div>
-                                <div class="cart_page_trans_detail">Giảm ₫40.000 phí vận chuyển đơn tối thiểu ₫0</div>
+                                <div class="cart_page_trans_detail">Discount 40,000 minimum single shipping fee 0</div>
                                 <div class="cart_page_transAdd">
-                                    <a href="http://" rel="noopener noreferrer">Tìm hiểu thêm</a>
+                                    <a href="http://" rel="noopener noreferrer">Learn more</a>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +273,7 @@
             @foreach ($get_grp_pdt_hid as $index_pdt => $product_creator)
                 <div class="cart_page_product_infor" id="cart_page-product-inactive">
                     <div id="cart_page-product-inactive-warp">
-                        <div id="cart_page-product-inactive-title">Danh Sách Sản Phẩm Không Hoạt Động</div>
+                        <div id="cart_page-product-inactive-title">Inactive products List</div>
                         <input type="hidden" name="product_information[{{ $index_pdt }}][user_code]" value="{{ $product_creator->user_code }}">
                         <input type="hidden" name="product_information[{{ $index_pdt }}][user_name]" value="{{ $product_creator->name }}">
                         <div class="cart_page_product_prize_infor">
@@ -284,19 +282,19 @@
                                     <input type="checkbox" name="" id="" />
                                 </div>
                                 <div class="cart_page_name_product">
-                                    <div>Đại diện cung cấp <strong>{{ $product_creator->name }}</strong></div>
+                                    <div>Provider <strong>{{ $product_creator->name }}</strong></div>
                                     <ion-icon style="color: red; font-size: 1.4rem" name="chatbubbles-sharp"></ion-icon>
                                 </div>
-                                <span class="cart__page-product-edit">Sửa</span>
+                                <span class="cart__page-product-edit">Edit</span>
                             </div>
                             @foreach ($product_creator->products as $index_item => $item)
                                 <div class="cart_page_warp_containt_border">
                                     <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->product_code }}">
                                     <div class="cart_page_wrap_containt">
                                         <div class="cart_page_voucher_cover">
-                                            <div class="cart_page_voucher_title">Combo khuyến mãi</div>
-                                            <div class="cart_page_voucher_detail">Mua 2 sản phẩm giảm 8%</div>
-                                            <div class="cart_page_voucher_add"><a href="http://" target="_blank" rel="noopener noreferrer">Thêm ></a></div>
+                                            <div class="cart_page_voucher_title">Sale combo</div>
+                                            <div class="cart_page_voucher_detail">Buy 2 products 8% off</div>
+                                            <div class="cart_page_voucher_add"><a href="http://" target="_blank" rel="noopener noreferrer">More ></a></div>
                                         </div>
                                         <div class="cart__page--hidden-wrap">
 
@@ -317,7 +315,7 @@
                                                 <div class="cart_page_option_wrap_respon">
                                                     <div class="cart_page_about_option">
                                                         <div class="cart_page_about_title">
-                                                            <span>Phân Loại Hàng</span>
+                                                            <span>Classify</span>
                                                             <ion-icon name="chevron-down-outline"></ion-icon>
                                                         </div>
                                                         <div class="cart_page_about_choice">MS</div>
@@ -360,9 +358,7 @@
                                                                     @endforeach
                                                                 </div>
                                                             </div>
-                                                            <button type="button" class="cart_page_option_submit_btn_wrap">
-                                                                Xác nhận
-                                                            </button>
+                                                            <button type="button" class="cart_page_option_submit_btn_wrap">Confirm</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -386,7 +382,7 @@
                                                             <ion-icon name="trash-outline"></ion-icon>
                                                         </div>
                                                         <div class="cart_page_actionAdd">
-                                                            <div>Tìm sản phảm tương tự</div>
+                                                            <div>Search familiar products</div>
                                                             <ion-icon name="chevron-down-outline"></ion-icon>
                                                         </div>
                                                     </div>
@@ -408,14 +404,14 @@
                             <ion-icon style="color: red" name="ticket-outline"></ion-icon>
                             <div>ShopBee Voucher</div>
                         </div>
-                        <div id="cart-page-sticky-voucher-input"><a href="http://" target="_blank" rel="noopener noreferrer">Chọn Hoặc Nhập Mã</a></div>
+                        <div id="cart-page-sticky-voucher-input"><a href="http://" target="_blank" rel="noopener noreferrer">Choose or Enter code</a></div>
                     </div>
                     <div id="cart-page-sticky-coin">
                         <div id="cart-page-sticky-coin-check">
                             <input type="checkbox" name="" id="" />
                             <ion-icon style="color: rgb(177, 177, 77)" name="logo-bitcoin"></ion-icon>
-                            <div>ShopBee Xu</div>
-                            <div id="cart-page-sticky-coin-amount-display">Bạn chưa chọn sản phẩm</div>
+                            <div>ShopBee coin</div>
+                            <div id="cart-page-sticky-coin-amount-display">You not choosed yet</div>
                         </div>
                         <div id="cart-page-sticky-coin-amount">
                             <span>₫ <span id="cart-page-total-price">0</span></span>
@@ -426,23 +422,23 @@
                             <input type="checkbox" name="" class="cart__page-check-all" />
                         </div>
                         <div id="cart-page-sticky-function-selectAll">
-                            <div>Chọn Tất Cả (<span id="cart-page-amnt-pdt-slct">0</span>)</div>
+                            <div>Check all (<span id="cart-page-amnt-pdt-slct">0</span>)</div>
                         </div>
                         <div id="cart-page-sticky-function-del">
-                            <div>Xoá</div>
+                            <div>Delete</div>
                         </div>
                         <div id="cart-page-sticky-function-delInactive">
-                            <div>Bỏ sản phẩm không hoạt động</div>
+                            <div>Remove all inactive products</div>
                         </div>
                         <div id="cart-page-sticky-function-saveToLike">
-                            <div style="color: red">Lưu vào mục Yêu thích</div>
+                            <div style="color: red">Add to bookmark</div>
                         </div>
                         <div id="cart-page-sticky-function-sumCost">
-                            <span>Tổng thanh toán</span>
+                            <span>Total</span>
                             <div>(₫<span id="cart-page-final-cost">0</span>)</div>
                         </div>
                         <div id="cart-page-sticky-function-btnBuy">
-                            <button id="cart-page-go-buy" form="cart-form-submit" type="submit">Thanh Toán</button>
+                            <button id="cart-page-go-buy" form="cart-form-submit" type="submit">Checkout</button>
                         </div>
                     </div>
                 </div>
