@@ -82,7 +82,7 @@ $(document).ready(function () {
     // todo: Sự kiện thêm sản phẩm vào giỏ hàng
     $("#product-title-add2cart").click(function (e) {
         e.preventDefault();
-        $("#theForm").ajaxSubmit({
+        $("#product-form-add-cart").ajaxSubmit({
             url: "/cart",
             type: "post",
             success: function (response, statusText, xhr, form) {
@@ -110,4 +110,18 @@ $(document).ready(function () {
             $("#product-alert-wrap").css("display", "none");
         }, 1500);
     }
+    const node__amnt_storage = document.getElementById("product-storage-number")
+    const node__amnt_order = document.getElementById("product-amount-order")
+    const node__btn__plus = document.getElementById("product-title_quantity-plus")
+    const node__btn_minus = document.getElementById("product-title_quantity-minus")
+    node__btn__plus.addEventListener("click", e => {
+        if(node__amnt_order.value < parseInt(node__amnt_storage.innerText)){
+            node__amnt_order.value++
+        }
+    })
+    node__btn_minus.addEventListener("click", e => {
+        if(node__amnt_order.value > 1){
+            node__amnt_order.value--
+        }
+    })
 });

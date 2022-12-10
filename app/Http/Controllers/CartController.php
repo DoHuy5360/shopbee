@@ -72,9 +72,12 @@ class CartController extends Controller
             } else {
                 $g_code = genCode(52);
                 $add_pdt_cart = new Cart();
-                $add_pdt_cart->code = $g_code;
-                $add_pdt_cart->user_code = $buyer_code;
-                $add_pdt_cart->product_code = $pdt_code;
+                $add_pdt_cart->code = "$g_code";
+                $add_pdt_cart->user_code = "$buyer_code";
+                $add_pdt_cart->product_code = "$pdt_code";
+                $add_pdt_cart->amount = $request->amount_order;
+                $add_pdt_cart->classificationone_code = "$request->classify1";
+                $add_pdt_cart->classificationtwo_code = "$request->classify2";
                 $add_pdt_cart->save();
             }
         } else {

@@ -17,13 +17,6 @@
         <div id="product-alert-mesage">Sản phẩm đã được thêm vào Giỏ hàng</div>
     </div>
     @include('layouts.header-home')
-    <form action="{{ route('cart.store') }}" id="theForm" method="POST">
-        @csrf
-        @auth
-            <input name="buyer_code" type="hidden" value="{{ Auth::user()->code }}">
-        @endauth
-        <input name="product_code" type="hidden" value="{{ $get_pdt->code }}">
-    </form>
     <div id="product-page-content">
         <div id="product-body">
             <div class="product_content" id="product-img">
@@ -73,10 +66,10 @@
             <div class="product_content" id="product-about">
                 <div id="product-title">
                     <div id="product-title_rating">
-                        <p>{{ $get_pdt->name }}</p>
+                        <div id="product-title-text">{{ $get_pdt->name }}</div>
                         <div id="product-title_rate_infor">
-                            <div>
-                                <p style="color: red; border-bottom: 1px red solid">5.0</p>
+                            <div id="product-title-rate-star">
+                                <div style="color: red; border-bottom: 1px red solid">5.0</div>
                                 <div id="product-title_rate-star">
                                     <ion-icon name="star"></ion-icon>
                                     <ion-icon name="star"></ion-icon>
@@ -96,8 +89,8 @@
                         </div>
                     </div>
                     <div id="product-title-column">
-                        <div class="product_title_column-item" id="product-title-price">
-                            <div class="product_title_column-item-infor">₫<span>{{ $get_pdt->price }}</span></div>
+                        <div id="product-title-price">
+                            <div id="product-title-price-currentcy-wrp"><span>₫</span><span id="product-price">{{ number_format($get_pdt->price, 0, ',', '.') }}</span></div>
                         </div>
                         <div class="product_title_column-item" id="product-title_insurance">
                             <div class="product_title_column_title">Bảo Hiểm</div>
@@ -110,7 +103,7 @@
                                 <div id="product-title-transportItem2">
                                     <div id="product-title-transportItem-row1">
                                         Vận Chuyển Tới
-                                        <span>HoChiMinh P8, Tân Bình</span>
+                                        <span>{{ $get_user_adres->province }}, {{ $get_user_adres->district }}, {{ $get_user_adres->wards }}</span>
                                         <ion-icon name="chevron-down-outline"></ion-icon>
                                     </div>
                                     <div id="product-title-transportItem-row2">
@@ -120,51 +113,62 @@
                                 </div>
                             </div>
                         </div>
-                        @if (isset($get_pdt->classificationone))
-                            <div class="product_title_column-item" id="product-title_colour">
-                                <div class="product_title_column_title">{{ $get_pdt->classificationone }}</div>
-                                <div class="product_title_column-item-infor">
-                                    @foreach ($get_classification_one as $cls1)  
-                                        <div class="product_title_colour-block">{{ $cls1->name }}</div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        @endif
-                        @if (isset($get_pdt->classificationtwo))
-                            <div class="product_title_column-item" id="product-title_colour">
-                                <div class="product_title_column_title">{{ $get_pdt->classificationtwo }}</div>
-                                <div id="product-classification2--wrap">
-                                    @foreach ($array_classification_two as $array_cls2)
-                                        <div class="product_title_column-item-infor">
-                                            @foreach ($array_cls2 as $cls2)
-                                                <div class="product_title_colour-block">{{ $cls2->name }}</div>
-                                            @endforeach
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        @endif
-                        <div class="product_title_column-item" id="product-title_quantity">
-                            <div class="product_title_column_title">Số Lượng</div>
-                            <div class="product-title-column-item-infor" id="product-title-columnItem4">
-                                <div id="product-title_quantity-inputfield">
-                                    <div id="product-up-down-wrap">
-                                        <button id="product-title_quantity-minus">-</button>
-                                        <input type="text" aria-valuenow="1" value="1" />
-                                        <button id="product-title_quantity-plus">+</button>
+                        <form action="{{ route('cart.store') }}" id="product-form-add-cart" method="POST">
+                            @csrf
+                            @auth
+                                <input name="buyer_code" type="hidden" value="{{ Auth::user()->code }}">
+                            @endauth
+                            <input name="product_code" type="hidden" value="{{ $get_pdt->code }}">
+                            @if (isset($get_pdt->classificationone))
+                                <div class="product_title_column-item">
+                                    <div class="product_title_column_title">{{ $get_pdt->classificationone }}</div>
+                                    <div class="product_title_column-item-infor">
+                                        @foreach ($get_classification_one as $cls1)
+                                            <label class="product_title_colour-block" for="{{ $cls1->code }}">{{ $cls1->name }}
+                                                <input type="radio" name="classify1" id="{{ $cls1->code }}" value="{{ $cls1->code }}">
+                                            </label>
+                                        @endforeach
                                     </div>
-                                    <span><span id="product-storage-number">{{ $get_pdt->storage }}</span> Sản phẩm có sẵn</span>
+                                </div>
+                            @endif
+                            @if (isset($get_pdt->classificationtwo))
+                                <div class="product_title_column-item">
+                                    <div class="product_title_column_title">{{ $get_pdt->classificationtwo }}</div>
+                                    <div id="product-classification2--wrap">
+                                        @foreach ($array_classification_two as $array_cls2)
+                                            <div class="product_title_column-item-infor">
+                                                @foreach ($array_cls2 as $cls2)
+                                                    <label class="product_title_colour-block" for="{{ $cls2->code }}">{{ $cls2->name }}
+                                                        <input type="radio" name="classify2" id="{{ $cls2->code }}" value="{{ $cls2->code }}">
+                                                    </label>
+                                                @endforeach
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endif
+                            <div class="product_title_column-item" id="product-title_quantity">
+                                <div class="product_title_column_title">Số Lượng</div>
+                                <div class="product-title-column-item-infor" id="product-title-columnItem4">
+                                    <div id="product-title_quantity-inputfield">
+                                        <div id="product-up-down-wrap">
+                                            <button id="product-title_quantity-minus" type="button">-</button>
+                                            <input name="amount_order" id="product-amount-order" type="text" aria-valuenow="1" value="1" type="Amount"/>
+                                            <button id="product-title_quantity-plus" type="button">+</button>
+                                        </div>
+                                        <span><span id="product-storage-number">{{ $get_pdt->storage }}</span> Sản phẩm có sẵn</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product_title_column-item" id="product-title_incartBtn">
-                            <button type="submit" id="product-title-add2cart">
-                                <ion-icon name="cart-outline"></ion-icon>
-                                <div>Thêm Vào Giỏ Hàng</div>
-                            </button>
-                            <a href="/cart" class="no_decoration">
-                                <button type="submit" id="product-title-buyNow">Mua Ngay</button></a>
-                        </div>
+                            <div class="product_title_column-item" id="product-title_incartBtn">
+                                <button type="submit" id="product-title-add2cart">
+                                    <ion-icon name="cart-outline"></ion-icon>
+                                    <div>Thêm Vào Giỏ Hàng</div>
+                                </button>
+                                <a href="/cart" class="no_decoration">
+                                    <button type="submit" id="product-title-buyNow">Mua Ngay</button></a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

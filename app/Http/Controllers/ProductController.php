@@ -145,31 +145,18 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $keys = [
-            "product_generate_id",
-            "product_image",
-            "product_price",
-            "product_category",
-            "product_sold",
-            "product_inventory",
-            "product_rate",
-            "product_star",
-            "product_like",
-            "product_color",
-            "user_address",
-            "shop_generate_id",
-            "shop_name",
-            "shop_rate",
-            "shop_response_rate",
-            "shop_created_at",
-            "shop_follower",
-            "shop_response_time",
-            "shop_product"
-        ];
+        $user_code = Auth::user()->code;
         $get_pdt = DB::select(
             "SELECT *
             FROM products p
             WHERE p.code = '$id'
+            "
+        )[0];
+        $get_user_adres = DB::select(
+            "SELECT *
+            FROM user_addresses
+            WHERE user_code = '$user_code'
+            AND default_address = 'true'
             "
         )[0];
         $get_pdt_img = DB::select(
@@ -193,7 +180,7 @@ class ProductController extends Controller
         $array_classification_two = [];
         foreach ($get_classification_one as $cls1) {
             $get_classification_two = DB::select(
-                "SELECT name, price, storage, sku
+                "SELECT code, name, price, storage, sku
                 FROM product_classificationtwos
                 WHERE classificationone_code = '{$cls1->code}'
                 "
@@ -207,6 +194,7 @@ class ProductController extends Controller
             'get_pdt_vid' => $get_pdt_vid,
             'get_classification_one' => $get_classification_one,
             'array_classification_two' => $array_classification_two,
+            'get_user_adres' => $get_user_adres,
         ]);
     }
 

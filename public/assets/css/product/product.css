@@ -6,7 +6,13 @@ body {
     width: 1200px;
     margin: 0 auto;
 }
-
+#product-title-text{
+    font-size: 20px;
+}
+#product-title-rate-star{
+    display: flex;
+    gap: 5px;
+}
 /*! noi dung cua san pham */
 #product-body {
     display: flex;
@@ -74,7 +80,9 @@ body {
     text-align: center;
     width: 100%;
 }
-
+#product-title{
+    width: 100%;
+}
 #product-title_rate_infor div {
     display: flex;
 }
@@ -91,10 +99,6 @@ body {
 
 #product-title_rate-star ion-icon {
     color: red;
-}
-
-#product-title_rate_infor {
-    /* margin: 0 20px; */
 }
 
 #product-title_rate_item1 {
@@ -127,12 +131,18 @@ body {
     gap: 8px;
     flex-direction: column;
 }
-
+#product-form-add-cart{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .product_title_column-item {
     display: flex;
-    margin: 5px 25px;
+    margin: 0 25px;
 }
-
+.product_title_column-item label{
+    margin-bottom: 0;
+}
 .product_title_column-item-infor {
     display: flex;
     gap: 10px;
@@ -168,8 +178,15 @@ body {
     box-sizing: border-box;
     background-color: white;
     cursor: pointer;
+    user-select: none;
 }
-
+.product_title_colour-block input{
+    display: none;
+}
+.product_title_colour-block:has(input:checked){
+    color: var(--color-4);
+    border-color: currentColor;
+}
 .product_title_colour-block:hover {
     border: 1px solid #ee4d2d;
     color: #ee4d2d;
@@ -695,9 +712,20 @@ body {
 
 #product-title-price {
     color: #ee4d2d;
-    font-size: 1.6rem;
+    height: 70px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #FAFAFA;
+    margin-top: 20px;
 }
-
+#product-title-price-currentcy-wrp{
+    display: flex;
+    align-items: flex-start;
+}
+#product-price{
+    font-size: 33px;
+}
 .product_rate_cmt_report {
     position: relative;
     cursor: pointer;
