@@ -174,49 +174,57 @@
                                                             <span>Classify</span>
                                                             <ion-icon name="chevron-down-outline"></ion-icon>
                                                         </div>
-                                                        <div class="cart_page_about_choice">MS</div>
+                                                        <div class="cart_page_about_choice">----</div>
                                                     </div>
-                                                    <div class="cart_page_option_items">
-                                                        <div class="cart_page_option_items_wrap">
-                                                            <div class="cart_page_option_fix">
-                                                                <div class="cart_page_option_fix_title">
-                                                                    <span>{{ $item->classificationone }}</span>:
+                                                    @if (isset($item->classificationone))
+                                                        <div class="cart_page_option_items">
+                                                            <div class="cart_page_option_items_wrap">
+                                                                <div class="cart_page_option_fix">
+                                                                    <div class="cart_page_option_fix_title">
+                                                                        <span>{{ $item->classificationone }}</span>:
+                                                                    </div>
+                                                                    <div class="cart_page_option_choice">
+                                                                        @foreach ($item->classificationones as $cls1)
+                                                                            <div class="cart_checkout--method-wrap">
+                                                                                <label class="cart_check--method-feature">
+                                                                                    <input class="cart_check--method" type="radio"
+                                                                                        name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][classification1]"
+                                                                                        value="{{ $cls1->name }}"
+                                                                                        {{ isset($cls1->checked) ? ($cls1->checked == $cls1->code ? 'checked' : '') : '' }} />
+                                                                                    <span>{{ $cls1->name }}</span>
+                                                                                </label>
+                                                                            </div>
+                                                                        @endforeach
+                                                                    </div>
                                                                 </div>
-                                                                <div class="cart_page_option_choice">
-                                                                    @foreach ($item->classificationones as $cls1)
-                                                                        <div class="cart_checkout--method-wrap">
-                                                                            <label class="cart_check--method-feature">
-                                                                                <input class="cart_check--method" type="radio" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][classification1]" value="{{ $cls1->name }}"
-                                                                                    {{ isset($cls1->checked) ? ($cls1->checked == $cls1->code ? 'checked' : '') : '' }} />
-                                                                                <span>{{ $cls1->name }}</span>
-                                                                            </label>
-                                                                        </div>
-                                                                    @endforeach
+                                                                <div class="cart_page_option_fix">
+                                                                    <div class="cart_page_option_fix_title">
+                                                                        <span>{{ $item->classificationtwo }}</span>:
+                                                                    </div>
+                                                                    <div id="cart-page-classification2-wrap">
+                                                                        @foreach ($item->classificationtwos as $array_cls2)
+                                                                            <div class="cart_page_option_choice">
+                                                                                @foreach ($array_cls2 as $cls2)
+                                                                                    <div class="cart_checkout--method-wrap">
+                                                                                        <label class="cart_check--method-feature">
+                                                                                            <input class="cart_check--method" type="radio"
+                                                                                                name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][classification2]"
+                                                                                                value="{{ $cls2->name }}"
+                                                                                                {{ isset($cls2->checked) ? ($cls2->checked == $cls2->code ? 'checked' : '') : '' }} />
+                                                                                            <span>{{ $cls2->name }}</span>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                @endforeach
+                                                                            </div>
+                                                                        @endforeach
+                                                                    </div>
                                                                 </div>
+                                                                <button type="button" class="cart_page_option_submit_btn_wrap">Confirm</button>
                                                             </div>
-                                                            <div class="cart_page_option_fix">
-                                                                <div class="cart_page_option_fix_title">
-                                                                    <span>{{ $item->classificationtwo }}</span>:
-                                                                </div>
-                                                                <div id="cart-page-classification2-wrap">
-                                                                    @foreach ($item->classificationtwos as $array_cls2)
-                                                                        <div class="cart_page_option_choice">
-                                                                            @foreach ($array_cls2 as $cls2)
-                                                                                <div class="cart_checkout--method-wrap">
-                                                                                    <label class="cart_check--method-feature">
-                                                                                        <input class="cart_check--method" type="radio" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][classification2]" value="{{ $cls2->name }}"
-                                                                                            {{ isset($cls2->checked) ? ($cls2->checked == $cls2->code ? 'checked' : '') : '' }} />
-                                                                                        <span>{{ $cls2->name }}</span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            @endforeach
-                                                                        </div>
-                                                                    @endforeach
-                                                                </div>
-                                                            </div>
-                                                            <button type="button" class="cart_page_option_submit_btn_wrap">Confirm</button>
                                                         </div>
-                                                    </div>
+                                                    {{-- @else --}}
+                                                        
+                                                    @endif
                                                 </div>
                                                 <div class="cart_page_pricePer_wrap_respon">
                                                     <div>₫ <span>{{ number_format((int) $item->price, 0, ',', '.') }}</span></div>
