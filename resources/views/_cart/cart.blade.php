@@ -55,7 +55,7 @@
                                 <div id="mainHome-hidden-tramform">
                                     <div id="mainHome-user-hidden-wrap">
                                         <div id="mainHome-hidden-option-user">
-                                            <a class="mainHome__action--user" href="{{ route('profile.show', Auth::user()->code) }}">My profile</a>
+                                            <a class="mainHome__action--user" href="{{ route('profile.index') }}">My profile</a>
                                             <a class="mainHome__action--user" href="">Order</a>
                                             <form action="{{ route('logout') }}" method="POST">
                                                 @csrf
