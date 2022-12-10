@@ -26,7 +26,7 @@
                                     <img class="sellerProduct__image--display" src="{{ asset($get_pdt_imgs[0]->path) }}" alt="">
                                 </label>
                                 <span class="sellerProduct__image--number cover">* Ảnh bìa</span>
-                                <input type="file" name="image-0" id="sellerProduct-add-image-cover" class="sellerProduct__hidden--image-input">
+                                <input type="file" name="image-0" id="sellerProduct-add-image-cover" class="sellerProduct__hidden--image-input" accept=".png,.jpg">
                             </div>
                             @for ($index = 1; $index < 9; $index++)
                                 <div class="sellerProduct__image--add-wrap">
@@ -71,17 +71,17 @@
                     </div>
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicName">
                         <label class="sellerProduct__title--field-wrap" for="seller_product_detail-basicName-input">* Tên sản phẩm</label>
-                        <div id="seller_product_detail-basicName-inputfield" class="sellerProduct__input--wrap">
-                            <input id="seller_product_detail-basicName-input" name="product_name" value="{{ $get_pdt->name }}" type="text" />
-                            <span id="sellerProduct-product-name-countLenght">0<span>/120</span></span>
+                        <div id="seller_product_detail-basicName-inputfield" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus">
+                            <input id="seller_product_detail-basicName-input" name="product_name" value="{{ $get_pdt->name }}" type="text" minlength="10" maxlength="120" />
+                            <div><span id="sellerProduct-product-name-countLenght">0</span>/120</div>
                         </div>
                     </div>
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicProdDesc">
                         <label class="sellerProduct__title--field-wrap" for="seller_product_detail-basicProdDesc-input">* Mô tả sản phẩm</label>
                         <div id="seller_product_detail-basicProdDesc-inputfield">
-                            <textarea type="textarea" name="product_description" id="seller_product_detail-basicProdDesc-input" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus" resize="none"
-                                autosize="true" maxlength="Infinity" restrictiontype="input" max="Infinity" min="-Infinity" spellcheck="false">{{ $get_pdt->description }}</textarea>
-                            <div id="seller_product_detail-basicProdDesc-inputLimit"><span>0</span>/3000</div>
+                            <textarea type="textarea" name="product_description" id="seller_product_detail-basicProdDesc-input" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus" resize="none" autosize="true"
+                                restrictiontype="input" minlength="0" maxlength="3000" spellcheck="false">{{ $get_pdt->description }}</textarea>
+                            <div id="seller_product_detail-basicProdDesc-inputLimit"><span id="seller-product-detail-desc-length">0</span>/3000</div>
                         </div>
                     </div>
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicCategory">
@@ -133,7 +133,7 @@
                     </div>
                     <div class="seller_product_detail_mainInfor_inputfield">
                         <div class="sellerProduct__title--field-wrap">Trọng lượng</div>
-                        <select name="product_weight" id="seller_product_detail-mainInfor-inputfield5" title="Product Weight">
+                        <select name="product_weight" id="seller_product_detail-mainInfor-inputfield5" title="Height">
                             <option value="{{ $get_pdt->weight }}" selected hidden>{{ $get_pdt->weight }}</option>
                             <option value="1 kg">1kg</option>
                             <option value="10 kg">10kg</option>
@@ -183,7 +183,8 @@
                             <div class="sellerProduct__choose--classification-input">
                                 <div class="sellerProduct__choose--classification-field">
                                     <label for="">Tên nhóm phân loại</label>
-                                    <input name="classification1_title" class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                    <input id="seller-product-clsfctn-1" name="classification1_title"
+                                        class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
                                         placeholder="Nhập tên nhóm loại hàng, ví dụ: màu sắc, kích thước,..." value="{{ $get_pdt->classificationone }}" />
                                 </div>
                                 <div class="sellerProduct__choose--classification-field">
@@ -201,7 +202,7 @@
                                             @endforeach
                                         @else
                                             <div class="sellerProduct__classification--inp-wrap">
-                                                <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                                <input class="sellerProduct__classification--ver-1 sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
                                                     placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." />
                                                 <div class="sellerProduct__classification--btn-remove">
                                                     <ion-icon name="trash-outline"></ion-icon>
@@ -218,6 +219,9 @@
                                     Đã thêm
                                 </button>
                             </div>
+                            <button class="seller__product--close-table-btn" type="button">
+                                <ion-icon name="close-outline"></ion-icon>
+                            </button>
                         </div>
                     </div>
                     <div id="seller-product-classification-type2" class="seller_product_detail-sellInfor-Category">
@@ -229,7 +233,8 @@
                             <div class="sellerProduct__choose--classification-input">
                                 <div class="sellerProduct__choose--classification-field">
                                     <label for="">Tên nhóm phân loại</label>
-                                    <input name="classification2_title" class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                    <input id="seller-product-clsfctn-2" name="classification2_title"
+                                        class="sellerProduct__classification--title sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
                                         placeholder="Nhập tên nhóm loại hàng, ví dụ: màu sắc, kích thước,..." value="{{ $get_pdt->classificationtwo }}" />
                                 </div>
                                 <div class="sellerProduct__choose--classification-field">
@@ -238,7 +243,7 @@
                                         @if ($get_classification_two != null)
                                             @foreach ($get_classification_two as $cls2)
                                                 <div class="sellerProduct__classification--inp-wrap">
-                                                    <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                                    <input class="sellerProduct__classification--ver-2 sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
                                                         placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." value="{{ $cls2->name }}" />
                                                     <div class="sellerProduct__classification--btn-remove">
                                                         <ion-icon name="trash-outline"></ion-icon>
@@ -264,71 +269,76 @@
                                     Đã thêm
                                 </button>
                             </div>
-                        </div>
-                    </div>
-                    <div class="seller_product_detail-sellInfor-Category">
-                        <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
-                        <div id="seller-product-classification-tip-wrap">
-                            <div id="seller-product-classification-tip-field">
-                                <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Giá" />
-                                <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Kho hàng" />
-                                <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="SKU phân loại" />
-                            </div>
-                            <button id="sellerProduct-classification-code-apply" type="button" disabled style="cursor:not-allowed;" title="Chức năng đang được phát triển">
-                                Áp dụng cho tất cả phân loại
+                            <button class="seller__product--close-table-btn" type="button">
+                                <ion-icon name="close-outline"></ion-icon>
                             </button>
                         </div>
                     </div>
-                    <div class="seller_product_detail-sellInfor-Category">
-                        <div class="sellerProduct__title--field-wrap">Danh sách phân loại hàng</div>
-                        <div id="productDetail-classification-wrap">
-                            <table id="produtDetail-classification-table-head" border="0" cellspacing="0">
-                                <tr>
-                                    <th class="produtDetail__classification-column">{{ $get_pdt->classificationone }}</th>
-                                    <th class="produtDetail__classification-column">{{ $get_pdt->classificationtwo }}</th>
-                                    <th>Giá</th>
-                                    <th>Kho hàng</th>
-                                    <th>SKU phân loại</th>
-                                </tr>
-                            </table>
-                            <div id="sellerProduct-classificatiom--item-wrap">
-                                @foreach ($create_classification_table as $index1 => $cell)
-                                    <table border="0" cellspacing="0">
-                                        @foreach ($cell->classificationtwos as $index2 => $cls2)
-                                            @if ($index2 == 0)
-                                                <tr>
-                                                    <th rowspan="{{ sizeOf($get_classification_two) }}">
-                                                        <div id="classification1--name-{{ $index1 }}" class="productDetail__classification--name">{{ $cell->name }}</div>
-                                                        <img class="productDetail__clss_image" src="http://surl.li/dafng" alt="" />
-                                                    </th>
-                                                    <th id="classification2--name-{{ $index1 }}-{{ $index2 }}" class="productDetail__classification--name">{{ $cls2->name }}</th>
-                                                    <th><input name="classification_price_{{ $index1 }}_{{ $index2 }}"
-                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
-                                                            value="{{ $cls2->price }}" /></th>
-                                                    <th><input name="classification_storage_{{ $index1 }}_{{ $index2 }}"
-                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" value="{{ $cls2->storage }}" /></th>
-                                                    <th><input name="classification_sku_{{ $index1 }}_{{ $index2 }}"
-                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
-                                                            value="{{ $cls2->sku }}" />
-                                                    </th>
-                                                </tr>
-                                            @else
-                                                <tr>
-                                                    <th id="classification2--name-{{ $index1 }}-{{ $index2 }}" class="productDetail__classification--name">{{ $cls2->name }}</th>
-                                                    <th><input name="classification_price_{{ $index1 }}_{{ $index2 }}"
-                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
-                                                            value="{{ $cls2->price }}" /></th>
-                                                    <th><input name="classification_storage_{{ $index1 }}_{{ $index2 }}"
-                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" value="{{ $cls2->storage }}" /></th>
-                                                    <th><input name="classification_sku_{{ $index1 }}_{{ $index2 }}"
-                                                            class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
-                                                            value="{{ $cls2->sku }}" />
-                                                    </th>
-                                                </tr>
-                                            @endif
-                                        @endforeach
-                                    </table>
-                                @endforeach
+                    <div id="seller-product-classification-table-display">
+                        <div class="seller_product_detail-sellInfor-Category">
+                            <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
+                            <div id="seller-product-classification-tip-wrap">
+                                <div id="seller-product-classification-tip-field">
+                                    <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Giá" />
+                                    <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Kho hàng" />
+                                    <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="SKU phân loại" />
+                                </div>
+                                <button id="sellerProduct-classification-code-apply" type="button" disabled style="cursor:not-allowed;" title="Chức năng đang được phát triển">
+                                    Áp dụng cho tất cả phân loại
+                                </button>
+                            </div>
+                        </div>
+                        <div class="seller_product_detail-sellInfor-Category">
+                            <div class="sellerProduct__title--field-wrap">Mẹo thiết lập phân loại hàng</div>
+                            <div id="productDetail-classification-wrap">
+                                <table id="produtDetail-classification-table-head" border="0" cellspacing="0">
+                                    <tr>
+                                        <th class="produtDetail__classification-column">{{ $get_pdt->classificationone }}</th>
+                                        <th class="produtDetail__classification-column">{{ $get_pdt->classificationtwo }}</th>
+                                        <th>Giá</th>
+                                        <th>Kho hàng</th>
+                                        <th>SKU phân loại</th>
+                                    </tr>
+                                </table>
+                                <div id="sellerProduct-classificatiom--item-wrap">
+                                    @foreach ($create_classification_table as $index1 => $cell)
+                                        <table border="0" cellspacing="0">
+                                            @foreach ($cell->classificationtwos as $index2 => $cls2)
+                                                @if ($index2 == 0)
+                                                    <tr>
+                                                        <th rowspan="{{ sizeOf($get_classification_two) }}">
+                                                            <div id="classification1--name-{{ $index1 }}" class="productDetail__classification--name">{{ $cell->name }}</div>
+                                                            <img class="productDetail__clss_image" src="http://surl.li/dafng" alt="" />
+                                                        </th>
+                                                        <th id="classification2--name-{{ $index1 }}-{{ $index2 }}" class="productDetail__classification--name">{{ $cls2->name }}</th>
+                                                        <th><input name="classification_price_{{ $index1 }}_{{ $index2 }}"
+                                                                class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
+                                                                value="{{ $cls2->price }}" /></th>
+                                                        <th><input name="classification_storage_{{ $index1 }}_{{ $index2 }}"
+                                                                class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" value="{{ $cls2->storage }}" /></th>
+                                                        <th><input name="classification_sku_{{ $index1 }}_{{ $index2 }}"
+                                                                class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
+                                                                value="{{ $cls2->sku }}" />
+                                                        </th>
+                                                    </tr>
+                                                @else
+                                                    <tr>
+                                                        <th id="classification2--name-{{ $index1 }}-{{ $index2 }}" class="productDetail__classification--name">{{ $cls2->name }}</th>
+                                                        <th><input name="classification_price_{{ $index1 }}_{{ $index2 }}"
+                                                                class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
+                                                                value="{{ $cls2->price }}" /></th>
+                                                        <th><input name="classification_storage_{{ $index1 }}_{{ $index2 }}"
+                                                                class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" value="{{ $cls2->storage }}" /></th>
+                                                        <th><input name="classification_sku_{{ $index1 }}_{{ $index2 }}"
+                                                                class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Nhập vào"
+                                                                value="{{ $cls2->sku }}" />
+                                                        </th>
+                                                    </tr>
+                                                @endif
+                                            @endforeach
+                                        </table>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -337,7 +347,7 @@
                         <div class="sellerProduct__title--field-wrap">* Giá</div>
                         <div id="seller_product_detail-sellInfor-price-inputfield">
                             <div id="seller_product_detail-sellInfor-price-currency">₫</div>
-                            <input type="text" name="product_price" id="seller_product_detail-sellInfor-price-input" class="sellerProduct__placeholder--color" min="1000" max="100000000"
+                            <input type="text" name="product_price" id="seller_product_detail-sellInfor-price-input" class="sellerProduct__placeholder--color" minlength="3" maxlength="9"
                                 placeholder="Nhập vào" required value="{{ $get_pdt->price }}" />
                         </div>
                     </div>
@@ -348,8 +358,8 @@
                         </div>
                         <div id="seller_product_detail-sellInfor-storage-inputfield">
                             <input type="text" name="product_storage" id="seller_product_detail-sellInfor-storage-input" class="sellerProduct__animate-hover-focus sellerProduct__placeholder--color"
-                                placeholder="Nhập vào" value="{{ $get_pdt->storage }}" />
-                            <div class="sellerProduct__alert--no-empty">Không được để trống ô</div>
+                                minlength="1" maxlength="9" placeholder="Nhập vào" value="{{ $get_pdt->storage }}" />
+                            {{-- <div class="sellerProduct__alert--no-empty">Không được để trống ô</div> --}}
                         </div>
                     </div>
                 </div>
@@ -400,7 +410,8 @@
                     <div id="seller_product_detail-transport-weight">
                         <div class="sellerProduct__title--field-wrap">* Cân nặng (Sau khi đóng gói)</div>
                         <div id="seller_product_detail-transport-weight-inputfield" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                            <input type="text" name="product_weight_packed" id="seller_product_detail-transport-weight-input" placeholder="Nhập vào" value="{{ $get_pdt->weight_packed }}" />
+                            <input type="text" name="product_weight_packed" id="seller_product_detail-transport-weight-input" minlength="1" maxlength="5" placeholder="Nhập vào"
+                                value="{{ $get_pdt->weight_packed }}" />
                             <div class="sellerProduct__unit">gr</div>
                         </div>
                     </div>
@@ -408,15 +419,18 @@
                         <div class="sellerProduct__title--field-wrap">Kích thước đóng gói (Phí vận chuyển thực tế sẽ thay đổi nếu bạn nhập sai kích thước)</div>
                         <div id="seller_product_detail-transport-size-inputfield">
                             <div class="seller_product_detail_transport_size_input sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                                <input type="text" name="product_r_packed" class="seller_product_detail_transport_size_input_block" placeholder="R" value="{{ $get_pdt->r_packed }}" />
+                                <input id="selle-product-package-r" type="text" name="product_r_packed" class="seller_product_detail_transport_size_input_block" minlength="1" maxlength="3"
+                                    placeholder="R" value="{{ $get_pdt->r_packed }}" />
                                 <div class="sellerProduct__unit">cm</div>
                             </div>
                             <div class="seller_product_detail_transport_size_input sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                                <input type="text" name="product_d_packed" class="seller_product_detail_transport_size_input_block" placeholder="D" value="{{ $get_pdt->d_packed }}" />
+                                <input id="selle-product-package-d" type="text" name="product_d_packed" class="seller_product_detail_transport_size_input_block" minlength="1" maxlength="3"
+                                    placeholder="D" value="{{ $get_pdt->d_packed }}" />
                                 <div class="sellerProduct__unit">cm</div>
                             </div>
                             <div class="seller_product_detail_transport_size_input sellerProduct__input--wrap sellerProduct__animate-hover-focus">
-                                <input type="text" name="product_c_packed" class="seller_product_detail_transport_size_input_block" placeholder="C" value="{{ $get_pdt->c_packed }}" />
+                                <input id="selle-product-package-c" type="text" name="product_c_packed" class="seller_product_detail_transport_size_input_block" minlength="1" maxlength="3"
+                                    placeholder="C" value="{{ $get_pdt->c_packed }}" />
                                 <div class="sellerProduct__unit">cm</div>
                             </div>
                         </div>
@@ -460,15 +474,15 @@
                     </div>
                     <div id="seller_product_detail-otherInfor-SKU">
                         <div class="sellerProduct__title--field-wrap">SKU sản phẩm</div>
-                        <input name="product_sku_code" type="text" id="seller_product_detail-otherInfor-SKU-detail" placeholder="Mã Stock Keeping Unit" title="Tính năng không khả dụng"
-                            value="{{ $get_pdt->sku_code }}" />
+                        <input name="product_sku_code" type="text" id="seller_product_detail-otherInfor-SKU-detail" minlength="10" maxlength="20" placeholder="Mã Stock Keeping Unit"
+                            title="Tính năng không khả dụng" value="{{ $get_pdt->sku_code }}" />
                     </div>
                 </div>
             </div>
             <div id="sellerProduct-finishStep-wrap">
-                <button id="sellerProduct-finishStep-cancel">Hủy</button>
+                <button id="sellerProduct-finishStep-cancel" onclick="javascript:window.close()">Hủy</button>
                 <button id="sellerProduct-finishStep-save-hidden" type="button">Lưu & ẩn</button>
-                <button id="sellerProduct-finishStep-save-display" type="submit">Lưu & Hiển thị</button>
+                <button id="sellerProduct-finishStep-save-display" type="button">Lưu & Hiển thị</button>
             </div>
         </form>
         <div id="sellerProduct-menu-right-wrap">
@@ -476,7 +490,7 @@
                 <a href="#seller_product_detail-basicInfor-label"><span class="sellerProduct-nemu-element menu__selected">Thông tin cơ bản</span></a>
                 <a href="#seller_product_detail-mainInfor-label"><span class="sellerProduct-nemu-element">Thông tin chi tiết</span></a>
                 <a href="#seller_product_detail-sellInfor-label"><span class="sellerProduct-nemu-element">Thông tin bán hàng</span></a>
-                <a href="#seller_product_detail-transport-label"span class="sellerProduct-nemu-element">Vận chuyển</span></a>
+                <a href="#seller_product_detail-transport-label"><span class="sellerProduct-nemu-element">Vận chuyển</span></a>
                 <a href="#seller_product_detail-otherInfor-label"><span class="sellerProduct-nemu-element">Thông tin khác</span></a>
             </div>
         </div>
