@@ -43,21 +43,29 @@ $(document).ready(function () {
             const node__dsply_cls = container.querySelector(
                 ".cart_page_about_choice"
             );
-            const [node__cls1, node__cls2] = container.querySelectorAll(
-                ".cart_check--method:checked"
-            );
-            if (node__cls1 != null || node__cls2 != null) {
-                node__dsply_cls.innerText = `${node__cls1.value}, ${node__cls2.value}`;
-            }
+                const [node__cls1, node__cls2] = container.querySelectorAll(
+                    ".cart_check--method:checked"
+                );
+                let str__cls_temp = "";
+                if (node__cls1 != null) {
+                    str__cls_temp += node__cls1.value;
+                    if (node__cls2 != null) {
+                        str__cls_temp += ', ';
+                        str__cls_temp += node__cls2.value;
+                    }
+                    node__dsply_cls.innerText = str__cls_temp;
+                }
         });
     }
     displayClassify();
-    const node__cls_confirm = document.querySelectorAll(".cart_page_option_submit_btn_wrap")
-    node__cls_confirm.forEach(_btn => {
-        _btn.addEventListener("click", e =>{
+    const node__cls_confirm = document.querySelectorAll(
+        ".cart_page_option_submit_btn_wrap"
+    );
+    node__cls_confirm.forEach((_btn) => {
+        _btn.addEventListener("click", (e) => {
             displayClassify();
-        })
-    })
+        });
+    });
     // todo : Mở bảng Xóa sản phẩm trong giỏ [ Mobile ]
     $.each($(".cart__page-product-edit"), function (index, node__btn) {
         node__btn.addEventListener("click", (e) => {

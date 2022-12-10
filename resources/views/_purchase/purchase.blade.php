@@ -114,11 +114,18 @@
                                                 <input type="hidden" name="product_information[{{ $index_creator }}][products][{{ $index_item }}][product_name]" value="{{ $item['name'] }}">
                                                 <div class="purchase_page_product_name_title">{{ $item['name'] }}
                                                 </div>
-                                                @if (isset($item['classification1']))
-                                                    <div class="purchase_page_product_about">Classify: <span>{{ $item['classification1'] }}, {{ $item['classification2'] }}</span></div>
-                                                @else
-                                                    <div class="purchase_page_product_about">Classify: -/-/-/-/- </div>
-                                                @endif
+                                                <div class="purchase_page_product_about">Classify:&nbsp;
+                                                    <span>
+                                                        @if (isset($item['classification1']))
+                                                            {{ $item['classification1'] }}
+                                                            @if (isset($item['classification2']))
+                                                            , {{ $item['classification2'] }}
+                                                            @endif
+                                                        @else
+                                                            -/-/-/-/-
+                                                        @endif
+                                                    </span>
+                                                </div>
                                                 <div class="purchase_page_product_price">
                                                     <input type="hidden" name="product_information[{{ $index_creator }}][products][{{ $index_item }}][price]" value="{{ $item['price'] }}">
                                                     <div>₫{{ number_format($item['price'], 0, ',', '.') }}</div>

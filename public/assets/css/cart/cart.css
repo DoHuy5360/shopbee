@@ -370,6 +370,7 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
+    user-select: none;
 }
 .cart_page_about_choice{
     font-size: 14px;
