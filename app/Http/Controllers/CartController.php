@@ -111,7 +111,7 @@ class CartController extends Controller
             // return $get_pdt_creator;
             foreach ($get_pdt_creator as $index => $creator) {
                 $get_pdt_cart = DB::select(
-                    "SELECT *, c.code AS cart_code, p.code AS product_code, hidden
+                    "SELECT *, c.code AS cart_code, p.code AS product_code, hidden, c.amount
                     FROM carts c, products p, product_images pi
                     WHERE c.user_code = '$id'
                     AND c.product_code = p.code
@@ -121,9 +121,16 @@ class CartController extends Controller
                     AND p.hidden = '$hidden'
                 "
                 );
+                if (isset($get_pdt_cart[$index])) {
+                    $cls1_ref = $get_pdt_cart[$index]->classificationone_code;
+                    $cls2_ref = $get_pdt_cart[$index]->classificationtwo_code;
+                }
                 foreach ($get_pdt_cart as $item) {
                     $get_classification_one = DB::select(
-                        "SELECT code, name, path
+                        "SELECT code, name, path, (
+                                SELECT code as checked
+                                FROM product_classificationones pc_i 
+                                WHERE pc_i.code = '$cls1_ref')
                         FROM product_classificationones
                         WHERE product_code = '{$item->product_code}'
                         "
@@ -132,7 +139,10 @@ class CartController extends Controller
                     $array_classificationtwos = [];
                     foreach ($get_classification_one as $cls1) {
                         $get_classification_two = DB::select(
-                            "SELECT classificationone_code, name, price, storage, sku
+                            "SELECT code, classificationone_code, name, price, storage, sku, (
+                                SELECT code as checked
+                                FROM product_classificationtwos pc_i 
+                                WHERE pc_i.code = '$cls2_ref')
                             FROM product_classificationtwos
                             WHERE classificationone_code = '{$cls1->code}'
                             "
@@ -151,6 +161,7 @@ class CartController extends Controller
         }
         $get_grp_pdt = getGroupProduct($id, 'false');
         $get_grp_pdt_hid = getGroupProduct($id, 'true');
+        // return $get_grp_pdt;
         return view('_cart.cart', [
             'get_grp_pdt' => $get_grp_pdt,
             'get_grp_pdt_hid' => $get_grp_pdt_hid,
