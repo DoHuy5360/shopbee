@@ -211,6 +211,7 @@
 
 .cart_page_about_option {
     color: #8c8c8c;
+    cursor: pointer;
 }
 
 .cart_page_option_items_wrap {
@@ -368,9 +369,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    gap: 5px;
 }
-
+.cart_page_about_choice{
+    font-size: 14px;
+}
 .cart_page_product_seller {
     display: flex;
     align-items: center;

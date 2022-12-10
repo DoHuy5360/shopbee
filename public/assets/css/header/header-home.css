@@ -279,6 +279,12 @@
 #mainHome-cart-list-product {
     display: flex;
     flex-direction: column;
+    height: 250px;
+    overflow-y: scroll;
+}
+#mainHome-cart-list-product::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .mainHome__cart--product-name {

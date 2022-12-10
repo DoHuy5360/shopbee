@@ -10,6 +10,9 @@
     <script type="module" src="{{ asset('assets/js/header/header.js') }}"></script>
 @endsection
 @section('content')
+    <div id="seller-frame-cover-fixed">
+        <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+    </div>
     <div id="product-alert-wrap">
         <div id="product-alert-icon">
             <ion-icon name="checkmark-outline"></ion-icon>
@@ -103,7 +106,11 @@
                                 <div id="product-title-transportItem2">
                                     <div id="product-title-transportItem-row1">
                                         Vận Chuyển Tới
-                                        <span>{{ $get_user_adres->province }}, {{ $get_user_adres->district }}, {{ $get_user_adres->wards }}</span>
+                                        @if ($get_user_adres)
+                                            <span>{{ $get_user_adres->province }}, {{ $get_user_adres->district }}, {{ $get_user_adres->wards }}</span>
+                                        @else
+                                            <span>Chưa thiết lập</span>
+                                        @endif
                                         <ion-icon name="chevron-down-outline"></ion-icon>
                                     </div>
                                     <div id="product-title-transportItem-row2">
@@ -153,7 +160,7 @@
                                     <div id="product-title_quantity-inputfield">
                                         <div id="product-up-down-wrap">
                                             <button id="product-title_quantity-minus" type="button">-</button>
-                                            <input name="amount_order" id="product-amount-order" type="text" aria-valuenow="1" value="1" type="Amount"/>
+                                            <input name="amount_order" id="product-amount-order" type="text" aria-valuenow="1" value="1" type="Amount" />
                                             <button id="product-title_quantity-plus" type="button">+</button>
                                         </div>
                                         <span><span id="product-storage-number">{{ $get_pdt->storage }}</span> Sản phẩm có sẵn</span>

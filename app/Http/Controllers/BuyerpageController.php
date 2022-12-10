@@ -92,15 +92,16 @@ class BuyerpageController extends Controller
             ['https://cf.shopee.vn/file/758ede02362e15c261a3c2eb4e130252_xhdpi', '80%'],
             ['https://cf.shopee.vn/file/d5f557dfbc5da10ce85c722bf4d40159_xhdpi', '70%'],
         ]);
-        $test_products = DB::select(
+        $get_pdt = DB::select(
             "SELECT pi.path, p.name, p.price, p.code
             FROM products p, product_images pi
             WHERE p.code = pi.product_code
             AND pi.index = '0'
+            AND p.hidden = 'false'
             "
         );
         return view('_home.home', [
-            'test_products' => $test_products,
+            'get_pdt' => $get_pdt,
             'product_categories' => $product_categories,
             'products_flash_sale' => $products_flash_sale,
             'malls' => $malls,

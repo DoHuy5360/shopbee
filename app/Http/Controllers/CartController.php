@@ -121,11 +121,13 @@ class CartController extends Controller
                     AND p.hidden = '$hidden'
                 "
                 );
-                if (isset($get_pdt_cart[$index])) {
-                    $cls1_ref = $get_pdt_cart[$index]->classificationone_code;
-                    $cls2_ref = $get_pdt_cart[$index]->classificationtwo_code;
-                }
                 foreach ($get_pdt_cart as $item) {
+                    $cls1_ref = "";
+                    $cls2_ref = "";
+                    if (isset($item->classificationone)) {
+                        $cls1_ref = $item->classificationone_code;
+                        $cls2_ref = $item->classificationtwo_code;
+                    }
                     $get_classification_one = DB::select(
                         "SELECT code, name, path, (
                                 SELECT code as checked

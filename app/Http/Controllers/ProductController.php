@@ -158,7 +158,11 @@ class ProductController extends Controller
             WHERE user_code = '$user_code'
             AND default_address = 'true'
             "
-        )[0];
+        );
+        if($get_user_adres){
+            $get_user_adres = $get_user_adres[0];
+        }
+        // return $get_user_adres;
         $get_pdt_img = DB::select(
             "SELECT *
             FROM product_images p_i

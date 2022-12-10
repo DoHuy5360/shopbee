@@ -75,6 +75,7 @@ class PurchaseController extends Controller
      */
     public function create(Request $request)
     {
+        // return $request;
         $user_code = Auth::user()->code;
         $get_user_address = DB::select(
             "SELECT *

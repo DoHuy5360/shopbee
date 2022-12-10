@@ -34,6 +34,30 @@ $(document).ready(function () {
             });
         });
     });
+    //todo: Hiển thị phân loại hàng
+    function displayClassify() {
+        const node__cls_container = document.querySelectorAll(
+            ".cart_page_option_wrap_respon"
+        );
+        node__cls_container.forEach((container) => {
+            const node__dsply_cls = container.querySelector(
+                ".cart_page_about_choice"
+            );
+            const [node__cls1, node__cls2] = container.querySelectorAll(
+                ".cart_check--method:checked"
+            );
+            if (node__cls1 != null || node__cls2 != null) {
+                node__dsply_cls.innerText = `${node__cls1.value}, ${node__cls2.value}`;
+            }
+        });
+    }
+    displayClassify();
+    const node__cls_confirm = document.querySelectorAll(".cart_page_option_submit_btn_wrap")
+    node__cls_confirm.forEach(_btn => {
+        _btn.addEventListener("click", e =>{
+            displayClassify();
+        })
+    })
     // todo : Mở bảng Xóa sản phẩm trong giỏ [ Mobile ]
     $.each($(".cart__page-product-edit"), function (index, node__btn) {
         node__btn.addEventListener("click", (e) => {
@@ -215,15 +239,21 @@ $(document).ready(function () {
                 const box = btn.parentNode.querySelector(
                     ".cart_page_option_items"
                 );
-                box.classList.toggle("cart_page_option_wrap_action");
-                prod_wrap.forEach((btn2) => {
-                    if (btn2 !== btn) {
-                        const box2 = btn2.parentNode.querySelector(
-                            ".cart_page_option_items"
-                        );
-                        box2.classList.remove("cart_page_option_wrap_action");
-                    }
-                });
+                if (box) {
+                    box.classList.toggle("cart_page_option_wrap_action");
+                    prod_wrap.forEach((btn2) => {
+                        if (btn2 !== btn) {
+                            const box2 = btn2.parentNode.querySelector(
+                                ".cart_page_option_items"
+                            );
+                            if (box2) {
+                                box2.classList.remove(
+                                    "cart_page_option_wrap_action"
+                                );
+                            }
+                        }
+                    });
+                }
             });
         });
     } else {
@@ -328,14 +358,14 @@ $(document).ready(function () {
         });
         node__amnt_pdt_slct.innerText = int__amnt_pdt_slct;
     }
-    const node__submit_form = document.getElementById("cart-form-submit")
-    node__submit_form.addEventListener("submit", e=>{
-        e.preventDefault()
-        const bool__is_slct = [...node__sgl_chckbx].some((chckbx)=>{
-            return chckbx.checked
-        })
-        if(bool__is_slct){
-            node__submit_form.submit()
+    const node__submit_form = document.getElementById("cart-form-submit");
+    node__submit_form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const bool__is_slct = [...node__sgl_chckbx].some((chckbx) => {
+            return chckbx.checked;
+        });
+        if (bool__is_slct) {
+            node__submit_form.submit();
         }
-    })
+    });
 });
