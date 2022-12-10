@@ -2,16 +2,12 @@ import { starScriptEdit } from "../profile/profile_edit.js";
 import { starScriptAddress } from "../profile/profile_address.js"
 
 $(document).ready(function () {
-    const str__user_code = $("#profile-user-code").val();
     // todo: Hiện đơn mua
     $("#profile-menu-element-order").click(function () {
         toogleFrameCover(true);
         $.ajax({
             type: "GET",
             url: "/purchase",
-            data: {
-                user_code: str__user_code,
-            },
             success: function (response) {
                 $("#profile-body-tranfer-wrap").html(response);
             },
@@ -26,9 +22,6 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
             url: "/user",
-            data: {
-                user_code: str__user_code,
-            },
             success: function (response) {
                 $("#profile-body-tranfer-wrap").html(response);
             },
@@ -59,7 +52,7 @@ $(document).ready(function () {
             window.history.replaceState(
                 "state name",
                 null,
-                `/profile/${str__slug}?user_code=${str__user_code}`
+                `/profile/${str__slug}`
             );
         });
     });

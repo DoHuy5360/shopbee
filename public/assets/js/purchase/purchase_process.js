@@ -36,7 +36,6 @@ $(document).ready(function () {
         });
     }
     function refreshStatus(_arr__response_count, _str_status_name) {
-        console.log(_arr__response_count)
         $.ajax({
             type: "GET",
             url: `/purchase/${$("#profile-user-code").val()}`,

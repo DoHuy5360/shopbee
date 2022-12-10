@@ -66,17 +66,16 @@ class ProfileController extends Controller
     {
         // return $request;
         $user_code = Auth::user()->code;
-        if ($user_code === $request->user_code) {
-            $get_user = DB::select(
-                "SELECT *
+        $get_user = DB::select(
+            "SELECT *
                  FROM users
                  WHERE code = '$user_code'
                 "
-            )[0];
-            switch ($slug) {
-                case "order":
-                    $get_bill_pdt = DB::select(
-                        "SELECT u.name AS owner_name, 
+        )[0];
+        switch ($slug) {
+            case "order":
+                $get_bill_pdt = DB::select(
+                    "SELECT u.name AS owner_name, 
                                 bp.name AS product_name, 
                                 bp.total AS product_total, 
                                 amount,
@@ -88,58 +87,55 @@ class ProfileController extends Controller
                         AND u.code = b.buyer_code
                         ORDER BY bp.id DESC
                         "
-                    );
-                    $arr_status = [
-                        "wait_confirm",
-                        "wait_get",
-                        "delivering",
-                        "delivered",
-                        "cancel",
-                        "refund",
-                    ];
-                    $amount_order = [];
-                    $amount_order['all'] = 0;
-                    foreach ($arr_status as $index => $status) {
-                        $get_amount_each_status = DB::select(
-                            "SELECT COUNT(*) AS count
+                );
+                $arr_status = [
+                    "wait_confirm",
+                    "wait_get",
+                    "delivering",
+                    "delivered",
+                    "cancel",
+                    "refund",
+                ];
+                $amount_order = [];
+                $amount_order['all'] = 0;
+                foreach ($arr_status as $index => $status) {
+                    $get_amount_each_status = DB::select(
+                        "SELECT COUNT(*) AS count
                             FROM bill_products
                             WHERE status = '$status'
                             "
-                        )[0];
-                        $amount_order[$status] = $get_amount_each_status->count;
-                        $amount_order['all'] += $get_amount_each_status->count;
-                    }
-                    $content = "_purchase.purchase_process_full";
-                    return view('_profile.profile', [
-                        'get_user' => $get_user,
-                        'get_bill_pdt' => $get_bill_pdt,
-                        'amount_order' => $amount_order,
-                        'content' => $content,
-                    ]);
-                case "info":
-                    return view('_profile.profile', [
-                        'get_user' => $get_user,
-                        'content' => '_profile.profile_edit'
-                    ]);
-                case "address":
-                    $get_address = DB::select(
-                        "SELECT *
+                    )[0];
+                    $amount_order[$status] = $get_amount_each_status->count;
+                    $amount_order['all'] += $get_amount_each_status->count;
+                }
+                $content = "_purchase.purchase_process_full";
+                return view('_profile.profile', [
+                    'get_user' => $get_user,
+                    'get_bill_pdt' => $get_bill_pdt,
+                    'amount_order' => $amount_order,
+                    'content' => $content,
+                ]);
+            case "info":
+                return view('_profile.profile', [
+                    'get_user' => $get_user,
+                    'content' => '_profile.profile_edit'
+                ]);
+            case "address":
+                $get_address = DB::select(
+                    "SELECT *
                         FROM user_addresses
                         WHERE user_code = '$user_code'
                         ORDER BY default_address DESC
                         "
-                    );
-                    return view('_profile.profile', [
-                        'get_user' => $get_user,
-                        'get_address' => $get_address,
-                        'content' => '_profile.profile_address'
-                    ]);
+                );
+                return view('_profile.profile', [
+                    'get_user' => $get_user,
+                    'get_address' => $get_address,
+                    'content' => '_profile.profile_address'
+                ]);
 
-                default:
-                    return "404";
-            }
-        } else {
-            return "Mã người dùng không hợp lệ";
+            default:
+                return "404";
         }
     }
 
