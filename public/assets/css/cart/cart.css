@@ -371,7 +371,7 @@
     align-items: center;
     gap: 5px;
 }
-.cart_page_about_choice{
+.cart_page_about_choice {
     font-size: 14px;
 }
 .cart_page_product_seller {
@@ -713,4 +713,13 @@ ion-icon[name="car-outline"] {
 #cart-page-sticky-voucher-input {
     width: 200px;
     text-align: right;
+}
+
+.cart_page_voucher_title {
+    border: 1px solid #f0582b;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 1px 4px;
+    color: #f0582b;
 }

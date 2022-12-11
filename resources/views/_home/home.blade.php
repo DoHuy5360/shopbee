@@ -57,55 +57,55 @@
                     <div class="mainHome__act--icon">
                         <img src="https://cf.shopee.vn/file/46a2a2c810622f314d78455da5e5d926_xhdpi" alt="" draggable="false">
                     </div>
-                    <div class="mainHome__act--name">Khung Giờ Săn Sale</div>
+                    <div class="mainHome__act--name">Sale Times</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
                         <img src="https://cf.shopee.vn/file/b3535d7e56c58c4ebe9a87672d38cc5e_xhdpi" alt="" draggable="false">
                     </div>
-                    <div class="mainHome__act--name">Gì Cũng Rẻ - Mua Là Freeship</div>
+                    <div class="mainHome__act--name">Cheap shit - Free shit</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
                         <img src="https://cf.shopee.vn/file/c7a2e1ae720f9704f92f72c9ef1a494a_xhdpi" alt="" draggable="false">
                     </div>
-                    <div class="mainHome__act--name">Miễn Phí Vận Chuyển</div>
+                    <div class="mainHome__act--name">Free delivery </div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
                         <img src="https://cf.shopee.vn/file/1975fb1af4ae3c22878d04f6f440b6f9_xhdpi" alt="" draggable="false">
                     </div>
-                    <div class="mainHome__act--name">Bắt Trend - Giá Sốc</div>
+                    <div class="mainHome__act--name">Trending - Shock deal</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
                         <img src="https://cf.shopee.vn/file/21a4856d1fecd4eda143748661315dba_xhdpi" alt="" draggable="false">
                     </div>
-                    <div class="mainHome__act--name">Hoàn Xu Xtra Từ 100K</div>
+                    <div class="mainHome__act--name">Coin refund over 100K</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
                         <img src="https://cf.shopee.vn/file/8d6d5ee795e7675fed39d31ba04c3b92_xhdpi" alt="" draggable="false">
                     </div>
-                    <div class="mainHome__act--name">Hàng Hiệu Giá Tốt</div>
+                    <div class="mainHome__act--name">Brand shit - Good deals</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
                         <img src="https://cf.shopee.vn/file/a08ab28962514a626195ef0415411585_xhdpi" alt="" draggable="false">
                     </div>
-                    <div class="mainHome__act--name">Hàng Quốc Tế</div>
+                    <div class="mainHome__act--name">International shipping</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
                         <img src="https://cf.shopee.vn/file/9df57ba80ca225e67c08a8a0d8cc7b85_xhdpi" alt="" draggable="false">
                     </div>
-                    <div class="mainHome__act--name">Nạp Thẻ & Dịch Vụ</div>
+                    <div class="mainHome__act--name">Card & Service</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
                         <img src="https://cf.shopee.vn/file/b898e8b6a0ba6fc2a86beb99f9420f06_xhdpi" alt="" draggable="false">
                     </div>
-                    <div class="mainHome__act--name">Chọn 6 Số Trúng Trăm Triệu</div>
+                    <div class="mainHome__act--name">Lucky number</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
@@ -118,7 +118,7 @@
         <div class="mainHome__category">
             <div id="mainHome__category--wrap">
                 <div class="mainHome__part--title">
-                    DANH MỤC
+                    CATEGORY
                 </div>
                 <div id="mainHome__category--wrap-arrow">
                     <div id="mainHome-category-arrow-left">
@@ -156,7 +156,7 @@
                                 <p class="mainHome__flashSale--price">{{ $product->product_price }}</p>
                                 <div class="mainHome__flashSale--processBar-wrap">
                                     <div class="mainHome__flashSale--processBar" style="width: {{ $product->product_sold_proportion }}%"></div>
-                                    <div class="mainHome__flashSal--text">Đang Bán Chạy</div>
+                                    <div class="mainHome__flashSal--text">Hot Selling</div>
                                 </div>
                             </div>
                         @endforeach
@@ -227,7 +227,7 @@
         </div>
         <div id="mainHome-top-finding">
             <div class="mainHome__part--title-wrap">
-                <div class="mainHome__part--title">Bán Chạy</div>
+                <div class="mainHome__part--title">Hot Selling</div>
                 <a href="http://" class="mainHome__link--to" target="_blank">Veiw all ></a>
             </div>
             <div id="mainHome-top-finding-wrap">
@@ -236,49 +236,49 @@
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
                             <img src="http://surl.li/dafng" alt="" />
-                            <div class="mainHome__topFind--price">Ban 234k / Thang</div>
+                            <div class="mainHome__topFind--price">Selling 234k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Ban phim co</div>
+                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
                     </div>
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
                             <img src="http://surl.li/dafnd" alt="" />
-                            <div class="mainHome__topFind--price">Ban 234k / Thang</div>
+                            <div class="mainHome__topFind--price">Selling 234k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Ban phim co</div>
+                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
                     </div>
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
                             <img src="http://surl.li/dafnj" alt="" />
-                            <div class="mainHome__topFind--price">Ban 234k / Thang</div>
+                            <div class="mainHome__topFind--price">Selling 234k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Ban phim co</div>
+                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
                     </div>
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
                             <img src="http://surl.li/dafnp" alt="" />
-                            <div class="mainHome__topFind--price">Ban 234k / Thang</div>
+                            <div class="mainHome__topFind--price">Selling 234k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Ban phim co</div>
+                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
                     </div>
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
                             <img src="http://surl.li/dafnq" alt="" />
-                            <div class="mainHome__topFind--price">Ban 234k / Thang</div>
+                            <div class="mainHome__topFind--price">Selling 234k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Ban phim co</div>
+                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
                     </div>
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
                             <img src="http://surl.li/dafnr" alt="" />
-                            <div class="mainHome__topFind--price">Ban 234k / Thang</div>
+                            <div class="mainHome__topFind--price">Selling 234k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Ban phim co</div>
+                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
                     </div>
                 </div>
             </div>
@@ -286,7 +286,7 @@
         <div id="mainHome-suggest">
             <div id="mainHome-suggest-wrap">
                 <div class="mainHome__part--title-wrap">
-                    <div class="mainHome__part--title">Gợi Ý Hôm Nay</div>
+                    <div class="mainHome__part--title">Product recommendation</div>
                     <a href="http://" class="mainHome__link--to" target="_blank">Veiw all ></a>
                 </div>
                 <div id="mainHome-card-suggest-wrap">
@@ -294,7 +294,7 @@
                         <a href="{{ route('product.show', $pdt->code) }}" class="mainHome__cardSuggest-padding">
                             <div class="mainHome__cardSuggest-content">
                                 <div class="mainHome__cardSuggest--image">
-                                    <div class="mainHome__cardSuggest--label-like">Yêu thích</div>
+                                    <div class="mainHome__cardSuggest--label-like">Like</div>
                                     <img src="{{ asset($pdt->path) }}" alt="{{ $pdt->path }}" draggable="false"/>
                                 </div>
                                 <div class="mainHome__cardSuggest--text">
@@ -305,7 +305,7 @@
                                         </div>
                                         <div class="mainHome__cardSuggest--price-wrap">
                                             <div class="mainHome__cardSuggest--price"><span>₫</span><span>{{ $pdt->price }}</span></div>
-                                            <span>Đã bán ###</span>
+                                            <span>Saled ###</span>
                                         </div>
                                     </div>
                                 </div>
@@ -314,7 +314,7 @@
                     @endforeach
                 </div>
                 <div id="mainHome-cardSuggest-display-btn">
-                    <button id="mainHome-cardSuggest-display-more" type="button">Hiển thị thêm sản phẩm</button>
+                    <button id="mainHome-cardSuggest-display-more" type="button">Show more</button>
                 </div>
             </div>
         </div>

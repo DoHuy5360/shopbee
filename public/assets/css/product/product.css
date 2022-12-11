@@ -6,10 +6,10 @@ body {
     width: 1200px;
     margin: 0 auto;
 }
-#product-title-text{
+#product-title-text {
     font-size: 20px;
 }
-#product-title-rate-star{
+#product-title-rate-star {
     display: flex;
     gap: 5px;
 }
@@ -80,7 +80,7 @@ body {
     text-align: center;
     width: 100%;
 }
-#product-title{
+#product-title {
     width: 100%;
 }
 #product-title_rate_infor div {
@@ -131,7 +131,11 @@ body {
     gap: 8px;
     flex-direction: column;
 }
-#product-form-add-cart{
+
+:is(#product-title-column *, #product-title-text)::first-letter {
+    text-transform: uppercase;
+}
+#product-form-add-cart {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -140,7 +144,7 @@ body {
     display: flex;
     margin: 0 25px;
 }
-.product_title_column-item label{
+.product_title_column-item label {
     margin-bottom: 0;
 }
 .product_title_column-item-infor {
@@ -180,10 +184,10 @@ body {
     cursor: pointer;
     user-select: none;
 }
-.product_title_colour-block input{
+.product_title_colour-block input {
     display: none;
 }
-.product_title_colour-block:has(input:checked){
+.product_title_colour-block:has(input:checked) {
     color: var(--color-4);
     border-color: currentColor;
 }
@@ -716,14 +720,14 @@ body {
     padding-left: 20px;
     display: flex;
     align-items: center;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     margin-top: 20px;
 }
-#product-title-price-currentcy-wrp{
+#product-title-price-currentcy-wrp {
     display: flex;
     align-items: flex-start;
 }
-#product-price{
+#product-price {
     font-size: 33px;
 }
 .product_rate_cmt_report {
