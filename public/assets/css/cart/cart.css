@@ -724,3 +724,12 @@ ion-icon[name="car-outline"] {
     width: 200px;
     text-align: right;
 }
+
+.cart_page_voucher_title {
+    border: 1px solid #f0582b;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 1px 4px;
+    color: #f0582b;
+}

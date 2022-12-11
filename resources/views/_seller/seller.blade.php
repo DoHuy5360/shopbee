@@ -1,5 +1,5 @@
 @extends('layouts.skeleton')
-@section('title', 'Kênh Người Bán')
+@section('title', 'Seller page')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/seller/seller.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/seller/seller_respon.css') }}">

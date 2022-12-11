@@ -17,7 +17,7 @@
         <div id="product-alert-icon">
             <ion-icon name="checkmark-outline"></ion-icon>
         </div>
-        <div id="product-alert-mesage">Sản phẩm đã được thêm vào Giỏ hàng</div>
+        <div id="product-alert-mesage">Product successfully stored</div>
     </div>
     @include('layouts.header-home')
     <div id="product-page-content">
@@ -51,7 +51,7 @@
                 </div>
                 <div id="product-shareLike">
                     <div id="product-shareLike-item">
-                        <span>Chia sẻ:</span>
+                        <span>Shared:</span>
                         <div id="product-social-wrap">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Facebook_Messenger_logo_2020.svg/2048px-Facebook_Messenger_logo_2020.svg.png" alt=""
                                 srcset="" />
@@ -61,7 +61,7 @@
                     </div>
                     <div id="product-like-index-wrap">
                         <ion-icon name="heart-outline"></ion-icon>
-                        <span>Đã thích</span>
+                        <span>Like</span>
                         <span>(234)</span>
                     </div>
                 </div>
@@ -83,11 +83,11 @@
                             </div>
                             <div id="product-title_rate_item1">
                                 <p style="border-bottom: 1px #000 solid">2,6k</p>
-                                <p style="color: gray">Đánh giá</p>
+                                <p style="color: gray">Review</p>
                             </div>
                             <div>
                                 <p>7,7k</p>
-                                <p style="color: gray">Đã bán</p>
+                                <p style="color: gray">Sold</p>
                             </div>
                         </div>
                     </div>
@@ -96,16 +96,16 @@
                             <div id="product-title-price-currentcy-wrp"><span>₫</span><span id="product-price">{{ number_format($get_pdt->price, 0, ',', '.') }}</span></div>
                         </div>
                         <div class="product_title_column-item" id="product-title_insurance">
-                            <div class="product_title_column_title">Bảo Hiểm</div>
-                            <div class="product_title_column-item-infor" id="product-title-columnItem1">Bảo hiểm Thiết bị điện tử</div>
+                            <div class="product_title_column_title">Insurance</div>
+                            <div class="product_title_column-item-infor" id="product-title-columnItem1">Electronic Device Insurance</div>
                         </div>
                         <div class="product_title_column-item" id="product-title_transport">
-                            <div class="product_title_column_title">Vận Chuyển</div>
+                            <div class="product_title_column_title">Transport</div>
                             <div class="product_title_column-item-infor" id="product-title-columnItem2">
-                                <div id="product-title-transportItem1">Miễn phí vận chuyển</div>
+                                <div id="product-title-transportItem1">Free delisvery</div>
                                 <div id="product-title-transportItem2">
                                     <div id="product-title-transportItem-row1">
-                                        Vận Chuyển Tới
+                                        destination
                                         @if ($get_user_adres)
                                             <span>{{ $get_user_adres->province }}, {{ $get_user_adres->district }}, {{ $get_user_adres->wards }}</span>
                                         @else
@@ -114,7 +114,7 @@
                                         <ion-icon name="chevron-down-outline"></ion-icon>
                                     </div>
                                     <div id="product-title-transportItem-row2">
-                                        Phí Vận Chuyển
+                                        transport fee
                                         <span><sup>đ</sup>0</span>
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
                                 </div>
                             @endif
                             <div class="product_title_column-item" id="product-title_quantity">
-                                <div class="product_title_column_title">Số Lượng</div>
+                                <div class="product_title_column_title">quantity</div>
                                 <div class="product-title-column-item-infor" id="product-title-columnItem4">
                                     <div id="product-title_quantity-inputfield">
                                         <div id="product-up-down-wrap">
@@ -163,16 +163,16 @@
                                             <input name="amount_order" id="product-amount-order" type="text" aria-valuenow="1" value="1" type="Amount" />
                                             <button id="product-title_quantity-plus" type="button">+</button>
                                         </div>
-                                        <span><span id="product-storage-number">{{ $get_pdt->storage }}</span> Sản phẩm có sẵn</span>
+                                        <span><span id="product-storage-number">{{ $get_pdt->storage }}</span> pieces available</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="product_title_column-item" id="product-title_incartBtn">
                                 <button type="submit" id="product-title-add2cart">
                                     <ion-icon name="cart-outline"></ion-icon>
-                                    <div>Thêm Vào Giỏ Hàng</div>
+                                    <div>Add to cart</div>
                                 </button>
-                                <button type="submit" id="product-title-buyNow">Mua Ngay</button>
+                                <button type="submit" id="product-title-buyNow">Buy Now</button>
                             </div>
                         </form>
                     </div>
@@ -184,21 +184,21 @@
                 <div id="product-seller-profile-left">
                     <div id="product__seller--avatar">
                         <img src="https://bit.ly/3pbRb8m" alt="" src="" />
-                        <span>Yêu Thích</span>
+                        <span>Perferred</span>
                     </div>
                     <div id="product-seller-info-wrap">
                         <div class="product-seller-info-wrap-name">
                             <div id="product-seller-name">DoHuy5360</div>
-                            <div id="product-seller-active">Online 20 năm trước</div>
+                            <div id="product-seller-active">Online 175320 hours</div>
                         </div>
                         <div id="product-seller-info-wrap-contact">
                             <button id="product-seller-chat-btn" type="button">
                                 <ion-icon name="chatbubbles-outline"></ion-icon>
-                                <span>Chat Ngay</span>
+                                <span>Chat Now</span>
                             </button>
                             <button id="product-seller-viewShop-btn" type="button">
                                 <ion-icon name="storefront-outline"></ion-icon>
-                                <span>Xem Shop</span>
+                                <span>View Shop</span>
                             </button>
                         </div>
                     </div>
@@ -206,8 +206,8 @@
                 <div id="product-seller-profile-right">
                     <div class="product__seller--profile-index">
                         <div class="product__seller--profile-index-wrap">
-                            <div class="product__seller--profile-name">Đánh giá</div>
-                            <div class="product__seller--profile-value">2,9k</div>
+                            <div class="product__seller--profile-name">Ratings</div>
+                            <div class="product__seller--profile-value">Products</div>
                         </div>
                         <div class="product__seller--profile-index-wrap">
                             <div class="product__seller--profile-name">Sản phẩm</div>
@@ -216,21 +216,21 @@
                     </div>
                     <div class="product__seller--profile-index">
                         <div class="product__seller--profile-index-wrap">
-                            <div class="product__seller--profile-name">Tỉ Lệ Phản Hồi</div>
+                            <div class="product__seller--profile-name">Response Rate</div>
                             <div class="product__seller--profile-value">88%</div>
                         </div>
                         <div class="product__seller--profile-index-wrap">
-                            <div class="product__seller--profile-name">Thời Gian Phản Hồi</div>
-                            <div class="product__seller--profile-value">trong vài giờ</div>
+                            <div class="product__seller--profile-name">Response Time</div>
+                            <div class="product__seller--profile-value">within hours</div>
                         </div>
                     </div>
                     <div class="product__seller--profile-index">
                         <div class="product__seller--profile-index-wrap">
-                            <div class="product__seller--profile-name">Tham gia</div>
-                            <div class="product__seller--profile-value">7 tháng trước</div>
+                            <div class="product__seller--profile-name">Joined</div>
+                            <div class="product__seller--profile-value">2 months ago</div>
                         </div>
                         <div class="product__seller--profile-index-wrap">
-                            <div class="product__seller--profile-name">Người theo dõi</div>
+                            <div class="product__seller--profile-name">Follower</div>
                             <div class="product__seller--profile-value">1k</div>
                         </div>
                     </div>
@@ -247,12 +247,12 @@
         </div>
         <div id="product-spec_feature" class="product-spec_feature_respon">
             <div id="product-spec_feature-wrapper">
-                <button id="product-spec_feature-btn-down" class="product-spec_feature_btn_down">Xem tất cả</button>
+                <button id="product-spec_feature-btn-down" class="product-spec_feature_btn_down">View more</button>
                 <div id="product-detail">
-                    <div class="product-detail-title">CHI TIẾT SẢN PHẨM</div>
+                    <div class="product-detail-title">Product Specifications</div>
                     <div id="product-specifications">
                         <div class="product_spec_item">
-                            <div class="product_spec_item_label">Danh Mục</div>
+                            <div class="product_spec_item_label">Category</div>
                             <div class="">
                                 <span><a href="http://" target="_blank" rel="noopener noreferrer">Shopbee</a></span>> <span><a href="http://" target="_blank" rel="noopener noreferrer">Máy Tính &
                                         Laptop</a></span>> <span><a href="http://" target="_blank" rel="noopener noreferrer">Gaming</a></span>> <span><a href="http://" target="_blank"
@@ -296,40 +296,40 @@
                             <div class="">Tương thích với tất cả các hệ thống</div>
                         </div>
                         <div class="product_spec_item">
-                            <div class="product_spec_item_label">Kích thước (dài x rộng x cao)</div>
+                            <div class="product_spec_item_label">Manufacturer (dài x rộng x cao)</div>
                             <div class="">35.5*12.6*4</div>
                         </div>
                         <div class="product_spec_item">
-                            <div class="product_spec_item_label">Số lượng hàng khuyến mãi</div>
+                            <div class="product_spec_item_label">Discount Stock</div>
                             <div class="">199279</div>
                         </div>
                         <div class="product_spec_item">
-                            <div class="product_spec_item_label">Số sản phẩm còn lại</div>
+                            <div class="product_spec_item_label">Other stocks</div>
                             <div class="">278500</div>
                         </div>
                         <div class="product_spec_item">
-                            <div class="product_spec_item_label">Gửi từ</div>
+                            <div class="product_spec_item_label">Ships From</div>
                             <div class="">Hà Nội</div>
                         </div>
                     </div>
                 </div>
                 <div id="product-feature">
-                    <div class="product-detail-title">MÔ TẢ SẢN PHẨm</div>
+                    <div class="product-detail-title">Product Description</div>
                     <div id="product-detail-content-description">{{ $get_pdt->description }}</div>
                 </div>
                 <button class="product-spec_feature_btn_up">
-                    <a href="#product-spec_feature" style="color:#ee4d2d;">Thu nhỏ</a>
+                    <a href="#product-spec_feature" style="color:#ee4d2d;">View less!</a>
                 </button>
             </div>
         </div>
         <div id="product-rate">
-            <div class="product-detail-title">Đánh Giá Sản Phẩm</div>
+            <div class="product-detail-title">Product Ratings</div>
             <div id="product-rate-star-table">
                 <div id="product-rate-star-table-content">
                     <div id="product-rate-star-amount">
                         <div id="product-rate-star-amount-detail">
                             <h3>4.9</h3>
-                            <span>trên 5</span>
+                            <span>out of 5</span>
                         </div>
                         <div id="product-rate-star">
                             <ion-icon name="star"></ion-icon>
@@ -340,14 +340,14 @@
                         </div>
                     </div>
                     <div id="product-rate-typeOfRate">
-                        <div id="product_rate-activeBlock">Tất Cả</div>
-                        <div class="product_rate_typeOfRate_block">5 Sao <span>(8.3)</span></div>
-                        <div class="product_rate_typeOfRate_block">4 Sao <span>(5)</span></div>
-                        <div class="product_rate_typeOfRate_block">3 Sao <span>(8)</span></div>
-                        <div class="product_rate_typeOfRate_block">2 Sao <span>(1)</span></div>
-                        <div class="product_rate_typeOfRate_block">1 Sao <span>(500)</span></div>
-                        <div class="product_rate_typeOfRate_block">Có Bình Luận <span>(1)</span></div>
-                        <div class="product_rate_typeOfRate_block">Có Hình Ảnh/ Video <span>(2)</span></div>
+                        <div id="product_rate-activeBlock">All</div>
+                        <div class="product_rate_typeOfRate_block">5 Star <span>(8.3)</span></div>
+                        <div class="product_rate_typeOfRate_block">4 Star <span>(5)</span></div>
+                        <div class="product_rate_typeOfRate_block">3 Star <span>(8)</span></div>
+                        <div class="product_rate_typeOfRate_block">2 Star <span>(1)</span></div>
+                        <div class="product_rate_typeOfRate_block">1 Star <span>(500)</span></div>
+                        <div class="product_rate_typeOfRate_block">With Comment <span>(1)</span></div>
+                        <div class="product_rate_typeOfRate_block">With Video <span>(2)</span></div>
                     </div>
                 </div>
                 <div id="product-list-rate-wrap">

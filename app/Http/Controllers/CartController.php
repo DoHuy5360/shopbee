@@ -133,10 +133,8 @@ class CartController extends Controller
                         $cls2_ref = $item->classificationtwo_code;
                     }
                     $get_classification_one = DB::select(
-                        "SELECT code, name, path, (
-                                SELECT code as checked
-                                FROM product_classificationones pc_i 
-                                WHERE pc_i.code = '$cls1_ref')
+                        "SELECT code, name, path, (SELECT code FROM product_classificationones pc_i WHERE pc_i.code = '$cls1_ref') 
+                        AS checked
                         FROM product_classificationones
                         WHERE product_code = '{$item->product_code}'
                         "
@@ -145,10 +143,8 @@ class CartController extends Controller
                     $array_classificationtwos = [];
                     foreach ($get_classification_one as $cls1) {
                         $get_classification_two = DB::select(
-                            "SELECT code, classificationone_code, name, price, storage, sku, (
-                                SELECT code as checked
-                                FROM product_classificationtwos pc_i 
-                                WHERE pc_i.code = '$cls2_ref')
+                            "SELECT code, classificationone_code, name, price, storage, sku, ( SELECT code FROM product_classificationtwos pc_i WHERE pc_i.code = '$cls2_ref') 
+                            AS checked
                             FROM product_classificationtwos
                             WHERE classificationone_code = '{$cls1->code}'
                             "
@@ -167,7 +163,6 @@ class CartController extends Controller
         }
         $get_grp_pdt = getGroupProduct($id, 'false');
         $get_grp_pdt_hid = getGroupProduct($id, 'true');
-        // return $get_grp_pdt_hid;
         return view('_cart.cart', [
             'get_grp_pdt' => $get_grp_pdt,
             'get_grp_pdt_hid' => $get_grp_pdt_hid,
