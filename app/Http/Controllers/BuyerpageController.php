@@ -93,7 +93,7 @@ class BuyerpageController extends Controller
             ['https://cf.shopee.vn/file/d5f557dfbc5da10ce85c722bf4d40159_xhdpi', '70%'],
         ]);
         $get_pdt = DB::select(
-            "SELECT pi.path, p.name, p.price, p.code
+            "SELECT pi.path, p.name, p.price, p.code, p.sold
             FROM products p, product_images pi
             WHERE p.code = pi.product_code
             AND pi.index = '0'
