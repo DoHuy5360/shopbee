@@ -1,5 +1,5 @@
 @extends('layouts.skeleton')
-@section('title', 'Đăng ký tài khoản')
+@section('title', 'Đăng nhập')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/auth/login/login.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/auth/login/login_respon.css') }}">

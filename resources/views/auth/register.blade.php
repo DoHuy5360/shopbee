@@ -1,5 +1,5 @@
 @extends('layouts.skeleton')
-@section('title', 'Đăng ký tài khoản')
+@section('title', 'Đăng ký')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/auth/register/register.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/auth/register/register_respon.css') }}">
@@ -8,6 +8,9 @@
     <script src="{{ asset('assets/js/auth/login_and_regs_page.js') }}"></script>
 @endsection
 @section('content')
+    <div id="seller-frame-cover-fixed">
+        <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+    </div>
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <x-auth-validation-errors class="mb-4" :errors="$errors" />
     <div id="reg_page-cover">

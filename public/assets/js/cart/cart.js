@@ -172,11 +172,11 @@ $(document).ready(function () {
             $("#cart-page-backdrop").css("display", "block");
             const node__alert_type = $("#cart-page-amount-item");
             if (int__amount_item > int__max_storage) {
-                node__alert_type.text(`nhiều nhất ${int__max_storage}`);
+                node__alert_type.text(`Maximum ${int__max_storage}`);
                 node__number_item.value = int__max_storage;
                 int__new_price = int__max_storage * int__orgin_price;
             } else {
-                node__alert_type.text(`ít nhất ${int__min_storage}`);
+                node__alert_type.text(`Minimum ${int__min_storage}`);
                 node__number_item.value = int__min_storage;
                 int__new_price = int__min_storage * int__orgin_price;
             }
@@ -299,18 +299,20 @@ $(document).ready(function () {
                 const box = btn.parentNode.querySelector(
                     ".cart_page_option_items"
                 );
-                cart_page_hidden_wrap.classList.toggle("cart_hidden_respon");
-                box.classList.toggle("cart_page_option_wrap_action_respon");
-                prod_wrap.forEach((btn2) => {
-                    if (btn2 !== btn) {
-                        const box2 = btn2.parentNode.querySelector(
-                            ".cart_page_option_items"
-                        );
-                        box2.classList.remove(
-                            "cart_page_option_wrap_action_respon"
-                        );
-                    }
-                });
+                if(box){
+                    cart_page_hidden_wrap.classList.toggle("cart_hidden_respon");
+                    box.classList.toggle("cart_page_option_wrap_action_respon");
+                    prod_wrap.forEach((btn2) => {
+                        if (btn2 !== btn) {
+                            const box2 = btn2.parentNode.querySelector(
+                                ".cart_page_option_items"
+                            );
+                            box2.classList.remove(
+                                "cart_page_option_wrap_action_respon"
+                            );
+                        }
+                    });
+                }
             });
         });
     }

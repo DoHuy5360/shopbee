@@ -64,7 +64,7 @@
 	margin: 0 80px;
 	height: 600px;
 	width: 1040px;
-	background-image: url("../../sale_regs.png");
+	background-image: url("../../../img/login_represent.png");
 	background-repeat: no-repeat;
 	background-size: 550px;
 	background-position: left center;
@@ -219,4 +219,7 @@
 
 #reg_page-content-form-loginSite > span {
 	color: #ccc;
+}
+#scroll-to-top{
+	display: none;
 }
