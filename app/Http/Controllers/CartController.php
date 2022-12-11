@@ -76,8 +76,12 @@ class CartController extends Controller
                 $add_pdt_cart->user_code = "$buyer_code";
                 $add_pdt_cart->product_code = "$pdt_code";
                 $add_pdt_cart->amount = $request->amount_order;
-                $add_pdt_cart->classificationone_code = "$request->classify1";
-                $add_pdt_cart->classificationtwo_code = "$request->classify2";
+                if (isset($request->classify1)) {
+                    $add_pdt_cart->classificationone_code = "$request->classify1";
+                    if (isset($request->classify2)) {
+                        $add_pdt_cart->classificationtwo_code = "$request->classify2";
+                    }
+                }
                 $add_pdt_cart->save();
             }
         } else {

@@ -120,7 +120,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="{{ route('cart.store') }}" id="product-form-add-cart" method="POST">
+                        <form action="{{ route('cart.show', Auth::user()->code) }}" id="product-form-add-cart" method="GET" target="_blank">
                             @csrf
                             @auth
                                 <input name="buyer_code" type="hidden" value="{{ Auth::user()->code }}">
@@ -172,8 +172,7 @@
                                     <ion-icon name="cart-outline"></ion-icon>
                                     <div>Thêm Vào Giỏ Hàng</div>
                                 </button>
-                                <a href="/cart" class="no_decoration">
-                                    <button type="submit" id="product-title-buyNow">Mua Ngay</button></a>
+                                <button type="submit" id="product-title-buyNow">Mua Ngay</button>
                             </div>
                         </form>
                     </div>

@@ -1,4 +1,4 @@
-import { displayProductsInCartPreview as refreshCartPreview } from "../module/function/header_func.js"
+import { displayProductsInCartPreview as refreshCartPreview } from "../module/function/header_func.js";
 
 // todo: Chức năng hiện thị ảnh, video theo sự kiện rê chuột
 const all_product_images = document.querySelectorAll(
@@ -98,8 +98,34 @@ $(document).ready(function () {
                 } else if (resp_msg.status === "duplicate") {
                     alertMessage();
                 } else {
-                    refreshCartPreview()
+                    refreshCartPreview();
                     alertMessage();
+                }
+            },
+        });
+    });
+    // todo: Sự kiện Mua ngay
+    $("#product-title-buyNow").click(function (e) {
+        e.preventDefault();
+        $("#product-form-add-cart").ajaxSubmit({
+            url: "/cart",
+            type: "post",
+            success: function (response, statusText, xhr, form) {
+                const resp_msg = $(response)[0];
+                if (resp_msg.status === "login") {
+                    $.ajax({
+                        type: "GET",
+                        url: `/login?pre_page=${window.location.pathname}`,
+                        success: function (response) {
+                            $("#body").html(response);
+                        },
+                    });
+                } else if (resp_msg.status === "duplicate") {
+                    alertMessage();
+                } else {
+                    refreshCartPreview();
+                    alertMessage();
+                    $("#product-form-add-cart").submit();
                 }
             },
         });
@@ -110,18 +136,24 @@ $(document).ready(function () {
             $("#product-alert-wrap").css("display", "none");
         }, 1500);
     }
-    const node__amnt_storage = document.getElementById("product-storage-number")
-    const node__amnt_order = document.getElementById("product-amount-order")
-    const node__btn__plus = document.getElementById("product-title_quantity-plus")
-    const node__btn_minus = document.getElementById("product-title_quantity-minus")
-    node__btn__plus.addEventListener("click", e => {
-        if(node__amnt_order.value < parseInt(node__amnt_storage.innerText)){
-            node__amnt_order.value++
+    const node__amnt_storage = document.getElementById(
+        "product-storage-number"
+    );
+    const node__amnt_order = document.getElementById("product-amount-order");
+    const node__btn__plus = document.getElementById(
+        "product-title_quantity-plus"
+    );
+    const node__btn_minus = document.getElementById(
+        "product-title_quantity-minus"
+    );
+    node__btn__plus.addEventListener("click", (e) => {
+        if (node__amnt_order.value < parseInt(node__amnt_storage.innerText)) {
+            node__amnt_order.value++;
         }
-    })
-    node__btn_minus.addEventListener("click", e => {
-        if(node__amnt_order.value > 1){
-            node__amnt_order.value--
+    });
+    node__btn_minus.addEventListener("click", (e) => {
+        if (node__amnt_order.value > 1) {
+            node__amnt_order.value--;
         }
-    })
+    });
 });
