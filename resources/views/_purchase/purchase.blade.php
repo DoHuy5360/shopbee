@@ -19,30 +19,30 @@
                     <div class="mainHome_navbar_about_topic">
                         <ul>
                             <a href="http://" target="_blank" rel="noopener noreferrer">
-                                <li class="mainHome_navbar-topic">Kênh người bán</li>
+                                <li class="mainHome_navbar-topic">Seller page</li>
                             </a>
                             <li class="mainHome__split--line">|</li>
                             <a href="http://" target="_blank" rel="noopener noreferrer">
-                                <li class="mainHome_navbar-topic">Tải ứng dụng</li>
+                                <li class="mainHome_navbar-topic">Download App</li>
                             </a>
                             <li class="mainHome__split--line">|</li>
                             <a href="http://" target="_blank" rel="noopener noreferrer">
-                                <li class="mainHome_navbar-topic">Liên kết</li>
+                                <li class="mainHome_navbar-topic">Link</li>
                             </a>
                         </ul>
                     </div>
                     <div class="mainHome_navbar_about_topic">
                         <ul>
-                            <li class="mainHome_navbar-topic">Thông báo</li>
-                            <li class="mainHome_navbar-topic">Hỗ Trợ</li>
-                            <li class="mainHome_navbar-topic">Ngôn ngữ</li>
+                            <li class="mainHome_navbar-topic">Notification</li>
+                            <li class="mainHome_navbar-topic">Support</li>
+                            <li class="mainHome_navbar-topic">Language</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div id="purchage-logo-title-wrap">
                 <a href="/"><img src="{{ asset('assets/img/shopbee.png') }}" alt="" /></a>
-                <div id="purchage-title">Thanh Toán</div>
+                <div id="purchage-title">Checkout</div>
             </div>
         </div>
         <div id="purchase-page-wrap">
@@ -50,7 +50,7 @@
                 <div id="purchage-letter-img"></div>
                 <div id="purchase-page-address-title">
                     <ion-icon name="location"></ion-icon>
-                    <div>Địa Chỉ Nhận Hàng</div>
+                    <div>Order address</div>
                 </div>
                 <div id="purchase-page-customerInfor">
                     <div id="purchase-page-infor">
