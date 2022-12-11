@@ -5,7 +5,7 @@
                 <div class="mainHome_navbar_about_topic">
                     <ul>
                         <a href="{{ route('seller.index') }}" target="_blank" rel="noopener noreferrer">
-                            <li class="mainHome_navbar-topic">Kênh người bán</li>
+                            <li class="mainHome_navbar-topic">Seller page</li>
                         </a>
                         <li class="mainHome__split--line">|</li>
                         <a href="http://" target="_blank" rel="noopener noreferrer">
@@ -13,19 +13,19 @@
                         </a>
                         <li class="mainHome__split--line">|</li>
                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <li class="mainHome_navbar-topic">Tải ứng dụng</li>
+                            <li class="mainHome_navbar-topic">Download App</li>
                         </a>
                         <li class="mainHome__split--line">|</li>
                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <li class="mainHome_navbar-topic">Liên kết</li>
+                            <li class="mainHome_navbar-topic">Link</li>
                         </a>
                     </ul>
                 </div>
                 <div class="mainHome_navbar_about_topic">
                     <ul>
-                        <li class="mainHome_navbar-topic">Thông báo</li>
-                        <li class="mainHome_navbar-topic">Hỗ Trợ</li>
-                        <li class="mainHome_navbar-topic">Ngôn ngữ</li>
+                        <li class="mainHome_navbar-topic">Notification</li>
+                        <li class="mainHome_navbar-topic">Support</li>
+                        <li class="mainHome_navbar-topic">Language</li>
                         @auth
                             <li class="mainHome_navbar-topic" id="mainHome-navbar-user">
                                 <img id="mainHome-avatar-ion" src="{{ asset(Auth::user()->avatar) }}
@@ -36,11 +36,11 @@
                                 <div id="mainHome-hidden-tramform">
                                     <div id="mainHome-user-hidden-wrap">
                                         <div id="mainHome-hidden-option-user">
-                                            <a class="mainHome__action--user" href="{{ route('profile.index') }}">Hồ sơ của tôi</a>
-                                            <a class="mainHome__action--user" href="">Đơn mua</a>
+                                            <a class="mainHome__action--user" href="{{ route('profile.index') }}">My profile</a>
+                                            <a class="mainHome__action--user" href="{{ route('profile.show', 'order') }}">Order</a>
                                             <form action="{{ route('logout') }}" method="POST">
                                                 @csrf
-                                                <button type="submit" class="mainHome__action--user" id="mainHome-logout-btn">Đăng xuất</button>
+                                                <button type="submit" class="mainHome__action--user" id="mainHome-logout-btn">Logout</button>
                                             </form>
                                         </div>
                                     </div>
@@ -50,12 +50,12 @@
                         @if (Auth::guest())
                             <li class="mainHome_navbar-topic">
                                 <a href="{{ route('register') }}">
-                                    Đăng Ký
+                                    Register
                                 </a>
                             </li>
                             <li class="mainHome_navbar-topic">
                                 <a href="{{ route('login') }}">
-                                    Đăng nhập
+                                    Login
                                 </a>
                             </li>
                         @endif
@@ -80,12 +80,12 @@
                     </button>
                 </div>
                 <div id="mainHome-list-recommend">
-                    <a href="">Điện thoại Xiaomi</a>
+                    <a href="">Xiaomi phone</a>
                     <a href="">Camera XY672</a>
                     <a href="">Air Pod 23</a>
                     <a href="">Fan UMX</a>
-                    <a href="">Sạc dự phòng</a>
-                    <a href="">Giày thép</a>
+                    <a href="">Spare battery Charge</a>
+                    <a href="">Steel shoes</a>
                     <a href="">Tablet 249f</a>
                     <a href="">Macbook Pro</a>
                 </div>
@@ -102,12 +102,12 @@
                     @if (Auth::guest())
                         <div id="mainHome-cart-empty-wrap">
                             <img src="{{ asset('assets/img/empty_cart.png') }}" alt="Giỏ hàng của bạn">
-                            <div>Chưa Có Sản Phẩm</div>
+                            <div>Empty Cart</div>
                         </div>
                     @else
-                        <div id="mainHome-cart-product-title">Sản phẩm mới thêm</div>
+                        <div id="mainHome-cart-product-title">New product added</div>
                         <div id="mainHome-cart-list-product"></div>
-                        <a href="{{ route('cart.show', Auth::user()->code) }}" id="mainHome-cart-view-btn">Xem giỏ hàng</a>
+                        <a href="{{ route('cart.show', Auth::user()->code) }}" id="mainHome-cart-view-btn">View cart</a>
                     @endif
                 </div>
             </div>

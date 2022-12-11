@@ -55,7 +55,7 @@
                                 <div id="mainHome-hidden-tramform">
                                     <div id="mainHome-user-hidden-wrap">
                                         <div id="mainHome-hidden-option-user">
-                                            <a class="mainHome__action--user" href="{{ route('profile.show', Auth::user()->code) }}">My profile</a>
+                                            <a class="mainHome__action--user" href="{{ route('profile.index') }}">My profile</a>
                                             <a class="mainHome__action--user" href="">Order</a>
                                             <form action="{{ route('logout') }}" method="POST">
                                                 @csrf
@@ -197,28 +197,30 @@
                                                                         @endforeach
                                                                     </div>
                                                                 </div>
-                                                                <div class="cart_page_option_fix">
-                                                                    <div class="cart_page_option_fix_title">
-                                                                        <span>{{ $item->classificationtwo }}</span>:
+                                                                @if (isset($item->classificationtwo))
+                                                                    <div class="cart_page_option_fix">
+                                                                        <div class="cart_page_option_fix_title">
+                                                                            <span>{{ $item->classificationtwo }}</span>:
+                                                                        </div>
+                                                                        <div id="cart-page-classification2-wrap">
+                                                                            @foreach ($item->classificationtwos as $array_cls2)
+                                                                                <div class="cart_page_option_choice">
+                                                                                    @foreach ($array_cls2 as $cls2)
+                                                                                        <div class="cart_checkout--method-wrap">
+                                                                                            <label class="cart_check--method-feature">
+                                                                                                <input class="cart_check--method" type="radio"
+                                                                                                    name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][classification2]"
+                                                                                                    value="{{ $cls2->name }}"
+                                                                                                    {{ isset($cls2->checked) ? ($cls2->checked == $cls2->code ? 'checked' : '') : '' }} />
+                                                                                                <span>{{ $cls2->name }}</span>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    @endforeach
+                                                                                </div>
+                                                                            @endforeach
+                                                                        </div>
                                                                     </div>
-                                                                    <div id="cart-page-classification2-wrap">
-                                                                        @foreach ($item->classificationtwos as $array_cls2)
-                                                                            <div class="cart_page_option_choice">
-                                                                                @foreach ($array_cls2 as $cls2)
-                                                                                    <div class="cart_checkout--method-wrap">
-                                                                                        <label class="cart_check--method-feature">
-                                                                                            <input class="cart_check--method" type="radio"
-                                                                                                name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][classification2]"
-                                                                                                value="{{ $cls2->name }}"
-                                                                                                {{ isset($cls2->checked) ? ($cls2->checked == $cls2->code ? 'checked' : '') : '' }} />
-                                                                                            <span>{{ $cls2->name }}</span>
-                                                                                        </label>
-                                                                                    </div>
-                                                                                @endforeach
-                                                                            </div>
-                                                                        @endforeach
-                                                                    </div>
-                                                                </div>
+                                                                @endif
                                                                 <button type="button" class="cart_page_option_submit_btn_wrap">Confirm</button>
                                                             </div>
                                                         </div>
@@ -276,10 +278,10 @@
                     </div>
                 @endforeach
             </form>
-            @foreach ($get_grp_pdt_hid as $index_pdt => $product_creator)
-                <div class="cart_page_product_infor" id="cart_page-product-inactive">
-                    <div id="cart_page-product-inactive-warp">
-                        <div id="cart_page-product-inactive-title">Inactive products List</div>
+            <div class="cart_page_product_infor" id="cart_page-product-inactive">
+                @foreach ($get_grp_pdt_hid as $index_pdt => $product_creator)
+                    <div class="cart_page-product-inactive-warp">
+                        <div class="cart_page-product-inactive-title">Inactive products List</div>
                         <input type="hidden" name="product_information[{{ $index_pdt }}][user_code]" value="{{ $product_creator->user_code }}">
                         <input type="hidden" name="product_information[{{ $index_pdt }}][user_name]" value="{{ $product_creator->name }}">
                         <div class="cart_page_product_prize_infor">
@@ -294,7 +296,7 @@
                                 <span class="cart__page-product-edit">Edit</span>
                             </div>
                             @foreach ($product_creator->products as $index_item => $item)
-                                <div class="cart_page_warp_containt_border">
+                                <div class="cart_page_warp_containt_border cart__product--inactive" data-cart-code="{{ $item->cart_code }}">
                                     <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->product_code }}">
                                     <div class="cart_page_wrap_containt">
                                         <div class="cart_page_voucher_cover">
@@ -401,8 +403,8 @@
                             @endforeach
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
             <div class="cart_page_product_prize_infor" id="cart-page-sticky-block">
                 <div id="cart-page-sticky-wrap">
                     <div id="cart-page-sticky-voucher">

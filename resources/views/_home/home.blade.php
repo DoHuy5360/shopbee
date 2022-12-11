@@ -22,6 +22,12 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="mainHome-carousel-top carousel-item active">
@@ -32,6 +38,24 @@
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
                             <img class="d-block" src="http://surl.li/dafnj" alt="Third slide" />
+                        </div>
+                        <div class="mainHome-carousel-top carousel-item">
+                            <img class="d-block" src="http://surl.li/dgukv" alt="First slide" />
+                        </div>
+                        <div class="mainHome-carousel-top carousel-item">
+                            <img class="d-block" src="http://surl.li/dgukx" alt="Second slide" />
+                        </div>
+                        <div class="mainHome-carousel-top carousel-item">
+                            <img class="d-block" src="http://surl.li/dguky" alt="Third slide" />
+                        </div>
+                        <div class="mainHome-carousel-top carousel-item">
+                            <img class="d-block" src="http://surl.li/dgula" alt="First slide" />
+                        </div>
+                        <div class="mainHome-carousel-top carousel-item">
+                            <img class="d-block" src="http://surl.li/dguld" alt="Second slide" />
+                        </div>
+                        <div class="mainHome-carousel-top carousel-item">
+                            <img class="d-block" src="http://surl.li/dgulf" alt="Third slide" />
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -45,7 +69,7 @@
                 </div>
             </div>
             <div class="mainHome-homeCarousel-block-right">
-                <img src="http://surl.li/dafnp" alt="" draggable="false" />
+                <img src="http://surl.li/dgula" alt="" draggable="false" />
             </div>
             <div class="mainHome-homeCarousel-block-right">
                 <img src="http://surl.li/dafnq" alt="" draggable="false" />
@@ -305,7 +329,7 @@
                                         </div>
                                         <div class="mainHome__cardSuggest--price-wrap">
                                             <div class="mainHome__cardSuggest--price"><span>₫</span><span>{{ $pdt->price }}</span></div>
-                                            <span>Saled ###</span>
+                                            <span>Saled {{ $pdt->sold }}</span>
                                         </div>
                                     </div>
                                 </div>
