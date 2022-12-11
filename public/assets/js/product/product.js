@@ -78,57 +78,89 @@ if (mediaQuery) {
     });
 }
 // todo: Chức năng thông báo thêm giỏ hàng thành công, không thì bắt đăng nhập
+const node__cls1_chck = document.querySelectorAll(".product__classify1_inp");
+const node__cls2_chck = document.querySelectorAll(".product__classify2_inp");
+let int__amnt_cls_exst = 0;
+function checkInArrHaveChecked() {
+    if (int__amnt_cls_exst == 1) {
+        return checkClassifyChecked(node__cls1_chck);
+    } else if (int__amnt_cls_exst == 2) {
+        return (
+            checkClassifyChecked(node__cls1_chck) &&
+            checkClassifyChecked(node__cls2_chck)
+        );
+    } else {
+        return true;
+    }
+}
+function checkClassifyChecked(_node) {
+    return [..._node].some((_chck) => {
+        return _chck.checked;
+    });
+}
+function checkClassifyExist() {
+    if (node__cls1_chck.length) {
+        int__amnt_cls_exst++;
+        if (node__cls2_chck.length) {
+            int__amnt_cls_exst++;
+        }
+    }
+}
+checkClassifyExist();
 $(document).ready(function () {
     // todo: Sự kiện thêm sản phẩm vào giỏ hàng
     $("#product-title-add2cart").click(function (e) {
         e.preventDefault();
-        $("#product-form-add-cart").ajaxSubmit({
-            url: "/cart",
-            type: "post",
-            success: function (response, statusText, xhr, form) {
-                const resp_msg = $(response)[0];
-                if (resp_msg.status === "login") {
-                    $.ajax({
-                        type: "GET",
-                        url: `/login?pre_page=${window.location.pathname}`,
-                        success: function (response) {
-                            $("#body").html(response);
-                        },
-                    });
-                } else if (resp_msg.status === "duplicate") {
-                    alertMessage();
-                } else {
-                    refreshCartPreview();
-                    alertMessage();
-                }
-            },
-        });
+        if (checkInArrHaveChecked()) {
+            $("#product-form-add-cart").ajaxSubmit({
+                url: "/cart",
+                type: "post",
+                success: function (response, statusText, xhr, form) {
+                    const resp_msg = $(response)[0];
+                    if (resp_msg.status === "login") {
+                        $.ajax({
+                            type: "GET",
+                            url: `/login?pre_page=${window.location.pathname}`,
+                            success: function (response) {
+                                $("#body").html(response);
+                            },
+                        });
+                    } else if (resp_msg.status === "duplicate") {
+                        alertMessage();
+                    } else {
+                        refreshCartPreview();
+                        alertMessage();
+                    }
+                },
+            });
+        }
     });
     // todo: Sự kiện Mua ngay
     $("#product-title-buyNow").click(function (e) {
         e.preventDefault();
-        $("#product-form-add-cart").ajaxSubmit({
-            url: "/cart",
-            type: "post",
-            success: function (response, statusText, xhr, form) {
-                const resp_msg = $(response)[0];
-                if (resp_msg.status === "login") {
-                    $.ajax({
-                        type: "GET",
-                        url: `/login?pre_page=${window.location.pathname}`,
-                        success: function (response) {
-                            $("#body").html(response);
-                        },
-                    });
-                } else if (resp_msg.status === "duplicate") {
-                    alertMessage();
-                } else {
-                    refreshCartPreview();
-                    alertMessage();
-                    $("#product-form-add-cart").submit();
-                }
-            },
-        });
+        if (checkInArrHaveChecked()) {
+            $("#product-form-add-cart").ajaxSubmit({
+                url: "/cart",
+                type: "post",
+                success: function (response, statusText, xhr, form) {
+                    const resp_msg = $(response)[0];
+                    if (resp_msg.status === "login") {
+                        $.ajax({
+                            type: "GET",
+                            url: `/login?pre_page=${window.location.pathname}`,
+                            success: function (response) {
+                                $("#body").html(response);
+                            },
+                        });
+                    } else if (resp_msg.status === "duplicate") {
+                        $("#product-form-add-cart").submit();
+                    } else {
+                        refreshCartPreview();
+                        $("#product-form-add-cart").submit();
+                    }
+                },
+            });
+        }
     });
     function alertMessage() {
         $("#product-alert-wrap").css("display", "flex");

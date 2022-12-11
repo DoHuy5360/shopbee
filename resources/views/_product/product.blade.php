@@ -132,27 +132,27 @@
                                     <div class="product_title_column-item-infor">
                                         @foreach ($get_classification_one as $cls1)
                                             <label class="product_title_colour-block" for="{{ $cls1->code }}">{{ $cls1->name }}
-                                                <input type="radio" name="classify1" id="{{ $cls1->code }}" value="{{ $cls1->code }}">
+                                                <input class="product__classify1_inp" type="radio" name="classify1" id="{{ $cls1->code }}" value="{{ $cls1->code }}">
                                             </label>
                                         @endforeach
                                     </div>
                                 </div>
-                            @endif
-                            @if (isset($get_pdt->classificationtwo))
-                                <div class="product_title_column-item">
-                                    <div class="product_title_column_title">{{ $get_pdt->classificationtwo }}</div>
-                                    <div id="product-classification2--wrap">
-                                        @foreach ($array_classification_two as $array_cls2)
-                                            <div class="product_title_column-item-infor">
-                                                @foreach ($array_cls2 as $cls2)
-                                                    <label class="product_title_colour-block" for="{{ $cls2->code }}">{{ $cls2->name }}
-                                                        <input type="radio" name="classify2" id="{{ $cls2->code }}" value="{{ $cls2->code }}">
-                                                    </label>
-                                                @endforeach
-                                            </div>
-                                        @endforeach
+                                @if (isset($get_pdt->classificationtwo))
+                                    <div class="product_title_column-item">
+                                        <div class="product_title_column_title">{{ $get_pdt->classificationtwo }}</div>
+                                        <div id="product-classification2--wrap">
+                                            @foreach ($array_classification_two as $array_cls2)
+                                                <div class="product_title_column-item-infor">
+                                                    @foreach ($array_cls2 as $cls2)
+                                                        <label class="product_title_colour-block" for="{{ $cls2->code }}">{{ $cls2->name }}
+                                                            <input class="product__classify2_inp" type="radio" name="classify2" id="{{ $cls2->code }}" value="{{ $cls2->code }}">
+                                                        </label>
+                                                    @endforeach
+                                                </div>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
+                                @endif
                             @endif
                             <div class="product_title_column-item" id="product-title_quantity">
                                 <div class="product_title_column_title">quantity</div>
@@ -168,11 +168,11 @@
                                 </div>
                             </div>
                             <div class="product_title_column-item" id="product-title_incartBtn">
-                                <button type="submit" id="product-title-add2cart">
+                                <button type="button" id="product-title-add2cart">
                                     <ion-icon name="cart-outline"></ion-icon>
                                     <div>Add to cart</div>
                                 </button>
-                                <button type="submit" id="product-title-buyNow">Buy Now</button>
+                                <button type="button" id="product-title-buyNow">Buy Now</button>
                             </div>
                         </form>
                     </div>
