@@ -2,8 +2,8 @@
 <script type="module" src="{{ asset('assets/js/new_product/new_product.js') }}"></script>
 <div id="seller-product-wrap">
     <div id="seller-product-wrap-title">
-        <div id="seller-product-title-about">Thêm 1 sản phẩm mới</div>
-        <div id="seller-product-subTitle">Vui lòng chọn ngành hàng phù hợp cho sản phẩm của bạn.</div>
+        <div id="seller-product-title-about">Add new products</div>
+        <div id="seller-product-subTitle">Choose your bank</div>
     </div>
     <div id="seller-product-name">
         <label for="seller-product-name-input-field">Tên sản phẩm: </label>
@@ -20,8 +20,8 @@
                 <ion-icon name="search-outline"></ion-icon>
             </div>
             <div id="typeProduct-describe-wrap">
-                <div id="typeProduct-describe-note">Chọn ngành hàng chính xác?</div>
-                <a href="">Bấm vào đây!</a>
+                <div id="typeProduct-describe-note">Identify the right account?</div>
+                <a href="">Click here!</a>
             </div>
         </div>
         <div id="seller-product-choice-option">
@@ -44,9 +44,9 @@
     </div>
     <div id="seller-product-submit">
         <div id="seller-product-submit-items-wrap">
-            Đã chọn :
+            Previous confirm :
             <div id="seller-product-submit-items"></div>
         </div>
-        <button type="button" id="seller-product-submit-btn" form="seller-product-name-field">Tiếp theo</button>
+        <button type="button" id="seller-product-submit-btn" form="seller-product-name-field">Next</button>
     </div>
 </div>
