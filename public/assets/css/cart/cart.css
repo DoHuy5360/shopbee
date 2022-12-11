@@ -479,8 +479,13 @@
 #cart_page-product-inactive {
     background: white;
 }
-
-#cart_page-product-inactive-title {
+#cart-page-sticky-function-delInactive{
+    cursor: pointer;
+}
+#cart-page-sticky-function-delInactive:hover{
+    color: var(--color-4);
+}
+.cart_page-product-inactive-title {
     height: 55px;
     padding-left: 20px;
     display: flex;

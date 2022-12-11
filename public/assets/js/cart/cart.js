@@ -34,6 +34,30 @@ $(document).ready(function () {
             });
         });
     });
+    //todo: Xóa sản phẩm không hoạt động
+    const node_inactive_del = document.getElementById(
+        "cart-page-sticky-function-delInactive"
+    );
+    node_inactive_del.addEventListener("click", (e) => {
+        const node__pdt_inactive = document.querySelectorAll(
+            ".cart__product--inactive"
+        );
+        if (node__pdt_inactive) {
+            node__pdt_inactive.forEach((_pdt) => {
+                $.ajax({
+                    type: "POST",
+                    url: `/cart/${_pdt.getAttribute("data-cart-code")}`,
+                    data: {
+                        _method: "DELETE",
+                        _token: $("#cartPage-csrf").val(),
+                    },
+                    success: function (response) {},
+                    complete: function () {},
+                });
+            });
+            document.getElementById("cart_page-product-inactive").remove();
+        }
+    });
     //todo: Hiển thị phân loại hàng
     function displayClassify() {
         const node__cls_container = document.querySelectorAll(
@@ -43,18 +67,18 @@ $(document).ready(function () {
             const node__dsply_cls = container.querySelector(
                 ".cart_page_about_choice"
             );
-                const [node__cls1, node__cls2] = container.querySelectorAll(
-                    ".cart_check--method:checked"
-                );
-                let str__cls_temp = "";
-                if (node__cls1 != null) {
-                    str__cls_temp += node__cls1.value;
-                    if (node__cls2 != null) {
-                        str__cls_temp += ', ';
-                        str__cls_temp += node__cls2.value;
-                    }
-                    node__dsply_cls.innerText = str__cls_temp;
+            const [node__cls1, node__cls2] = container.querySelectorAll(
+                ".cart_check--method:checked"
+            );
+            let str__cls_temp = "";
+            if (node__cls1 != null) {
+                str__cls_temp += node__cls1.value;
+                if (node__cls2 != null) {
+                    str__cls_temp += ", ";
+                    str__cls_temp += node__cls2.value;
                 }
+                node__dsply_cls.innerText = str__cls_temp;
+            }
         });
     }
     displayClassify();

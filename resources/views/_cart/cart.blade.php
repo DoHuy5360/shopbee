@@ -278,10 +278,10 @@
                     </div>
                 @endforeach
             </form>
-            @foreach ($get_grp_pdt_hid as $index_pdt => $product_creator)
-                <div class="cart_page_product_infor" id="cart_page-product-inactive">
-                    <div id="cart_page-product-inactive-warp">
-                        <div id="cart_page-product-inactive-title">Inactive products List</div>
+            <div class="cart_page_product_infor" id="cart_page-product-inactive">
+                @foreach ($get_grp_pdt_hid as $index_pdt => $product_creator)
+                    <div class="cart_page-product-inactive-warp">
+                        <div class="cart_page-product-inactive-title">Inactive products List</div>
                         <input type="hidden" name="product_information[{{ $index_pdt }}][user_code]" value="{{ $product_creator->user_code }}">
                         <input type="hidden" name="product_information[{{ $index_pdt }}][user_name]" value="{{ $product_creator->name }}">
                         <div class="cart_page_product_prize_infor">
@@ -296,7 +296,7 @@
                                 <span class="cart__page-product-edit">Edit</span>
                             </div>
                             @foreach ($product_creator->products as $index_item => $item)
-                                <div class="cart_page_warp_containt_border">
+                                <div class="cart_page_warp_containt_border cart__product--inactive" data-cart-code="{{ $item->cart_code }}">
                                     <input type="hidden" name="product_information[{{ $index_pdt }}][products][{{ $index_item }}][product_code]" value="{{ $item->product_code }}">
                                     <div class="cart_page_wrap_containt">
                                         <div class="cart_page_voucher_cover">
@@ -403,8 +403,8 @@
                             @endforeach
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
             <div class="cart_page_product_prize_infor" id="cart-page-sticky-block">
                 <div id="cart-page-sticky-wrap">
                     <div id="cart-page-sticky-voucher">

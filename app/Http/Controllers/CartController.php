@@ -163,7 +163,7 @@ class CartController extends Controller
         }
         $get_grp_pdt = getGroupProduct($id, 'false');
         $get_grp_pdt_hid = getGroupProduct($id, 'true');
-        // return $get_grp_pdt;
+        // return $get_grp_pdt_hid;
         return view('_cart.cart', [
             'get_grp_pdt' => $get_grp_pdt,
             'get_grp_pdt_hid' => $get_grp_pdt_hid,
