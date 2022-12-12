@@ -1,5 +1,5 @@
 @media screen and (max-width: 1080px) {
-    body{
+    body {
         overflow-y: unset !important;
     }
     #seller-icon {
@@ -182,14 +182,21 @@
     .seller_icon_respon {
         color: #fff;
     }
-    .parent_active 
-    .seller_icon_respon {
+    .parent_active .seller_icon_respon {
         color: black;
     }
-    #seller-contentTable-tranfer{
+    #seller-contentTable-tranfer {
         max-height: unset !important;
     }
-    body{
+    body {
         overflow: unset;
+    }
+    .respons_respons_list_items li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.285);
+    }
+    .respons_respons_list_items > li:last-child {
+        padding-top: 0.75rem;
+        border: none;
     }
 }
