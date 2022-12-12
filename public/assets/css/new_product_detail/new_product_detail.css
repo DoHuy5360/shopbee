@@ -28,7 +28,7 @@ body {
     gap: 10px;
     position: relative;
 }
-.seller__product--close-table-btn{
+.seller__product--close-table-btn {
     all: unset;
     position: absolute;
     top: 10px;
@@ -36,10 +36,10 @@ body {
     color: #9999a8;
     outline: unset !important;
 }
-.seller__product--close-table-btn:hover{
+.seller__product--close-table-btn:hover {
     color: #656565;
 }
-#seller-product-classification-table-display{
+#seller-product-classification-table-display {
     display: none;
     flex-direction: column;
     gap: 30px;
@@ -114,11 +114,15 @@ body {
     font-size: 14px;
     color: #9999a6;
 }
-#sellerProduct-detail-choice-wrap:has(#seller_product_detail-otherInfor-option-true:checked)
+#sellerProduct-detail-choice-wrap:has(
+        #seller_product_detail-otherInfor-option-true:checked
+    )
     ~ #seller_product_detail-otherInfor-option-true-quote {
     display: block;
 }
-#sellerProduct-detail-choice-wrap:has(#seller_product_detail-otherInfor-option-false:checked)
+#sellerProduct-detail-choice-wrap:has(
+        #seller_product_detail-otherInfor-option-false:checked
+    )
     ~ #seller_product_detail-otherInfor-option-false-quote {
     display: block;
 }
@@ -237,6 +241,7 @@ body {
     padding: 10px;
     height: 210px;
     resize: unset;
+    font-size: 14px;
 }
 .sellerProduct__animate-hover-focus {
     transition: 100ms linear !important;
@@ -251,7 +256,7 @@ body {
     right: 0;
     font-size: 14px;
 }
-#seller-product-detail-desc-length{
+#seller-product-detail-desc-length {
     color: #999999;
 }
 #sellerProduct-product-name-countLenght {
@@ -497,7 +502,9 @@ select:invalid {
 .sellerProduct__placeholder--color::placeholder {
     color: #beb7b7;
 }
-#seller_product_detail-sellInfor-price-inputfield:has(#seller_product_detail-sellInfor-price-input:invalid) {
+#seller_product_detail-sellInfor-price-inputfield:has(
+        #seller_product_detail-sellInfor-price-input:invalid
+    ) {
     border: 1px solid red;
 }
 #seller_product_detail-sellInfor-storage {
@@ -768,7 +775,7 @@ select:invalid {
 }
 #seller-product-classification-tip-field {
     display: flex;
-    width: 555px;
+    width: 650px;
 }
 .sellerProduct__tip-setup {
     flex-grow: 1;
@@ -834,9 +841,9 @@ table {
     color: #b1b1b1;
     font-size: 14px;
 }
-.product__detail--image-unvalid-alert{
+.product__detail--image-unvalid-alert {
     font-size: 13px;
     font-weight: bold;
     color: red;
     text-align: center;
-  }
+}

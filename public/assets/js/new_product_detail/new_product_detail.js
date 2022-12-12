@@ -102,7 +102,7 @@ node__classify_close_btns.forEach((btn, indx) => {
             valid__pdt_clsfcatn1.forceValid();
             node__classify_table_display.style.display = "none";
             node__classify_field.style.display = "none";
-            node__classify_btn2.style.display = "block";
+            node__classify_btn2.style.display = "flex";
             const node__classify_table_wrap =
                 node__classify_table_parent.parentNode.parentNode.querySelector(
                     ".seller_product_detail-sellInfor-Category"

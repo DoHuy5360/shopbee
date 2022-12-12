@@ -7,6 +7,9 @@
     <script type="module" src="{{ asset('assets/js/new_product/new_product.js') }}"></script>
 @endsection
 @section('content')
+    <div id="seller-frame-cover-fixed">
+        <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+    </div>
     <div id="seller-product-wrap">
         <div id="seller-product-wrap-title">
             <div id="seller-product-title-about">Thêm 1 sản phẩm mới</div>
@@ -16,7 +19,7 @@
             <label for="seller-product-name-input-field">Tên sản phẩm: </label>
             <form action="{{ route('product.create') }}" method="GET" id="seller-product-name-field">
                 @csrf
-                <input name="product_name" id="seller-product-name-input-field" value="" maxlength="120" minlength="10" placeholder="Nhập vào" type="text" required/>
+                <input name="product_name" id="seller-product-name-input-field" value="" maxlength="120" minlength="10" placeholder="Nhập vào" type="text" required />
                 <div id="seller-product-name-input-numb"><span id="seller-product-input-numb">0</span>/120</div>
             </form>
         </div>
