@@ -71,6 +71,7 @@ class SellerController extends Controller
                     WHERE p.user_code = '$user_code'
                     AND p.code = pi.product_code
                     AND pi.index = '0'
+                    ORDER BY p.id DESC
                     "
                 );
                 $get_pdt_cls = DB::select(
@@ -87,6 +88,7 @@ class SellerController extends Controller
                     AND p.user_code = '$user_code'
                     AND p.code = pi.product_code
                     AND pi.index = '0'
+                    ORDER BY p.id DESC
                     "
                 );
                 $amnt_cls_dsply = 3;

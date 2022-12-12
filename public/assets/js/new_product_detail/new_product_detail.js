@@ -102,7 +102,7 @@ node__classify_close_btns.forEach((btn, indx) => {
             valid__pdt_clsfcatn1.forceValid();
             node__classify_table_display.style.display = "none";
             node__classify_field.style.display = "none";
-            node__classify_btn2.style.display = "block";
+            node__classify_btn2.style.display = "flex";
             const node__classify_table_wrap =
                 node__classify_table_parent.parentNode.parentNode.querySelector(
                     ".seller_product_detail-sellInfor-Category"
@@ -326,11 +326,18 @@ node__sbmit_save_dsply.addEventListener("click", (e) => {
 });
 
 function lastCheckBeforeSumit() {
-    const obj__total_validation = true;
-    valid__pdt_clsfcatn1.isValid();
-    valid__pdt_clsfcatn2.isValid();
-
-    if (obj__total_validation) {
+    const bool__lst_valid = bool__init_valid
+        .map((_obj) => {
+            return _obj.isValid();
+        })
+        .every((valid_obj) => {
+            return valid_obj;
+        });
+    if (
+        bool__lst_valid &&
+        valid__pdt_clsfcatn1.isValid() &&
+        valid__pdt_clsfcatn2.isValid()
+    ) {
         const node__classification1_names = queryAll(
             ".sellerProduct__classification--ver-1"
         );
@@ -364,6 +371,6 @@ function lastCheckBeforeSumit() {
             },
         });
     } else {
-        console.log(obj__total_validation);
+        console.log(bool__init_valid);
     }
 }

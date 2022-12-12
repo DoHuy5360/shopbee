@@ -8,6 +8,9 @@
     <script type="module" src="{{ asset('assets/js/product/product_edit.js') }}"></script>
 @endsection
 @section('content')
+    <div id="seller-frame-cover-fixed">
+        <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+    </div>
     <div id="seller_product_detail-wrapper">
         <form action="{{ route('product.update', $get_pdt->code) }}" id="seller_product_detail-wrapper-detail" method="POST" enctype="multipart/form-data">
             @csrf
@@ -80,8 +83,8 @@
                     <div class="sellerProduct__image--field-wrap" id="seller_product_detail-basicProdDesc">
                         <label class="sellerProduct__title--field-wrap" for="seller_product_detail-basicProdDesc-input">* Product description</label>
                         <div id="seller_product_detail-basicProdDesc-inputfield">
-                            <textarea type="textarea" name="product_description" id="seller_product_detail-basicProdDesc-input" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus" resize="none" autosize="true"
-                                restrictiontype="input" minlength="0" maxlength="3000" spellcheck="false">{{ $get_pdt->description }}</textarea>
+                            <textarea type="textarea" name="product_description" id="seller_product_detail-basicProdDesc-input" class="sellerProduct__input--wrap sellerProduct__animate-hover-focus" resize="none"
+                                autosize="true" restrictiontype="input" minlength="0" maxlength="3000" spellcheck="false">{{ $get_pdt->description }}</textarea>
                             <div id="seller_product_detail-basicProdDesc-inputLimit"><span id="seller-product-detail-desc-length">0</span>/3000</div>
                         </div>
                     </div>
@@ -400,7 +403,8 @@
                                 <ion-icon name="add-circle-outline"> </ion-icon>
                                 Add range price
                             </button>
-                            <div id="seller_product_detail-sellInfor-buyMore-notification">Buy a lot of discount will be hidden when the product is participating in Buy With Shock Deal or Promotion Combo</div>
+                            <div id="seller_product_detail-sellInfor-buyMore-notification">Buy a lot of discount will be hidden when the product is participating in Buy With Shock Deal or Promotion Combo
+                            </div>
                         </div>
                     </div>
                 </div>

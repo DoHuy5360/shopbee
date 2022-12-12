@@ -7,6 +7,9 @@
     <script type="module" src="{{ asset('assets/js/new_product_detail/new_product_detail.js') }}"></script>
 @endsection
 @section('content')
+    <div id="seller-frame-cover-fixed">
+        <img id="seller-frame-cover-img" src="{{ asset('assets/img/bee_loading.gif') }}" alt="">
+    </div>
     <div id="seller_product_detail-wrapper">
         <form action="{{ route('product.store') }}" id="seller_product_detail-wrapper-detail" method="POST" enctype="multipart/form-data">
             @csrf
@@ -303,7 +306,7 @@
                                 <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="SKU phân loại" />
                             </div>
                             <button id="sellerProduct-classification-code-apply" type="button" disabled style="cursor:not-allowed;" title="Chức năng đang được phát triển">
-                                Applies to all categories
+                                Applies for all
                             </button>
                         </div>
                     </div>
@@ -440,7 +443,7 @@
                             the days the shipping unit is not working)</div>
                         <div class="sellerProduct__descript--hidden" id="seller_product_detail-otherInfor-option-true-quote">Tôi cần <input type="text"
                                 id="seller_product_detail-otherInfor-option-true-date" class="sellerProduct__animate-hover-focus sellerProduct__input--wrap" min="1" max="15" />
-                                delivery time (minimum: 7 days - maximum: 15 days)</div>
+                            delivery time (minimum: 7 days - maximum: 15 days)</div>
                     </div>
                 </div>
                 <div id="seller_product_detail-otherInfor-condition">
@@ -469,7 +472,7 @@
             <a href="#seller_product_detail-mainInfor-label"><span class="sellerProduct-nemu-element">Product details</span></a>
             <a href="#seller_product_detail-sellInfor-label"><span class="sellerProduct-nemu-element">Product Sales Informs</span></a>
             <a href="#seller_product_detail-transport-label"><span class="sellerProduct-nemu-element">Transport</span></a>
-            <a href="#seller_product_detail-otherInfor-label"><span class="sellerProduct-nemu-element">Anothrt inform</span></a>
+            <a href="#seller_product_detail-otherInfor-label"><span class="sellerProduct-nemu-element">Another inform</span></a>
         </div>
     </div>
 </div>

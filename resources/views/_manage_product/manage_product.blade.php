@@ -157,14 +157,17 @@
                                                 <div class="seller__allProduct--card-classification">{{ $cls1->name }}, {{ $cls2->name }}</div>
                                                 <div class="seller__allProduct--card-price">{{ $cls2->price }}</div>
                                                 <div class="seller__allProduct--card-storage">{{ $cls2->storage }}</div>
-                                                <div class="seller__allProduct--card-storage">Add column 'sold' for cls2</div>
+                                                <div class="seller__allProduct--card-storage">-/-/-/-/-</div>
                                                 {{-- <div class="seller__allProduct--card-sales">{{ $cls2->sold }}</div> --}}
                                             </div>
                                         @endforeach
                                     @endforeach
                                 </div>
                                 @if (isset($item->classification_hidden))
-                                    <div class="manage__product_view_more_classification"><div class="manage__product--amnt-cls-hden">{{ $item->classification_hidden }} phân loại hàng khác <ion-icon name="chevron-down-outline"></ion-icon></div></div>
+                                    <div class="manage__product_view_more_classification">
+                                        <div class="manage__product--amnt-cls-hden">{{ $item->classification_hidden }} phân loại hàng khác <ion-icon name="chevron-down-outline"></ion-icon>
+                                        </div>
+                                    </div>
                                 @endif
                             </div>
                             <div class="seller__allProduct--card-action">
@@ -200,11 +203,11 @@
                                     </div>
                                 </div>
                             </div>
-                                <div class="seller__allProduct--card-sku-code">{{ $item->sku_code }}</div>
-                                <div class="seller__allProduct--card-classification">-/-/-/-/-/-/-</div>
-                                <div class="seller__allProduct--card-price">{{ $item->price }}</div>
-                                <div class="seller__allProduct--card-storage">{{ $item->storage }}</div>
-                                <div class="seller__allProduct--card-sales">{{ $item->sold }}</div>
+                            <div class="seller__allProduct--card-sku-code">{{ $item->sku_code }}</div>
+                            <div class="seller__allProduct--card-classification">-/-/-/-/-/-/-</div>
+                            <div class="seller__allProduct--card-price">{{ $item->price }}</div>
+                            <div class="seller__allProduct--card-storage">{{ $item->storage }}</div>
+                            <div class="seller__allProduct--card-sales">{{ $item->sold }}</div>
                             <div class="seller__allProduct--card-action">
                                 <a href="{{ route('product.edit', $item->product_code) }}" target="_blank">Edit</a>
                                 <a href="#" target="_blank">Copy</a>
