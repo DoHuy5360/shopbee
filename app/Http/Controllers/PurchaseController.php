@@ -53,8 +53,10 @@ class PurchaseController extends Controller
         foreach ($arr_status as $index => $status) {
             $get_amount_each_status = DB::select(
                 "SELECT COUNT(*) AS count
-                FROM bill_products
+                FROM bill_products bp, bills b
                 WHERE status = '$status'
+                AND bp.bill_code = b.code
+                AND b.buyer_code = '$user_code'
                 "
             )[0];
             $amount_order[$status] = $get_amount_each_status->count;
@@ -84,9 +86,9 @@ class PurchaseController extends Controller
             AND default_address = 'true'
             "
         );
-        if(isset($get_user_address[0])){
+        if (isset($get_user_address[0])) {
             $get_user_address = $get_user_address[0];
-        }else{
+        } else {
             $get_user_address = null;
         }
         // return $request;
@@ -150,7 +152,7 @@ class PurchaseController extends Controller
                     $add_pdt_bill->amount = $product["amount"];
                     $add_pdt_bill->total = $product["sum_price"];
                     $add_pdt_bill->save();
-                    
+
                     if ($add_pdt_bill) {
                         DB::delete(
                             "DELETE 
@@ -163,7 +165,7 @@ class PurchaseController extends Controller
                 }
             }
         }
-        return redirect()->route("profile.show",'order');
+        return redirect()->route("profile.show", 'order');
     }
 
     /**

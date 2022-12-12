@@ -101,19 +101,21 @@ class ProfileController extends Controller
                 foreach ($arr_status as $index => $status) {
                     $get_amount_each_status = DB::select(
                         "SELECT COUNT(*) AS count
-                            FROM bill_products
+                            FROM bill_products bp, bills b
                             WHERE status = '$status'
+                            AND bp.bill_code = b.code
+                            AND b.buyer_code = '$user_code'
                             "
                     )[0];
                     $amount_order[$status] = $get_amount_each_status->count;
                     $amount_order['all'] += $get_amount_each_status->count;
                 }
-                $content = "_purchase.purchase_process_full";
-                return view('_profile.profile', [
-                    'get_user' => $get_user,
-                    'get_bill_pdt' => $get_bill_pdt,
-                    'amount_order' => $amount_order,
-                    'content' => $content,
+            $content = "_purchase.purchase_process_full";
+            return view('_profile.profile', [
+                'get_user' => $get_user,
+                'get_bill_pdt' => $get_bill_pdt,
+                'amount_order' => $amount_order,
+                'content' => $content,
                 ]);
             case "info":
                 return view('_profile.profile', [
