@@ -1,5 +1,5 @@
 @extends('layouts.skeleton')
-@section('title', 'Đăng nhập')
+@section('title', 'Log in')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/auth/login/login.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/auth/login/login_respon.css') }}">
@@ -21,11 +21,11 @@
                         <img src="https://cdn.discordapp.com/attachments/885169725640937492/1017451862548549742/shopbee.png" alt="" srcset="" />
                     </div>
                     <div id="login_page-header-logo-detail">
-                        <div id="login_page-header-logo-script">Đăng ký</div>
+                        <div id="login_page-header-logo-script">Log in</div>
                     </div>
                 </div>
                 <div id="login_page-header-help">
-                    <a href="" id="login_page-header-help-detail">Bạn cần giúp đỡ?</a>
+                    <a href="" id="login_page-header-help-detail">Do you need help?</a>
                 </div>
             </div>
             <div id="login_page-content-wrapper">
@@ -35,10 +35,10 @@
                             @csrf
                             <input type="hidden" name="previous_page" value="{{ $previous_page }}">
                             <div id="login_page-content-form-label">
-                                <label for="login_page-content-form-input-field">Đăng nhập</label>
+                                <label for="login_page-content-form-input-field">Log in</label>
                                 <div id="login_page-content-form-qr-login">
                                     <div id="login_page-content-form-qr-wrap">
-                                        <div id="login_page-content-form-qr-wrap-detail">Đăng nhập với mã QR</div>
+                                        <div id="login_page-content-form-qr-wrap-detail">Log in by QR code</div>
                                     </div>
                                     <div id="login_page-content-form-qr">
                                         <ion-icon name="qr-code-outline"></ion-icon>
@@ -52,24 +52,24 @@
                             </div>
                             <div id="login_page-content-form-pwd">
                                 <div id="login_page-content-form-pwd-wrap">
-                                    <input type="password" name="password" id="login_page-content-form-pwd-field" placeholder="Mật khẩu" />
+                                    <input type="password" name="password" id="login_page-content-form-pwd-field" placeholder="Password" />
                                 </div>
                             </div>
                             <div id="login_page-content-form-btn">
-                                <button type="submit">Đăng nhập</button>
+                                <button type="submit">Log in</button>
                                 <div id="login_page-content-form-otherLogin">
                                     @if (Route::has('password.request'))
                                         <a href="{{ route('password.request') }}" target="_blank">
-                                            Quên mật khẩu
+                                            Forgot password
                                         </a>
                                     @endif
-                                    <a href="#" target="_blank" rel="noopener noreferrer">Đăng nhập với SMS</a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">Log in by SMS</a>
                                 </div>
                             </div>
                             <div id="login_page-content-form-pageSep">
                                 <div id="login_page-content-form-pageSep-wrap">
                                     <div class="login_page-content-form-pageSep-line"></div>
-                                    <div id="login_page-content-form-pageSep-content">HOẶC</div>
+                                    <div id="login_page-content-form-pageSep-content">OR</div>
                                     <div class="login_page-content-form-pageSep-line"></div>
                                 </div>
                             </div>
@@ -90,8 +90,8 @@
                                 </div>
                             </div>
                             <div id="login_page-content-form-loginSite">
-                                <span>Bạn mới biết đến Shopee? </span>
-                                <a href="{{ route('register') }}" rel="noopener noreferrer">Đăng ký</a>
+                                <span>Are you new to Shopee? </span>
+                                <a href="{{ route('register') }}" rel="noopener noreferrer">Sign up</a>
                             </div>
                         </form>
                     </div>
