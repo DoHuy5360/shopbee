@@ -1,5 +1,5 @@
 @extends('layouts.skeleton')
-@section('title', "Checkout page")
+@section('title', 'Checkout page')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/purchase/purchase_respon.css') }}">
@@ -59,7 +59,11 @@
                         <span>{{ Auth::user()->phone }}</span>
                     </div>
                     <div id="purchase-page-address-detail">
-                        <div>{{ $get_user_address->province }}, {{ $get_user_address->district }}, {{ $get_user_address->wards }} / {{ $get_user_address->detail }}</div>
+                        @if (isset($get_user_address->province))
+                            <div>{{ $get_user_address->province }}, {{ $get_user_address->district }}, {{ $get_user_address->wards }} / {{ $get_user_address->detail }}</div>
+                        @else
+                            <div>Chưa thiết lập</div>
+                        @endif
                     </div>
                     <div id="purchage-address-default">
                         <abbr title="Product will delivered to thid address">Default</abbr>
