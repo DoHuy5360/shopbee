@@ -9,7 +9,7 @@
 @endsection
 @section('content')
     <div id="seller_product_detail-wrapper">
-        <form action="{{ route('product.update', $get_pdt->code) }}" id="seller_product_detail-wrapper-detail" target="_blank" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('product.update', $get_pdt->code) }}" id="seller_product_detail-wrapper-detail" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             <input id="sellerProduct-classification1-post-field" type="hidden" name="classification1_values">
