@@ -1,4 +1,4 @@
-import { chart__index, starScriptEdit } from "../monitor/monitor.js";
+import { chart__index, starScript } from "../monitor/monitor.js";
 
 const menuList = document.querySelectorAll(".sidebar__menu--title");
 menuList.forEach((menu) => {
@@ -70,8 +70,10 @@ $(document).ready(function () {
                 $("#seller-contentTable-tranfer").html(response);
             },
             complete: function () {
-                chart__index.destroy();
-                starScriptEdit();
+                if(chart__index){
+                    chart__index.destroy();
+                }
+                starScript();
                 this_obj.displayLoading(false);
             },
         });
