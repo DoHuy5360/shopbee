@@ -91,4 +91,19 @@ $(document).ready(function () {
             },
         });
     });
+    const rdrt__order_manage = new RedirectContent("#seller-all-order-btn");
+    rdrt__order_manage.addEventClick((this_obj) => {
+        this_obj.displayLoading(true);
+        this_obj.setNewState("/seller/manage_order");
+        $.ajax({
+            type: "GET",
+            url: "/manage_order",
+            success: function (response) {
+                $("#seller-contentTable-tranfer").html(response);
+            },
+            complete: function () {
+                this_obj.displayLoading(false);
+            },
+        });
+    });
 });

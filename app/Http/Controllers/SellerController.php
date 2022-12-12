@@ -55,7 +55,7 @@ class SellerController extends Controller
      */
     public function show($slug)
     {
-        $user_id = Auth::user()->code;
+        $user_code = Auth::user()->code;
         switch ($slug) {
             case 'manage_product':
                 $get_pdt = DB::select(
@@ -68,7 +68,7 @@ class SellerController extends Controller
                             storage,
                             sold
                     FROM products p, product_images pi
-                    WHERE p.user_code = '$user_id'
+                    WHERE p.user_code = '$user_code'
                     AND p.code = pi.product_code
                     AND pi.index = '0'
                     "
@@ -84,7 +84,7 @@ class SellerController extends Controller
                             sold
                     FROM products p, product_images pi
                     WHERE p.classificationone IS NOT NULL
-                    AND p.user_code = '$user_id'
+                    AND p.user_code = '$user_code'
                     AND p.code = pi.product_code
                     AND pi.index = '0'
                     "
@@ -131,6 +131,21 @@ class SellerController extends Controller
             case 'monitor':
                 return view('_seller.seller', [
                     'content' => '_seller.seller_monitor',
+                ]);
+            case 'manage_order':
+                $get_bill = DB::select(
+                    "SELECT *, p.name AS product_name
+                    FROM bills b, bill_products bp, products p
+                    WHERE b.code = bp.bill_code
+                    AND p.code = bp.product_code
+                    AND p.user_code = '$user_code'
+                    "
+                );
+                $amnt_bill = sizeOf($get_bill);
+                return view('_seller.seller', [
+                    'content' => '_seller.seller_order',
+                    'amnt_bill' => $amnt_bill,
+                    'get_bill' => $get_bill,
                 ]);
 
             default:
