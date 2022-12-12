@@ -379,7 +379,7 @@ class ProductController extends Controller
                 }
             }
         }
-        return $request;
+        return redirect()->route('seller.show','manage_product');
     }
 
     /**
