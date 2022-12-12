@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::table('carts', function (Blueprint $table) {
             $table->integer("amount");
-            $table->char("classificationone_code", 52);
-            $table->char("classificationtwo_code", 52);
+            $table->char("classificationone_code", 52)->nullable();
+            $table->char("classificationtwo_code", 52)->nullable();
         });
     }
 
