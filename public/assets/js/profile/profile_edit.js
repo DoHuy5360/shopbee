@@ -234,7 +234,7 @@ export function starScriptEdit() {
                                 $("#profile-body-tranfer-wrap").html(response);
                             },
                             complete: function () {
-                                starScript();
+                                starScriptEdit();
                                 toggleLoadingAnimation(false);
                             },
                         });
