@@ -209,22 +209,20 @@ export function initValidation() {
         ths_obj.updateValueLength();
         ths_obj.checkLengthMinMax(10, 20);
     });
-
-    return [
-        valid__pdt_name.isValid(),
-        valid__pdt_desc.isValid(),
-        valid__pdt_img.isValid(),
-        valid__pdt_video.isValid(),
-        valid__pdt_price.isValid(),
-        valid__pdt_storage.isValid(),
-        valid__pdt_weight.isValid(),
-        valid__pdt_size_r.isValid(),
-        valid__pdt_size_d.isValid(),
-        valid__pdt_size_c.isValid(),
-        valid__pdt_sku.isValid(),
-    ].every((valid_obj) => {
-        return valid_obj;
-    });
+    const arr__valid_list = [
+        valid__pdt_name,
+        valid__pdt_desc,
+        valid__pdt_img,
+        valid__pdt_video,
+        valid__pdt_price,
+        valid__pdt_storage,
+        valid__pdt_weight,
+        valid__pdt_size_r,
+        valid__pdt_size_d,
+        valid__pdt_size_c,
+        valid__pdt_sku,
+    ];
+    return arr__valid_list
 }
 const node__all_input_image = queryAll(".sellerProduct__hidden--image-input");
 const node__display_video = getById("seller_product_detail-basicVid-item");
@@ -441,7 +439,3 @@ export function ActiveMenuByViewPort() {
         );
     }
 }
-
-let a = 1
-let b = 2
-console.log(a + b);

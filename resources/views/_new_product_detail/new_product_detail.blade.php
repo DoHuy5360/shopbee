@@ -306,7 +306,7 @@
                                 <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="SKU phân loại" />
                             </div>
                             <button id="sellerProduct-classification-code-apply" type="button" disabled style="cursor:not-allowed;" title="Chức năng đang được phát triển">
-                                Applies to all categories
+                                Applies for all
                             </button>
                         </div>
                     </div>
@@ -472,7 +472,7 @@
             <a href="#seller_product_detail-mainInfor-label"><span class="sellerProduct-nemu-element">Product details</span></a>
             <a href="#seller_product_detail-sellInfor-label"><span class="sellerProduct-nemu-element">Product Sales Informs</span></a>
             <a href="#seller_product_detail-transport-label"><span class="sellerProduct-nemu-element">Transport</span></a>
-            <a href="#seller_product_detail-otherInfor-label"><span class="sellerProduct-nemu-element">Anothrt inform</span></a>
+            <a href="#seller_product_detail-otherInfor-label"><span class="sellerProduct-nemu-element">Another inform</span></a>
         </div>
     </div>
 </div>

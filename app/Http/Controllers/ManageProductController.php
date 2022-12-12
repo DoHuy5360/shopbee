@@ -30,6 +30,7 @@ class ManageProductController extends Controller
             AND p.user_code = '$user_id'
             AND p.code = pi.product_code
             AND pi.index = '0'
+            ORDER BY p.id DESC
             "
         );
         $get_pdt_cls = DB::select(
@@ -46,6 +47,7 @@ class ManageProductController extends Controller
             AND p.user_code = '$user_id'
             AND p.code = pi.product_code
             AND pi.index = '0'
+            ORDER BY p.id DESC
             "
         );
         $amnt_cls_dsply = 3;

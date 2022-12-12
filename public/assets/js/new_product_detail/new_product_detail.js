@@ -326,11 +326,18 @@ node__sbmit_save_dsply.addEventListener("click", (e) => {
 });
 
 function lastCheckBeforeSumit() {
-    const obj__total_validation = true;
-    valid__pdt_clsfcatn1.isValid();
-    valid__pdt_clsfcatn2.isValid();
-
-    if (obj__total_validation) {
+    const bool__lst_valid = bool__init_valid
+        .map((_obj) => {
+            return _obj.isValid();
+        })
+        .every((valid_obj) => {
+            return valid_obj;
+        });
+    if (
+        bool__lst_valid &&
+        valid__pdt_clsfcatn1.isValid() &&
+        valid__pdt_clsfcatn2.isValid()
+    ) {
         const node__classification1_names = queryAll(
             ".sellerProduct__classification--ver-1"
         );
@@ -364,6 +371,6 @@ function lastCheckBeforeSumit() {
             },
         });
     } else {
-        console.log(obj__total_validation);
+        console.log(bool__init_valid);
     }
 }
