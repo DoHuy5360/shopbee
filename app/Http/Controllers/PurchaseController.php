@@ -83,7 +83,12 @@ class PurchaseController extends Controller
             WHERE user_code = '$user_code'
             AND default_address = 'true'
             "
-        )[0];
+        );
+        if(isset($get_user_address[0])){
+            $get_user_address = $get_user_address[0];
+        }else{
+            $get_user_address = null;
+        }
         // return $request;
         $array_pdt_slc = [];
         $total_price = 0;
