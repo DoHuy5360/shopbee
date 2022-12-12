@@ -125,7 +125,7 @@
                             @auth
                                 <input name="buyer_code" type="hidden" value="{{ Auth::user()->code }}">
                             @endauth
-                            <input name="product_code" type="hidden" value="{{ $get_pdt->code }}">
+                            <input name="product_code" type="hidden" value="{{ $get_pdt->product_code }}">
                             @if (isset($get_pdt->classificationone))
                                 <div class="product_title_column-item">
                                     <div class="product_title_column_title">{{ $get_pdt->classificationone }}</div>
@@ -188,7 +188,7 @@
                     </div>
                     <div id="product-seller-info-wrap">
                         <div class="product-seller-info-wrap-name">
-                            <div id="product-seller-name">DoHuy5360</div>
+                            <div id="product-seller-name">{{ $get_pdt->real_name }}</div>
                             <div id="product-seller-active">Online 175320 hours</div>
                         </div>
                         <div id="product-seller-info-wrap-contact">
