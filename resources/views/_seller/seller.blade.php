@@ -67,7 +67,7 @@
                                 </span>
                             </div>
                             <ul class="sidebar__menu--content">
-                                <li class="sidebar-subMenu">All</li>
+                                <li id="seller-all-order-btn" class="sidebar-subMenu">All</li>
                                 <li class="sidebar-subMenu">Cancellation Order</li>
                                 <li class="sidebar-subMenu">Cancel/Refund</li>
                             </ul>
