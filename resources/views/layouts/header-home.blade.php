@@ -74,7 +74,7 @@
             </div>
             <div id="mainHone-search-field">
                 <div class="mainHome_pageSearch">
-                    <input id="mainHome-search-inp" name="navb-field" type="text" placeholder="Săn sale 31 tháng 2 ..." spellcheck="false" />
+                    <input id="mainHome-search-inp" name="navb-field" type="text" placeholder="Sale hunting February 31 ..." spellcheck="false" />
                     <button id="mainHome_pageSearchHome_search">
                         <ion-icon name="search-outline"></ion-icon>
                     </button>

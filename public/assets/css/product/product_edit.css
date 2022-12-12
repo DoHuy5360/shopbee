@@ -15,3 +15,6 @@
 #product-edit-change-catygory ion-icon {
     color: var(--color-4) !important;
 }
+#seller-product-classification-table-display{
+    display: flex;
+}
