@@ -71,7 +71,7 @@ class ProductController extends Controller
             "sku_code" => $request->product_sku_code,
             "classificationone" => $request->classification1_title,
             "classificationtwo" => $request->classification2_title,
-            "hidden"=> $request->hidden,
+            "hidden" => $request->hidden,
         ]);
         $addProduct->save();
 
@@ -160,7 +160,7 @@ class ProductController extends Controller
             AND default_address = 'true'
             "
         );
-        if($get_user_adres){
+        if ($get_user_adres) {
             $get_user_adres = $get_user_adres[0];
         }
         // return $get_user_adres;
@@ -380,7 +380,9 @@ class ProductController extends Controller
                 }
             }
         }
-        return redirect()->route('seller.show','manage_product');
+        return response()->json([
+            'status' => true
+        ]);
     }
 
     /**

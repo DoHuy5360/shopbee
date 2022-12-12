@@ -5,13 +5,14 @@
     <link rel="stylesheet" href="{{ asset('assets/css/product/product_edit.css') }}">
 @endsection
 @section('js')
-    <script src="{{ asset('assets/js/product/product_edit.js') }}"></script>
+    <script type="module" src="{{ asset('assets/js/product/product_edit.js') }}"></script>
 @endsection
 @section('content')
     <div id="seller_product_detail-wrapper">
         <form action="{{ route('product.update', $get_pdt->code) }}" id="seller_product_detail-wrapper-detail" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
+            <input id="sellerProduct-pdt-hidden" type="hidden" name="hidden">
             <input id="sellerProduct-classification1-post-field" type="hidden" name="classification1_values">
             <input id="sellerProduct-classification2-post-field" type="hidden" name="classification2_values">
             <div id="seller_product_detail-basicInfor" class="seller_product_detail_inforWrapper">
@@ -171,12 +172,12 @@
                     Product Sales Informs
                 </div>
                 <div id="seller_product_detail-sellInfor-detail">
-                    {{-- <div class="seller_product_detail-sellInfor-Category">
+                    <div class="seller_product_detail-sellInfor-Category" style="display: {{ $get_classification_one != null ? 'none' : 'flex' }};">
                         <div class="sellerProduct__title--field-wrap">Phân loại hàng</div>
                         <button id="seller_product_detail-sellInfor-addCategoryBtn" type="button">
                             <ion-icon name="add-circle-outline"> </ion-icon>Thêm phân loại hàng
                         </button>
-                    </div> --}}
+                    </div>
                     <div id="seller-product-classification-type1" class="seller_product_detail-sellInfor-Category">
                         <div class="sellerProduct__title--field-wrap">Group type 1</div>
                         <div class="sellerProduct__choose--classification-wrap">
@@ -193,7 +194,7 @@
                                         @if ($get_classification_one != null)
                                             @foreach ($get_classification_one as $cls1)
                                                 <div class="sellerProduct__classification--inp-wrap">
-                                                    <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                                    <input class="sellerProduct__classification--ver-1 sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
                                                         placeholder="Enter the item category, for example: red, black, L, M, S, etc." value="{{ $cls1->name }}" />
                                                     <div class="sellerProduct__classification--btn-remove">
                                                         <ion-icon name="trash-outline"></ion-icon>
@@ -216,7 +217,7 @@
                                 <span></span>
                                 <button class="seller_product_detail-sellInfor-classification" type="button">
                                     <ion-icon name="add-circle-outline"> </ion-icon>
-                                    Submit
+                                    Add
                                 </button>
                             </div>
                             <button class="seller__product--close-table-btn" type="button">
@@ -252,7 +253,7 @@
                                             @endforeach
                                         @else
                                             <div class="sellerProduct__classification--inp-wrap">
-                                                <input class="sellerProduct__classification--ver sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
+                                                <input class="sellerProduct__classification--ver-2 sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text"
                                                     placeholder="Nhập phân loại hàng, ví dụ: đỏ, đen, L, M, S,..." />
                                                 <div class="sellerProduct__classification--btn-remove">
                                                     <ion-icon name="trash-outline"></ion-icon>
@@ -266,7 +267,7 @@
                                 <span></span>
                                 <button class="seller_product_detail-sellInfor-classification" type="button">
                                     <ion-icon name="add-circle-outline"> </ion-icon>
-                                    Submit
+                                    Add
                                 </button>
                             </div>
                             <button class="seller__product--close-table-btn" type="button">
@@ -283,8 +284,8 @@
                                     <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="Kho hàng" />
                                     <input class="sellerProduct__tip-setup sellerProduct__animate-hover-focus sellerProduct__placeholder--color" type="text" placeholder="SKU phân loại" />
                                 </div>
-                                <button id="sellerProduct-classification-code-apply" type="button" disabled style="cursor:not-allowed;" title="Chức năng đang được phát triển">
-                                    Áp dụng cho tất cả phân loại
+                                <button id="sellerProduct-classification-code-apply" type="button" disabled style="cursor:not-allowed;" title="Still developing">
+                                    Apply for all
                                 </button>
                             </div>
                         </div>
@@ -367,19 +368,19 @@
                     <div class="sellerProduct__title--field-wrap">Discount policy</div>
                     <button id="seller_product_detail-sellInfor-buyMoreBtn" type="button" style="cursor: not-allowed" title="Tính năng không khả dụng" disabled>
                         <ion-icon name="add-circle-outline"> </ion-icon>
-                        Thêm khoảng giá
+                        Add range price
                     </button>
                     <div id="seller_product_detail-sellInfor-voucher-inputfield">
                         <div class="seller_product_detail_sellInfor_voucher_inputfield_wrap" id="seller_product_detail-sellInfor-voucher-inputfield-title">
                             <div class="seller_product_detail_sellInfor_voucher_inputfield_label"></div>
-                            <div class="seller_product_detail_sellInfor_voucher_input">Từ (sản phẩm)</div>
-                            <div class="seller_product_detail_sellInfor_voucher_input">Đến (sản phẩm)</div>
-                            <div class="seller_product_detail_sellInfor_voucher_input">Đơn Giá</div>
+                            <div class="seller_product_detail_sellInfor_voucher_input">From (sản phẩm)</div>
+                            <div class="seller_product_detail_sellInfor_voucher_input">To (sản phẩm)</div>
+                            <div class="seller_product_detail_sellInfor_voucher_input">Price</div>
                             <div class="seller_product_detail_sellInfor_voucher_inputfield_label"></div>
                         </div>
                         <div id="sellerProduct-rangePrice-wrap">
                             <div class="seller_product_detail_sellInfor_voucher_inputfield_wrap" id="seller_product_detail-sellInfor-voucher-inputfield-1">
-                                <div class="seller_product_detail_sellInfor_voucher_inputfield_label"><span>1</span>. Khoảng giá <span>1</span></div>
+                                <div class="seller_product_detail_sellInfor_voucher_inputfield_label"><span>1</span>. Range price <span>1</span></div>
                                 <div class="seller_product_detail_sellInfor_voucher_input">
                                     <input type="text" name="" class="sellerProduct__input--wrap" id="seller_product_detail-sellInfor-voucher-input1" placeholder="Fill in" />
                                 </div>
@@ -397,9 +398,9 @@
                         <div id="seller_product_detail-sellInfor-buyMore-addMore-wrap">
                             <button id="seller_product_detail-sellInfor-buyMoreBtn-addMore">
                                 <ion-icon name="add-circle-outline"> </ion-icon>
-                                Thêm khoảng giá
+                                Add range price
                             </button>
-                            <div id="seller_product_detail-sellInfor-buyMore-notification">Mua nhiều giảm giá sẽ bị ẩn khi sản phẩm đang tham gia Mua Kèm Deal Sốc hay Combo Khuyến Mãi</div>
+                            <div id="seller_product_detail-sellInfor-buyMore-notification">Buy a lot of discount will be hidden when the product is participating in Buy With Shock Deal or Promotion Combo</div>
                         </div>
                     </div>
                 </div>
@@ -447,13 +448,13 @@
                                 <div class="sellerProduct__accept--wrap">
                                     <div class="sellerProduct__accept--check-wrap">
                                         <input type="radio" name="product_pre_order" id="seller_product_detail-otherInfor-option-false" value="false" checked />
-                                        <label id="seller_product_detail-otherInfor-option-false-label" for="seller_product_detail-otherInfor-option-false">Không đồng ý</label>
+                                        <label id="seller_product_detail-otherInfor-option-false-label" for="seller_product_detail-otherInfor-option-false">Not accept</label>
                                     </div>
                                 </div>
                                 <div class="sellerProduct__accept--wrap">
                                     <div class="sellerProduct__accept--check-wrap" title="Tính năng không khả dụng">
                                         <input type="radio" name="product-pre-order" id="seller_product_detail-otherInfor-option-true" value="true" style="cursor: not-allowed" disabled />
-                                        <label id="seller_product_detail-otherInfor-option-true-label" for="seller_product_detail-otherInfor-option-true">Đồng ý</label>
+                                        <label id="seller_product_detail-otherInfor-option-true-label" for="seller_product_detail-otherInfor-option-true">Accept</label>
                                     </div>
                                 </div>
                             </div>
@@ -461,7 +462,7 @@
                                 the days the shipping unit is not working)</div>
                             <div class="sellerProduct__descript--hidden" id="seller_product_detail-otherInfor-option-true-quote">Tôi cần <input type="text"
                                     id="seller_product_detail-otherInfor-option-true-date" class="sellerProduct__animate-hover-focus sellerProduct__input--wrap" min="1" max="15" />
-                                    delivery time (minimum: 7 days - maximum: 15 days)</div>
+                                delivery time (minimum: 7 days - maximum: 15 days)</div>
                         </div>
                     </div>
                     <div id="seller_product_detail-otherInfor-condition">
@@ -475,7 +476,7 @@
                     <div id="seller_product_detail-otherInfor-SKU">
                         <div class="sellerProduct__title--field-wrap">SKU product</div>
                         <input name="product_sku_code" type="text" id="seller_product_detail-otherInfor-SKU-detail" minlength="10" maxlength="20" placeholder="Mã Stock Keeping Unit"
-                            title="Tính năng không khả dụng" value="{{ $get_pdt->sku_code }}" />
+                            title="Still developing" value="{{ $get_pdt->sku_code }}" />
                     </div>
                 </div>
             </div>
