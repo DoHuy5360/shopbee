@@ -147,9 +147,10 @@ class ProductController extends Controller
     {
         $user_code = Auth::user()->code;
         $get_pdt = DB::select(
-            "SELECT *
-            FROM products p
+            "SELECT *, p.code AS product_code, u.code AS user_code
+            FROM products p, users u
             WHERE p.code = '$id'
+            AND p.user_code = u.code
             "
         )[0];
         $get_user_adres = DB::select(
