@@ -69,7 +69,7 @@
             <div class="product_content" id="product-about">
                 <div id="product-title">
                     <div id="product-title_rating">
-                        <div id="product-title-text">{{ $get_pdt->name }}</div>
+                        <div id="product-title-text">{{ $get_pdt->product_name }}</div>
                         <div id="product-title_rate_infor">
                             <div id="product-title-rate-star">
                                 <div style="color: red; border-bottom: 1px red solid">5.0</div>
@@ -188,7 +188,7 @@
                     </div>
                     <div id="product-seller-info-wrap">
                         <div class="product-seller-info-wrap-name">
-                            <div id="product-seller-name">{{ $get_pdt->real_name }}</div>
+                            <div id="product-seller-name">{{ $get_pdt->user_name }}</div>
                             <div id="product-seller-active">Online 175320 hours</div>
                         </div>
                         <div id="product-seller-info-wrap-contact">
