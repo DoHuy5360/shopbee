@@ -73,6 +73,7 @@ export function starScript() {
     manage_activity.setArrow();
     manage_activity.setTransformLeftRight();
 }
+
 const node__switch_tab = document.querySelector("[data-switch-name='manage-marketing']")
 if (node__switch_tab){
     starScript()
