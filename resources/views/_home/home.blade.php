@@ -31,31 +31,31 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="mainHome-carousel-top carousel-item active">
-                            <img class="d-block" src="http://surl.li/dafng" alt="First slide" />
+                            <img class="d-block" src="http://surl.li/dafng" alt="First slide" draggable="false"/>
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dafnd" alt="Second slide" />
+                            <img class="d-block" src="http://surl.li/dafnd" alt="Second slide" draggable="false"/>
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dafnj" alt="Third slide" />
+                            <img class="d-block" src="http://surl.li/dafnj" alt="Third slide" draggable="false"/>
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dgukv" alt="First slide" />
+                            <img class="d-block" src="http://surl.li/dgukv" alt="Fourth slide" draggable="false"/>
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dgukx" alt="Second slide" />
+                            <img class="d-block" src="http://surl.li/dgukx" alt="Fifth slide" draggable="false"/>
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dguky" alt="Third slide" />
+                            <img class="d-block" src="http://surl.li/dguky" alt="Sixth slide" draggable="false"/>
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dgula" alt="First slide" />
+                            <img class="d-block" src="http://surl.li/dgula" alt="Seventh slide" draggable="false"/>
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dguld" alt="Second slide" />
+                            <img class="d-block" src="http://surl.li/dguld" alt="Eighth slide" draggable="false"/>
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dgulf" alt="Third slide" />
+                            <img class="d-block" src="http://surl.li/dgulf" alt="Ninth slide" draggable="false"/>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

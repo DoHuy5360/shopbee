@@ -1,5 +1,5 @@
 @extends('layouts.skeleton')
-@section('title', 'Đăng ký')
+@section('title', 'Sign up')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/auth/register/register.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/auth/register/register_respon.css') }}">
@@ -20,11 +20,11 @@
                     <img src="https://cdn.discordapp.com/attachments/885169725640937492/1017451862548549742/shopbee.png" alt="" srcset="" />
                 </div>
                 <div id="reg_page-header-logo-detail">
-                    <div id="reg_page-header-logo-script">Đăng ký</div>
+                    <div id="reg_page-header-logo-script">Sign up</div>
                 </div>
             </div>
             <div id="reg_page-header-help">
-                <a href="" id="reg_page-header-help-detail">Bạn cần giúp đỡ?</a>
+                <a href="" id="reg_page-header-help-detail">Do you need help?</a>
             </div>
         </div>
         <div id="reg_page-content-wrapper">
@@ -33,14 +33,14 @@
                     <form action="{{ route('register') }}" method="POST" id="reg_page-content-form-regs">
                         @csrf
                         <div id="reg_page-content-form-label">
-                            <label for="reg_page-content-form-input-field">Đăng ký</label>
+                            <label for="reg_page-content-form-input-field">Sign up</label>
                         </div>
                         <div id="reg_page-content-form-input">
                             <div id="reg_page-content-form-input-wrap">
-                                <input type="text" name="name" id="reg_page-content-form-input-field" placeholder="Tên đăng nhập" required autofocus />
+                                <input type="text" name="name" id="reg_page-content-form-input-field" placeholder="Login name" required autofocus />
                             </div>
                             <div id="reg_page-content-form-input-wrap">
-                                <input type="text" name="email" id="reg_page-content-form-input-field" placeholder="Số điện thoại/ Email" required />
+                                <input type="text" name="email" id="reg_page-content-form-input-field" placeholder="Phone / Email" required />
                             </div>
                             <div id="reg_page-content-form-input-wrap">
                                 <input type="password" name="password" id="reg_page-content-form-input-field" placeholder="Password" required />
@@ -50,12 +50,12 @@
                             </div>
                         </div>
                         <div id="reg_page-content-form-btn">
-                            <button type="submit">Tiếp theo</button>
+                            <button type="submit">Next</button>
                         </div>
                         <div id="reg_page-content-form-pageSep">
                             <div id="reg_page-content-form-pageSep-wrap">
                                 <div class="reg_page-content-form-pageSep-line"></div>
-                                <div id="reg_page-content-form-pageSep-content">hoặc</div>
+                                <div id="reg_page-content-form-pageSep-content">OR</div>
                                 <div class="reg_page-content-form-pageSep-line"></div>
                             </div>
                         </div>
@@ -72,14 +72,14 @@
                             </div>
                         </div>
                         <div id="reg_page-content-form-rule">
-                            Bằng việc đăng kí, bạn đã đồng ý với Shopee về
-                            <a href="http://" target="_blank" rel="noopener noreferrer">Điều khoản dịch vụ</a>
+                            By registering, you agree to Shopee about
+                            <a href="http://" target="_blank" rel="noopener noreferrer">Terms of Service</a>
                             &
-                            <a href="http://" target="_blank" rel="noopener noreferrer">Chính sách bảo mật</a>
+                            <a href="http://" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                         </div>
                         <div id="reg_page-content-form-loginSite">
-                            <span>Bạn đã có tài khoản?</span>
-                            <a href="{{ route('login') }}" rel="noopener noreferrer">Đăng nhập</a>
+                            <span>Already have an account?</span>
+                            <a href="{{ route('login') }}" rel="noopener noreferrer">Log in</a>
                         </div>
                     </form>
                 </div>
