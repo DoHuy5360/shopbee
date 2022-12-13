@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BuyerpageController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ManageProductController;
 use App\Http\Controllers\MonitorController;
 use App\Http\Controllers\ProductController;
@@ -35,6 +36,7 @@ Route::resource('/profile', ProfileController::class)->middleware(['auth']);
 Route::resource('/cart', CartController::class)->middleware(['auth']);
 Route::resource('/user', UserController::class)->middleware(['auth']);
 Route::resource('/user_address', UserAddressController::class)->middleware(['auth']);
+Route::resource('/category', CategoryController::class)->middleware(['auth']);
 
 Route::get('/manage_order', function () {
 

@@ -1,3 +1,4 @@
+import { arr_categories } from "../new_product/category_array.js";
 const node__head_menu = querySelect(
     "#mainHome_navbar_about_topic-respon-hidden"
 );
@@ -30,3 +31,69 @@ $(document).ready(function () {
         },
     });
 });
+//todo: Search
+const node__search_rslt = document.getElementById(
+    "mainHome-result-search-tray"
+);
+const node__search_empty = document.getElementById(
+    "mainHome__search--result-empty"
+);
+const node__search_inp = document.getElementById("mainHome-search-inp");
+const node__search_rsult_tray = document.getElementById(
+    "mainHome-result-search-wrap"
+);
+node__search_inp.addEventListener("focus", (e) => {
+    node__search_rsult_tray.style.display = "block";
+});
+node__search_inp.addEventListener("input", (e) => {
+    node__search_rsult_tray.style.display = "block";
+    node__search_rslt.innerHTML = "";
+    const str__inp_text = node__search_inp.value.toLowerCase();
+    const regex__pattern = new RegExp(`${str__inp_text}`);
+    if (!str__inp_text) {
+        node__search_empty.style.display = "block";
+    } else {
+        node__search_empty.style.display = "none";
+        arr_categories.forEach((_category) => {
+            const str__to_lower = _category.toLowerCase();
+            if (str__to_lower.match(regex__pattern)) {
+                node__search_rslt.appendChild(
+                    crtEle(
+                        "a",
+                        {
+                            href: `/category/${_category}`,
+                            class: "mainHome__search--result",
+                        },
+                        _category
+                    )
+                );
+            }
+        });
+        const node__srch_rslt_ele = document.querySelectorAll(
+            ".mainHome__search--result"
+        );
+        node__srch_rslt_ele.forEach((_node) => {
+            _node.addEventListener("click", (e) => {
+                node__search_rsult_tray.style.display = "none";
+            });
+        });
+    }
+});
+document.addEventListener("click", (e) => {
+    if (e.target !== node__search_inp) {
+        node__search_rsult_tray.style.display = "none";
+    }
+});
+node__search_inp.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        node__search_rsult_tray.style.display = "none";
+    }
+});
+function crtEle(_name, _attrs, _txt) {
+    const node = document.createElement(_name);
+    if (_txt) node.innerHTML = _txt;
+    for (let key in _attrs) {
+        node.setAttribute(key, _attrs[key]);
+    }
+    return node;
+}

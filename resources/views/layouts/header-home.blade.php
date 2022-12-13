@@ -75,7 +75,7 @@
             <div id="mainHone-search-field">
                 <div class="mainHome_pageSearch">
                     <input id="mainHome-search-inp" name="navb-field" type="text" placeholder="Sale hunting February 31 ..." spellcheck="false" />
-                    <button id="mainHome_pageSearchHome_search">
+                    <button id="mainHome_pageSearchHome_search" type="button">
                         <ion-icon name="search-outline"></ion-icon>
                     </button>
                 </div>
@@ -88,6 +88,10 @@
                     <a href="">Steel shoes</a>
                     <a href="">Tablet 249f</a>
                     <a href="">Macbook Pro</a>
+                </div>
+                <div id="mainHome-result-search-wrap">
+                    <div id="mainHome__search--result-empty">Enter the category you are interested</div>
+                    <div id="mainHome-result-search-tray"></div>
                 </div>
             </div>
             <div class="mainHome_personal">
