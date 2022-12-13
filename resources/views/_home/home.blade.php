@@ -5,9 +5,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main-home/main-home-respon.css') }}" />
 @endsection
 @section('js')
-    <script src="{{ asset('assets/js/home/home.js') }}"></script>
-    <script src="{{ asset('assets/js/footer/footer.js') }}"></script>
-    <script src="{{ asset('assets/js/header/header.js') }}"></script>
+    <script type="module" src="{{ asset('assets/js/home/home.js') }}"></script>
+    <script type="module" src="{{ asset('assets/js/footer/footer.js') }}"></script>
+    <script type="module" src="{{ asset('assets/js/header/header.js') }}"></script>
 @endsection
 @section('content')
     <div id="seller-frame-cover-fixed">
