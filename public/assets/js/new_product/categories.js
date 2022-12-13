@@ -102,17 +102,17 @@ export const CATEGORIES = [
 
             {
                 level: 2,
-                parent: "Đầm ",
+                parent: "Đầm",
                 childrend: [],
             },
             {
                 level: 2,
-                parent: "Váy cưới ",
+                parent: "Váy cưới",
                 childrend: [],
             },
             {
                 level: 2,
-                parent: "Đồ liền thân ",
+                parent: "Đồ liền thân",
                 childrend: [
                     {
                         level: 3,
@@ -135,7 +135,7 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Áo khoác ",
+                parent: "Áo khoác",
                 childrend: [
                     {
                         level: 3,
@@ -176,12 +176,12 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Áo len ",
+                parent: "Áo len",
                 childrend: [],
             },
             {
                 level: 2,
-                parent: "Hoodie và Áo nỉ ",
+                parent: "Hoodie và Áo nỉ",
                 childrend: [
                     {
                         level: 3,
@@ -204,7 +204,7 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Bộ ",
+                parent: "Bộ",
                 childrend: [
                     {
                         level: 3,
@@ -233,7 +233,7 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Đồ lót ",
+                parent: "Đồ lót",
                 childrend: [
                     {
                         level: 3,
@@ -316,7 +316,7 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Đồ ngủ ",
+                parent: "Đồ ngủ",
                 childrend: [
                     {
                         level: 3,
@@ -345,7 +345,7 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Đồ Bầu ",
+                parent: "Đồ Bầu",
                 childrend: [
                     {
                         level: 3,
@@ -392,7 +392,7 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Đồ truyền thống ",
+                parent: "Đồ truyền thống",
                 childrend: [
                     {
                         level: 3,
@@ -427,17 +427,17 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Đồ hóa trang ",
+                parent: "Đồ hóa trang",
                 childrend: [],
             },
             {
                 level: 2,
-                parent: "Khác ",
+                parent: "Khác",
                 childrend: [],
             },
             {
                 level: 2,
-                parent: "Vải ",
+                parent: "Vải",
                 childrend: [
                     {
                         level: 3,
@@ -490,7 +490,7 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Vớ/ Tất",
+                parent: "Vớ/Tất",
                 childrend: [
                     {
                         level: 3,
@@ -778,7 +778,7 @@ export const CATEGORIES = [
 
             {
                 level: 2,
-                parent: "Vớ/ Tất",
+                parent: "Vớ/Tất",
                 childrend: [],
             },
         ],
@@ -1762,7 +1762,7 @@ export const CATEGORIES = [
                     { level: 3, parent: "Khác", childrend: [] },
                 ],
             },
-            { level: 2, parent: "Giày thể thao/ Sneakers", childrend: [] },
+            { level: 2, parent: "Giày thể thao/Sneakers", childrend: [] },
             { level: 2, parent: "Giày sục", childrend: [] },
             { level: 2, parent: "Giày tây lười", childrend: [] },
             { level: 2, parent: "Giày Oxfords & Giày buộc dây", childrend: [] },
@@ -2052,7 +2052,7 @@ export const CATEGORIES = [
                     { level: 3, parent: "Khác", childrend: [] },
                 ],
             },
-            { level: 2, parent: "Giày thể thao/ sneaker", childrend: [] },
+            { level: 2, parent: "Giày thể thao/sneaker", childrend: [] },
             {
                 level: 2,
                 parent: "Giày đế bằng",
@@ -2079,7 +2079,7 @@ export const CATEGORIES = [
                 parent: "Xăng-đan và dép",
                 childrend: [
                     { level: 3, parent: "Xăng-đan đế bằng", childrend: [] },
-                    { level: 3, parent: "Dép kẹp/ dép xỏ ngón", childrend: [] },
+                    { level: 3, parent: "Dép kẹp/dép xỏ ngón", childrend: [] },
                     { level: 3, parent: "Dép mát-xa", childrend: [] },
                     { level: 3, parent: "Dép đi trong nhà", childrend: [] },
                     { level: 3, parent: "Khác", childrend: [] },
@@ -2134,7 +2134,7 @@ export const CATEGORIES = [
             { level: 2, parent: "Túi đeo chéo", childrend: [] },
             {
                 level: 2,
-                parent: "Bóp/ Ví",
+                parent: "Bóp/Ví",
                 childrend: [
                     { level: 3, parent: "Ví đựng thẻ", childrend: [] },
                     { level: 3, parent: "Ví đựng tiền xu", childrend: [] },
@@ -2207,7 +2207,7 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Cáp âm thanh/ video & Đầu chuyển",
+                parent: "Cáp âm thanh/video & Đầu chuyển",
                 childrend: [],
             },
             { level: 2, parent: "Khác", childrend: [] },
@@ -2355,7 +2355,7 @@ export const CATEGORIES = [
                     { level: 3, parent: "Đường", childrend: [] },
                     { level: 3, parent: "Chất tạo ngọt", childrend: [] },
                     { level: 3, parent: "Sốt & súp ăn liền", childrend: [] },
-                    { level: 3, parent: "Gói/ bột gia vị", childrend: [] },
+                    { level: 3, parent: "Gói/bột gia vị", childrend: [] },
                     { level: 3, parent: "Phụ gia thực phẩm", childrend: [] },
                     { level: 3, parent: "Bột phủ", childrend: [] },
                     { level: 3, parent: "Khác", childrend: [] },
@@ -2411,7 +2411,7 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Sữa - trứng",
+                parent: "Sữa-trứng",
                 childrend: [
                     {
                         level: 3,
@@ -2575,7 +2575,7 @@ export const CATEGORIES = [
                 childrend: [
                     { level: 3, parent: "Bánh mì", childrend: [] },
                     { level: 3, parent: "Bánh kem", childrend: [] },
-                    { level: 3, parent: "Bánh ngọt/ pastry", childrend: [] },
+                    { level: 3, parent: "Bánh ngọt/pastry", childrend: [] },
                     { level: 3, parent: "Khác", childrend: [] },
                 ],
             },
@@ -3709,7 +3709,7 @@ export const CATEGORIES = [
                         childrend: [],
                     },
                     { level: 3, parent: "Nệm", childrend: [] },
-                    { level: 3, parent: "Mùng/ Màn chống muỗi", childrend: [] },
+                    { level: 3, parent: "Mùng/Màn chống muỗi", childrend: [] },
                     { level: 3, parent: "Gối ôm", childrend: [] },
                     { level: 3, parent: "Khác", childrend: [] },
                 ],
@@ -4425,7 +4425,7 @@ export const CATEGORIES = [
         childrend: [
             {
                 level: 2,
-                parent: "Quà Tặng - Giấy Gói",
+                parent: "Quà Tặng-Giấy Gói",
                 childrend: [
                     { level: 3, parent: "Giấy Gói Quà", childrend: [] },
                     { level: 3, parent: "Hộp Quà Tặng", childrend: [] },
@@ -4585,7 +4585,7 @@ export const CATEGORIES = [
             },
             {
                 level: 2,
-                parent: "Đồ chơi - Giải trí",
+                parent: "Đồ chơi-Giải trí",
                 childrend: [
                     {
                         level: 3,
@@ -4607,7 +4607,7 @@ export const CATEGORIES = [
                     { level: 3, parent: "Khác", childrend: [] },
                 ],
             },
-            { level: 2, parent: "Băng - Đĩa", childrend: [] },
+            { level: 2, parent: "Băng-Đĩa", childrend: [] },
             {
                 level: 2,
                 parent: "Nhạc Cụ & Phụ Kiện",
@@ -4972,13 +4972,13 @@ export const CATEGORIES = [
                 parent: "Máy Tính Bàn",
                 childrend: [
                     { level: 3, parent: "Quạt và Tản Nhiệt", childrend: [] },
-                    { level: 3, parent: "CPU - Bộ Vi Xử Lý", childrend: [] },
+                    { level: 3, parent: "CPU-Bộ Vi Xử Lý", childrend: [] },
                     {
                         level: 3,
-                        parent: "Mainboard - Bo Mạch Chủ",
+                        parent: "Mainboard-Bo Mạch Chủ",
                         childrend: [],
                     },
-                    { level: 3, parent: "VGA - Card Màn Hình", childrend: [] },
+                    { level: 3, parent: "VGA-Card Màn Hình", childrend: [] },
                     { level: 3, parent: "Keo Tản Nhiệt", childrend: [] },
                     { level: 3, parent: "Nguồn Máy Tính", childrend: [] },
                     { level: 3, parent: "Ram Máy Tính", childrend: [] },
@@ -4995,13 +4995,13 @@ export const CATEGORIES = [
                 parent: "Linh Kiện Máy Tính",
                 childrend: [
                     { level: 3, parent: "Quạt và Tản Nhiệt", childrend: [] },
-                    { level: 3, parent: "CPU - Bộ Vi Xử Lý", childrend: [] },
+                    { level: 3, parent: "CPU-Bộ Vi Xử Lý", childrend: [] },
                     {
                         level: 3,
-                        parent: "Mainboard - Bo Mạch Chủ",
+                        parent: "Mainboard-Bo Mạch Chủ",
                         childrend: [],
                     },
-                    { level: 3, parent: "VGA - Card Màn Hình", childrend: [] },
+                    { level: 3, parent: "VGA-Card Màn Hình", childrend: [] },
                     { level: 3, parent: "Keo Tản Nhiệt", childrend: [] },
                     { level: 3, parent: "Nguồn Máy Tính", childrend: [] },
                     { level: 3, parent: "Ram Máy Tính", childrend: [] },

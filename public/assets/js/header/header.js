@@ -48,18 +48,20 @@ node__search_inp.addEventListener("focus", (e) => {
 node__search_inp.addEventListener("input", (e) => {
     node__search_rsult_tray.style.display = "block";
     node__search_rslt.innerHTML = "";
-    const str__inp_text = node__search_inp.value;
+    const str__inp_text = node__search_inp.value.toLowerCase();
     const regex__pattern = new RegExp(`${str__inp_text}`);
     if (!str__inp_text) {
         node__search_empty.style.display = "block";
     } else {
         node__search_empty.style.display = "none";
         arr_categories.forEach((_category) => {
-            if (_category.match(regex__pattern)) {
+            const str__to_lower = _category.toLowerCase();
+            if (str__to_lower.match(regex__pattern)) {
                 node__search_rslt.appendChild(
                     crtEle(
-                        "div",
+                        "a",
                         {
+                            href: `/category/${_category}`,
                             class: "mainHome__search--result",
                         },
                         _category
