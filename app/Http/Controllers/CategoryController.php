@@ -52,10 +52,12 @@ class CategoryController extends Controller
             WHERE category LIKE '%$id%'
             "
         );
-        if($get_pdt){
-            return $get_pdt;
+        if ($get_pdt) {
+            return view('_category.category', [
+                'get_pdt' => $get_pdt
+            ]);
         }
-        return $id;
+        return "No products record '$id'";
     }
 
     /**
