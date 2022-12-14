@@ -47,11 +47,15 @@ class CategoryController extends Controller
     public function show($id)
     {
         $get_pdt = DB::select(
-            "SELECT *
-            FROM products
-            WHERE category LIKE '%$id%'
+            "SELECT pi.path, p.name, p.price, p.code, p.sold
+            FROM products p, product_images pi
+            WHERE p.code = pi.product_code
+            AND pi.index = '0'
+            AND p.hidden = 'false'
+            AND p.category LIKE '%$id%'
             "
         );
+
         if ($get_pdt) {
             return view('_category.category', [
                 'get_pdt' => $get_pdt

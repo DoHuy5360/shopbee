@@ -2,19 +2,250 @@
 @section('title', 'Category')
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/category/category.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/components/card.css') }}">
 @endsection
 @section('js')
-
+    <script type="module" src="{{ asset('assets/js/header/header.js') }}"></script>
 @endsection
 @section('content')
     @include('layouts.header-home')
     <div id="category-gallery-wrap">
-        <div id="category-left-part"></div>
+        <div id="category-left-part">
+            <div id="category-search-filter-title-wrap">
+                <ion-icon name="funnel-outline"></ion-icon>
+                <span>SEARCH FILTER</span>
+            </div>
+            <div class="category__search--filter-block-wrap">
+                <div class="category__search--filter-title">By category</div>
+                <div class="category__search--filter-option">
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Other category name &nbsp;<span>(12k)</span></div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Other category name &nbsp;<span>(1k)</span></div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Other category name &nbsp;<span>(2k)</span></div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Other category name &nbsp;<span>(282k)</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="category__search--filter-block-wrap">
+                <div class="category__search--filter-title">Shipped from</div>
+                <div class="category__search--filter-option">
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">District 7</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Ho Chi Minh City</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Ha Noi</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">District 1</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">District 3</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">District 6</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">District 8</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">District 10</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">District 11</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">District 12</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Go Vap District</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Tan Phu District</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Binh Tan District</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Tan Binh District</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Thu Duc City</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Binh Thanh District</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Phu Nhuan District</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Binh Chanh District</div>
+                    </div>
+                </div>
+            </div>
+            <div class="category__search--filter-block-wrap">
+                <div class="category__search--filter-title">Shipping option</div>
+                <div class="category__search--filter-option">
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Express</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Fast</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Saving</div>
+                    </div>
+                </div>
+            </div>
+            <div class="category__search--filter-block-wrap">
+                <div class="category__search--filter-title">Brands</div>
+                <div class="category__search--filter-option">
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Samsung</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">OPPO</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Xiaomi</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Huawei</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Baseus</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Nokia</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Sony</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">OnePlus</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Hewlett Packard HP</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Lenovo</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Acer</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Dell</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Meizu</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Motorola</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Realme</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">FOSCAM</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">FPT</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">UNITEK</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Vsmart</div>
+                    </div>
+                    <div class="category__search--filter-option-wrap">
+                        <input type="checkbox" name="" id="" class="category__search--filter-checkbox">
+                        <div class="category__search--filter-name">Blackberry</div>
+                    </div>
+                </div>
+            </div>
+            <div class="category__search--filter-block-wrap">
+                <div class="category__search--filter-title">Price range</div>
+                <div class="category__search--filter-option"></div>
+            </div>
+            <div class="category__search--filter-block-wrap">
+                <div class="category__search--filter-title">Shop type</div>
+                <div class="category__search--filter-option"></div>
+            </div>
+            <div class="category__search--filter-block-wrap">
+                <div class="category__search--filter-title">Condition</div>
+                <div class="category__search--filter-option"></div>
+            </div>
+            <div class="category__search--filter-block-wrap">
+                <div class="category__search--filter-title">Payment options</div>
+                <div class="category__search--filter-option"></div>
+            </div>
+            <div class="category__search--filter-block-wrap">
+                <div class="category__search--filter-title">Rating</div>
+                <div class="category__search--filter-option"></div>
+            </div>
+            <div class="category__search--filter-block-wrap">
+                <div class="category__search--filter-title">Service & Promotion</div>
+                <div class="category__search--filter-option"></div>
+            </div>
+            <button id="category-filter-clear-all-btn" type="button">Clear All</button>
+        </div>
         <div id="category-right-part">
             <div id="category-head-banner-wrap">
                 <div id="category-banner-title-wrap">
                     <div id="category-banner-title-left">
-                        <img id="category-banner-icon" src="{{ asset('assets/img/user/_bee_user_default_avatar.jpg') }}"/>
+                        <img id="category-banner-icon" src="{{ asset('assets/img/user/_bee_user_default_avatar.jpg') }}" />
                         <div id="category-banner-title">Super Sale Black Friday Event</div>
                     </div>
                     <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -106,7 +337,30 @@
                     </div>
                 </div>
                 <div id="category-product-list-wrap">
-                    <div id="category-product-card">User component</div>
+                    <div id="category-product-seperate-grid">
+                        @foreach ($get_pdt as $pdt)
+                            <a href="{{ route('product.show', $pdt->code) }}" class="mainHome__cardSuggest-padding">
+                                <div class="mainHome__cardSuggest-content">
+                                    <div class="mainHome__cardSuggest--image">
+                                        <div class="mainHome__cardSuggest--label-like">Like</div>
+                                        <img src="{{ asset($pdt->path) }}" alt="{{ $pdt->path }}" draggable="false" />
+                                    </div>
+                                    <div class="mainHome__cardSuggest--text">
+                                        <div class="mainHome__cardSuggest--name">{{ $pdt->name }}</div>
+                                        <div class="mainHome__cardSuggest--footer">
+                                            <div class="mainhome__bonus--bebefit">
+                                                <ion-icon name="cart-outline"></ion-icon>
+                                            </div>
+                                            <div class="mainHome__cardSuggest--price-wrap">
+                                                <div class="mainHome__cardSuggest--price"><span>₫</span><span>{{ $pdt->price }}</span></div>
+                                                <span>Saled {{ $pdt->sold }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

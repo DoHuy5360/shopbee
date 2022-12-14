@@ -23,7 +23,10 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
+*::selection{
+    color: var(--color-2);
+    background-color: var(--color-1);
+}
 .logo__color--orange {
     color: #f1582c;
 }

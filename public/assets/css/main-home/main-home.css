@@ -253,11 +253,11 @@
     margin: auto;
     height: 130px;
 }
-.mainHome-ads-inside{
+.mainHome-ads-inside {
     display: flex;
     gap: 10px;
 }
-.mainHome__sale--img-wrap{
+.mainHome__sale--img-wrap {
     width: calc(100% / 3);
     overflow: hidden;
     display: grid;
@@ -271,7 +271,7 @@
     object-fit: cover;
     border-radius: 2px;
 }
-.mainHome-ads-inside img:hover{
+.mainHome-ads-inside img:hover {
     transform: scale(1.2);
 }
 .mainHome-shopbeeMall {
@@ -404,81 +404,7 @@
     margin: 10px 0 20px 0;
     row-gap: 10px;
 }
-.mainHome__cardSuggest-padding {
-    padding: 0 5px;
-    color: black;
-    text-decoration: unset !important;
-}
-.mainHome__cardSuggest-content {
-    display: grid;
-    grid-template-rows: 200px 110px;
-    background-color: white;
-    box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
-    -webkit-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
-    -moz-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
-}
-.mainHome__cardSuggest--image {
-    position: relative;
-}
-.mainHome__cardSuggest--label-like {
-    position: absolute;
-    background-color: #e51c3b;
-    color: white;
-    font-weight: bold;
-    padding: 0 5px;
-    border-radius: 0 10px 10px 0;
-    font-size: 10px;
-    left: -5px;
-    top: 5px;
-}
-.mainHome__cardSuggest--label-like::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 5px;
-    aspect-ratio: 1;
-    background-color: #b6152d;
-    clip-path: polygon(100% 100%, 0 0, 100% 0);
-}
-.mainHome__cardSuggest--image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.mainHome__cardSuggest--text {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 auto;
-    padding: 5px;
-    gap: 5px;
-    justify-content: space-between;
-}
-.mainHome__cardSuggest--name {
-    word-wrap: break-word;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    font-size: 13px;
-}
-.mainHome__cardSuggest--price-wrap {
-    display: flex;
-    justify-content: space-between;
-}
-.mainHome__cardSuggest--price {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-}
-.mainHome__cardSuggest--price span:first-child {
-    font-size: 13px;
-}
+
 #mainHome-cardSuggest-display-btn {
     text-align: center;
 }
