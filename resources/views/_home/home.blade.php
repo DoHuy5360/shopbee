@@ -3,6 +3,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/main-home/main-home.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/main-home/main-home-respon.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/components/card.css') }}">
 @endsection
 @section('js')
     <script type="module" src="{{ asset('assets/js/home/home.js') }}"></script>

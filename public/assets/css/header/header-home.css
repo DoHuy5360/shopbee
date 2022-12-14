@@ -151,6 +151,7 @@
     color: white;
     cursor: pointer;
     position: relative;
+    margin-right: 15px;
 }
 
 #mainHome_navbar_about_topic-respon-hidden {
@@ -170,7 +171,7 @@
 
 #mainHone-search-field {
     width: 100%;
-    margin: 0 70px;
+    margin: 0 105px 0 50px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -356,7 +357,7 @@
     background-color: white;
     overflow-y: scroll;
     height: 360px;
-    width: 800px;
+    width: 770px;
     border-radius: 2px;
     box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
     -webkit-box-shadow: 0 0.125rem 0.25rem #1b1b1b13;
