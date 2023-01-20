@@ -1,17 +1,14 @@
 import { SWITCHTAB } from "../module/class/switch_tab.js";
 import { PrimitiveInteractive } from "../module/primitive/data.js";
 
-export let chart__index
+export let chart__index;
 export function starScript() {
     const pri__obj = new PrimitiveInteractive();
-    const date__date = new Date();
-    const int__crrnt_month = date__date.getMonth() + 1;
+    // const date__date = new Date();
+    // const int__crrnt_month = date__date.getMonth() + 1;
 
-    var xValues = pri__obj.arrayFromTo(
-        1,
-        int__crrnt_month,
-        pri__obj.arr__months_vn_T
-    );
+    var xValues = pri__obj.arrayFromTo(1, 12, pri__obj.arr__months_vn_T);
+    console.log(xValues);
     var yValues1 = [2, 3, 1, 4, 1, 7, 0, 3, 5, 4, 4, 6];
     var yValues2 = [1, 3, 5, 7, 2, 4, 8, 9, 0, 4, 6, 1];
     var yValues3 = [4, 8, 9, 0, 4, 6, 3, 1, 4, 1, 7, 1];
@@ -64,7 +61,6 @@ export function starScript() {
         },
     });
 
-    // todo: -----------
     var manage_marketing = new SWITCHTAB("manage-marketing");
     manage_marketing.implement();
 
@@ -74,7 +70,9 @@ export function starScript() {
     manage_activity.setTransformLeftRight();
 }
 
-const node__switch_tab = document.querySelector("[data-switch-name='manage-marketing']")
-if (node__switch_tab){
-    starScript()
+const node__switch_tab = document.querySelector(
+    "[data-switch-name='manage-marketing']"
+);
+if (node__switch_tab) {
+    starScript();
 }
