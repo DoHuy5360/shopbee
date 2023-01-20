@@ -9,13 +9,13 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="http://surl.li/dafng" alt="First slide" />
+                        <img class="d-block w-100" src="{{ asset('assets/img/home/slider/sungglasses.webp') }}" alt="First slide" />
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="http://surl.li/dafnd" alt="Second slide" />
+                        <img class="d-block w-100" src="{{ asset('assets/img/home/slider/shoes.webp') }}" alt="Second slide" />
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="http://surl.li/dafnj" alt="Third slide" />
+                        <img class="d-block w-100" src="{{ asset('assets/img/home/slider/remote_game.webp') }}" alt="Third slide" />
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

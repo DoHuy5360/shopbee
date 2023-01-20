@@ -87,7 +87,7 @@
                 <div id="cart-shopbee">Cart</div>
             </div>
             <div id="cart-search-inputVoucher">
-                <input id="cart-search-input-field" placeholder="VOUCHER FREE SHIP ĐẾN 70K" type="text" />
+                <input id="cart-search-input-field" placeholder="VOUCHER FREE SHIP UP TO 70K" type="text" />
                 <button id="cart-search-icon">
                     <ion-icon style="color: #fff" name="search"></ion-icon>
                 </button>
@@ -137,7 +137,7 @@
                                         title="Check all this shop's products" />
                                 </div>
                                 <div class="cart_page_name_product">
-                                    <div>Product Provider  <strong>{{ $product_creator->name }}</strong></div>
+                                    <div>Product Provider <strong>{{ $product_creator->name }}</strong></div>
                                     <ion-icon style="color: red; font-size: 1.4rem" name="chatbubbles-sharp"></ion-icon>
                                 </div>
                                 <span class="cart__page-product-edit">Sửa</span>
