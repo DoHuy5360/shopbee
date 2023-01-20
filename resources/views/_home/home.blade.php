@@ -32,31 +32,31 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="mainHome-carousel-top carousel-item active">
-                            <img class="d-block" src="http://surl.li/dafng" alt="First slide" draggable="false"/>
+                            <img class="d-block" src="{{ asset('assets/img/home/slider/head_phone.png') }}" alt="First slide" draggable="false" />
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dafnd" alt="Second slide" draggable="false"/>
+                            <img class="d-block" src="{{ asset('assets/img/home/slider/watch.png') }}" alt="Second slide" draggable="false" />
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dafnj" alt="Third slide" draggable="false"/>
+                            <img class="d-block" src="{{ asset('assets/img/home/slider/camera.png') }}" alt="Third slide" draggable="false" />
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dgukv" alt="Fourth slide" draggable="false"/>
+                            <img class="d-block" src="{{ asset('assets/img/home/slider/camera2.webp') }}" alt="Fourth slide" draggable="false" />
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dgukx" alt="Fifth slide" draggable="false"/>
+                            <img class="d-block" src="{{ asset('assets/img/home/slider/glass.webp') }}" alt="Fifth slide" draggable="false" />
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dguky" alt="Sixth slide" draggable="false"/>
+                            <img class="d-block" src="{{ asset('assets/img/home/slider/remote_game.webp') }}" alt="Sixth slide" draggable="false" />
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dgula" alt="Seventh slide" draggable="false"/>
+                            <img class="d-block" src="{{ asset('assets/img/home/slider/bag.webp') }}" alt="Seventh slide" draggable="false" />
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dguld" alt="Eighth slide" draggable="false"/>
+                            <img class="d-block" src="{{ asset('assets/img/home/slider/shoes.webp') }}" alt="Eighth slide" draggable="false" />
                         </div>
                         <div class="mainHome-carousel-top carousel-item">
-                            <img class="d-block" src="http://surl.li/dgulf" alt="Ninth slide" draggable="false"/>
+                            <img class="d-block" src="{{ asset('assets/img/home/slider/airpod.webp') }}" alt="Ninth slide" draggable="false" />
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -70,71 +70,71 @@
                 </div>
             </div>
             <div class="mainHome-homeCarousel-block-right">
-                <img src="http://surl.li/dgula" alt="" draggable="false" />
+                <img src="{{ asset('assets/img/home/slider/bag.webp') }}" alt="" draggable="false" />
             </div>
             <div class="mainHome-homeCarousel-block-right">
-                <img src="http://surl.li/dafnq" alt="" draggable="false" />
+                <img src="{{ asset('assets/img/home/slider/sungglasses.webp') }}" alt="" draggable="false" />
             </div>
         </div>
         <div id="mainHome-activity">
             <div id="mainHome-activity-wrapper">
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/46a2a2c810622f314d78455da5e5d926_xhdpi" alt="" draggable="false">
+                        <img src="{{ asset('assets/img/home/options/flash.gif') }}" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Sale Times</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/b3535d7e56c58c4ebe9a87672d38cc5e_xhdpi" alt="" draggable="false">
+                        <img src="{{ asset('assets/img/home/options/cheap.webp') }}" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Cheap shit - Free shit</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/c7a2e1ae720f9704f92f72c9ef1a494a_xhdpi" alt="" draggable="false">
+                        <img src="{{ asset('assets/img/home/options/freeship.webp') }}" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Free delivery </div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/1975fb1af4ae3c22878d04f6f440b6f9_xhdpi" alt="" draggable="false">
+                        <img src="{{ asset('assets/img/home/options/firepercent.webp') }}" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Trending - Shock deal</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/21a4856d1fecd4eda143748661315dba_xhdpi" alt="" draggable="false">
+                        <img src="{{ asset('assets/img/home/options/refund_coin.webp') }}" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Coin refund over 100K</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/8d6d5ee795e7675fed39d31ba04c3b92_xhdpi" alt="" draggable="false">
+                        <img src="{{ asset('assets/img/home/options/good_brand.webp') }}" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Brand shit - Good deals</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/a08ab28962514a626195ef0415411585_xhdpi" alt="" draggable="false">
+                        <img src="{{ asset('assets/img/home/options/shipping.webp') }}" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">International shipping</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/9df57ba80ca225e67c08a8a0d8cc7b85_xhdpi" alt="" draggable="false">
+                        <img src="{{ asset('assets/img/home/options/card.webp') }}" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Card & Service</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/b898e8b6a0ba6fc2a86beb99f9420f06_xhdpi" alt="" draggable="false">
+                        <img src="{{ asset('assets/img/home/options/what_number.webp') }}" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Lucky number</div>
                 </div>
                 <div class="mainHome__activity--card">
                     <div class="mainHome__act--icon">
-                        <img src="https://cf.shopee.vn/file/93acaac785c19b09180b01cc34a4c17e_xhdpi" alt="" draggable="false">
+                        <img src="{{ asset('assets/img/home/options/flash_sale.webp') }}" alt="" draggable="false">
                     </div>
                     <div class="mainHome__act--name">Flash Sale</div>
                 </div>
@@ -211,28 +211,28 @@
                 <div class="mainHome__wrap--shop-carousel_wrapper">
                     <div class="mainHome__wrap--shop-carousel">
                         <div class="mainHome-mallCarousel">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                    <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="mainHome-carousel-bot carousel-item active">
-                                        <img class="d-block w-100" src="http://surl.li/dafnp" alt="First slide" loading="lazy" />
+                                        <img class="d-block w-100" src="{{ asset('assets/img/home/slider/shoe.webp') }}" alt="shoe" loading="lazy" draggable="false" />
                                     </div>
                                     <div class="mainHome-carousel-bot carousel-item">
-                                        <img class="d-block w-100" src="http://surl.li/dafnq" alt="Second slide" loading="lazy" />
+                                        <img class="d-block w-100" src="{{ asset('assets/img/home/slider/lipstick.webp') }}" alt="lipstick" loading="lazy" draggable="false" />
                                     </div>
                                     <div class="mainHome-carousel-bot carousel-item">
-                                        <img class="d-block w-100" src="http://surl.li/dafnr" alt="Third slide" loading="lazy" />
+                                        <img class="d-block w-100" src="{{ asset('assets/img/home/slider/sungglasses.webp') }}" alt="sungglasses" loading="lazy" draggable="false" />
                                     </div>
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
@@ -253,57 +253,57 @@
         <div id="mainHome-top-finding">
             <div class="mainHome__part--title-wrap">
                 <div class="mainHome__part--title">Hot Selling</div>
-                <a href="http://" class="mainHome__link--to" target="_blank">Veiw all ></a>
+                <a href="#" class="mainHome__link--to" target="_blank">Veiw all ></a>
             </div>
             <div id="mainHome-top-finding-wrap">
                 <div id="mainHome-card-topfind-wrap">
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
-                            <img src="http://surl.li/dafng" alt="" />
+                            <img src="{{ asset('assets/img/home/slider/sungglasses.webp') }}" alt="" />
                             <div class="mainHome__topFind--price">Selling 234k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
+                        <div class="mainHome__topFind--name">Cool sungglasses</div>
                     </div>
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
-                            <img src="http://surl.li/dafnd" alt="" />
-                            <div class="mainHome__topFind--price">Selling 234k / month</div>
+                            <img src="{{ asset('assets/img/home/slider/shoes.webp') }}" alt="" />
+                            <div class="mainHome__topFind--price">Selling 24k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
+                        <div class="mainHome__topFind--name">New shoes trend</div>
                     </div>
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
-                            <img src="http://surl.li/dafnj" alt="" />
-                            <div class="mainHome__topFind--price">Selling 234k / month</div>
+                            <img src="{{ asset('assets/img/home/slider/lipstick.webp') }}" alt="" />
+                            <div class="mainHome__topFind--price">Selling 34k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
+                        <div class="mainHome__topFind--name">Red lipstick</div>
                     </div>
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
-                            <img src="http://surl.li/dafnp" alt="" />
-                            <div class="mainHome__topFind--price">Selling 234k / month</div>
+                            <img src="{{ asset('assets/img/home/slider/bag.webp') }}" alt="" />
+                            <div class="mainHome__topFind--price">Selling 4k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
+                        <div class="mainHome__topFind--name">Back bag</div>
                     </div>
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
-                            <img src="http://surl.li/dafnq" alt="" />
-                            <div class="mainHome__topFind--price">Selling 234k / month</div>
+                            <img src="{{ asset('assets/img/home/slider/camera2.webp') }}" alt="" />
+                            <div class="mainHome__topFind--price">Selling 2k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
+                        <div class="mainHome__topFind--name">Black camera</div>
                     </div>
                     <div class="mainHome__card--topfind">
                         <div class="mainHome__topFind--image-wrap">
                             <div class="mainHome__topFind--top"><span>Top</span></div>
-                            <img src="http://surl.li/dafnr" alt="" />
-                            <div class="mainHome__topFind--price">Selling 234k / month</div>
+                            <img src="{{ asset('assets/img/home/slider/remote_game.webp') }}" alt="" />
+                            <div class="mainHome__topFind--price">Selling 9k / month</div>
                         </div>
-                        <div class="mainHome__topFind--name">Mechanical keyboard</div>
+                        <div class="mainHome__topFind--name">Gaming hand ultra</div>
                     </div>
                 </div>
             </div>
@@ -320,7 +320,7 @@
                             <div class="mainHome__cardSuggest-content">
                                 <div class="mainHome__cardSuggest--image">
                                     <div class="mainHome__cardSuggest--label-like">Like</div>
-                                    <img src="{{ asset($pdt->path) }}" alt="{{ $pdt->path }}" draggable="false"/>
+                                    <img src="{{ asset($pdt->path) }}" alt="{{ $pdt->path }}" draggable="false" />
                                 </div>
                                 <div class="mainHome__cardSuggest--text">
                                     <div class="mainHome__cardSuggest--name">{{ $pdt->name }}</div>
