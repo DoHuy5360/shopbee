@@ -342,7 +342,7 @@
                             <a href="{{ route('product.show', $pdt->code) }}" class="mainHome__cardSuggest-padding">
                                 <div class="mainHome__cardSuggest-content">
                                     <div class="mainHome__cardSuggest--image">
-                                        <div class="mainHome__cardSuggest--label-like">Like</div>
+                                        <div class="mainHome__cardSuggest--label-like">Favorite</div>
                                         <img src="{{ asset($pdt->path) }}" alt="{{ $pdt->path }}" draggable="false" />
                                     </div>
                                     <div class="mainHome__cardSuggest--text">

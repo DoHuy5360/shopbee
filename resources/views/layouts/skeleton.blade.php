@@ -29,7 +29,7 @@
 
 <body id="body">
     @yield('content')
-    <button id="scroll-to-top" type="button">Cuộn lên trên</button>
+    <button id="scroll-to-top" type="button">Scroll to top</button>
     <button id="scroll-to-top-respon" type="button">&#8679;</button>
 
 </body>
